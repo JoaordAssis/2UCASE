@@ -1,0 +1,70 @@
+/* Fonte Work Sans e Quicksand */
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&family=Work+Sans:wght@300;400;500&display=swap');
+
+/* Reset Global */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a, button{
+    cursor: pointer;
+}
+
+object{
+    padding: .5px;
+}
+
+/* Variaveis de Cor */
+
+:root{
+    --cor-principal: #D55B70;
+    --cor-secundaria-background: rgb(16, 55, 65);
+    --cor-secundaria-gradient: linear-gradient(90deg, rgba(16, 55, 65, 1) 32%, rgba(16, 77, 92, 1) 85%);
+}
+
+/* Estilo de fontes nos titulos e textos */
+
+h1{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    font-size: 2.5rem;
+}
+
+h2{
+    font-family: 'Work Sans', sans-serif;
+    font-size: 2.125rem;
+}
+
+h3{
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.75rem;
+}
+
+h4, p, button, a{
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.375rem;
+}
+
+h5, input, p, button, a{
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1rem;
+}
+
+h6{
+    font-family: 'Work Sans', sans-serif;
+    font-size: 0.75rem;
+}
+
+/* Resets de links e listas */
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+ul, li{
+    list-style: none;
+}
