@@ -46,6 +46,7 @@ h3{
 h4, p, button, a{
     font-family: 'Work Sans', sans-serif;
     font-size: 1.375rem;
+    font-weight: 500;
 }
 
 h5, input, p, button, a{

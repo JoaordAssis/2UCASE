@@ -62,7 +62,7 @@
 
             <section class="logo-responsive">
                 <button id="menu-button">
-                    <img src="../assets/svg/menu.svg" alt="Menu mobile para dispositivos moveis" id="menu-mobile" width="60" height="60"></img>
+                    <span id="hamburguer"></span>
                 </button>
                 <h2 id="logo-mobile">VILICAPAS</h2>
             </section>
@@ -108,9 +108,23 @@
                 <a href="#">
                     <li>Acessórios</li>
                 </a>
+
+                <section class="util-icons-xs">
+                    <button id="bag-button">
+                        <img src="../assets/svg/BagCarrinho.svg" alt="icone do carrinho de compras" id="carrinhoSVG" width="30" height="30"></img>
+                    </button>
+                    <button id="favorito-button">
+                        <img src="../assets/svg/CoracaoFavoritos.svg" alt="Icone de favoritos" id="coracaoSVG" width="30" height="30"></img>
+                    </button>
+                    <button id="login-button">
+                        <img src="../assets/svg/Login.svg" alt="icone de login" id="login-icon" width="40" height="40"></img>
+                    </button>
+                </section>
             </ul>
         </nav>
     </section>
+
+    <script src="../assets/js/navbar.js"></script>
 
 </body>
 
