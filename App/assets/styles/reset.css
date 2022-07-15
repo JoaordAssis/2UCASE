@@ -17,6 +17,14 @@ object{
     padding: .5px;
 }
 
+#body-margin{
+    margin-top: 148px;
+}
+
+header{
+    margin-top: -148px;
+}
+
 /* Variaveis de Cor */
 
 :root{
@@ -68,4 +76,17 @@ a{
 
 ul, li{
     list-style: none;
+}
+
+/* Media Queries globais */
+
+
+@media (max-width: 1050px) {
+    #body-margin{
+        margin-top: 80px;
+    }
+
+    header{
+    margin-top: -80px;
+    }
 }

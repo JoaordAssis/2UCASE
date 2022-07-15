@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@glidejs/glide": "^3.5.2",
     "jshint": "^2.13.5"
   }
 }

@@ -28,10 +28,13 @@
     gap: .5rem;
 }
 
-#logo-informations .user-login .login-links, a {
+#logo-informations .user-login .login-links{
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+#logo-informations a{
     color: white;
 }
 
@@ -178,7 +181,6 @@
     .nav-container{
         display: flex;
         flex-direction: column;
-        height: 80px;
     }
 
     .header-secundario{
