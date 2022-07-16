@@ -25,27 +25,29 @@
                 </div>
             </div>
         </section>
-        <section class="about">
-            <h5>Sobre o Vilicapas</h5>
-            <a href="#">Quem Somos</a>
-        </section>
-        <section class="help">
-            <h5>Precisa de Ajuda</h5>
-            <ul class="footer-links">
-                <a href="#">
-                    <li>Fale Conosco</li>
-                </a>
-                <a href="#">
-                    <li>Central de Ajuda</li>
-                </a>
-                <a href="#">
-                    <li>Políticas de Privacidade</li>
-                </a>
-            </ul>
-        </section>
-        <section class="payment">
-            <h5>Metódos de Pagamento</h5>
-        </section>
+        <main class="footer-wraper">
+            <section class="about">
+                <h4>Sobre o Vilicapas</h4>
+                <a href="#">Quem Somos</a>
+            </section>
+            <section class="help">
+                <h4>Precisa de Ajuda</h4>
+                <ul class="footer-links">
+                    <a href="#">
+                        <li>Fale Conosco</li>
+                    </a>
+                    <a href="#">
+                        <li>Central de Ajuda</li>
+                    </a>
+                    <a href="#">
+                        <li>Políticas de Privacidade</li>
+                    </a>
+                </ul>
+            </section>
+            <section class="payment">
+                <h4>Metódos de Pagamento</h4>
+            </section>
+        </main>
     </footer>
 </body>
 

@@ -3,12 +3,19 @@
 footer{
     display: flex;
     background-color: var(--cor-principal);
-    justify-content: space-around;
+    justify-content: center;
     padding: 5rem;
     flex-wrap: wrap;
+    gap: 15rem;
 }
 
-footer h3, h4, h5, a, button{
+.footer-wraper{
+    display: flex;
+    flex-direction: row;
+    gap: 10rem;
+}
+
+footer h3, footer h4, footer h5, footer a, footer button{
     color: white;
 }
 
@@ -49,6 +56,7 @@ footer a{
     gap: 0;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    width: 18rem;
 }
 
 #form-marketing button{
@@ -59,11 +67,12 @@ footer a{
 
 #form-marketing input{
     padding: 1rem;
-    width: 18rem;
+    width: 100%;
     border: none;
     outline: none;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
+    max-width: 100%;
 }
 
 /* Sobre */
@@ -88,3 +97,60 @@ footer .help .footer-links{
     gap: .6rem;
 }
 
+
+/* Media Queries */
+
+@media (max-width: 1700px) {
+
+    footer {
+        gap: 10rem;
+        padding: 3rem;
+    }
+
+    .footer-wraper {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 5rem;
+    }
+}
+
+@media (max-width: 960px) {
+
+    footer {
+        gap: 10rem;
+    }
+    .footer-wraper{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 5rem;
+    }
+}
+
+@media (max-width: 830px) {
+
+    footer {
+        gap: 10rem;
+        text-align: center;
+    }
+
+    .footer-wraper {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 5rem;
+    }
+
+    .icon-media{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 320px) {
+
+    #form-marketing {
+        width: 14rem;
+    }
+}
