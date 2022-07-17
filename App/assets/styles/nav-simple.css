@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&family=Work+Sans:wght@300;400;500&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    display: flex;
+    width: 100vw;
+    height: 120px;
+    justify-content: center;
+    align-items: center;
+    background-color: #D55B70;
+}
+
+header h1{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    font-size: 3rem;
+    color: #fff;
+}
