@@ -72,7 +72,7 @@
             <h1>Fale Conosco</h1>
 
             <section class="fale-container">
-                <section class="form-contato">
+                <form action="#" method="POST" class="form-contato">
                     <input type="text" placeholder="Nome" id="input-nome" class="input-contact" name="nome">
 
                     <div class="row-contact">
@@ -91,7 +91,7 @@
                         </label>
                         <button id="principal-button" type="submit">Enviar</button>
                     </div>
-                </section>
+                </form>
 
                 <section class="contact-informations">
                     <div class="address info-container">
@@ -115,10 +115,9 @@
     </main>
 </body>
 
-<script src="../assets/./js/./contactAccordion.js"></script>
+<script src="../assets/./js/./contact.js"></script>
 
 <!-- Footer -->
-<?php require_once './footer.php'; 
-?>
+<?php require_once './footer.php'; ?>
 
 </html>

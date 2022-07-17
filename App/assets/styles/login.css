@@ -1,0 +1,203 @@
+@import './reset.css';
+
+.sign-login-container{
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    margin-top: 15rem;
+    flex-wrap: wrap;
+    padding: .5rem;
+    margin-bottom: 10rem;
+}
+
+/* Login */
+
+.login-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+    max-width: 100%;
+}
+
+.login-container form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 26rem;
+    max-width: 100%;
+}
+
+/* Cadastro */
+
+.sign-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+}
+
+.sign-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 26rem;
+}
+
+.row-sign{
+    display: flex;
+    gap: 1rem;
+}
+
+.row-sign label input{
+    display: block;
+    width: 12.5rem;
+    max-width: 100%;
+}
+
+/* Social Media */
+
+.sign-login-container .social-media{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* Linha */
+
+.line{
+    border: 1px solid #000;
+    background-color: #000;
+    height: 60vh;
+    margin-top: -6rem;
+}
+
+
+/* Componentes */
+
+.sign-login-container input{
+    padding: 1rem;
+    border: 1px solid var(--cor-principal);
+    border-radius: 15px;
+    width: 26rem;
+    max-width: 100%;
+}
+
+.sign-login-container input::placeholder{
+    color: var(--cor-principal);
+}
+
+.sign-login-container #principal-button{
+    width: 15rem;
+}
+
+.sign-login-container a {
+    font-size: 1rem;
+    color: var(--cor-principal);
+    text-decoration: underline;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.sign-login-container #social{
+    padding: 1rem;
+    width: 10rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: .5rem;
+}
+
+.sign-login-container .facebook{
+    background-color: #3b5998;
+    color: white;
+    border: none;
+}
+
+.sign-login-container .google{
+    background-color: transparent;
+    color: #3d6cd3;
+    border: none;
+}
+
+@media (max-width: 1010px){
+    .line{
+        display: none;
+    }
+}
+
+@media (max-width: 450px) {
+    .sign-login-container input {
+        width: 18rem;
+        max-width: 100%;
+    }
+
+    .row-sign{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .row-sign label input {
+        display: block;
+        width: 18rem;
+        max-width: 100%;
+    }
+
+    .sign-login-container p, h1{
+        text-align: center;
+    }
+    
+    .sign-container{
+        width: 100%;
+    }
+
+    .sign-container h1, p{
+        text-align: center;
+        word-wrap: break-word;
+        max-width: 100%;
+    }
+
+    .sign-container p{
+        max-width: 80%;
+    }
+
+}
+
+@media (max-width: 350px) {
+    .social-media {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sign-container p{
+        max-width: 60%;
+    }   
+}
+
+@media (max-width: 300px) {
+    .sign-login-container input {
+        width: 16rem;
+        max-width: 100%;
+    }
+
+    .row-sign label input {
+        display: block;
+        width: 16rem;
+        max-width: 100%;
+    }
+
+    .sign-login-container #social{
+        padding: 1rem;
+        width: 8rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        gap: .5rem;
+    }
+}
