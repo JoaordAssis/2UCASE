@@ -21,9 +21,10 @@
             <h1>Qual a forma de Pagamento?</h1>
 
             <section class="payment-container">
+
                 <section class="payment-forms">
 
-                    <div class="pergunta">
+                    <div class="pergunta card-payment">
                         <button class="accordion">
                             <img src="../assets/svg/./card.svg" width="50" height="50" alt="Cartão de Crédito">
                             Cartão de Crédito
@@ -79,6 +80,26 @@
                             </form>
                         </div>
                     </div>
+
+                    <div class="pergunta boleto-payment">
+                        <button class="accordion">
+                            <img src="../assets/svg/./invoice.svg" width="50" height="50" alt="Boleto">
+                            Boleto
+                        </button>
+                        <div class="panel">
+
+                        </div>
+                    </div>
+
+                    <div class="pergunta pix-payment">
+                        <button class="accordion">
+                            <img src="../assets/svg/./pix.svg" width="60" height="70" alt="PIX">
+                            PIX
+                        </button>
+                        <div class="panel">
+
+                        </div>
+                    </div>
                 </section>
 
                 <section class="detail-order">
@@ -86,7 +107,7 @@
                     <div class="detalhe-produto">
                         <p>2 Items</p>
                         <span id="color-payment">
-                            <a href="#">ver detalhes</a>
+                            <button id="link-detail">Ver detalhes</button>
                         </span>
                     </div>
 
@@ -125,6 +146,9 @@
         </article>
     </main>
 </body>
+
+<script src="../assets/./js/Payment.js"></script>
+
 <!-- Footer -->
 <?php //require_once './footer.php'; 
 ?>

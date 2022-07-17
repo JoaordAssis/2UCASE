@@ -14,6 +14,8 @@
     flex-direction: column;
     align-content: flex-start;
     width: 60rem;
+    max-width: 100%;
+    padding: 1rem;
 }
 
 .payment-container{
@@ -23,7 +25,10 @@
 }
 
 .payment-forms{
+    display: flex;
+    flex-direction: column;
     width: 50%;
+    gap: 2rem;
 }
 
 .payment-forms .accordion{
@@ -42,6 +47,16 @@
     flex-direction: column;
     width: 100%;
     border: 1px solid var(--cor-principal);
+}
+
+.panel{
+    padding: 0 1.1rem;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-out;
+    margin-bottom: 1rem;
 }
 
 /* Formulario de Cartão */
@@ -88,4 +103,261 @@
 
 #label-check input{
     max-width: 2rem;
+}
+
+/* Detalhes do pedido */
+
+.detail-order{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 15rem;
+}
+
+.detail-order p, .detail-order button{
+    font-size: 1rem;
+    background-color: transparent;
+    border: none;
+}
+
+.detail-order div{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.detail-order span{
+    color: var(--cor-principal);
+}
+
+.detail-order #link-detail{
+    color: var(--cor-principal);
+    text-decoration: underline;
+}
+
+#principal-button{
+    width: 100%;
+}
+
+
+/* Media Queries */
+
+@media (max-width: 960px){
+    .payment{
+        display: flex;
+        flex-direction: column;
+        align-content: flex-start;
+        width: 48rem;
+        padding: 1rem;
+    }
+
+    #formulario-pagamento input, select{
+        display: block;
+        width: 22rem;
+        max-width: 100%;
+        padding: 1rem;
+        border: 1px solid var(--cor-principal);
+        border-radius: 15px;
+        color: var(--cor-principal);
+    }
+
+    .row-payment input, .row-payment label{
+        display: block;
+        max-width: 10.5rem;
+        width: 100%;
+    }
+
+    #label-check{
+    display: flex;
+    gap: 1rem;
+    max-width: 100%;
+    padding: 1rem;
+    color: var(--cor-principal);
+    }
+
+    #label-check input{
+        max-width: 2rem;
+    }
+}
+
+@media (max-width: 750px) {
+    .payment {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        width: 48rem;
+        padding: 1rem;
+    }
+
+    .payment-container{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 100%;
+    }
+
+    #formulario-pagamento input,
+    select {
+        display: block;
+        width: 22rem;
+        max-width: 100%;
+        padding: 1rem;
+        border: 1px solid var(--cor-principal);
+        border-radius: 15px;
+        color: var(--cor-principal);
+    }
+
+    .row-payment input,
+    .row-payment label {
+        display: block;
+        max-width: 10.5rem;
+        width: 100%;
+    }
+
+    #label-check {
+        display: flex;
+        gap: 1rem;
+        max-width: 100%;
+        padding: 1rem;
+        color: var(--cor-principal);
+    }
+
+    #label-check input {
+        max-width: 2rem;
+    }
+    
+    .payment-forms{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .payment {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        width: 48rem;
+        padding: 1rem;
+    }
+
+    .payment-container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 100%;
+    }
+
+    #formulario-pagamento input,
+    select {
+        display: block;
+        width: 18rem;
+        max-width: 100%;
+        padding: 1rem;
+        border: 1px solid var(--cor-principal);
+        border-radius: 15px;
+        color: var(--cor-principal);
+    }
+
+    .row-payment{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .row-payment input,
+    .row-payment label {
+        display: block;
+        max-width: 18rem;
+        width: 100%;
+    }
+
+    #label-check {
+        display: flex;
+        gap: 1rem;
+        max-width: 100%;
+        padding: 1rem;
+        color: var(--cor-principal);
+    }
+
+    #label-check input {
+        max-width: 2rem;
+    }
+
+    .payment-forms {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 2rem;
+    }
+}
+
+
+@media (max-width: 350px) {
+    .payment {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        width: 48rem;
+        padding: 1rem;
+    }
+
+    .payment-container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 100%;
+    }
+
+    #formulario-pagamento{
+        padding: 1rem;
+    }
+
+    #formulario-pagamento input,
+    select {
+        display: block;
+        width: 14rem;
+        max-width: 100%;
+        padding: 1rem;
+        border: 1px solid var(--cor-principal);
+        border-radius: 15px;
+        color: var(--cor-principal);
+    }
+
+    .row-payment {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .row-payment input,
+    .row-payment label {
+        display: block;
+        max-width: 14rem;
+        width: 100%;
+    }
+
+    #label-check {
+        display: flex;
+        gap: 1rem;
+        max-width: 100%;
+        padding: 1rem;
+        color: var(--cor-principal);
+    }
+
+    #label-check input {
+        max-width: 2rem;
+    }
+
+    .payment-forms {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 2rem;
+    }
 }
