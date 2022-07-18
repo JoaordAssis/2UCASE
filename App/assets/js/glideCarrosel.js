@@ -2,10 +2,6 @@ import Glide from "@glidejs/glide";
 
 
 
-let glideInst = new Glide(".glide", {
-  type: "carousel",
-  startAt: 0,
-  perView: 1,
-});
+let glideInst = new Glide(".glide");
 
 glideInst.mount();
