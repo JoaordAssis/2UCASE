@@ -1,368 +1,57 @@
 @import './reset.css';
 
 
-.homepage-container{
+.homepage-content{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5rem;
-    margin-bottom: 10rem;
-    overflow: hidden;
-}
-
-/* CARROSEL BANNER */
-
-.image-box{
-    display: flex;
-    width: 100vw;
-    height: 100%;
-    justify-content: center;
-}
-
-
-.image-box img{
     width: 100%;
-    height: 70vh;
 }
 
-.image-box .left{
-    position: absolute;
-    z-index: 1000;
-    left: 50px;
-    top: 50%;
-}
 
-.image-box .right{
-    position: absolute;
-    z-index: 1000;
-    right: 50px;
-    top: 50%;
-}
-
-/* Categorias */
-
-.category-box{
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    width: 100%;
-    max-width: 100vw;
-    padding: 1rem;
-}
-
-.category-box #image-resize{
-    display: block;
-    height: 30rem;
-    width: 100%;
-    max-height: 100%;
-}
-
-.column-category{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    max-height: 30rem;
-}
-
-.column-category img{
-    height: 14.5rem;
-}
-
-/* Motivos para amar */
-
-.motivos-amar{
+.homepage-center{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100vw;
-    height: 20rem;
-    background-color: var(--cor-principal);
-    padding: 1rem;
-    color: white;
-    text-align: center;
+    width: 80vw;
 }
 
-.amar{
-    margin-top: -2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    gap: 5rem;
-    color: white;
+/* CARROSSEL */
+
+.carrossel-container {
+    margin-top: 1rem;
 }
 
-.amar .point{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-}
-
-/* Produtos container */
-
-.product-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5rem;
-    margin-bottom: 5rem;
-}
-
-.product-cont{
+.carrossel-container-box{
     display: flex;
     justify-content: center;
     gap: 2.5rem;
-    width: 90rem;
+    width: 80vw;
     max-width: 100%;
-    padding: 1rem;
 }
 
-.product-cont .left{
-    position: absolute;
-    z-index: 1000;
-    left: 20px;
-    top: 50%;
-}
-
-.product-cont .right {
-    position: absolute;
-    z-index: 1000;
-    right: 20px;
-    top: 50%;
-}
-
-.product-box a{
-    max-width: 300px;
+.carrossel-container-box img {
     width: 100%;
+    height: 50rem;
 }
 
-.product-box {
-    max-width: 300px;
-    width: 100%;
-}
-
-.prod-lanc{
-    margin-bottom: 6rem;
-}
-
-
-/* Media Queries */
-
-@media (max-width: 1450px){
-
-    .product-box a {
-        max-width: 200px;
-        width: 100%;
-    }
-
-    .product-box {
-        max-width: 200px;
-        width: 100%;
-    }
-
-    .product-cont {
-        display: flex;
-        justify-content: center;
-        gap: 5rem;
-        width: 70rem;
-        max-width: 100%;
-        padding: 1rem;
-    }
-
-    .product-cont ul{
-        display: flex;
-        gap: 2rem;
-    }
-}
-
-@media (max-width: 1100px) {
-
-    .product-cont {
-        display: flex;
-
-        width: 50rem;
-        max-width: 100%;
-        padding: 1rem;
-    }
-
-    .product-cont ul {
-        display: flex;
-        gap: 2rem;
-    }
-}
-
-@media (max-width: 800px) {
-
-    .product-box a {
-        max-width: 150px;
-        width: 100%;
-    }
-
-    .product-box {
-        max-width: 150px;
-        width: 100%;
-    }
-
-    .product-cont {
-        display: flex;
-        width: 35rem;
-        max-width: 100%;
-        padding: 1rem;
-    }
-
-    .product-cont ul {
-        display: flex;
-        justify-content: flex-start;
-        gap: 2rem;
-    }
-}
-
-@media (max-width: 700px) {
-    .category-box {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        justify-content: center;
-        width: 100%;
-        max-width: 100vw;
-        padding: 1rem;
-    }
-
-    .category-box #image-resize {
-        display: block;
-        height: 100%;
-        max-height: 30rem;
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .column-category {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 100%;
-    }
-
-    .column-category img {
-        width: 100%;
-        height: 100%;
-    }
+.glide__bullets{
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
 }
 
 
-@media (max-width: 550px) {
-
-    .product-box a {
-        max-width: 200px;
-        width: 100%;
-    }
-
-    .product-box {
-        max-width: 200px;
-        width: 100%;
-    }
-
-    .product-cont {
-        display: flex;
-        width: 100vw;
-        max-width: 100%;
-        padding: 1rem;
-    }
-
-     .left, .right{
-        display: none;
-    }
-
-    .product-cont ul {
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-    }
-
-    .motivos-amar {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 5rem;
-        width: 100vw;
-        height:100%;
-        background-color: var(--cor-principal);
-        padding: 1rem;
-        color: white;
-    }
-
-    .amar{
-        display: flex;
-        flex-direction: column;
-    }
+.glide__bullets button{
+    padding: .2rem;
+    width: 6rem;
+    height: .1rem;
+    border: 2px solid black;
+    background-color: rgba(.5, .5, .5, .1);
+    z-index: 1000;
+    margin-top: -2rem;
 }
 
-
-@media (max-width: 350px) {
-
-    .product-box a {
-        max-width: 80vw;
-        width: 100%;
-    }
-
-    .product-box {
-        max-width: 80vw;
-        width: 100%;
-    }
-
-    .product-cont {
-        display: flex;
-        width: 100vw;
-        max-width: 100%;
-        padding: 1rem;
-    }
-
-    .product-cont .left,
-    .product-cont .right {
-        display: none;
-    }
-
-    .product-cont ul {
-        display: flex;
-        gap: 2rem;
-    }
-
-    .column-category {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 100%;
-        margin-bottom: 5rem;
-    }
-}
-
-@media (max-width: 280px) {
-
-    .product-box a {
-        max-width: 70vw;
-        width: 100%;
-    }
-
-    .product-box {
-        max-width: 70vw;
-        width: 100%;
-    }
-
-    .product-cont {
-        display: flex;
-        width: 100vw;
-        max-width: 100%;
-        padding: 1rem;
-    }
-
-    .product-cont .left,
-    .product-cont .right {
-        display: none;
-    }
-
-    .product-cont ul {
-        display: flex;
-        gap: 4rem;
-    }
+.glide__bullets button:focus {
+    background-color: var(--cor-principal);
 }
