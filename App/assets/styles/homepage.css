@@ -5,15 +5,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 10rem;
     width: 100%;
+    margin-bottom: 10rem;
 }
 
 
-.homepage-center{
+.homepage-carrossel{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80vw;
+    width: -moz-fit-content;
+    width: fit-content;
 }
 
 /* CARROSSEL */
@@ -25,8 +28,7 @@
 .carrossel-container-box{
     display: flex;
     justify-content: center;
-    gap: 2.5rem;
-    width: 80vw;
+    width: 90vw;
     max-width: 100%;
 }
 
@@ -35,23 +37,260 @@
     height: 50rem;
 }
 
-.glide__bullets{
+/* Vantangens e Beneficios do site */
+
+
+.homepage-beneficios{
+    display: flex;
+    width: 70vw;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.container-beneficio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .2rem;
+    text-align: center;
+}
+
+.container-beneficio p{
+    width: 15rem;
+    text-align: center;
+}
+
+.container-beneficio h3{
+    font-family: Quicksand, 'sans-serif';
+}
+
+.container-beneficio img{
+    width: 150px;
+    height: 150px;
+}
+
+
+/* Sobre a loja */
+
+.homepage-about-section{
     display: flex;
     justify-content: center;
+    gap: 10rem;
+    padding: 1rem;
+    width: 60vw;
+    flex-wrap: wrap;
+}
+
+.homepage-about-section .texts-about{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.homepage-about-section .texts-about p{
+    width: 20rem;
+    max-width: 100%;
+    text-align: center;
+}
+
+.homepage-about-section img{
+    width: 500px;
+    max-width: 100%;
+}
+
+.texts-about button{
+    padding: 1rem;
+    background-color: transparent;
+    border: 1px solid var(--cor-principal);
+    color: var(--cor-principal);
+}
+
+.texts-about button:hover {
+    transition: ease .4s;
+    background-color: var(--cor-principal);
+    color: #ffff;
+}
+
+/* Carrosseis dos Produtos */
+
+.homepage-prod-carrossel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60vw;
+    gap: 5rem;
+    text-align: center;
+}
+
+.homepage-prod-carrossel .glide__arrow{
+    color: var(--cor-principal);
+    border: 1px solid var(--cor-principal);
+}
+
+.produto-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--cor-principal);
     gap: .5rem;
 }
 
-
-.glide__bullets button{
-    padding: .2rem;
-    width: 6rem;
-    height: .1rem;
-    border: 2px solid black;
-    background-color: rgba(.5, .5, .5, .1);
-    z-index: 1000;
-    margin-top: -2rem;
+.produto-box img{
+    width: 300px;
 }
 
-.glide__bullets button:focus {
-    background-color: var(--cor-principal);
+.produto-box h4{
+    font-weight: bold;
+    max-width: 250px;
+    text-align: center;
+}
+
+/* Cards de Categoria */
+
+.homepage-category{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6rem;
+}
+
+.homepage-category-cards{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 60vw;
+    flex: 1 1 350px;
+    gap: 1rem;
+    max-width: 1152px;
+}
+
+.homepage-category-cards .card-category img{
+    width: 350px;
+    height: 400px;
+    max-width: 100%;
+    border-radius: 15px;
+}
+
+.homepage-category-cards .card-category{
+    border-radius: 15px;
+}
+
+
+
+/* Media Queries */
+
+@media (max-width: 1700px) {
+    .homepage-about-section {
+        display: flex;
+        justify-content: center;
+        gap: 4rem;
+        padding: 1rem;
+        width: 60vw;
+        flex-wrap: wrap;
+    }
+
+    .homepage-about-section .texts-about {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 1500px) {
+    .homepage-prod-carrossel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80vw;
+        gap: 5rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .produto-box img {
+        width: 200px;
+    }
+
+    .produto-box h4 {
+        font-weight: bold;
+        max-width: 150px;
+        text-align: center;
+    }
+
+    .homepage-beneficios {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+        width: 80vw;
+    }
+}
+
+@media (max-width: 900px) {
+    .homepage-category-cards {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 90vw;
+    }
+
+    .homepage-prod-carrossel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90vw;
+        gap: 5rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .homepage-prod-carrossel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90vw;
+        gap: 5rem;
+    }
+
+    .homepage-category-cards .card-category img {
+        width: 250px;
+        height: 350px;
+        max-width: 100%;
+        border-radius: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .carrossel-container-box {
+        display: flex;
+        justify-content: center;
+        width: 100vw;
+        max-width: 100%;
+    }
+
+    .carrossel-container {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .homepage-prod-carrossel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
+        gap: 5rem;
+    }   
+}
+
+@media (max-width: 400px){
+    .homepage-about-section .texts-about p {
+        padding: 1rem;
+        width: 100%;
+        text-align: center;
+    }
 }
