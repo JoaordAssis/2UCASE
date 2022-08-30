@@ -1,0 +1,63 @@
+@import './reset.css';
+
+header{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 20rem;
+    gap: 10rem;
+    padding: 2rem;
+    background-color: var(--cor-laranja);
+}
+
+header #nav-links ul{
+    color: #ffff;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+header #nav-links ul a{
+    color: #ffff;
+    font-weight: 500;
+}
+
+
+#logo{
+    color: #ffff;
+}
+
+.dropdown-content{
+    display: none;
+    flex-direction: column;
+    gap: .5rem;
+    margin-top: 1rem;
+}
+
+.dropdown-content a{
+    display: block;
+    padding: .5rem;
+}
+
+#nav-links li a:hover{
+    text-decoration: underline;
+    transition: ease .4s;
+}
+
+.dropdown-link{
+    display: block;
+    padding: .5px;
+    color: #ffff;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.dropdown-link:hover{
+    text-decoration: underline;
+    transition: ease .4s;
+}
+
+.dropdown-link:hover  .dropdown-content{
+    display: flex;
+}

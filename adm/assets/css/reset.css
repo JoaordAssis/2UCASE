@@ -1,0 +1,68 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Variaveis de Cor */
+
+:root{
+    --cor-branca: #F8F8F8;
+    --cor-laranja: #FB745D;
+}
+
+/* Estilo de fontes nos titulos e textos */
+
+h1 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.9rem;
+}
+
+h3 {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.75rem;
+}
+
+h4,
+p,
+button,
+a, li {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+h5,
+input,
+textarea,
+select,
+option,
+label {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1rem;
+    outline: none;
+}
+
+h6 {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 0.75rem;
+}
+
+/* Resets de links e listas */
+
+a {
+    color: black;
+    text-decoration: none;
+    padding: .5px;
+}
+
+ul,
+li {
+    list-style: none;
+}
