@@ -3,23 +3,14 @@
 
 <head>
     <?php require_once "../config/config.php"; ?>
-    <link rel="stylesheet" href="../assets/css/usuariosADM.css">
+    <link rel="stylesheet" href="../assets/css/cupons.css">
 </head>
 
 <?php require_once "./navbar.php"; ?>
 
 <body id="body-margin">
     <main class="container-produto">
-        <h1>Usuários Administrativos</h1>
-        <!-- BARRA DE PESQUISA -->
-        <article class="container-pesquisa">
-            <form action="#" method="POST">
-                <div class="input-pesquisa">
-                    <input type="text" placeholder="Pesquisar" id="pesquisar-input">
-                    <input type="submit" value="">
-                </div>
-            </form>
-        </article>
+        <h1>Cupons de Desconto</h1>
 
         <section class="container-tabela-filter">
 
@@ -29,7 +20,7 @@
                     <div class="icon-container">
                         <i class="fa-regular fa-plus"></i>
                     </div>
-                    Novo Usuário
+                    Novo Cupom
                 </button>
             </section>
 
@@ -40,9 +31,9 @@
                     <tr>
                         <th>#</th>
                         <th>Nome</th>
-                        <th>Email</th>
-                        <th>Poder</th>
-                        <th>Data de Criação</th>
+                        <th>Cupom</th>
+                        <th>Categoria</th>
+                        <th>Data de Expiração</th>
                         <th>Status</th>
                         <th>Ações</th>
                     </tr>

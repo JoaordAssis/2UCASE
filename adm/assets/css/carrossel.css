@@ -1,0 +1,98 @@
+@import './reset.css';
+
+/* CONTAINER PRODUTO */
+
+.container-produto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 2rem;
+}
+
+.carrossel-start{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* CARROSSEL */
+
+.carrossel-container {
+    margin-top: 1rem;
+}
+
+.carrossel-container-box {
+    display: flex;
+    justify-content: center;
+    width: 60vw;
+    max-width: 100%;
+}
+
+.carrossel-container-box img {
+    width: 100%;
+    height: 50rem;
+}
+
+/* Banners Carrossel */
+
+.edit-carrossel{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.banner-box{
+    display: flex;
+    gap: 1rem;
+    width: 60rem;
+    align-items: stretch;
+    background-color: #ffff;
+    padding: 1rem;
+    border-radius: 15px;
+}
+
+.banner-box img{
+    width: 400px;
+    height: 200px;
+}
+
+.banner-box .box-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.banner-box  button{
+    height: 100%;
+    padding: 1rem;
+    border: none;
+    background-color: #ffff;
+    cursor: pointer;
+}
+
+#edit-prod i {
+    color: #25b808;
+    cursor: pointer;
+}
+
+#delete-prod i {
+    color: #ca0606;
+    cursor: pointer;
+}
+
+#btn-new-produto {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#btn-new-produto .icon-container {
+    background-color: #ffff;
+    padding: 1rem;
+    cursor: pointer;
+}

@@ -23,8 +23,8 @@
                     <!-- <i class="fa-solid fa-angle-down"></i> -->
                     <li class="dropdown-content">
                         <a href="ListMenus.php">Menus</a>
-                        <a href="#">Carrossel</a>
-                        <a href="#">Promoções</a>
+                        <a href="carrossel.php">Carrossel</a>
+                        <a href="ListCupons.php">Cupons</a>
                     </li>
                 </div>
 
