@@ -1,78 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/7fa5ede5bb.js" crossorigin="anonymous"></script>
+    <?php require_once "../config/config.php"; ?>
     <link rel="stylesheet" href="../assets/css/menus.css">
 </head>
-<body>
-    <div id="conteudoMenu">
-        <p class="titulo">MENUS</p>
 
-        <center>
-        <div class="total_tableAdmMenu">
+<?php require_once "./navbar.php"; ?>
 
-        <div class="inputAddUserMenu">
-            <input type="submit" value="">
-            <p>Novo Usuário</p>
-        </div>
-            
-        <table class="tabelaAdmMenu">
-            <tr>
-                <th class="tabelaAdmThMenu">#</th>
-                <th class="tabelaAdmThMenu">Nome</th>
-                <th class="tabelaAdmThMenu">Status</th>
-                <th class="tabelaAdmThMenu" colspan="2">Ações</th>
-            </tr>
-            <tr>
-                <td class="tabelaAdmTdMenu">1</td>
-                <td class="tabelaAdmTdMenu">Capinhas</td>
-                <td class="tabelaAdmTdMenu">Disponivel</td>
-                <td class="tabelaAdmTdMenu"><i class="fa-solid fa-trash-can"></i></td>
-                <td class="tabelaAdmTdMenu"><i class="fa-solid fa-pen-to-square"></i></td>
-            </tr> 
-        </table>
-        </div>
-        </center>
-        </div>
+<body id="body-margin">
+    <main class="container-produto">
+        <h1>Menus</h1>
+        <!-- BARRA DE PESQUISA -->
+
+        <section class="container-tabela-filter">
+
+            <!-- FILTROS -->
+            <section class="container-filters">
+                <button id="btn-new-produto">
+                    <div class="icon-container">
+                        <i class="fa-regular fa-plus"></i>
+                    </div>
+                    Novo Menu
+                </button>
+            </section>
 
 
-        <div id="conteudoSub">
-        <p class="titulo">SUB MENUS</p>
-        
-        <center>
-        <div class="total_tableAdmSub">
+            <!-- TABELAS -->
+            <section class="container-tabela">
+                <table class="table-clientes">
+                    <tr>
+                        <th>#</th>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Poder</th>
+                        <th>Data de Criação</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                    <tr>
+                        <!-- DADOS PARA MODIFICAR -->
+                        <td>1</td>
+                        <td> Sophiazinha</td>
+                        <td>sophia.perfeitaa@gmail.com</td>
+                        <td> 111.222.333-4 </td>
+                        <td>23/08/0001</td>
+                        <td>SOLTEIRA</td>
+                        <td id="btn-actions">
+                            <button id="delete-prod"><i class="fa-solid fa-trash-can"></i></button>
+                            <button id="edit-prod"><i class="fa-regular fa-pen-to-square"></i></i></button>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+        </section>
 
-        <div class="inputAddUserSub">
-            <input type="submit" value="">
-            <p>Novo Usuário</p>
-        </div>
-            
-        <table class="tabelaAdmSub">
-            <tr>
-                <th class="tabelaAdmThSub">#</th>
-                <th class="tabelaAdmThSub">Menu Principal</th>
-                <th class="tabelaAdmThSub">Nome Sub</th>
-                <th class="tabelaAdmThSub">Categoria</th>
-                <th class="tabelaAdmThSub">Status</th>
-                <th class="tabelaAdmThSub" colspan="2">Ações</th>
-            </tr>
-            <tr>
-                <td class="tabelaAdmTdSub">1</td>
-                <td class="tabelaAdmTdSub">Capinhas</td>
-                <td class="tabelaAdmTdSub">Iphone</td>
-                <td class="tabelaAdmTdSub">Time</td>
-                <td class="tabelaAdmTdSub">Disponivel</td>
-                <td class="tabelaAdmTdSub"><i class="fa-solid fa-trash-can"></i></td>
-                <td class="tabelaAdmTdSub"><i class="fa-solid fa-pen-to-square"></i></td>
-            </tr> 
-        </table>
-        </div>
-        </center>
+                    <!-- SUBMENU -->
 
-        </div>
-    
+        <h1>Submenus</h1>
+
+        <section class="container-tabela-filter">
+
+            <!-- FILTROS -->
+            <section class="container-filters">
+                <button id="btn-new-produto">
+                    <div class="icon-container">
+                        <i class="fa-regular fa-plus"></i>
+                    </div>
+                    Novo Submenu
+                </button>
+            </section>
+
+
+            <!-- TABELAS -->
+            <section class="container-tabela">
+                <table class="table-clientes">
+                    <tr>
+                        <th>#</th>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Poder</th>
+                        <th>Data de Criação</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                    <tr>
+                        <!-- DADOS PARA MODIFICAR -->
+                        <td>1</td>
+                        <td> Sophiazinha</td>
+                        <td>sophia.perfeitaa@gmail.com</td>
+                        <td> 111.222.333-4 </td>
+                        <td>23/08/0001</td>
+                        <td>SOLTEIRA</td>
+                        <td id="btn-actions">
+                            <button id="delete-prod"><i class="fa-solid fa-trash-can"></i></button>
+                            <button id="edit-prod"><i class="fa-regular fa-pen-to-square"></i></i></button>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+        </section>
+    </main>
 </body>
+
 </html>

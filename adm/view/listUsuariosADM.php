@@ -3,7 +3,7 @@
 
 <head>
     <?php require_once "../config/config.php"; ?>
-    <link rel="stylesheet" href="../assets/css/produtos.css">
+    <link rel="stylesheet" href="../assets/css/usuarios.css">
 </head>
 
 <?php require_once "./navbar.php"; ?>

@@ -1,7 +1,8 @@
 @import './reset.css';
 
+/* CONTAINER PRODUTO */
 
-.container-usuarios{
+.container-produto {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,98 +11,113 @@
     margin-top: 2rem;
 }
 
-/* ------------- INICIO BARRA PESQUISA ------------- */
 
-.container-pesquisa{
+/* BARRA DE PESQUISA */
+
+.input-pesquisa {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-}
-.input-pesquisa input[type=text]{
-    background-color: white;
-    border: solid black 1px;
-    border-right: none;
-    padding-left: 40px;
-    height: 50px;
-    width: 600px;
-    border-bottom-left-radius: 10px;
-    border-top-left-radius: 10px;
-    float: left;
 }
 
-.input-pesquisa input[type=submit]{
-    background-color: white;
-    border: solid 1px black;
+.input-pesquisa input[type=text] {
+    background-color: #ffff;
+    padding: 1rem;
+    border: 1px solid #000;
+    border-right: none;
+    width: 40rem;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+.input-pesquisa input[type=submit] {
+    background-color: #ffff;
+    border: 1px solid #000;
     border-left: none;
     background-image: url('../../view/img/lupapesquisa.png');
     background-size: 20px 20px;
     background-position-y: center;
     background-position-x: center;
     background-repeat: no-repeat;
-    width: 35px;
-    height: 50px;
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
+    padding: 1rem;
     cursor: pointer;
-    float: left;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
-/* ------------- FIM DA BARRA DE PESQUISA ------------- */
+/* Container Tabela e Filtro */
 
-
-/* ------------- INICIO TABELA E BOTÃO NOVO USUÁRIO ---------------- */
-.box-new-produto {
-    width: 190px;
+.container-tabela-filter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60rem;
 }
 
-.box-new-produto p{
-    padding: 3% 0 0 3rem;
+.container-filters {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: flex-end;
 }
-.btn-novo-produto{
-    background-color: rgba(137, 223, 116, 0.404);
-    border: solid 1px white;
-    background-image: url('../../view/img/maisAdd.png');
-    background-size: 50px 50px;
-    background-position-y: center;
-    background-position-x: center;
-    background-repeat: no-repeat;
-    width: 35px;
-    height: 35px;
+
+.box-filter {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    align-items: center;
+}
+
+.box-filter select,
+.box-filter input[type="month"] {
+    padding: 1rem;
+    border-radius: 15px;
+    min-width: 10rem;
+    border: 1px solid #000;
+}
+
+#btn-new-produto {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: transparent;
+    border: none;
     cursor: pointer;
-    float: left;
 }
 
-.table-usuarios{
-    margin: 50px;
-    border: 1px black solid;
-    border-radius: 10px;
-    font-family: 'Work Sans', sans-serif;
-    width: 70%;
-}
-.table-usuarios .tabela-adm-th{
-   text-align: left;
-   padding: 15px;
+#btn-new-produto .icon-container {
+    background-color: #ffff;
+    padding: 1rem;
+    cursor: pointer;
 }
 
-.table-usuarios .tabela-adm-td{
-    padding: 10px;
+/* TABELA */
+
+.container-tabela {
+    width: 100%;
+    background-color: #ffff;
+    margin-top: 1rem;
+}
+
+.container-tabela .table-clientes {
+    width: 100%;
+    padding: 1rem;
+}
+
+.table-clientes tr td {
     text-align: center;
-    color: black;
-    font-family: 'Courier New', Courier, monospace;
-}
-.fa-trash-can{
-    color: red;
 }
 
-.fa-pen-to-square{
-    color: rgb(43, 207, 28);
-} 
- 
-/* ------------- FIM TABELA E BOTÃO NOVO USUÁRIO ---------------- */
+#btn-actions button {
+    padding: .5rem;
+    background-color: transparent;
+    border: none;
+}
 
+#btn-actions #edit-prod i {
+    color: #25b808;
+    cursor: pointer;
+}
 
-
-  
-  
-  
+#btn-actions #delete-prod i {
+    color: #ca0606;
+    cursor: pointer;
+}
