@@ -1,0 +1,107 @@
+@import './reset.css';
+
+
+.container-usuarios{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 2rem;
+}
+
+/* ------------- INICIO BARRA PESQUISA ------------- */
+
+.container-pesquisa{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+.input-pesquisa input[type=text]{
+    background-color: white;
+    border: solid black 1px;
+    border-right: none;
+    padding-left: 40px;
+    height: 50px;
+    width: 600px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    float: left;
+}
+
+.input-pesquisa input[type=submit]{
+    background-color: white;
+    border: solid 1px black;
+    border-left: none;
+    background-image: url('../../view/img/lupapesquisa.png');
+    background-size: 20px 20px;
+    background-position-y: center;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 50px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    cursor: pointer;
+    float: left;
+}
+
+/* ------------- FIM DA BARRA DE PESQUISA ------------- */
+
+
+/* ------------- INICIO TABELA E BOTÃO NOVO USUÁRIO ---------------- */
+.box-new-produto {
+    width: 190px;
+}
+
+.box-new-produto p{
+    padding: 3% 0 0 3rem;
+}
+.btn-novo-produto{
+    background-color: rgba(137, 223, 116, 0.404);
+    border: solid 1px white;
+    background-image: url('../../view/img/maisAdd.png');
+    background-size: 50px 50px;
+    background-position-y: center;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    float: left;
+}
+
+.table-usuarios{
+    margin: 50px;
+    border: 1px black solid;
+    border-radius: 10px;
+    font-family: 'Work Sans', sans-serif;
+    width: 70%;
+}
+.table-usuarios .tabela-adm-th{
+   text-align: left;
+   padding: 15px;
+}
+
+.table-usuarios .tabela-adm-td{
+    padding: 10px;
+    text-align: center;
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+}
+.fa-trash-can{
+    color: red;
+}
+
+.fa-pen-to-square{
+    color: rgb(43, 207, 28);
+} 
+ 
+/* ------------- FIM TABELA E BOTÃO NOVO USUÁRIO ---------------- */
+
+
+
+  
+  
+  

@@ -1,13 +1,16 @@
 @import './reset.css';
 
+
 header{
     display: flex;
     flex-direction: column;
     height: 100vh;
-    width: 20rem;
+    width: 14rem;
     gap: 10rem;
     padding: 2rem;
     background-color: var(--cor-laranja);
+    float: left;
+    margin-top: -2rem;
 }
 
 header #nav-links ul{
@@ -61,3 +64,19 @@ header #nav-links ul a{
 .dropdown-link:hover  .dropdown-content{
     display: flex;
 }
+
+#html-navbar{
+    max-width: 14rem;
+}
+
+
+/* #container #menu {
+    width: 18%;
+    float: left;
+    
+}
+#container #apres {
+    width: 80vw;
+    height: 100vh;
+    float: left;
+} */

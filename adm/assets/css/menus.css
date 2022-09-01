@@ -1,0 +1,224 @@
+@import './reset.css';
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Work+Sans:wght@300&display=swap');
+
+/* cor #ff8973; */
+
+body{
+    background-color: rgba(233, 233, 233, 0.37);
+    color: black;
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* -------------------- MENU ------------------- */
+
+#conteudoMenu{
+    text-align: center;
+    padding: 7rem 0 0 0;
+    justify-content: center;
+    align-items: center; 
+}
+
+#conteudoMenu .titulo{
+    font-family: 'Quicksand', sans-serif;
+    padding: 0 0 10px 0;
+}
+
+form{
+    margin: 10px;
+    height: 10vh;
+}
+.inputPesquisaMenu{
+    width: 635px;
+}
+.inputPesquisaMenu input[type=text]{
+    background-color: white;
+    border: solid black 1px;
+    border-right: none;
+    padding-left: 40px;
+    height: 50px;
+    width: 600px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    float: left;
+}
+
+.inputPesquisaMenu input[type=submit]{
+    background-color: white;
+    border: solid 1px black;
+    border-left: none;
+    background-image: url('../../view/img/lupapesquisa.png');
+    background-size: 20px 20px;
+    background-position-y: center;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 50px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    cursor: pointer;
+    float: left;
+}
+
+.total_tableAdmMenu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputAddUserMenu{
+    margin: 30px 100px 5px 0;
+}
+
+.inputAddUserMenu input[type=submit]{
+    background-color: white;
+    border: solid 1px white;
+    background-image: url('../../view/img/maisAdd.png');
+    background-size: 50px 50px;
+    background-position-y: center;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    float: left;
+}
+.inputAddUserMenu p{
+    float: left;
+    margin: 0 0 0 10px ;
+    padding-top: 5px;
+}
+
+.tabelaAdmMenu{
+    border-radius: 10px;
+    font-family: 'Work Sans', sans-serif;
+    width: 70%;
+    background-color: white;
+}
+.tabelaAdmMenu .tabelaAdmTdMenu{
+   text-align: center;
+   padding: 20px 0 10px 0;
+}
+
+.tabelaAdmMenu .tabelaAdmTdMenu{
+    padding: 10px;
+    text-align: center;
+    color: rgb(43, 207, 28);
+    max-width: 100px;
+    font-family: 'Quicksand', sans-serif;
+ }
+
+.tabelaAdmMenu .fa-trash-can{
+     color: red;
+ }
+.tabelaAdmMenu .fa-pen-to-square{
+     color: rgb(43, 207, 28);
+ }
+  
+
+ /* -------------------- SUB MENU ------------------- */
+  
+ #conteudoSub{
+    text-align: center;
+    padding: 7rem 0 0 0;
+    justify-content: center;
+    align-items: center; 
+}
+
+#conteudoSub .titulo{
+    font-family: 'Quicksand', sans-serif;
+    padding: 0 0 10px 0;
+}
+
+form{
+    margin: 10px;
+    height: 10vh;
+}
+.inputPesquisaSub{
+    width: 635px;
+}
+.inputPesquisaSub input[type=text]{
+    background-color: white;
+    border: solid black 1px;
+    border-right: none;
+    padding-left: 40px;
+    height: 50px;
+    width: 600px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    float: left;
+}
+
+.inputPesquisaSub input[type=submit]{
+    background-color: white;
+    border: solid 1px black;
+    border-left: none;
+    background-image: url('../../view/img/lupapesquisa.png');
+    background-size: 20px 20px;
+    background-position-y: center;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 50px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    cursor: pointer;
+    float: left;
+}
+
+.total_tableAdmSub{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputAddUserSub{
+    margin: 30px 100px 5px 0;
+}
+
+.inputAddUserSub input[type=submit]{
+    background-color: white;
+    border: solid 1px white;
+    background-image: url('../../view/img/maisAdd.png');
+    background-size: 50px 50px;
+    background-position-y: center;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    float: left;
+}
+.inputAddUserSub p{
+    float: left;
+    margin: 0 0 0 10px ;
+    padding-top: 5px;
+}
+
+.tabelaAdmSub{
+    border-radius: 10px;
+    font-family: 'Work Sans', sans-serif;
+    width: 70%;
+    background-color: white;
+}
+.tabelaAdmSub .tabelaAdmThSub{
+   text-align: center;
+   padding: 20px 0 10px 0;
+}
+
+.tabelaAdmSub .tabelaAdmTdSub{
+    padding: 10px;
+    text-align: center;
+    color: rgb(43, 207, 28);
+    max-width: 100px;
+    font-family: 'Quicksand', sans-serif;
+ }
+
+ .tabelaAdmSub .fa-trash-can{
+     color: red;
+ }
+ .tabelaAdmSub .fa-pen-to-square{
+     color: rgb(43, 207, 28);
+ }
+  
+  
+  
