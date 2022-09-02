@@ -16,7 +16,7 @@
                 <li><a href="listPedidos.php">Pedidos</a></li>
                 <li><a href="listProdutos.php">Produtos</a></li>
                 <li><a href="ListClientes.php">Clientes</a></li>
-                <li><a href="ListClientes.php">Feedback</a></li>
+                <li><a href="ListComentarios.php">Feedback</a></li>
                 <li><a href="ListUsuariosADM.php">Administração</a></li>
                 <div class="dropdown-link">
                     Configurações

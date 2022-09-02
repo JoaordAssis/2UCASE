@@ -72,7 +72,7 @@
                     <div class="icon-container">
                         <i class="fa-regular fa-plus"></i>
                     </div>
-                    Novo Produto
+                    Novo Banner
                 </button>
             </section>
         </article>
