@@ -25,7 +25,7 @@
 
             <!-- FILTROS -->
             <section class="container-filters">
-                <button id="btn-new-produto">
+                <button id="btn-new-produto" onclick="window.location.href='./AddProduto.php'">
                     <div class="icon-container">
                         <i class="fa-regular fa-plus"></i>
                     </div>

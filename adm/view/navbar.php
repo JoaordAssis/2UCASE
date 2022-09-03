@@ -7,7 +7,7 @@
     <!-- <title>Document</title> -->
 </head>
 
-<body>
+<body class="nav-body">
     <header>
         <h1 id="logo">2UCASE</h1>
 

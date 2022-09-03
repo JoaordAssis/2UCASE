@@ -1,0 +1,10 @@
+@import './reset.css';
+
+.container-bemvindo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 2rem;
+}

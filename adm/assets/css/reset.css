@@ -79,8 +79,20 @@ li {
     list-style: none;
 }
 
+button, input[type="submit"]{
+    cursor: pointer;
+}
+
 /* Container paginas */
 
 #body-margin{
     background-color: var(--cor-branca);
+}
+
+.nav-body{
+    height: calc(100vh + 20rem);
+}
+
+.nav-body header{
+    height: calc(100% + 10rem);
 }
