@@ -184,6 +184,57 @@
                 <p>Garantia do Produto</p>
             </section>
         </article>
+
+        <article class="container-avaliacao">
+            <h1>Avaliações de quem comprou</h1>
+            <section class="container-dados-rating">
+                <div class="box-total-rating">
+                    <h2>5,0</h2>
+                    <div class="container-stars">
+                        <i class="fa-solid fa-star fa-2x"></i>
+                        <i class="fa-solid fa-star fa-2x"></i>
+                        <i class="fa-solid fa-star fa-2x"></i>
+                        <i class="fa-solid fa-star fa-2x"></i>
+                        <i class="fa-solid fa-star fa-2x"></i>
+                    </div>
+                    <p>200 avaliações</p>
+                </div>
+            </section>
+
+            <section class="container-users-rating">
+                <section class="user-rating usr1">
+                    <div class="user-total-rating">
+                        <h3>5,0</h3>
+                        <div class="container-stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+
+                    <div class="user-rat-info">
+                        <h3>Camargo Davi</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore aliquid officiis accusantium dolorem voluptas pariatur, dicta maiores consectetur iste ipsum consequatur voluptates sint magnam possimus numquam ducimus fugit earum officia laboriosam totam natus! Repellendus ullam rerum nobis ex fugiat illo mollitia. Commodi possimus dolorem reiciendis obcaecati numquam temporibus ea repellat.</p>
+                        <div class="container-comment">
+                            <p id="quest-comment">Esse comentário foi útil?</p>
+                            <button id="like-comment">
+                                <i class="fa-solid fa-thumbs-up"></i>
+                            </button>
+
+                            <button id="dislike-comment">
+                                <i class="fa-solid fa-thumbs-down"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="data-comment">
+                        <p>21/01/2006</p>
+                    </div>
+                </section>
+            </section>
+        </article>
     </main>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
@@ -219,7 +270,6 @@
 
 
 <!-- Footer -->
-<?php //require_once './footer.php'; 
-?>
+<?php require_once './footer.php'; ?>
 
 </html>
