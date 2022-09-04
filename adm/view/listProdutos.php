@@ -25,7 +25,7 @@
 
             <!-- FILTROS -->
             <section class="container-filters">
-                <button id="btn-new-produto" onclick="window.location.href='./AddProduto.php'">
+                <button id="btn-new-produto" onclick="window.location.href='./CRUDAddProduto.php'">
                     <div class="icon-container">
                         <i class="fa-regular fa-plus"></i>
                     </div>
@@ -87,7 +87,9 @@
                         <td>SOLTEIRA</td>
                         <td id="btn-actions">
                             <button id="delete-prod"><i class="fa-solid fa-trash-can"></i></button>
-                            <button id="edit-prod"><i class="fa-regular fa-pen-to-square"></i></i></button>
+                            <button id="edit-prod" onclick="window.location.href='./CRUDEditProduto.php'">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                            </button>
                         </td>
                     </tr>
                 </table>
