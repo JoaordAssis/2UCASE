@@ -75,6 +75,9 @@
 
 .principal-address{
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
     color: var(--cor-principal);
 }
 
@@ -113,6 +116,12 @@ input::placeholder, select{
 
 form #principal-button.form-submit{
     width: 20rem;
+}
+
+#input-checkbox-payment{
+    display: block;
+    width: 30px;
+    height: 30px;
 }
 
 

@@ -1,5 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&family=Work+Sans:wght@300;400;500&display=swap');
+@import './reset.css';
 
+
+body{
+    overflow-x: hidden;
+}
 
 *{
     margin: 0;
@@ -13,7 +17,8 @@ header{
     height: 120px;
     justify-content: center;
     align-items: center;
-    background-color: #D55B70;
+    overflow: hidden;
+    background-color: var(--cor-principal);
 }
 
 header h1{

@@ -4,6 +4,7 @@
 <head>
     <?php require_once __DIR__ . "/../config/stylesConfig.php"; ?>
     <link rel="stylesheet" href="../../node_modules/./@glidejs/./glide/./dist/./css/./glide.core.min.css">
+    <link rel="stylesheet" href="../../node_modules/@glidejs/glide/dist/css/glide.theme.min.css">
     <link rel="stylesheet" href="../assets/styles/carrinho.css">
 
 </head>
@@ -96,38 +97,29 @@
 
         </article>
 
-        <article class="product-container lancamento">
-            <h1>Lançamentos</h1>
-
-            <section class="glide product-cont prod-lanc">
+        <article class="homepage-prod-carrossel">
+            <h1>Mais vendidos</h1>
+            <section class="glide prod-container-box">
                 <div class="glide__arrows left" data-glide-el="controls">
-                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fa-solid fa-angle-left fa-2x"></i></button>
                 </div>
                 <div class="glide__track" data-glide-el="track">
-                    <ul class="glide__slides">
-                        <?php for ($i = 0; $i < 10; $i++) : ?>
 
-                            <div class="product-box glide__slide">
-                                <a href="#">
-                                    <img src="../assets/./img/./Time.png" alt="imagem time do flamengas">
-                                    <h4>Flamengo - Uniforme 1 2022 Personalizada</h4>
-                                    <div class="stars">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </div>
-                                    <p>R$ 36,65</p>
-                                    <button id="principal-button">Comprar</button>
-                                </a>
-                            </div>
+                    <ul class="glide__slides">
+                        <?php for ($i = 0; $i < 6; $i++) : ?>
+
+                            <a class="produto-box glide__slide" href="./produto.php">
+                                <img src="../assets/img/Time.png" alt="Capinha Flamengo">
+                                <h4>Capinha 2022 - Flamengo</h4>
+                                <p>R$ 23,59</p>
+                            </a>
 
                         <?php endfor; ?>
                     </ul>
                 </div>
+
                 <div class="glide__arrows right" data-glide-el="controls">
-                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="fa-solid fa-angle-right fa-2x"></i></button>
                 </div>
             </section>
         </article>
@@ -140,26 +132,25 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
 <script>
-    new Glide('.prod-lanc', {
+    new Glide('.prod-container-box', {
         type: 'carousel',
         startAt: 0,
         perView: 4,
+        autoplay: 2000,
+        gap: 2,
         breakpoints: {
-            1300: {
+            800: {
                 perView: 3
             },
-            1100: {
+            600: {
                 perView: 2
             },
-
-            550: {
-                perView: 1
-            },
-
-            350: {
+            500: {
                 perView: 1
             }
         }
+
+
     }).mount();
 </script>
 

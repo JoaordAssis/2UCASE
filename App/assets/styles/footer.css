@@ -97,6 +97,16 @@ footer .help .footer-links{
     gap: .6rem;
 }
 
+/* Pagamento */
+
+.payment{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    color: #fff;
+}
+
 
 /* Media Queries */
 

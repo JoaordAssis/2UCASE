@@ -43,16 +43,16 @@
     justify-content: space-between;
     padding: 1rem;
     max-width: 100%;
-    border: 1px solid black;
+    border: 1px solid #000;
     /* border-top: none;
     border-left: none;
     border-right: none; */
-    /* background-color: red; */
+    background-color: #fff;
 }
 
 .pergunta .panel {
     padding: 0 1.1rem;
-    background-color: white;
+    background-color: #fff;
     display: none;
     overflow: hidden;
     max-height: 0;
@@ -164,7 +164,7 @@ input[type='file'] {
 
 .accordion.active, .accordion:hover {
     background-color: var(--cor-principal);
-    color: white;
+    color:var(--cor-principal);
     transition: ease .4s all;
 }
 

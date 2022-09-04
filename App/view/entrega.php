@@ -78,10 +78,8 @@
 
 
             <div class="checkbox principal-address">
-                <label for="time">
-                    <input type="checkbox" name="time" id="input-checkbox">
-                    Tornar esse endereço o principal?
-                </label>
+                <input type="checkbox" name="time" id="input-checkbox-payment">
+                <p>Tornar esse endereço o principal?</p>
             </div>
         </article>
 
@@ -106,7 +104,9 @@
                 <p>R$ 21,54</p>
             </div>
         </article>
-        <button id="principal-button" class="form-submit" type="submit">Ir para o pagamento</button>
+        <button id="principal-button" class="form-submit" type="submit">
+            Ir para o pagamento
+        </button>
     </form>
 </body>
 <!-- Footer -->

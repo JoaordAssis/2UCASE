@@ -18,25 +18,29 @@
             <h4>Nós siga nas redes sociais</h4>
             <div class="icon-media">
                 <div class="instagram media">
-                    <a href="#"><i class="fa-brands fa-instagram fa-2x"></i></a>
+                    <a target="__blank" href="https://www.instagram.com/07_sophi/">
+                        <i class="fa-brands fa-instagram fa-2x"></i>
+                    </a>
                 </div>
                 <div class="facebook media">
-                    <a href="#"><i class="fa-brands fa-facebook-f fa-2x"></i></a>
+                    <a target="__blank" href="https://www.facebook.com/friends/suggestions/?profile_id=100013558717826">
+                        <i class="fa-brands fa-facebook-f fa-2x"></i>
+                    </a>
                 </div>
             </div>
         </section>
         <main class="footer-wraper">
             <section class="about">
                 <h4>Sobre o Vilicapas</h4>
-                <a href="#">Quem Somos</a>
+                <a href="./about.php">Quem Somos</a>
             </section>
             <section class="help">
                 <h4>Precisa de Ajuda</h4>
                 <ul class="footer-links">
-                    <a href="#">
+                    <a href="./contact.php">
                         <li>Fale Conosco</li>
                     </a>
-                    <a href="#">
+                    <a href="./contact.php">
                         <li>Central de Ajuda</li>
                     </a>
                     <a href="#">
@@ -46,6 +50,10 @@
             </section>
             <section class="payment">
                 <h4>Metódos de Pagamento</h4>
+                <p>PIX</p>
+                <p>Mastercard</p>
+                <p>Elo</p>
+                <p>Boleto</p>
             </section>
         </main>
     </footer>

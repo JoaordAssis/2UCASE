@@ -71,23 +71,13 @@
                 </div>
 
                 <div class="product-container">
-                    <?php for ($i = 0; $i < 25; $i++) : ?>
+                    <?php for ($i = 0; $i < 15; $i++) : ?>
 
-                        <div class="product-box">
-                            <a href="#">
-                                <img src="../assets/./img/./Time.png" alt="imagem time do flamengas">
-                                <h4>Flamengo - Uniforme 1 2022 Personalizada</h4>
-                                <div class="stars">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </div>
-                                <p>R$ 36,65</p>
-                                <button id="principal-button">Comprar</button>
-                            </a>
-                        </div>
+                        <a class="produto-box glide__slide" href="./produto.php">
+                            <img src="../assets/img/Time.png" alt="Capinha Flamengo">
+                            <h4>Capinha 2022 - Flamengo</h4>
+                            <p>R$ 23,59</p>
+                        </a>
 
                     <?php endfor; ?>
                 </div>

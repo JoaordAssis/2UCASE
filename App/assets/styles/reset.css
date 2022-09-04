@@ -109,12 +109,12 @@ ul, li{
 /* Checkbox */
 
 
-.checkbox {
+.checkbox:not(#input-checkbox-payment) {
     display: inline-block;
     vertical-align: middle;
 }
 
-.checkbox input {
+.checkbox input:not(#input-checkbox-payment) {
     border: 0;
     clip: rect(0 0 0 0);
     height: 1px;
@@ -125,13 +125,13 @@ ul, li{
     width: 1px;
 }
 
-.checkbox label {
+.checkbox label:not(#input-checkbox-payment) {
     position: relative;
     padding-left: 2.2em;
     display: inline-block;
 }
 
-.checkbox label::before {
+.checkbox label::before:not(#input-checkbox-payment) {
     content: "";
     display: inline-block;
     vertical-align: middle;
@@ -148,7 +148,7 @@ ul, li{
     color: #000;
 }
 
-.checkbox label::after {
+.checkbox label::after:not(#input-checkbox-payment) {
     content: "\2713";
     position: absolute;
     top: 50%;
@@ -160,12 +160,12 @@ ul, li{
     transition: all 0.2s ease;
 }
 
-.checkbox label:focus::before,
-.checkbox label:hover::before {
+.checkbox label:focus::before:not(#input-checkbox-payment),
+.checkbox label:hover::before:not(#input-checkbox-payment) {
     background: #DDD;
 }
 
-.checkbox input:checked+label::before {
+.checkbox input:checked+label::before:not(#input-checkbox-payment) {
     background: var(--cor-principal);
     border-color: var(--cor-principal);
 }
@@ -177,23 +177,20 @@ ul, li{
 
 /* Produto */
 
-.product-box a {
+.produto-box {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 300px;
+    color: var(--cor-principal);
     gap: .5rem;
 }
 
-.product-box img {
-    width: 200px;
-    height: 200px;
+.produto-box img {
+    width: 250px;
 }
 
-.product-box h4 {
+.produto-box h4 {
+    font-weight: bold;
+    max-width: 150px;
     text-align: center;
-}
-
-.product-box .stars i {
-    color: rgb(244, 189, 9);
 }

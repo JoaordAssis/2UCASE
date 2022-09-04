@@ -92,42 +92,15 @@
                 <div class="glide__track" data-glide-el="track">
 
                     <ul class="glide__slides">
-                        <a class="produto-box glide__slide" href="#">
-                            <img src="../assets/img/Time.png" alt="Capinha Flamengo">
-                            <h4>Capinha 2022 - Flamengo</h4>
-                            <p>R$ 23,59</p>
-                        </a>
+                        <?php for ($i = 0; $i < 6; $i++) : ?>
 
-                        <a class="produto-box glide__slide" href="#">
-                            <img src="../assets/img/Time.png" alt="Capinha Flamengo">
-                            <h4>Capinha 2022 - Flamengo</h4>
-                            <p>R$ 23,59</p>
-                        </a>
+                            <a class="produto-box glide__slide" href="./produto.php">
+                                <img src="../assets/img/Time.png" alt="Capinha Flamengo">
+                                <h4>Capinha 2022 - Flamengo</h4>
+                                <p>R$ 23,59</p>
+                            </a>
 
-                        <a class="produto-box glide__slide" href="#">
-                            <img src="../assets/img/Time.png" alt="Capinha Flamengo">
-                            <h4>Capinha 2022 - Flamengo</h4>
-                            <p>R$ 23,59</p>
-                        </a>
-
-                        <a class="produto-box glide__slide" href="#">
-                            <img src="../assets/img/Time.png" alt="Capinha Flamengo">
-                            <h4>Capinha 2022 - Flamengo</h4>
-                            <p>R$ 23,59</p>
-                        </a>
-
-                        <a class="produto-box glide__slide" href="#">
-                            <img src="../assets/img/Time.png" alt="Capinha Flamengo">
-                            <h4>Capinha 2022 - Flamengo</h4>
-                            <p>R$ 23,59</p>
-                        </a>
-
-                        <a class="produto-box glide__slide" href="#">
-                            <img src="../assets/img/Time.png" alt="Capinha Flamengo">
-                            <h4>Capinha 2022 - Flamengo</h4>
-                            <p>R$ 23,59</p>
-                        </a>
-
+                        <?php endfor; ?>
                     </ul>
                 </div>
 
@@ -288,6 +261,7 @@
         type: 'carousel',
         startAt: 0,
         perView: 4,
+        autoplay: 2000,
         gap: 2,
         breakpoints: {
             800: {
@@ -308,6 +282,7 @@
         type: 'carousel',
         startAt: 0,
         perView: 4,
+        autoplay: 2000,
         gap: 2,
         breakpoints: {
             800: {
@@ -326,6 +301,7 @@
         type: 'carousel',
         startAt: 0,
         perView: 4,
+        autoplay: 2000,
         gap: 2,
         breakpoints: {
             800: {
@@ -341,8 +317,6 @@
     }).mount();
 </script>
 <!-- Footer -->
-<?php
-require_once "./footer.php";
-?>
+<?php require_once "./footer.php"; ?>
 
 </html>

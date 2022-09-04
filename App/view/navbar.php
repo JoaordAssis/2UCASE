@@ -17,40 +17,40 @@
                 </button>
             </section>
             <section class="user-login">
-                <button id="login-button">
+                <button id="login-button" onclick="window.location.href='./login.php'">
                     <img src="../assets/svg/Login.svg" alt="icone de login" id="login-icon" width="50" height="50"></img>
                 </button>
                 <div class="login-links">
-                    <a href="#">Minha conta</a>
-                    <a href="#" id="login-sign">Entre ou Cadastre-se</a>
+                    <a href="./login.php">Minha conta</a>
+                    <a href="./login.php" id="login-sign">Entre ou Cadastre-se</a>
                 </div>
             </section>
             <button id="favorito-button">
                 <img src="../assets/svg/CoracaoFavoritos.svg" alt="Icone de favoritos" id="coracaoSVG" width="40" height="40"></img>
             </button>
-            <button id="bag-button">
+            <button id="bag-button" onclick="window.location.href='./carrinho.php'">
                 <img src="../assets/svg/BagCarrinho.svg" alt="icone do carrinho de compras" id="carrinhoSVG" width="40" height="40"></img>
             </button>
         </nav>
 
         <nav id="menu">
             <ul id="nav-links">
-                <a href="#">
+                <a href="./homepage.php">
                     <li>Página Inicial</li>
                 </a>
-                <a href="#">
+                <a href="./category.php">
                     <li>Promoções</li>
                 </a>
-                <a href="#">
+                <a href="./category.php">
                     <li>Capinhas</li>
                 </a>
-                <a href="#">
+                <a href="./category.php">
                     <li>Pop Socket</li>
                 </a>
-                <a href="#">
+                <a href="./category.php">
                     <li>Carregadores</li>
                 </a>
-                <a href="#">
+                <a href="./category.php">
                     <li>Acessórios</li>
                 </a>
             </ul>
@@ -68,13 +68,13 @@
             </section>
 
             <section class="util-icons">
-                <button id="bag-button">
+                <button id="bag-button" onclick="window.location.href='./carrinho.php'">
                     <img src="../assets/svg/BagCarrinho.svg" alt="icone do carrinho de compras" id="carrinhoSVG" width="30" height="30"></img>
                 </button>
                 <button id="favorito-button">
                     <img src="../assets/svg/CoracaoFavoritos.svg" alt="Icone de favoritos" id="coracaoSVG" width="30" height="30"></img>
                 </button>
-                <button id="login-button">
+                <button id="login-button" onclick="window.location.href='./login.php'">
                     <img src="../assets/svg/Login.svg" alt="icone de login" id="login-icon" width="40" height="40"></img>
                 </button>
             </section>
@@ -90,33 +90,33 @@
             </section>
 
             <ul id="links-mobile">
-                <a href="#">
+                <a href="./homepage.php">
                     <li>Página Inicial</li>
                 </a>
-                <a href="#">
+                <a href="./category.php">
                     <li>Promoções</li>
                 </a>
-                <a href="#">
+                <a href="./category.php">
                     <li>Capinhas</li>
                 </a>
-                <a href="#">
+                <a href="./category.php">
                     <li>Pop Socket</li>
                 </a>
-                <a href="#">
+                <a href="./category.php">
                     <li>Carregadores</li>
                 </a>
-                <a href="#">
+                <a href="./category.php">
                     <li>Acessórios</li>
                 </a>
 
                 <section class="util-icons-xs">
-                    <button id="bag-button">
+                    <button id="bag-button" onclick="window.location.href='./carrinho.php'">
                         <img src="../assets/svg/BagCarrinho.svg" alt="icone do carrinho de compras" id="carrinhoSVG" width="30" height="30"></img>
                     </button>
                     <button id="favorito-button">
                         <img src="../assets/svg/CoracaoFavoritos.svg" alt="Icone de favoritos" id="coracaoSVG" width="30" height="30"></img>
                     </button>
-                    <button id="login-button">
+                    <button id="login-button" onclick="window.location.href='./login.php'">
                         <img src="../assets/svg/Login.svg" alt="icone de login" id="login-icon" width="40" height="40"></img>
                     </button>
                 </section>

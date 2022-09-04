@@ -140,6 +140,7 @@
     }
 
     .product-box{
+        width: -moz-fit-content;
         width: fit-content;
     }
 
@@ -171,6 +172,26 @@
         width: 100%;
     }
 
+}
+
+@media (max-width: 1200px) {
+    .produto-box img {
+        width: 200px;
+    }
+
+    .produto-box h4 {
+        font-weight: bold;
+        max-width: 150px;
+        text-align: center;
+    }
+
+    .homepage-beneficios {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+        width: 80vw;
+    }
 }
 
 @media (max-width: 650px) {
