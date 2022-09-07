@@ -4,13 +4,64 @@
 <head>
     <?php require_once __DIR__ . "/../config/stylesConfig.php"  ?>
     <link rel="stylesheet" href="../assets/styles/register.css">
+    <script src="../assets/js/register.js" defer></script>
 </head>
 
 <!-- Barra de Navegação -->
-<?php require_once "./navbar-simple.php" ?>
+<?php require_once "./navbar.php" ?>
 
 <body id="body-margin">
     <form action="#" method="POST" class="entrega-container">
+
+        <article class="entrega">
+            <!-- INformações do Cliente e contato -->
+
+            <h1>Informações</h1>
+            <!-- Flex direction Column -->
+
+            <section class="columns-container">
+                <section class="address-column1 address">
+                    <label for="nomeCompleto">
+                        <input type="text" name="nomeCompleto" id="nome-completo" placeholder="Nome Completo">
+                    </label>
+
+                    <label for="cpf">
+                        <input type="text" name="cpf" data-js="cpf" id="input-entrega" placeholder="CPF">
+                    </label>
+
+                    <div class="state-container">
+                        <!-- Input Data de Nascimento -->
+
+                        <label for="dataNasc" class="input-dataNasc">
+                            <input type="date" name="dataNasc" id="input-entrega" placeholder="Data de Nascimento">
+                        </label>
+
+                    </div>
+                </section>
+
+                <section class="address-column2 address">
+                    <div class="number-container">
+
+                        <label for="numeroCelular">
+                            <input type="text" name="numeroCelular" required id="input-entrega" data-js="phone" maxlength="15" placeholder="Telefone Celular">
+                        </label>
+
+                        <label for="numeroFixo">
+                            <input type="text" data-js="phone" maxlength="14" name="numeroFixo" id="input-entrega" placeholder="Telefone Fixo">
+                        </label>
+                    </div>
+
+                    <div class="gender-container">
+                        <select name="gender" id="gender-input">
+                            <option>Gênero</option>
+                            <option value="0">Masculino</option>
+                            <option value="1">Feminino</option>
+                            <option value="2">Prefiro não informar</option>
+                        </select>
+                    </div>
+                </section>
+            </section>
+        </article>
 
         <article class="entrega">
 

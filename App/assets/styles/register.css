@@ -12,6 +12,16 @@
     margin-top: 6rem;
 }
 
+/* Informações */
+
+.input-dataNasc input[type="date"]{
+    color: var(--cor-principal);
+}
+
+.gender-container select{
+    padding: 1rem;
+}
+
 /* Entrega */
 
 .entrega {
@@ -193,6 +203,15 @@ form #principal-button.form-submit {
 
     #state-input {
         min-width: 50%;
+    }
+
+    .input-dataNasc {
+        width: 100%;
+    }
+
+    .gender-container select {
+        padding: 1rem;
+        width: 100%;
     }
 }
 
