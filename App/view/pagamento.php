@@ -51,7 +51,7 @@
                                 </div>
 
                                 <label for="cpf">
-                                    <input type="text" name="cpf" id="input-card" placeholder="CPF" class="input-payment">
+                                    <input type="text" name="cpf" id="input-card" placeholder="CPF" data-js="cpf" class="input-payment">
                                 </label>
 
                                 <label for="logPayment">

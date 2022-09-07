@@ -1,0 +1,44 @@
+@import './reset.css';
+
+.container-senha{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    overflow: hidden;
+}
+
+.email-check{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 30rem;
+    gap: 1rem;
+    text-align: center;
+}
+
+.email-check label{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    color: var(--cor-principal);
+}
+
+.email-check input{
+    padding: 1rem;
+    width: 28rem;
+}
+
+.email-check input[type="email"] {
+    border: 1px solid var(--cor-principal);
+}
+
+.email-check input[type="submit"]{
+    border: 1px solid var(--cor-principal);
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: var(--cor-principal);
+}

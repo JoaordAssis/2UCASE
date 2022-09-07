@@ -3,7 +3,7 @@
 
 <head>
     <?php require_once __DIR__ . "/../config/stylesConfig.php"  ?>
-    <link rel="stylesheet" href="../assets/styles/entrega.css">
+    <link rel="stylesheet" href="../assets/styles/register.css">
 </head>
 
 <!-- Barra de Navegação -->
@@ -11,11 +11,6 @@
 
 <body id="body-margin">
     <form action="#" method="POST" class="entrega-container">
-        <div class="process">
-            <!-- Icones da etapa do processo -->
-            <img src="../assets/./img/Etapas.png" alt="etapa entrega" width="210" height="80">
-        </div>
-
 
         <article class="entrega">
 
@@ -72,40 +67,12 @@
                     <label for="nomeR">
                         <input type="text" name="nomeR" id="input-entrega" placeholder="Nome do Recebedor">
                     </label>
-
                 </section>
             </section>
-
-
-            <div class="checkbox principal-address">
-                <input type="checkbox" name="time" id="input-checkbox-payment">
-                <p>Tornar esse endereço o principal?</p>
-            </div>
         </article>
 
-        <article class="frete-container">
-            <h1>Frete</h1>
-
-            <div class="frete-option" id="sedex">
-                <label for="frete">
-                    <input type="radio" name="frete" id="radio-input">
-                    Sedex - <span id="time-entrega">7 Dias úteis</span>
-                </label>
-
-                <p>R$ 21,54</p>
-            </div>
-
-            <div class="frete-option" id="sedex">
-                <label for="frete">
-                    <input type="radio" name="frete" id="radio-input">
-                    Loggi - <span id="time-entrega">7 Dias úteis</span>
-                </label>
-
-                <p>R$ 21,54</p>
-            </div>
-        </article>
         <button id="principal-button" class="form-submit" type="submit">
-            Ir para o pagamento
+            Cadastrar
         </button>
     </form>
 </body>

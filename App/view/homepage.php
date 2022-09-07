@@ -249,73 +249,7 @@
     </main>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
-
-<script>
-    new Glide('.carrossel-container-box', {
-        type: 'carousel',
-        startAt: 0,
-        perView: 1
-    }).mount();
-
-    new Glide('.prod-container-box', {
-        type: 'carousel',
-        startAt: 0,
-        perView: 4,
-        autoplay: 2000,
-        gap: 2,
-        breakpoints: {
-            800: {
-                perView: 3
-            },
-            600: {
-                perView: 2
-            },
-            500: {
-                perView: 1
-            }
-        }
-
-
-    }).mount();
-
-    new Glide('.prod-container-box-like', {
-        type: 'carousel',
-        startAt: 0,
-        perView: 4,
-        autoplay: 2000,
-        gap: 2,
-        breakpoints: {
-            800: {
-                perView: 3
-            },
-            600: {
-                perView: 2
-            },
-            500: {
-                perView: 1
-            }
-        }
-    }).mount();
-
-    new Glide('.prod-container-box-sell', {
-        type: 'carousel',
-        startAt: 0,
-        perView: 4,
-        autoplay: 2000,
-        gap: 2,
-        breakpoints: {
-            800: {
-                perView: 3
-            },
-            600: {
-                perView: 2
-            },
-            500: {
-                perView: 1
-            }
-        }
-    }).mount();
-</script>
+<script src="../assets/js/homepage.js"></script>
 <!-- Footer -->
 <?php require_once "./footer.php"; ?>
 
