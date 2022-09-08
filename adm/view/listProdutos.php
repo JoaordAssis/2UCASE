@@ -81,9 +81,9 @@
                         <!-- DADOS PARA MODIFICAR -->
                         <td>1</td>
                         <td> Sophiazinha</td>
-                        <td>sophia.perfeitaa@gmail.com</td>
-                        <td> 111.222.333-4 </td>
-                        <td>23/08/0001</td>
+                        <td>Perfeição</td>
+                        <td> 1 </td>
+                        <td>1.000.000</td>
                         <td>SOLTEIRA</td>
                         <td id="btn-actions">
                             <button id="delete-prod"><i class="fa-solid fa-trash-can"></i></button>

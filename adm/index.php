@@ -9,7 +9,7 @@
 <body>
     <main class="container-login">
         <h1>Login Administrativo</h1>
-        <form action="./view/BemVindo.php" method="post">
+        <form action="controller/validaLogin.php" method="post">
             <label for="email-login">Email
                 <input type="text" required name="email-login" id="input-email">
             </label>
@@ -22,5 +22,14 @@
         </form>
     </main>
 </body>
+<?php
+        if (isset($_POST['msg'])) {
+            require_once 'view/msg.php';
+            $msg = $_POST["msg"];
+            $msgExibir = $MSG[$msg];
+            echo "<script>alert('" . $msgExibir . "');</script>";
+        }
 
+
+        ?>
 </html>
