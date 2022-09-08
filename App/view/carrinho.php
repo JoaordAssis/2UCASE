@@ -17,7 +17,7 @@
 
         <article class="carrinho-container">
             <h1>Seu Carrinho</h1>
-            <p>Não está pronto para finalizar sua compra?<a href="#"> Continuar Comprando.</a></p>
+            <p>Não está pronto para finalizar sua compra?<a href="./category.php"> Continuar Comprando.</a></p>
 
             <section class="body-parts">
                 <section class="prod-carrinho">

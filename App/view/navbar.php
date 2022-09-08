@@ -9,7 +9,7 @@
 <body>
     <header class="header-navbar header-primario">
         <nav id="logo-informations">
-            <h1>VILICAPAS</h1>
+            <h1 id="logo-site"><a href="./homepage.php">VILICAPAS</a></h1>
             <section class="input-search">
                 <input type="search" id="searchIn" placeholder="Pesquisar" name="search">
                 <button id="search-button">

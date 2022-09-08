@@ -25,6 +25,19 @@ header{
     margin-top: -148px;
 }
 
+footer a:hover, header a:hover:not(#logo-site a) {
+    text-decoration: underline;
+    transition: ease .4s;
+}
+
+#logo-site a{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+
 /* Variaveis de Cor */
 
 :root{

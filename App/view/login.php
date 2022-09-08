@@ -21,7 +21,7 @@
                 <label for="senha">
                     <input type="text" name="senha" id="input-login" placeholder="Senha">
                 </label>
-                <a href="#">Esqueceu sua senha?</a>
+                <a href="./esqueceu-senha.php">Esqueceu sua senha?</a>
 
                 <button type="submit" id="principal-button">Entrar</button>
                 <p>Ou entre com suas redes sociais</p>
@@ -48,11 +48,11 @@
                     <input type="text" name="nome" id="input-login" placeholder="Nome">
                 </label>
                 <label for="email">
-                    <input type="text" name="email" id="input-login" placeholder="Email">
+                    <input type="email" name="email" id="input-login" placeholder="Email">
                 </label>
 
-                <label for="cpf">
-                    <input type="text" name="cpf" id="input-login" placeholder="CPF">
+                <label for="confirmEmail">
+                    <input type="email" name="confirmEmail" id="input-login" placeholder="Confirme o Email">
                 </label>
 
                 <div class="row-sign">
@@ -83,7 +83,7 @@
     </main>
 </body>
 <!-- Footer -->
-<?php require_once './footer.php'; 
+<?php require_once './footer.php';
 ?>
 
 </html>

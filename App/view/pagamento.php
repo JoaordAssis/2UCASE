@@ -45,7 +45,7 @@
                                         <input type="text" name="venc" id="input-card" placeholder="Vencimento" class="input-payment">
                                     </label>
                                     <label for="codS">
-                                        <input type="text" name="codS" id="input-card" placeholder="Código de Segurança" class="input-payment">
+                                        <input type="text" name="codS" maxlength="3" id="input-card" placeholder="Código de Segurança" class="input-payment">
                                     </label>
 
                                 </div>

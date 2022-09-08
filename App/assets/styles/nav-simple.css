@@ -21,7 +21,7 @@ header{
     background-color: var(--cor-principal);
 }
 
-header h1{
+header #logo-site a {
     font-family: 'Quicksand', sans-serif;
     font-weight: 500;
     font-size: 3rem;
