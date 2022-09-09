@@ -17,7 +17,7 @@ if (isset($_SESSION['ADM-ID']) && $_SESSION['ADM-ID'] != '') :
     <body class="nav-body">
         <header>
             <h1 id="logo">2UCASE</h1>
-            
+
             <nav id="nav-links">
                 <ul>
                     <li><a href="listPedidos.php">Pedidos</a></li>
@@ -25,30 +25,35 @@ if (isset($_SESSION['ADM-ID']) && $_SESSION['ADM-ID'] != '') :
                     <li><a href="ListClientes.php">Clientes</a></li>
                     <li><a href="ListComentarios.php">Feedback</a></li>
                     <?php
-                        if($_SESSION['ADM-PODER'] >= 9):
+                    if ($_SESSION['ADM-PODER'] >= 9) :
                     ?>
-                    <li><a href="ListUsuariosADM.php">Administração</a></li>
-                    <div class="dropdown-link">
-                        Configurações
-                        <!-- <i class="fa-solid fa-angle-down"></i> -->
-                        <li class="dropdown-content">
-                            <a href="ListMenus.php">Menus</a>
-                            <a href="carrossel.php">Carrossel</a>
-                            <a href="ListCupons.php">Cupons</a>
-                        </li>
-                    </div>
+                        <li><a href="ListUsuariosADM.php">Administração</a></li>
+                        <div class="dropdown-link">
+                            Configurações
+                            <!-- <i class="fa-solid fa-angle-down"></i> -->
+                            <li class="dropdown-content">
+                                <a href="ListMenus.php">Menus</a>
+                                <a href="carrossel.php">Carrossel</a>
+                                <a href="ListCupons.php">Cupons</a>
+                            </li>
+                        </div>
                     <?php endif; ?>
                 </ul>
             </nav>
+
+            <section class="container-session">
+                <p><?= $_SESSION['ADM-EMAIL'] ?></p>
+                <?php
+                if ($_SESSION['ADM-PODER'] >= 9) {
+                    echo "<P>Função:<br> Administrador</p>";
+                } else {
+                    echo "<P>Função:<br> Repositor</p>";
+                }
+                ?>
+            </section>
             
-            <p><?=$_SESSION['ADM-EMAIL']?></p>
-            <?php
-            if($_SESSION['ADM-PODER'] >= 9){
-                echo "<P>Função:<br> Administrador</p>";
-            }else{
-                echo "<P>Função:<br> Repositor</p>";
-            }
-            ?>
+            <button id="logout-session" onclick="window.location.href='../controller/validaLogin.php?action=logoutADM'">Logout</button>
+
         </header>
     </body>
 

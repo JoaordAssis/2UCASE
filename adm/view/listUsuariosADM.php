@@ -70,8 +70,12 @@ $resultListUsuarios = $manager->listClient('adm_administrador');
                                 <td><?= $dateExib ?></td>
                                 <td><?= $resultListUsuarios[$i]['status'] ?></td>
                                 <td id="btn-actions">
-                                    <button id="delete-prod"><i class="fa-solid fa-trash-can"></i></button>
-                                    <button id="edit-prod"><i class="fa-regular fa-pen-to-square"></i></i></button>
+                                    <button id="delete-prod" onclick="window.location.href='../controller/ControllerUsuariosADM.php?id=<?= $resultListUsuarios[$i]['id'] ?>&action=deleteUserADM'">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </button>
+                                    <button id="edit-prod">
+                                        <i class="fa-regular fa-pen-to-square"></i>
+                                    </button>
                                 </td>
                             </tr>
                     <?php
