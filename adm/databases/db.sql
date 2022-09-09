@@ -115,27 +115,35 @@ CREATE TABLE avaliacao_prod(
 	FOREIGN KEY ( id_cliente ) REFERENCES cliente( id_cliente )
 );
 
- INSERT INTO adm_administrador(nome,email,senha,datahora,poder,status) VALUES(
-    'Sophia Santos',
-    'sophia.santos@adm.com',
-    '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5',
-    now(),
-    9,
-    1);
+INSERT INTO adm_administrador(nome,email,senha,datahora,poder,status) VALUES(
+'Sophia Santos',
+'sophia.santos@adm.com',
+'5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5',
+now(),
+9,
+1);
 
-     INSERT INTO adm_administrador(nome,email,senha,datahora,poder,status) VALUES(
-    'Davi Moreira',
-    'davi.moreira@adm.com',
-    '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5',
-    now(),
-    9,
-    1);
+INSERT INTO adm_administrador(nome,email,senha,datahora,poder,status) VALUES(
+'Davi Moreira',
+'davi.moreira@adm.com',
+'5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5',
+now(),
+9,
+1);
 
-     INSERT INTO endereco_cliente(logradouro,bairro,cep,uf,numero) VALUES(
-    'Av. Jurubatuba',
-    'Vila Cordeiro',
-    '04583-100',
-    'SP',
-    '350'
-    );
+INSERT INTO adm_administrador(nome,email,senha,datahora,poder,status) VALUES(
+'Davi Moreira',
+'davi.moreira@repositor.com',
+'5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5',
+now(),
+8,
+1);
+
+INSERT INTO endereco_cliente(logradouro,bairro,cep,uf,numero) VALUES(
+'Av. Jurubatuba',
+'Vila Cordeiro',
+'04583-100',
+'SP',
+'350'
+);
 

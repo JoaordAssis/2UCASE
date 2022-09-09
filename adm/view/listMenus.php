@@ -55,7 +55,7 @@
             </section>
         </section>
 
-                    <!-- SUBMENU -->
+        <!-- SUBMENU -->
 
         <h1>Submenus</h1>
 
@@ -102,5 +102,15 @@
         </section>
     </main>
 </body>
+<?php
+if (isset($_POST['msg'])) {
+    require_once './msg.php';
+    $msg = $_POST["msg"];
+    $msgExibir = $MSG[$msg];
+    echo "<script>alert('" . $msgExibir . "');</script>";
+}
+
+
+?>
 
 </html>

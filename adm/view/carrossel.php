@@ -81,12 +81,16 @@
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
-<script>
-    new Glide('.carrossel-container-box', {
-        type: 'carousel',
-        startAt: 0,
-        perView: 1
-    }).mount();
-</script>
+<script src="../assets/js/carrossel.js"></script>
+<?php
+if (isset($_POST['msg'])) {
+    require_once './msg.php';
+    $msg = $_POST["msg"];
+    $msgExibir = $MSG[$msg];
+    echo "<script>alert('" . $msgExibir . "');</script>";
+}
+
+
+?>
 
 </html>

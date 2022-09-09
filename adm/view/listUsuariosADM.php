@@ -1,3 +1,9 @@
+<?php
+require_once "../model/Manager.class.php";
+$manager = new Manager();
+
+$resultListUsuarios = $manager->listClient('adm_administrador');
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -46,23 +52,48 @@
                         <th>Status</th>
                         <th>Ações</th>
                     </tr>
-                    <tr>
-                        <!-- DADOS PARA MODIFICAR -->
-                        <td>1</td>
-                        <td> Sophiazinha</td>
-                        <td>sophia.perfeitaa@gmail.com</td>
-                        <td> 111.222.333-4 </td>
-                        <td>23/08/0001</td>
-                        <td>SOLTEIRA</td>
-                        <td id="btn-actions">
-                            <button id="delete-prod"><i class="fa-solid fa-trash-can"></i></button>
-                            <button id="edit-prod"><i class="fa-regular fa-pen-to-square"></i></i></button>
-                        </td>
-                    </tr>
+                    <?php
+                    if (count($resultListUsuarios) > 0) :
+                        for ($i = 0; $i < count($resultListUsuarios); $i++) :
+
+                            $timestamp = strtotime($resultListUsuarios[$i]["datahora"]);
+                            $newDate = date("d-m-Y H:i:s", $timestamp);
+                            $dateExib = str_replace('-', '/', $newDate)
+                    ?>
+
+                            <tr>
+                                <!-- DADOS PARA MODIFICAR -->
+                                <td><?= $resultListUsuarios[$i]['id'] ?></td>
+                                <td><?= $resultListUsuarios[$i]['nome'] ?></td>
+                                <td><?= $resultListUsuarios[$i]['email'] ?></td>
+                                <td><?= $resultListUsuarios[$i]['poder'] ?></td>
+                                <td><?= $dateExib ?></td>
+                                <td><?= $resultListUsuarios[$i]['status'] ?></td>
+                                <td id="btn-actions">
+                                    <button id="delete-prod"><i class="fa-solid fa-trash-can"></i></button>
+                                    <button id="edit-prod"><i class="fa-regular fa-pen-to-square"></i></i></button>
+                                </td>
+                            </tr>
+                    <?php
+                        endfor;
+                    else :
+                        echo "<td>Sem usuários cadastrados!</td>";
+                    endif;
+                    ?>
                 </table>
             </section>
         </section>
     </main>
 </body>
+<?php
+if (isset($_POST['msg'])) {
+    require_once './msg.php';
+    $msg = $_POST["msg"];
+    $msgExibir = $MSG[$msg];
+    echo "<script>alert('" . $msgExibir . "');</script>";
+}
+
+
+?>
 
 </html>

@@ -25,6 +25,14 @@ header #nav-links ul a{
     font-weight: 500;
 }
 
+header p{
+    word-break: break-all;
+    color: var(--cor-laranja);
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
 
 #logo{
     color: #ffff;
