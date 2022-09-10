@@ -2,7 +2,7 @@
 require_once "../model/Manager.class.php";
 $manager = new Manager();
 
-$resultListUsuarios = $manager->listClient('adm_administrador', 'id');
+$resultListUsuarios = $manager->listClient('adm_administrador', 'id_adm');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -56,21 +56,21 @@ $resultListUsuarios = $manager->listClient('adm_administrador', 'id');
                     if (count($resultListUsuarios) > 0) :
                         for ($i = 0; $i < count($resultListUsuarios); $i++) :
 
-                            $timestamp = strtotime($resultListUsuarios[$i]["datahora"]);
+                            $timestamp = strtotime($resultListUsuarios[$i]["data_reg_adm"]);
                             $newDate = date("d-m-Y H:i:s", $timestamp);
                             $dateExib = str_replace('-', '/', $newDate)
                     ?>
 
                             <tr>
                                 <!-- DADOS PARA MODIFICAR -->
-                                <td><?= $resultListUsuarios[$i]['id'] ?></td>
-                                <td><?= $resultListUsuarios[$i]['nome'] ?></td>
-                                <td><?= $resultListUsuarios[$i]['email'] ?></td>
-                                <td><?= $resultListUsuarios[$i]['poder'] ?></td>
+                                <td><?= $resultListUsuarios[$i]['id_adm'] ?></td>
+                                <td><?= $resultListUsuarios[$i]['nome_adm'] ?></td>
+                                <td><?= $resultListUsuarios[$i]['email_adm'] ?></td>
+                                <td><?= $resultListUsuarios[$i]['poder_adm'] ?></td>
                                 <td><?= $dateExib ?></td>
                                 <td><?= $resultListUsuarios[$i]['status'] == 1 ? "Ativo" : "Inativo"?></td>
                                 <td id="btn-actions">
-                                    <button id="delete-prod" onclick="window.location.href='../controller/ControllerUsuariosADM.php?id=<?= $resultListUsuarios[$i]['id'] ?>&action=deleteUserADM'">
+                                    <button id="delete-prod" onclick="window.location.href='../controller/ControllerUsuariosADM.php?id=<?= $resultListUsuarios[$i]['id_adm'] ?>&action=deleteUserADM'">
                                         <i class="fa-solid fa-trash-can"></i>
                                     </button>
                                     <button id="edit-prod">

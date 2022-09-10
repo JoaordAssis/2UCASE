@@ -5,7 +5,7 @@ class Conexao{
     public function __construct(){
         // CONEXAO
         try{
-            $this->pdo = new PDO("mysql:dbname=2ucase_bd;host=localhost","root","");
+            $this->pdo = new PDO("mysql:dbname=2ucase_bd2;host=localhost","root","");
         }catch(PDOException $e){
             echo "Erro com banco de dados: " . $e->getMessage() . "<br>";
             exit();

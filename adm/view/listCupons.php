@@ -1,3 +1,9 @@
+<?php
+require_once "../model/Manager.class.php";
+$manager = new Manager();
+
+$resultListCupons = $manager->listClient('user_cupom', 'id_cupom');
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -37,19 +43,31 @@
                         <th>Status</th>
                         <th>Ações</th>
                     </tr>
-                    <tr>
-                        <!-- DADOS PARA MODIFICAR -->
-                        <td>1</td>
-                        <td> Sophiazinha</td>
-                        <td>sophia.perfeitaa@gmail.com</td>
-                        <td> 111.222.333-4 </td>
-                        <td>23/08/0001</td>
-                        <td>SOLTEIRA</td>
-                        <td id="btn-actions">
-                            <button id="delete-prod"><i class="fa-solid fa-trash-can"></i></button>
-                            <button id="edit-prod"><i class="fa-regular fa-pen-to-square"></i></i></button>
-                        </td>
-                    </tr>
+                    <?php
+                    if (count($resultListCupons) > 0) :
+                        for ($i = 0; $i < count($resultListCupons); $i++) :
+                    ?>
+                            <tr>
+                                <!-- DADOS PARA MODIFICAR -->
+                                <td><?= $resultListCupons[$i]['id_cupom'] ?></td>
+                                <td><?= $resultListCupons[$i]['nome_cupom'] ?></td>
+                                <td><?= $resultListCupons[$i]['codigo_cupom'] ?></td>
+                                <td><?= $resultListCupons[$i]['id_categoria'] ?></td>
+                                <td><?= $resultListCupons[$i]['data_expira_cupom'] ?></td>
+                                <td><?= $resultListCupons[$i]['status'] ?></td>
+                                <td id="btn-actions">
+                                    <button id="delete-prod">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </button>
+                                    <button id="edit-prod">
+                                        <i class="fa-regular fa-pen-to-square"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                    <?php
+                        endfor;
+                    endif;
+                    ?>
                 </table>
             </section>
         </section>

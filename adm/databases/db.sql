@@ -1,160 +1,219 @@
-CREATE DATABASE 2ucase_bd;
+CREATE DATABASE 2ucase_bd2;
 
-use 2ucase_bd;
+use 2ucase_bd2;
 
 CREATE TABLE adm_administrador(
-	id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-	nome VARCHAR(300) NOT NULL COMMENT 'nome do administrador',
-	email VARCHAR(300) NOT NULL COMMENT 'email do administrador',
-	senha VARCHAR(64) NOT NULL COMMENT 'senha em sha256',
-	datahora DATETIME NOT NULL COMMENT 'data e  hora doregistro',
-	poder INT(1) NOT NULL COMMENT  'abrangencia do usuario no sistema',
-	status INT(1) NOT NULL COMMENT '1 - ativo; 0 - inativo'
+	id_adm INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+	nome_adm VARCHAR(300) NOT NULL COMMENT 'nome do administrador',
+	email_adm VARCHAR(300) NOT NULL COMMENT 'email do administrador',
+	senha_adm VARCHAR(64) NOT NULL COMMENT 'senha em sha256',
+	poder_adm INT(1) NOT NULL COMMENT  'abrangencia do usuario no sistema',
+	status INT(1) NOT NULL COMMENT '1 - ativo; 0 - inativo',
+	data_reg_adm DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL  COMMENT 'data e hora do registro'
 );
 
 CREATE TABLE adm_menu(
 	id_menu INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
 	nome_menu VARCHAR(300) NOT NULL,
 	link_menu varchar(300) not null,
+	status INT(1) NOT NULL COMMENT '1 - ativo; 0 - inativo',
+	data_reg_menu DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL  COMMENT 'data e hora do registro'
+
+);
+
+CREATE TABLE user_mod_celular(
+	id_modelo_celular INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+	marca_celular VARCHAR(300) NOT NULL,
+	modelo_celular VARCHAR(64) NOT NULL
+);
+
+CREATE TABLE user_forma_pagamento(
+	id_pagamento INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+	descricao_pagamento VARCHAR(64) NOT NULL
+);
+
+CREATE TABLE user_cliente(
+	id_cliente INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+	nome_cliente VARCHAR(300) NOT NULL COMMENT 'nome do cliente',
+	email_cliente VARCHAR(300) NOT NULL COMMENT 'email do cliente',
+	cpf_cliente VARCHAR(18) NOT NULL COMMENT 'cpf do cliente',
+	telefone_cliente VARCHAR(18) NOT NULL COMMENT 'telefone do cliente',
+	genero_cliente int(1) NOT NULL COMMENT '1 - feminino; 0 - masculino; 2 - não inofmrar',
+	senha_cliente VARCHAR(256) NOT NULL COMMENT 'senha em sha256',
+	data_nasc_cliente DATE NOT NULL COMMENT 'data de nascimente',
+	data_reg_cliente DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL COMMENT 'data e hora do registro',
 	status INT(1) NOT NULL COMMENT '1 - ativo; 0 - inativo'
 );
 
-CREATE TABLE mod_celular(
-	id_modelo INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-	marca VARCHAR(300) NOT NULL,
-	modelo VARCHAR(64) NOT NULL
-);
-
-CREATE TABLE forma_pagamento(
-	id_formaPag INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-	descricao VARCHAR(64) NOT NULL
-);
-
-CREATE TABLE endereco_cliente(
+CREATE TABLE user_endereco_cliente(
 	id_endereco INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-	logradouro VARCHAR(900) NOT NULL ,
-	bairro VARCHAR(100) NOT NULL ,
-	cep VARCHAR(15) NOT NULL ,
-	uf VARCHAR(2) NOT NULL ,
-	numero int(5) NOT NULL ,
-	complemento VARCHAR(150) ,
-	ponto_ref VARCHAR(300)
+	id_cliente INT NOT NULL,
+	logradouro_cliente VARCHAR(900) NOT NULL ,
+	bairro_cliente VARCHAR(100) NOT NULL ,
+	cep_cliente VARCHAR(15) NOT NULL ,
+	uf_cliente VARCHAR(2) NOT NULL ,
+	numero_cliente int(5) NOT NULL ,
+	complemento_cliente VARCHAR(150) ,
+	ponto_ref_cliente VARCHAR(300),
+	data_endereco_cliente DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL  COMMENT 'data e hora do registro',
+
+	FOREIGN KEY ( id_cliente ) REFERENCES user_cliente( id_cliente )
+
 );
+
 CREATE TABLE adm_submenu(
 	id_submenu INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
 	id_menu INT NOT NULL,
-	nome_sub VARCHAR(300) NOT NULL,
+	nome_submenu VARCHAR(300) NOT NULL,
 	link_submenu varchar(300) not null,
 	status INT(1) NOT NULL COMMENT '1 - ativo; 0 - inativo',
+	data_reg_submenu DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL  COMMENT 'data e hora do registro',
+
 	FOREIGN KEY ( id_menu ) REFERENCES adm_menu( id_menu )
 );
-CREATE TABLE produtos(
-	id_prod INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-	id_modelo INT,
-	nome_prod VARCHAR(300) NOT NULL,
-	preco VARCHAR(64) NOT NULL,
-	descricao VARCHAR(900) NOT NULL,
-	imagem VARCHAR(300) NOT NULL,
-	quantidade INT NOT NULL,
-	garantias VARCHAR(300) NOT NULL COMMENT 'beneficios - ex - garantia 3 dias',
-	status INT(1) NOT NULL COMMENT '2 - oferta 1 - disponivel 0 - indisponivel',
-	FOREIGN KEY ( id_modelo ) REFERENCES mod_celular( id_modelo )
+
+CREATE TABLE user_categoria(
+	id_categoria INT NOT NULL PRIMARY KEY,
+	nome_categoria VARCHAR(200) NOT NULL,
+	img_categoria VARCHAR(300) NOT NULL,
+	data_reg_cupom DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL  COMMENT 'data e hora do registro'
 );
 
-CREATE TABLE imgProdutos(
+CREATE TABLE user_produto(
+	id_produto INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+	id_modelo_celular INT NOT NULL,
+	id_categoria INT NOT NULL,
+	nome_produto VARCHAR(300) NOT NULL,
+	preco_produto VARCHAR(64) NOT NULL,
+	descricao_produto VARCHAR(900) NOT NULL,
+	imagem_principal_produto VARCHAR(300) NOT NULL,
+	quantidade_produto INT NOT NULL,
+	garantias_produto VARCHAR(300) NOT NULL COMMENT 'beneficios - ex - garantia 3 dias',
+	status INT(1) NOT NULL COMMENT '2 - oferta 1 - disponivel 0 - indisponivel',
+	data_reg_produto DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL  COMMENT 'data e hora do registro',
+
+	FOREIGN KEY ( id_modelo_celular ) REFERENCES user_mod_celular( id_modelo_celular ),
+	FOREIGN KEY ( id_categoria ) REFERENCES user_categoria( id_categoria )
+);
+
+CREATE TABLE user_produtos_img(
 	id_img INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-	id_prod INT NOT NULL,
+	id_produto INT NOT NULL,
 	nome_img VARCHAR(300) NOT NULL,
 	link_img varchar(300) not null,
 	status INT(1) NOT NULL COMMENT '1 - ativo; 0 - inativo',
-	FOREIGN KEY ( id_prod ) REFERENCES produtos( id_prod )
+	data_reg_img DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL  COMMENT 'data e hora do registro',
+
+	FOREIGN KEY ( id_produto ) REFERENCES user_produto( id_produto )
 );
 
-
-
-CREATE TABLE cliente(
-	id_cliente INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    id_endereco INT NOT NULL,
-	nome_completo VARCHAR(300) NOT NULL COMMENT 'nome do cliente',
-	email VARCHAR(300) NOT NULL COMMENT 'email do cliente',
-	cpf VARCHAR(18) NOT NULL COMMENT 'cpf do cliente',
-	telefone VARCHAR(18) NOT NULL COMMENT 'telefone do cliente',
-	genero int(1) NOT NULL COMMENT '1 - feminino; 0 - masculino; 2 - não inofmrar',
-	senha VARCHAR(64) NOT NULL COMMENT 'senha em sha256',
-	datanasc DATE NOT NULL COMMENT 'data de nascimente',
-	datareg DATETIME NOT NULL COMMENT 'data e hora do registro',
+CREATE TABLE user_cupom(
+	id_cupom INT NOT NULL,
+	id_categoria INT NOT NULL,
+	nome_cupom INT NOT NULL,
+	codigo_cupom INT NOT NULL,
+	data_expira_cupom DATE NOT NULL,
+	desconto_cupom VARCHAR(4) NOT NULL,
+	data_reg_cupom DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL COMMENT 'data e hora do registro',
 	status INT(1) NOT NULL COMMENT '1 - ativo; 0 - inativo',
-    FOREIGN KEY ( id_endereco ) REFERENCES endereco_cliente( id_endereco )
+
+	FOREIGN KEY ( id_categoria ) REFERENCES user_categoria( id_categoria )
 );
 
-
-CREATE TABLE vendas(
-	id_vendas INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-	id_prod INT NOT NULL,
+CREATE TABLE adm_venda(
+	id_venda INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+	id_produto INT NOT NULL,
 	id_cliente int NOT NULL,
-	forma_pag VARCHAR(64) NOT NULL ,
-	data_compra DATETIME NOT NULL,
-	valor FLOAT NOT NULL,
-	poder INT(1) NOT NULL,
+	id_pagamento INT NOT NULL,
+	status_venda VARCHAR(200) NOT NULL,
+	valor_desconto FLOAT NOT NULL,
+	data_venda DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL COMMENT 'data e hora do registro',
+	valor_venda FLOAT NOT NULL,
 	status INT(1) NOT NULL COMMENT '1 - ativo; 0 - inativo',
-	FOREIGN KEY ( id_prod ) REFERENCES produtos( id_prod ),
-	FOREIGN KEY ( id_cliente ) REFERENCES cliente( id_cliente )
+
+	FOREIGN KEY ( id_produto ) REFERENCES user_produto( id_produto ),
+	FOREIGN KEY ( id_pagamento ) REFERENCES user_forma_pagamento( id_pagamento ),
+	FOREIGN KEY ( id_cliente ) REFERENCES user_cliente( id_cliente )
 );
 
-
-
-
-
-CREATE TABLE avaliacao_prod(
-	id_av INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-	id_prod INT NOT NULL,
+CREATE TABLE user_avaliacao(
+	id_avaliacao INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+	id_produto INT NOT NULL,
 	id_cliente INT NOT NULL,
-	nota int(1) NOT NULL COMMENT 'avaliação de 1 - 5',
+	nota_avaliacao int(1) NOT NULL COMMENT 'avaliação de 1 - 5',
 	descricao VARCHAR(900) NOT NULL,
-	FOREIGN KEY ( id_prod ) REFERENCES produtos( id_prod ),
-	FOREIGN KEY ( id_cliente ) REFERENCES cliente( id_cliente )
+	data_avaliacao DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL  COMMENT 'data e hora do registro',
+
+	FOREIGN KEY ( id_produto ) REFERENCES user_produto( id_produto ),
+	FOREIGN KEY ( id_cliente ) REFERENCES user_cliente( id_cliente )
 );
 
 -- INSERTS USUARIOS ADMINISTRATIVOS
 
-INSERT INTO adm_administrador(nome,email,senha,datahora,poder,status) VALUES(
-'Sophia Santos',
-'sophia.santos@adm.com',
+		-- Administrador
+
+INSERT INTO adm_administrador(nome_adm, email_adm, senha_adm, poder_adm, status) VALUES(
+'Davi Moreira',
+'davi@adm.com',
 '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5',
-now(),
 9,
 1);
 
-INSERT INTO adm_administrador(nome,email,senha,datahora,poder,status) VALUES(
-'Davi Moreira',
-'davi.moreira@adm.com',
-'5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5',
-now(),
-9,
-1);
+		-- Repositor
 
-INSERT INTO adm_administrador(nome,email,senha,datahora,poder,status) VALUES(
+INSERT INTO adm_administrador(nome_adm, email_adm, senha_adm, poder_adm, status) VALUES(
 'Davi Moreira',
-'davi.moreira@repositor.com',
+'davi@repositor.com',
 '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5',
-now(),
 8,
 1);
 
+-- INSERTS CLIENTE
+
+INSERT INTO user_cliente (nome_cliente, email_cliente, cpf_cliente, telefone_cliente, genero_cliente, senha_cliente, data_nasc_cliente, status)
+VALUES ('Davi Moreira', 'davisant6@gmail.com', '49471488885', '11996120093', '0', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', '2006-01-21', 1);
+
 -- INSERTS ENDEREÇO CLIENTE
 
-INSERT INTO endereco_cliente(logradouro,bairro,cep,uf,numero) VALUES(
-'Av. Jurubatuba',
-'Vila Cordeiro',
-'04583-100',
+INSERT INTO user_endereco_cliente(logradouro_cliente, bairro_cliente, cep_cliente, uf_cliente ,numero_cliente, complemento_cliente, id_cliente) VALUES(
+'Rua Ciclades',
+'Jardim Guaruja',
+'05876-040',
 'SP',
-'350'
+'30',
+'Casa 4',
+1
 );
+
+-- INSERTS CATEGORIA
+
+INSERT INTO user_categoria (nome_categoria, img_categoria) VALUES ('Times', '../assets/img/Banner1.png');
+
+-- INSERTS CUPOM
+
+INSERT INTO user_cupom (id_cupom, id_categoria, nome_cupom, codigo_cupom, data_expira_cupom, desconto_cupom, status) VALUES (3, 0, 'So para quem me quiser', 'CARENTE25', '2022-09-30', '25', 1);
 
 -- INSERTS MENU E SUBMENU
 
 INSERT INTO adm_menu(nome_menu, link_menu, status) VALUES ('Teste delete', './categoria.php', 1);
-INSERT INTO adm_submenu(id_menu, nome_sub, link_submenu, status) VALUES (3, 'Teste delete2', './categoria.php', 1);
-INSERT INTO adm_submenu(id_menu, nome_sub, link_submenu, status) VALUES (3, 'Teste delete3', './categoria.php', 1);
-INSERT INTO adm_submenu(id_menu, nome_sub, link_submenu, status) VALUES (2, 'Teste', './categoria.php', 1);
+INSERT INTO adm_submenu(id_menu, nome_submenu, link_submenu, status) VALUES (1, 'Teste delete2', './categoria.php', 1);
+INSERT INTO adm_submenu(id_menu, nome_submenu, link_submenu, status) VALUES (1, 'Teste delete3', './categoria.php', 1);
+INSERT INTO adm_submenu(id_menu, nome_submenu, link_submenu, status) VALUES (1, 'Teste', './categoria.php', 1);
 
+
+-- ALTERAR AS TABELAS
+
+-- user_cupom
+-- user_categoria
+
+
+-- ALTERAÇÕES
+
+ALTER TABLE user_cupom
+MODIFY COLUMN id_cupom INT AUTO_INCREMENT NOT NULL PRIMARY KEY;
+
+ALTER TABLE user_cupom
+MODIFY COLUMN nome_cupom VARCHAR(200) NOT NULL;
+
+ALTER TABLE user_cupom
+MODIFY COLUMN codigo_cupom VARCHAR(200) NOT NULL;

@@ -106,7 +106,7 @@ $resultSubMenu = $manager->listClient('adm_submenu', 'id_submenu');
                                 <!-- DADOS PARA MODIFICAR -->
                                 <td><?= $resultSubMenu[$j]['id_submenu'] ?></td>
                                 <td><?= $exibMenuSub[$jk]['nome_menu'] ?></td>
-                                <td><?= $resultSubMenu[$j]['nome_sub'] ?></td>
+                                <td><?= $resultSubMenu[$j]['nome_submenu'] ?></td>
                                 <td><?= $resultSubMenu[$j]['link_submenu'] ?></td>
                                 <td><?= $resultSubMenu[$j]['status'] == 1 ? "Ativo" : "Inativo" ?></td>
                                 <td id="btn-actions">
