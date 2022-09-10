@@ -20,8 +20,8 @@ class Manager extends Conexao {
 		$statement->execute();
 	}
 
-    public function getInfo($table, $id) {
-		$sql = "SELECT * FROM $table WHERE id = :id";
+    public function getInfo($table, $columnName, $id) {
+		$sql = "SELECT * FROM $table WHERE {$columnName} = :id";
 		$statement = $this->pdo->prepare($sql);
 		$statement->bindValue(":id", $id);
 		$statement->execute();
