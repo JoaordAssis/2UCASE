@@ -2,9 +2,9 @@
 require_once 'Conexao.class.php';
 class Manager extends Conexao {
 
-	public function listClient($table) {
+	public function listClient($table, $columnName) {
 		$res = array();
-        $cmd = $this->pdo->query("SELECT * FROM {$table} ORDER by id DESC");
+        $cmd = $this->pdo->query("SELECT * FROM {$table} ORDER by {$columnName} DESC");
         $res = $cmd->fetchAll(PDO::FETCH_ASSOC);
         return $res;
 	}
@@ -45,8 +45,8 @@ class Manager extends Conexao {
 		$statement->execute();
 	}
 
-    public function deleteClient($table, $id) {
-		$sql = "DELETE FROM $table WHERE id = :id";
+    public function deleteClient($table, $columnName, $id) {
+		$sql = "DELETE FROM $table WHERE {$columnName} = :id";
 		$statement = $this->pdo->prepare($sql);
 		$statement->bindValue(":id", $id);
 		$statement->execute();
@@ -73,7 +73,7 @@ class Manager extends Conexao {
 
 	public function getInfoSub($table, $id){
 
-		$sql = "SELECT * FROM $table WHERE idMenu = :id";
+		$sql = "SELECT * FROM $table WHERE id_menu = :id";
 		$statement = $this->pdo->prepare($sql);
 		$statement->bindValue(":id", $id);
 		$statement->execute();

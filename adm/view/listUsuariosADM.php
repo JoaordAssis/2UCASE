@@ -2,7 +2,7 @@
 require_once "../model/Manager.class.php";
 $manager = new Manager();
 
-$resultListUsuarios = $manager->listClient('adm_administrador');
+$resultListUsuarios = $manager->listClient('adm_administrador', 'id');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -68,7 +68,7 @@ $resultListUsuarios = $manager->listClient('adm_administrador');
                                 <td><?= $resultListUsuarios[$i]['email'] ?></td>
                                 <td><?= $resultListUsuarios[$i]['poder'] ?></td>
                                 <td><?= $dateExib ?></td>
-                                <td><?= $resultListUsuarios[$i]['status'] ?></td>
+                                <td><?= $resultListUsuarios[$i]['status'] == 1 ? "Ativo" : "Inativo"?></td>
                                 <td id="btn-actions">
                                     <button id="delete-prod" onclick="window.location.href='../controller/ControllerUsuariosADM.php?id=<?= $resultListUsuarios[$i]['id'] ?>&action=deleteUserADM'">
                                         <i class="fa-solid fa-trash-can"></i>

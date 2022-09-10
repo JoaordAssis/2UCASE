@@ -16,17 +16,17 @@ if (!isset($_SESSION["ADM-ID"]) || empty($_SESSION["ADM-ID"])) {
 if (isset($_REQUEST['action']) && $_REQUEST['action'] != '' && isset($_REQUEST['id']) && $_REQUEST['id'] != '') {
 
     // DELETAR USUÁRIO ADMINISTRATIVO
-    if ($_REQUEST['action'] === 'deleteUserADM') {
-        $idUserADM = $_REQUEST['id'];
+    if ($_REQUEST['action'] === 'deleteSubMenuADM') {
+        $idSubMenuADM = $_REQUEST['id'];
         require_once "../model/Manager.class.php";
 
         $manager = new Manager();
 
-        $deleteUserADM = $manager->deleteClient('adm_administrador', 'id', $idUserADM);
+        $deleteUserADM = $manager->deleteClient('adm_submenu', 'id_submenu', $idSubMenuADM);
 
         // Sucesso
     ?>
-        <form action="../view/listUsuariosADM.php" name="myForm" id="myForm" method="post">
+        <form action="../view/listMenus.php" name="myForm" id="myForm" method="post">
             <input type="hidden" name="msg" value="BD54">
         </form>
         <script>
@@ -40,7 +40,7 @@ if (isset($_REQUEST['action']) && $_REQUEST['action'] != '' && isset($_REQUEST['
 } else {
     // Não existe requisição
     ?>
-    <form action="../view/listUsuariosADM.php" name="myForm" id="myForm" method="post">
+    <form action="../view/listMenus.php" name="myForm" id="myForm" method="post">
         <input type="hidden" name="msg" value="BD00">
     </form>
     <script>

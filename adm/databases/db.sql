@@ -115,6 +115,8 @@ CREATE TABLE avaliacao_prod(
 	FOREIGN KEY ( id_cliente ) REFERENCES cliente( id_cliente )
 );
 
+-- INSERTS USUARIOS ADMINISTRATIVOS
+
 INSERT INTO adm_administrador(nome,email,senha,datahora,poder,status) VALUES(
 'Sophia Santos',
 'sophia.santos@adm.com',
@@ -139,6 +141,8 @@ now(),
 8,
 1);
 
+-- INSERTS ENDEREÇO CLIENTE
+
 INSERT INTO endereco_cliente(logradouro,bairro,cep,uf,numero) VALUES(
 'Av. Jurubatuba',
 'Vila Cordeiro',
@@ -146,4 +150,11 @@ INSERT INTO endereco_cliente(logradouro,bairro,cep,uf,numero) VALUES(
 'SP',
 '350'
 );
+
+-- INSERTS MENU E SUBMENU
+
+INSERT INTO adm_menu(nome_menu, link_menu, status) VALUES ('Teste delete', './categoria.php', 1);
+INSERT INTO adm_submenu(id_menu, nome_sub, link_submenu, status) VALUES (3, 'Teste delete2', './categoria.php', 1);
+INSERT INTO adm_submenu(id_menu, nome_sub, link_submenu, status) VALUES (3, 'Teste delete3', './categoria.php', 1);
+INSERT INTO adm_submenu(id_menu, nome_sub, link_submenu, status) VALUES (2, 'Teste', './categoria.php', 1);
 

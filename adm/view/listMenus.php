@@ -1,9 +1,20 @@
+<?php
+require_once "../model/Manager.class.php";
+
+$manager = new Manager();
+
+$resultMenu = $manager->listClient('adm_menu', 'id_menu');
+$resultSubMenu = $manager->listClient('adm_submenu', 'id_submenu');
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
     <?php require_once "../config/config.php"; ?>
     <link rel="stylesheet" href="../assets/css/menus.css">
+    <script defer src="../assets/js/menu.js"></script>
 </head>
 
 <?php require_once "./navbar.php"; ?>
@@ -31,26 +42,28 @@
                 <table class="table-clientes">
                     <tr>
                         <th>#</th>
-                        <th>Nome</th>
-                        <th>Email</th>
-                        <th>Poder</th>
-                        <th>Data de Criação</th>
+                        <th>Nome do Menu</th>
+                        <th>Link</th>
                         <th>Status</th>
                         <th>Ações</th>
                     </tr>
-                    <tr>
-                        <!-- DADOS PARA MODIFICAR -->
-                        <td>1</td>
-                        <td> Sophiazinha</td>
-                        <td>sophia.perfeitaa@gmail.com</td>
-                        <td> 111.222.333-4 </td>
-                        <td>23/08/0001</td>
-                        <td>SOLTEIRA</td>
-                        <td id="btn-actions">
-                            <button id="delete-prod"><i class="fa-solid fa-trash-can"></i></button>
-                            <button id="edit-prod"><i class="fa-regular fa-pen-to-square"></i></i></button>
-                        </td>
-                    </tr>
+                    <?php for ($i = 0; $i < count($resultMenu); $i++) : ?>
+                        <tr>
+                            <!-- DADOS PARA MODIFICAR -->
+                            <td><?= $resultMenu[$i]['id_menu'] ?></td>
+                            <td><?= $resultMenu[$i]['nome_menu'] ?></td>
+                            <td><?= $resultMenu[$i]['link_menu'] ?></td>
+                            <td><?= $resultMenu[$i]['status'] == 1 ? "Ativo" : "Inativo"?></td>
+                            <td id="btn-actions">
+                                <button id="delete-prod" onclick="menuDelete(<?= $resultMenu[$i]['id_menu'] ?>)">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </button>
+                                <button id="edit-prod">
+                                    <i class="fa-regular fa-pen-to-square"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    <?php endfor; ?>
                 </table>
             </section>
         </section>
@@ -77,26 +90,38 @@
                 <table class="table-clientes">
                     <tr>
                         <th>#</th>
-                        <th>Nome</th>
-                        <th>Email</th>
-                        <th>Poder</th>
-                        <th>Data de Criação</th>
+                        <th>Menu</th>
+                        <th>Nome do Sub Menu</th>
+                        <th>Link do Submenu</th>
                         <th>Status</th>
                         <th>Ações</th>
                     </tr>
-                    <tr>
-                        <!-- DADOS PARA MODIFICAR -->
-                        <td>1</td>
-                        <td> Sophiazinha</td>
-                        <td>sophia.perfeitaa@gmail.com</td>
-                        <td> 111.222.333-4 </td>
-                        <td>23/08/0001</td>
-                        <td>SOLTEIRA</td>
-                        <td id="btn-actions">
-                            <button id="delete-prod"><i class="fa-solid fa-trash-can"></i></button>
-                            <button id="edit-prod"><i class="fa-regular fa-pen-to-square"></i></i></button>
-                        </td>
-                    </tr>
+                    <?php
+
+                    for ($j = 0; $j < count($resultSubMenu); $j++) :
+                        $exibMenuSub = $manager->getInfoSub('adm_menu', $resultSubMenu[$j]['id_menu']);
+                        for ($jk = 0; $jk < count($exibMenuSub); $jk++) :
+                    ?>
+                            <tr>
+                                <!-- DADOS PARA MODIFICAR -->
+                                <td><?= $resultSubMenu[$j]['id_submenu'] ?></td>
+                                <td><?= $exibMenuSub[$jk]['nome_menu'] ?></td>
+                                <td><?= $resultSubMenu[$j]['nome_sub'] ?></td>
+                                <td><?= $resultSubMenu[$j]['link_submenu'] ?></td>
+                                <td><?= $resultSubMenu[$j]['status'] == 1 ? "Ativo" : "Inativo" ?></td>
+                                <td id="btn-actions">
+                                    <button id="delete-prod" onclick="subMenuDelete(<?= $resultSubMenu[$j]['id_submenu'] ?>)">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </button>
+                                    <button id="edit-prod">
+                                        <i class="fa-regular fa-pen-to-square"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                    <?php
+                        endfor;
+                    endfor;
+                    ?>
                 </table>
             </section>
         </section>
