@@ -1,3 +1,9 @@
+<?php
+require_once "../model/Manager.class.php";
+$manager = new Manager();
+
+$exibCategoriaFilters = $manager->listClient('user_categoria', 'id_categoria');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,32 +18,32 @@
     <main class="container-new-produto">
         <h1>Adicionar novo Produto</h1>
         <form action="#" method="POST" class="form-add-produto" enctype="multipart/form-data">
-            <label for="nome_prod">Nome do Produto
+            <label for="nome_prod">
                 <input type="text" name="nome_prod" id="input-nome" placeholder="Nome do Produto">
             </label>
 
             <div class="row-preco-quant row-inputs">
-                <label for="preco_prod">Preço do Produto
-                    <input type="text" name="preco_prod" id="input-preco" placeholder="Preço do Produto">
+                <label for="preco_prod">
+                    <input type="text" data-js="money" name="preco_prod" id="input-preco" placeholder="Preço do Produto">
                 </label>
 
-                <label for="quant_prod">Quantidade
+                <label for="quant_prod">
                     <input type="number" name="quant_prod" id="input-quant" placeholder="Quantidade">
                 </label>
             </div>
 
             <div class="row-garantia-status row-inputs">
                 <select name="garantia_prod" id="select-garantia">
-                    <option value="" selected>Escolha a garantia</option>
-                    <option value="">7 Dias</option>
-                    <option value="">1 Mês</option>
-                    <option value="">3 Mêses</option>
-                    <option value="">6 Mêses</option>
-                    <option value="">1 Ano</option>
+                    <option selected>Escolha a garantia</option>
+                    <option>7 Dias</option>
+                    <option>1 Mês</option>
+                    <option>3 Mêses</option>
+                    <option>6 Mêses</option>
+                    <option>1 Ano</option>
                 </select>
 
                 <select name="status_prod" id="select-status">
-                    <option value="1" selected>Status</option>
+                    <option value="incorrect" selected>Status</option>
                     <option value="1">Disponível</option>
                     <option value="0">Indisponível</option>
                 </select>
@@ -45,8 +51,17 @@
 
             <select name="categoria_prod" id="select-categoria">
                 <option value="1" selected>Categoria</option>
-                <option value="1">Disponível</option>
-                <option value="0">Indisponível</option>
+                <?php
+                if (count($exibCategoriaFilters) > 0) :
+                    for ($i = 0; $i < count($exibCategoriaFilters); $i++) :
+                ?>
+                        <option value="<?= $exibCategoriaFilters[$i]['id_categoria'] ?>">
+                            <?= $exibCategoriaFilters[$i]['nome_categoria'] ?>
+                        </option>
+                <?php
+                    endfor;
+                endif;
+                ?>
             </select>
 
             <h3>Marcas</h3>
@@ -79,15 +94,16 @@
             </label>
 
             <label for="img_principal">Outras Imagens
-                <input type="file" name="imgProduto[]" multiple="multiple" id="input-img">
+                <input type="file" name="imgProduto" multiple="multiple" onchange="newInput(this)" id="input-img-multiple">
+                <button style="width: 50%; padding: 1rem !important;" onclick="removeAllImages()" id="btn-remove-file">Remover todas as imagens</button>
             </label>
+            <ul id="dp-files"></ul>
 
             <input type="submit" value="Adicionar">
-
-            
         </form>
         <button id="btn-exit" onclick="window.location.href='./listProdutos.php'">Voltar</button>
     </main>
 </body>
+<script src="../assets/js/addProduto.js"></script>
 
 </html>

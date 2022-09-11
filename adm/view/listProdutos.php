@@ -1,3 +1,11 @@
+<?php
+require_once "../model/Manager.class.php";
+$manager = new Manager();
+
+$resultProdutos = $manager->listClient('user_produto', 'id_produto');
+$exibCategoriaFilters = $manager->listClient('user_categoria', 'id_categoria');
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -48,9 +56,18 @@
                 <div class="box-faixa-preco box-filter">
                     <label for="select-faixa-preco">Categorias</label>
                     <select id="boselectx-faixa-preco" name="select-faixa-preco">
-                        <option value="1">Categoria</option>
-                        <option value="2">Categ2</option>
-                        <option value="3">Categ3</option>
+                        <option value="all" default>Todos</option>
+                        <?php
+                        if (count($exibCategoriaFilters) > 0) :
+                            for ($i = 0; $i < count($exibCategoriaFilters); $i++) :
+                        ?>
+                                <option value="<?= $exibCategoriaFilters[$i]['id_categoria'] ?>">
+                                    <?= $exibCategoriaFilters[$i]['nome_categoria'] ?>
+                                </option>
+                        <?php
+                            endfor;
+                        endif;
+                        ?>
                     </select>
                 </div>
 
@@ -77,21 +94,32 @@
                         <th>Status</th>
                         <th>Ações</th>
                     </tr>
-                    <tr>
-                        <!-- DADOS PARA MODIFICAR -->
-                        <td>1</td>
-                        <td> Sophiazinha</td>
-                        <td>Perfeição</td>
-                        <td> 1 </td>
-                        <td>1.000.000</td>
-                        <td>SOLTEIRA</td>
-                        <td id="btn-actions">
-                            <button id="delete-prod"><i class="fa-solid fa-trash-can"></i></button>
-                            <button id="edit-prod" onclick="window.location.href='./CRUDEditProduto.php'">
-                                <i class="fa-regular fa-pen-to-square"></i>
-                            </button>
-                        </td>
-                    </tr>
+                    <?php
+                    if (count($resultProdutos) > 0) :
+                        for ($i = 0; $i < count($resultProdutos); $i++) :
+                            $exibCategoria = $manager->getInfo('user_categoria', 'id_categoria', $resultProdutos[$i]['id_categoria']);
+                            for ($jk = 0; $jk < count($exibCategoria); $jk++) :
+                    ?>
+                                <tr>
+                                    <!-- DADOS PARA MODIFICAR -->
+                                    <td><?= $resultProdutos[$i]['id_produto'] ?></td>
+                                    <td id="table-name"><?= $resultProdutos[$i]['nome_produto'] ?></td>
+                                    <td><?= $exibCategoria[$jk]['nome_categoria'] ?></td>
+                                    <td><?= $resultProdutos[$i]['quantidade_produto'] ?></td>
+                                    <td>R$<?= $resultProdutos[$i]['preco_produto'] ?></td>
+                                    <td><?= $resultProdutos[$i]['status'] === 1 ? 'Disponível' : 'Indisponível' ?></td>
+                                    <td id="btn-actions">
+                                        <button id="delete-prod"><i class="fa-solid fa-trash-can"></i></button>
+                                        <button id="edit-prod" onclick="window.location.href='./CRUDEditProduto.php'">
+                                            <i class="fa-regular fa-pen-to-square"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                    <?php
+                            endfor;
+                        endfor;
+                    endif;
+                    ?>
                 </table>
             </section>
         </section>

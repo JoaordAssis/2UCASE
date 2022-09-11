@@ -101,6 +101,10 @@
    padding: 1rem;
 }
 
+.table-clientes tr #table-name{
+    max-width: 8rem;
+}
+
 .table-clientes tr td{
     text-align: center;
 }

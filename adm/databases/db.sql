@@ -1,6 +1,6 @@
-CREATE DATABASE 2ucase_bd2;
+CREATE DATABASE 2ucase_bd3 DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
-use 2ucase_bd2;
+use 2ucase_bd3;
 
 CREATE TABLE adm_administrador(
 	id_adm INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
@@ -81,7 +81,7 @@ CREATE TABLE adm_submenu(
 );
 
 CREATE TABLE user_categoria(
-	id_categoria INT NOT NULL PRIMARY KEY,
+	id_categoria INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
 	nome_categoria VARCHAR(200) NOT NULL,
 	img_categoria VARCHAR(300) NOT NULL,
 	data_reg_cupom DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL  COMMENT 'data e hora do registro'
@@ -217,10 +217,16 @@ INSERT INTO adm_carrossel (nome_carrossel, link_carrossel, status) VALUES ('Time
 INSERT INTO adm_carrossel (nome_carrossel, link_carrossel, status) VALUES ('Time Qualquer', '../assets/img/Banner3.png', 1);
 
 
--- ALTERAR AS TABELAS
 
--- user_cupom
--- user_categoria
+--INSERT INTO MODELO CELULAR
+
+INSERT INTO user_mod_celular (marca_celular, modelo_celular) VALUES ('Iphone', 'Iphone 13 Pro Max');
+
+
+--INSERT INTO PRODUTO
+
+INSERT INTO user_produto(id_modelo_celular, id_categoria, nome_produto, preco_produto, descricao_produto, imagem_principal_produto, quantidade_produto, garantias_produto, status)
+VALUES (1, 0, 'Capinha Flamengo 2022 - Seleção Oficial', 25.94, 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum facere aperiam dolor minus laudantium autem soluta eum, officia sunt ducimus sed. Possimus necessitatibus ex molestiae.', '../assets/img/Banner1.png', 10, '2 Meses', 1);
 
 
 -- ALTERAÇÕES
