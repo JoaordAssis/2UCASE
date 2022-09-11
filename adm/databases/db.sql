@@ -21,6 +21,14 @@ CREATE TABLE adm_menu(
 
 );
 
+CREATE TABLE adm_carrossel(
+	id_carrossel INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+	nome_carrossel VARCHAR(200) NOT NULL,
+	link_carrossel VARCHAR(300) NOT NULL,
+	status INT(1) NOT NULL COMMENT '1 - ativo; 0 - inativo',
+	data_reg_adm DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL  COMMENT 'data e hora do registro' 
+);
+
 CREATE TABLE user_mod_celular(
 	id_modelo_celular INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
 	marca_celular VARCHAR(300) NOT NULL,
@@ -199,6 +207,14 @@ INSERT INTO adm_menu(nome_menu, link_menu, status) VALUES ('Teste delete', './ca
 INSERT INTO adm_submenu(id_menu, nome_submenu, link_submenu, status) VALUES (1, 'Teste delete2', './categoria.php', 1);
 INSERT INTO adm_submenu(id_menu, nome_submenu, link_submenu, status) VALUES (1, 'Teste delete3', './categoria.php', 1);
 INSERT INTO adm_submenu(id_menu, nome_submenu, link_submenu, status) VALUES (1, 'Teste', './categoria.php', 1);
+
+-- INSERT INTO CARROSSEL
+
+INSERT INTO adm_carrossel (nome_carrossel, link_carrossel, status) VALUES ('Time Qualquer', '../assets/img/Banner1.png', 1);
+
+INSERT INTO adm_carrossel (nome_carrossel, link_carrossel, status) VALUES ('Time Qualquer', '../assets/img/Banner2.png', 1);
+
+INSERT INTO adm_carrossel (nome_carrossel, link_carrossel, status) VALUES ('Time Qualquer', '../assets/img/Banner3.png', 1);
 
 
 -- ALTERAR AS TABELAS

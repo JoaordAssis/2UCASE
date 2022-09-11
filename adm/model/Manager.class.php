@@ -54,7 +54,7 @@ class Manager extends Conexao {
 
 	public function dadosClient($table, $email){
 		$res = array();
-		$sql = "SELECT * FROM $table WHERE email = :email";
+		$sql = "SELECT * FROM $table WHERE email_adm = :email";
 		$statement = $this->pdo->prepare($sql);
 		$statement->bindValue(":email", $email);
 		$statement->execute();

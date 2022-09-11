@@ -56,16 +56,16 @@ if (isset($_POST['email-login']) && $_POST['email-login'] != '' && isset($_POST[
 
     // Senha está certa
 
-    if (isset($dados["id"])) {
+    if (isset($dados["id_adm"])) {
         require_once '../model/Ferramentas.class.php';
         $ferr = new Ferramentas();
         $senhaHash = $ferr->hash256($_POST['senha-login']);
-        if ($dados["senha"] == $senhaHash) { //tudo validado
+        if ($dados["senha_adm"] == $senhaHash) { //tudo validado
 
-            $_SESSION["ADM-ID"] = $dados["id"];
-            $_SESSION["ADM-NOME"] = $dados["nome"];
-            $_SESSION["ADM-EMAIL"] = $dados["email"];
-            $_SESSION["ADM-PODER"] = $dados["poder"];
+            $_SESSION["ADM-ID"] = $dados["id_adm"];
+            $_SESSION["ADM-NOME"] = $dados["nome_adm"];
+            $_SESSION["ADM-EMAIL"] = $dados["email_adm"];
+            $_SESSION["ADM-PODER"] = $dados["poder_adm"];
 
         ?>
             <form action="../view/bemvindo.php" name="myForm" id="myForm" method="post">

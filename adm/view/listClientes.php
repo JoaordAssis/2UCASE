@@ -1,3 +1,9 @@
+<?php
+require_once "../model/Manager.class.php";
+$manager = new Manager();
+
+$resultClienteList = $manager->listClient('user_cliente', 'id_cliente');
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -54,25 +60,38 @@
                 <table class="table-clientes">
                     <tr>
                         <th>#</th>
-                        <th>Email</th>
                         <th>Nome</th>
+                        <th>Email</th>
                         <th>CPF</th>
                         <th>DataNasc</th>
                         <th>Status</th>
                         <th>Ações</th>
                     </tr>
-                    <tr>
-                        <!-- DADOS PARA MODIFICAR -->
-                        <td>1</td>
-                        <td> Sophiazinha</td>
-                        <td>sophia.perfeitaa@gmail.com</td>
-                        <td> 111.222.333-4 </td>
-                        <td>23/08/0001</td>
-                        <td>SOLTEIRA</td>
-                        <td id="btn-actions">
-                            <button id="search-client"><i class="fa-solid fa-magnifying-glass"></i></i></i></button>
-                        </td>
-                    </tr>
+                    <?php
+
+                    if (count($resultClienteList) > 0) :
+                        for ($i = 0; $i < count($resultClienteList); $i++) :
+                            $timestamp = strtotime($resultClienteList[$i]["data_nasc_cliente"]);
+                            $newDate = date("d-m-Y", $timestamp);
+                            $dateExib = str_replace('-', '/', $newDate)
+                    ?>
+                            <tr>
+                                <!-- DADOS PARA MODIFICAR -->
+                                <td><?= $resultClienteList[$i]['id_cliente'] ?></td>
+                                <td><?= $resultClienteList[$i]['nome_cliente'] ?></td>
+                                <td><?= $resultClienteList[$i]['email_cliente'] ?></td>
+                                <td><?= $resultClienteList[$i]['cpf_cliente'] ?></td>
+                                <td><?= $dateExib ?></td>
+                                <td><?= $resultClienteList[$i]['status'] == 1 ? "Ativo" : "Inativo" ?></td>
+                                <td id="btn-actions">
+                                    <button id="search-client"><i class="fa-solid fa-magnifying-glass"></i></i></i></button>
+                                </td>
+                            </tr>
+
+                    <?php
+                        endfor;
+                    endif;
+                    ?>
                 </table>
             </section>
         </section>

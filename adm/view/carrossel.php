@@ -1,3 +1,9 @@
+<?php
+require_once "../model/Manager.class.php";
+$manager = new Manager();
+
+$resultCarrosselList = $manager->listClient('adm_carrossel', 'id_carrossel');
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -28,23 +34,25 @@
 
                         <ul class="glide__slides">
 
-                            <div class="carrossel-box glide__slide">
-                                <img src="../assets/img/Banner1.png" alt="Banner1">
-                            </div>
+                            <?php
+                            if (count($resultCarrosselList) > 0) :
+                                for ($i = 0; $i < count($resultCarrosselList); $i++) :
+                            ?>
 
-                            <div class="carrossel-box glide__slide">
-                                <img src="../assets/img/Banner2.png" alt="Banner1">
-                            </div>
+                                    <div class="carrossel-box glide__slide">
+                                        <img src="<?= $resultCarrosselList[$i]['link_carrossel'] ?>" alt="<?= $resultCarrosselList[$i]['nome_carrossel'] ?>">
+                                    </div>
 
-                            <div class="carrossel-box glide__slide">
-                                <img src="../assets/img/Banner3.png" alt="Banner1">
-                            </div>
+                            <?php
+                                endfor;
+                            endif;
+                            ?>
 
                         </ul>
                         <div class="glide__bullets" data-glide-el="controls[nav]">
-                            <button class="glide__bullet" data-glide-dir="=0"></button>
-                            <button class="glide__bullet" data-glide-dir="=1"></button>
-                            <button class="glide__bullet" data-glide-dir="=2"></button>
+                            <?php for ($j = 0; $j < count($resultCarrosselList); $j++) : ?>
+                            <button class="glide__bullet" data-glide-dir="=<?=$j?>"></button>
+                            <?php endfor; ?>
                         </div>
                     </div>
 
@@ -57,16 +65,30 @@
 
             <!-- GERENCIADOR DO CARROSSEL -->
             <section class="edit-carrossel">
-                <div class="banner-box">
-                    <img src="../assets/img/Banner1.png" alt="Banner1">
-                    <div class="box-info">
-                        <h2>Titulo Imagem</h2>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut, minus.</p>
-                        <p>246KBs</p>
-                    </div>
-                    <button id="delete-prod"><i class="fa-solid fa-trash-can"></i></button>
-                    <button id="edit-prod"><i class="fa-regular fa-pen-to-square"></i></i></button>
-                </div>
+                <?php
+                if (count($resultCarrosselList) > 0) :
+                    for ($i = 0; $i < count($resultCarrosselList); $i++) :
+                ?>
+
+                        <div class="banner-box">
+                            <img src="<?= $resultCarrosselList[$i]['link_carrossel'] ?>" alt="<?= $resultCarrosselList[$i]['nome_carrossel'] ?>">
+                            <div class="box-info">
+                                <h2><?= $resultCarrosselList[$i]['nome_carrossel'] ?></h2>
+                                <p><?= $resultCarrosselList[$i]['link_carrossel'] ?></p>
+                                <p>246KBs</p>
+                            </div>
+                            <button id="delete-prod" onclick="window.location.href='../controller/ControllerCarrosselADM.php?id=<?= $resultCarrosselList[$i]['id_carrossel'] ?>&action=deleteCarrosselADM'">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </button>
+                            <button id="edit-prod">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                            </button>
+                        </div>
+
+                <?php
+                    endfor;
+                endif;
+                ?>
 
                 <button id="btn-new-produto">
                     <div class="icon-container">
