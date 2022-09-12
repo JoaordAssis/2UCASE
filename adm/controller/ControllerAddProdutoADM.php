@@ -4,76 +4,81 @@ session_start();
 if (!isset($_SESSION["ADM-ID"]) || empty($_SESSION["ADM-ID"])) {
     session_destroy();
 
-    ?>
-<form action="../index.php" name="myForm" id="myForm" method="post">
-    <input type="hidden" name="msg" value="BD52">
-</form>
-<script>
-    document.getElementById('myForm').submit();
-</script>
+?>
+    <form action="../index.php" name="myForm" id="myForm" method="post">
+        <input type="hidden" name="msg" value="OA01">
+    </form>
+    <script>
+        document.getElementById('myForm').submit();
+    </script>
 
 <?php
 
 }
 
-if(isset($_REQUEST['nome_produto']) && $_REQUEST['nome_produto'] != ''):
+if (isset($_REQUEST['nome_produto']) && $_REQUEST['nome_produto'] != '') :
 
-require_once '../model/Manager.class.php';
-require_once '../model/Ferramentas.class.php';
+    require_once '../model/Manager.class.php';
+    require_once '../model/Ferramentas.class.php';
 
-$manager = new Manager();
-$ferr = new Ferramentas();
+    $manager = new Manager();
+    $ferr = new Ferramentas();
 
-// Organizando os dados
+    // Organizando os dados
 
-// $dados["id_modelo_celular"] = $_REQUEST["marca_celular"];
-// $dados["id_categoria"] = $_REQUEST["categoria_produto"];
-// $dados["nome_produto"] = $_REQUEST["nome_produto"];
-// $dados["preco_produto"] = $_REQUEST["preco_produto"];
-// $dados["descricao_produto"] = $_REQUEST["descricao_produto"];
-// $dados["imagem_principal_produto"] = $_REQUEST["imagem_principal_produto"];
-// $dados["quantidade_produto"] = $_REQUEST["quantidade_produto"];
-// $dados["garantias_produto"] = $_REQUEST["garantias_produto"];
-// $dados["status"] = $_REQUEST["status"];
+    $dados["id_modelo_celular"] = $_REQUEST["marca_celular"];
+    $dados["id_categoria"] = $_REQUEST["categoria_produto"];
+    $dados["nome_produto"] = $_REQUEST["nome_produto"];
+    $dados["preco_produto"] = $_REQUEST["preco_produto"];
+    $dados["descricao_produto"] = $_REQUEST["descricao_produto"];
+    $imgRetrieveData = $manager->imgUpload('imagem_principal_produto', $_REQUEST["nome_produto"]);
+    $dados["imagem_principal_produto"] = $imgRetrieveData[0];
+    $dados["quantidade_produto"] = $_REQUEST["quantidade_produto"];
+    $dados["garantias_produto"] = $_REQUEST["garantias_produto"];
+    $dados["status"] = $_REQUEST["status"];
 
-echo "<pre>";
-print_r($_FILES['imagem_principal_produto']);
-echo "<pre>";
+    $manager->insertClient("user_produto", $dados);
 
-echo "<br><br><br><br>";
+    // var_dump($_FILES['link_img']);
 
-echo "<pre>";
-print_r($_FILES['link_img']);
-echo "<pre>";
 
-echo count($_FILES['link_img']['name']);
+    if (isset($_FILES['link_img']) && $_FILES['link_img']['name'][0] != '') {
+        $uploadMultipleImageT = $manager->imgMultipleUpload('link_img', $_REQUEST["nome_produto"]);
+        for ($i = 0; $i < count($uploadMultipleImageT); $i++) :
+            $lastId = $manager->lastInsertId('user_produto', 'id_produto');
+            $dadosImg['id_produto'] = $lastId[0];
+            $dadosImg['nome_img'] = $_FILES['link_img']['name'][$i];
+            $dadosImg['link_img'] = $uploadMultipleImageT[$i];
+            $dadosImg['status'] = 1;
 
-echo "<br><br><br><br>";
+            $manager->insertClient("user_produtos_img", $dadosImg);
+        endfor;
+        // echo "<pre>";
+        // print_r($uploadMultipleImageT);
+        // echo "<pre>";
 
-$uploadImage = $manager->imgUpload('link_img', $_REQUEST["nome_produto"], $_REQUEST['preco_produto']);
+    }
 
-var_dump($uploadImage);
 
-// $manager->insertClient("administrador", $dados);
 ?>
-<!-- <form action="../view/adm_usuarios_list.php" name="myForm" id="myForm" method="post">
-    <input type="hidden" name="msg" value="BD52">
-</form>
-<script>
-    document.getElementById('myForm').submit();
-</script> -->
+    <form action="../view/listProdutos.php" name="myForm" id="myForm" method="post">
+        <input type="hidden" name="msg" value="BD52">
+    </form>
+    <script>
+        document.getElementById('myForm').submit();
+    </script>
 
 <?php
 
-else:
+else :
 
 ?>
-<!-- <form action="../view/CRUDAddProduto.php" name="myForm" id="myForm" method="post">
-    <input type="hidden" name="msg" value="BD52">
-</form>
-<script>
-    document.getElementById('myForm').submit();
-</script> -->
+    <form action="../view/CRUDAddProduto.php" name="myForm" id="myForm" method="post">
+        <input type="hidden" name="msg" value="BD02">
+    </form>
+    <script>
+        document.getElementById('myForm').submit();
+    </script>
 
 <?php
 

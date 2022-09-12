@@ -196,10 +196,14 @@ INSERT INTO user_endereco_cliente(logradouro_cliente, bairro_cliente, cep_client
 -- INSERTS CATEGORIA
 
 INSERT INTO user_categoria (nome_categoria, img_categoria) VALUES ('Times', '../assets/img/Banner1.png');
+INSERT INTO user_categoria (id_categoria, nome_categoria, img_categoria) VALUES (1, 'Animações', '../assets/img/Banner2.png');
+
 
 -- INSERTS CUPOM
 
 INSERT INTO user_cupom (id_cupom, id_categoria, nome_cupom, codigo_cupom, data_expira_cupom, desconto_cupom, status) VALUES (3, 0, 'So para quem me quiser', 'CARENTE25', '2022-09-30', '25', 1);
+INSERT INTO user_cupom (id_categoria, nome_cupom, codigo_cupom, data_expira_cupom, desconto_cupom, status) VALUES (1, 'So para quem não me quiser', 'CARENTENAO50', '2022-09-30', '50', 1);
+
 
 -- INSERTS MENU E SUBMENU
 
@@ -239,3 +243,4 @@ MODIFY COLUMN nome_cupom VARCHAR(200) NOT NULL;
 
 ALTER TABLE user_cupom
 MODIFY COLUMN codigo_cupom VARCHAR(200) NOT NULL;
+
