@@ -93,4 +93,21 @@ class Manager extends Conexao {
         return $res;
 	}
 
+	public function imgUpload($name, $nome_produto){
+
+		for($i = 0; $i < count($_FILES[$name]['name']); $i++){
+			$ext = strtolower(substr($_FILES[$name]['name'][$i], -4)); //Pegando extensão do arquivo
+			$x = ((8 + $i) ** 4) * 32;
+			$new_name = $nome_produto. "-" . ++$x . $ext; //Definindo um novo nome para o arquivo
+			$dir = '../databases/img-database/'; //Diretório para uploads
+
+			move_uploaded_file($_FILES[$name]['tmp_name'][$i], $dir . $new_name);
+
+			$arrayImage[$i] = $dir . $new_name;
+
+		}
+		return $arrayImage;
+		
+	}
+
 }
