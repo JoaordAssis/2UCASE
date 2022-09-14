@@ -29,13 +29,13 @@ class Manager extends Conexao {
 		return $statement->fetchAll();
 	}
 
-    public function updateClient($table, $data, $id) {
+    public function updateClient($table, $data, $id, $columnName) {
 		$new_values = "";
 		foreach($data as $key => $value) {
 			$new_values .= "$key=:$key, ";
 		}
 		$new_values = substr($new_values, 0, -2);
-		$sql = "UPDATE $table SET $new_values WHERE id = :id";
+		$sql = "UPDATE $table SET $new_values WHERE {$columnName} = :id";
 		$statement = $this->pdo->prepare($sql);
 		$statement->bindValue(":id", $id);
 		foreach($data as $key => $value) {

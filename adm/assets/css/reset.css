@@ -96,3 +96,13 @@ button, input[type="submit"]{
 .nav-body header{
     height: calc(100% + 10rem);
 }
+
+main #btn-exit {
+    width: 20%;
+    padding: 1rem;
+    font-weight: 400;
+    color: var(--cor-laranja);
+    background-color: #fff;
+    border: 1px solid var(--cor-laranja);
+    border-radius: 10px;
+}

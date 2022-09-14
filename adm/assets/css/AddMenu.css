@@ -1,0 +1,64 @@
+@import './reset.css';
+
+.container-new-produto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 2rem;
+} 
+
+.form-add-menu{
+    display:flex;
+    padding: 1rem;
+    background-color: #fff;
+    gap:1rem;
+    justify-content: center;
+    /* max-width: 50rem; */
+    width: 40rem;
+    border-radius: 10px;
+    flex-direction: column;
+
+}
+
+.form-add-menu input{
+    padding: 0.8rem;
+    border-radius: 5px;
+    border: 1px solid var(--cor-laranja);
+    width: 100%;
+}
+
+
+.form-add-menu input[type="submit"]{
+    background-color: var(--cor-laranja);
+    font-weight: 500;
+    border: 1px solid var(--cor-laranja);
+    text-transform: uppercase;
+    width: 50%;
+    color: #ffff;
+
+}
+
+.form-add-menu input::placeholder, .form-add-menu select{
+    color: var(--cor-laranja);
+}
+
+.row-ativo-submit{
+    display:flex;
+    gap: 0.5rem;
+}
+
+.form-add-menu select{
+    border: 1px solid var(--cor-laranja);
+    border-radius: 5px;
+}
+
+
+#submenu-select{
+    padding: .8rem;
+}
+
+#submenu-label{
+    color: var(--cor-laranja);
+}

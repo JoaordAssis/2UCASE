@@ -41,11 +41,52 @@ if (isset($_REQUEST['action']) && $_REQUEST['action'] != '' && isset($_REQUEST['
         <script>
             document.getElementById('myForm').submit();
         </script>
-    <?php
+        <?php
     }
 
-    // EDITAR MENU ADMINISTRATIVO
+    // EDITAR MENU
 
+    if ($_REQUEST['action'] === 'editMenuADM') {
+        require_once "../model/Manager.class.php";
+        require_once "../model/Ferramentas.class.php";
+
+        $manager = new Manager();
+        $ferr = new Ferramentas();
+
+        $verificaNomeMenu = $ferr->antiInjection($_REQUEST['nome_menu']);
+        $verificaLinkMenu = $ferr->antiInjection($_REQUEST['link_menu']);
+
+
+        if ($verificaNomeMenu && $verificaLinkMenu === 1) {
+
+            $idMenu = $_REQUEST['idMenu'];
+
+            $dadosMenuADM['nome_menu'] = $_REQUEST['nome_menu'];
+            $dadosMenuADM['link_menu'] = $_REQUEST['link_menu'];
+            $dadosMenuADM['status'] = $_REQUEST['status'];
+
+
+            $manager->updateClient("adm_menu", $dadosMenuADM, $idMenu, 'id_menu');
+
+        ?>
+            <form action="../view/listMenus.php" name="myForm" id="myForm" method="post">
+                <input type="hidden" name="msg" value="BD53">
+            </form>
+            <script>
+                document.getElementById('myForm').submit();
+            </script>
+        <?php
+        }
+
+        ?>
+        <form action="../view/CRUDEditMenu.php" name="myForm" id="myForm" method="post">
+            <input type="hidden" name="msg" value="BD03">
+        </form>
+        <script>
+            document.getElementById('myForm').submit();
+        </script>
+    <?php
+    }
 } else {
     // Não existe requisição
     ?>

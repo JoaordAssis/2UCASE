@@ -31,7 +31,7 @@ $resultListUsuarios = $manager->listClient('adm_administrador', 'id_adm');
 
             <!-- FILTROS -->
             <section class="container-filters">
-                <button id="btn-new-produto">
+                <button id="btn-new-produto" onclick="window.location.href='./CRUDAddUsuario.php'">
                     <div class="icon-container">
                         <i class="fa-regular fa-plus"></i>
                     </div>
@@ -68,12 +68,12 @@ $resultListUsuarios = $manager->listClient('adm_administrador', 'id_adm');
                                 <td><?= $resultListUsuarios[$i]['email_adm'] ?></td>
                                 <td><?= $resultListUsuarios[$i]['poder_adm'] ?></td>
                                 <td><?= $dateExib ?></td>
-                                <td><?= $resultListUsuarios[$i]['status'] == 1 ? "Ativo" : "Inativo"?></td>
+                                <td><?= $resultListUsuarios[$i]['status'] == 1 ? "Ativo" : "Inativo" ?></td>
                                 <td id="btn-actions">
                                     <button id="delete-prod" onclick="window.location.href='../controller/ControllerUsuariosADM.php?id=<?= $resultListUsuarios[$i]['id_adm'] ?>&action=deleteUserADM'">
                                         <i class="fa-solid fa-trash-can"></i>
                                     </button>
-                                    <button id="edit-prod">
+                                    <button id="edit-prod" onclick="window.location.href='./CRUDEditUsuarioADM.php?id=<?= $resultListUsuarios[$i]['id_adm'] ?>'">
                                         <i class="fa-regular fa-pen-to-square"></i>
                                     </button>
                                 </td>

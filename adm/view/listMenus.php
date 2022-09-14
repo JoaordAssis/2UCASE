@@ -28,7 +28,7 @@ $resultSubMenu = $manager->listClient('adm_submenu', 'id_submenu');
 
             <!-- FILTROS -->
             <section class="container-filters">
-                <button id="btn-new-produto">
+                <button id="btn-new-produto" onclick="window.location.href='./CRUDAddMenu.php'">
                     <div class="icon-container">
                         <i class="fa-regular fa-plus"></i>
                     </div>
@@ -53,12 +53,12 @@ $resultSubMenu = $manager->listClient('adm_submenu', 'id_submenu');
                             <td><?= $resultMenu[$i]['id_menu'] ?></td>
                             <td><?= $resultMenu[$i]['nome_menu'] ?></td>
                             <td><?= $resultMenu[$i]['link_menu'] ?></td>
-                            <td><?= $resultMenu[$i]['status'] == 1 ? "Ativo" : "Inativo"?></td>
+                            <td><?= $resultMenu[$i]['status'] == 1 ? "Ativo" : "Inativo" ?></td>
                             <td id="btn-actions">
                                 <button id="delete-prod" onclick="menuDelete(<?= $resultMenu[$i]['id_menu'] ?>)">
                                     <i class="fa-solid fa-trash-can"></i>
                                 </button>
-                                <button id="edit-prod">
+                                <button id="edit-prod" onclick="window.location.href='./CRUDEditMenu.php?id=<?= $resultMenu[$i]['id_menu'] ?>&action=editMenuADM'">
                                     <i class="fa-regular fa-pen-to-square"></i>
                                 </button>
                             </td>
@@ -76,7 +76,7 @@ $resultSubMenu = $manager->listClient('adm_submenu', 'id_submenu');
 
             <!-- FILTROS -->
             <section class="container-filters">
-                <button id="btn-new-produto">
+                <button id="btn-new-produto" onclick="window.location.href='./CRUDAddSubMenu.php'">
                     <div class="icon-container">
                         <i class="fa-regular fa-plus"></i>
                     </div>
@@ -90,8 +90,8 @@ $resultSubMenu = $manager->listClient('adm_submenu', 'id_submenu');
                 <table class="table-clientes">
                     <tr>
                         <th>#</th>
+                        <th>Nome do Submenu</th>
                         <th>Menu</th>
-                        <th>Nome do Sub Menu</th>
                         <th>Link do Submenu</th>
                         <th>Status</th>
                         <th>Ações</th>
@@ -105,15 +105,15 @@ $resultSubMenu = $manager->listClient('adm_submenu', 'id_submenu');
                             <tr>
                                 <!-- DADOS PARA MODIFICAR -->
                                 <td><?= $resultSubMenu[$j]['id_submenu'] ?></td>
-                                <td><?= $exibMenuSub[$jk]['nome_menu'] ?></td>
                                 <td><?= $resultSubMenu[$j]['nome_submenu'] ?></td>
+                                <td><?= $exibMenuSub[$jk]['nome_menu'] ?></td>
                                 <td><?= $resultSubMenu[$j]['link_submenu'] ?></td>
                                 <td><?= $resultSubMenu[$j]['status'] == 1 ? "Ativo" : "Inativo" ?></td>
                                 <td id="btn-actions">
                                     <button id="delete-prod" onclick="subMenuDelete(<?= $resultSubMenu[$j]['id_submenu'] ?>)">
                                         <i class="fa-solid fa-trash-can"></i>
                                     </button>
-                                    <button id="edit-prod">
+                                    <button id="edit-prod" onclick="window.location.href='./CRUDEditSubMenu.php?id=<?= $resultSubMenu[$i]['id_submenu'] ?>&action=editSubMenuADM'">
                                         <i class="fa-regular fa-pen-to-square"></i>
                                     </button>
                                 </td>

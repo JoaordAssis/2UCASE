@@ -109,7 +109,9 @@ $exibCategoriaFilters = $manager->listClient('user_categoria', 'id_categoria');
                                     <td>R$<?= $resultProdutos[$i]['preco_produto'] ?></td>
                                     <td><?= $resultProdutos[$i]['status'] === 1 ? 'Disponível' : 'Indisponível' ?></td>
                                     <td id="btn-actions">
-                                        <button id="delete-prod"><i class="fa-solid fa-trash-can"></i></button>
+                                        <button id="delete-prod" onclick="window.location.href='../controller/ControllerProdutoADM.php?id=<?= $resultProdutos[$i]['id_produto'] ?>&action=deleteProdutoADM'">
+                                            <i class="fa-solid fa-trash-can"></i>
+                                        </button>
                                         <button id="edit-prod" onclick="window.location.href='./CRUDEditProduto.php'">
                                             <i class="fa-regular fa-pen-to-square"></i>
                                         </button>
