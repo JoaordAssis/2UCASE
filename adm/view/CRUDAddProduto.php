@@ -21,21 +21,21 @@ $exibModeloFilters = $manager->listClient('user_mod_celular', 'id_modelo_celular
         <h1>Adicionar novo Produto</h1>
         <form action="../controller/ControllerAddProdutoADM.php" method="POST" class="form-add-produto" enctype="multipart/form-data">
             <label for="nome_produto">
-                <input type="text" name="nome_produto" id="input-nome" placeholder="Nome do Produto">
+                <input type="text" required name="nome_produto" id="input-nome" placeholder="Nome do Produto">
             </label>
 
             <div class="row-preco-quant row-inputs">
                 <label for="preco_produto">
-                    <input type="text" data-js="money" name="preco_produto" id="input-preco" placeholder="Preço do Produto">
+                    <input type="text" required data-js="money" name="preco_produto" id="input-preco" placeholder="Preço do Produto">
                 </label>
 
                 <label for="quantidade_produto">
-                    <input type="number" name="quantidade_produto" min="0" id="input-quant" placeholder="Quantidade">
+                    <input type="number" required name="quantidade_produto" min="0" id="input-quant" placeholder="Quantidade">
                 </label>
             </div>
 
             <div class="row-garantia-status row-inputs">
-                <select name="garantias_produto" id="select-garantia">
+                <select required name="garantias_produto" id="select-garantia">
                     <option selected>Escolha a garantia</option>
                     <option>7 Dias</option>
                     <option>1 Mês</option>
@@ -44,15 +44,14 @@ $exibModeloFilters = $manager->listClient('user_mod_celular', 'id_modelo_celular
                     <option>1 Ano</option>
                 </select>
 
-                <select name="status" id="select-status">
+                <select required name="status" id="select-status">
                     <option value="incorrect" selected>Status</option>
                     <option value="1">Disponível</option>
                     <option value="0">Indisponível</option>
                 </select>
             </div>
 
-            <select name="categoria_produto" id="select-categoria">
-                <option value="1" selected>Categoria</option>
+            <select required name="categoria_produto" id="select-categoria">
                 <?php
                 if (count($exibCategoriaFilters) > 0) :
                     for ($i = 0; $i < count($exibCategoriaFilters); $i++) :
@@ -84,7 +83,6 @@ $exibModeloFilters = $manager->listClient('user_mod_celular', 'id_modelo_celular
                 </label> -->
 
                 <select name="marca_celular" id="select-categoria">
-                    <option value="0" selected>Marcas</option>
                     <?php
                     if (count($exibModeloFilters) > 0) :
                         for ($i = 0; $i < count($exibModeloFilters); $i++) :
@@ -100,7 +98,7 @@ $exibModeloFilters = $manager->listClient('user_mod_celular', 'id_modelo_celular
             </article>
 
             <label for="descricao_produto">Descrição
-                <textarea name="descricao_produto" id="textarea-desc" cols="30" rows="10">
+                <textarea required name="descricao_produto" id="textarea-desc" cols="30" rows="10">
 
                 </textarea>
             </label>

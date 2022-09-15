@@ -22,7 +22,7 @@ $resultListCupons = $manager->listClient('user_cupom', 'id_cupom');
 
             <!-- FILTROS -->
             <section class="container-filters">
-                <button id="btn-new-produto">
+                <button id="btn-new-produto" onclick="window.location.href='./CRUDAddCupom.php'">
                     <div class="icon-container">
                         <i class="fa-regular fa-plus"></i>
                     </div>
@@ -61,7 +61,7 @@ $resultListCupons = $manager->listClient('user_cupom', 'id_cupom');
                                         <button id="delete-prod" onclick="window.location.href='../controller/ControllerCupomADM.php?id=<?= $resultListCupons[$i]['id_cupom'] ?>&action=deleteCupomADM'">
                                             <i class="fa-solid fa-trash-can"></i>
                                         </button>
-                                        <button id="edit-prod">
+                                        <button id="edit-prod" onclick="window.location.href='./CRUDEditCupom.php?id=<?= $resultListCupons[$i]['id_cupom'] ?>&action=editCupomADM'">
                                             <i class="fa-regular fa-pen-to-square"></i>
                                         </button>
                                     </td>

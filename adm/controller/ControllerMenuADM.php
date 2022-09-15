@@ -87,6 +87,8 @@ if (isset($_REQUEST['action']) && $_REQUEST['action'] != '' && isset($_REQUEST['
         </script>
     <?php
     }
+
+    
 } else {
     // Não existe requisição
     ?>
