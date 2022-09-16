@@ -78,7 +78,7 @@ $exibCupons = $manager->getInfo('user_cupom', 'id_cupom', $idCupom);
                     ?>
                 </select>
 
-                <input type="submit" value="Adicionar" id="adcionar_menu">
+                <input type="submit" value="Editar" id="adcionar_menu">
             </div>
 
 

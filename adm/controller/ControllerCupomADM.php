@@ -49,7 +49,7 @@ if (isset($_REQUEST['action']) && $_REQUEST['action'] != '' && isset($_REQUEST['
             $verificaCupomCode = $ferr->antiInjection($_REQUEST['codigo_cupom']);
     
     
-            if ($verificaCupomMenu && $verificaCupomCode === 1) {
+            if ($verificaCupomNome && $verificaCupomCode === 1) {
     
     
                 $idCupom = $_REQUEST['idMenu'];
@@ -91,12 +91,12 @@ if (isset($_REQUEST['action']) && $_REQUEST['action'] != '' && isset($_REQUEST['
 } else {
     // Não existe requisição
     ?>
-    <!-- <form action="../view/listCupons.php" name="myForm" id="myForm" method="post">
+    <form action="../view/listCupons.php" name="myForm" id="myForm" method="post">
         <input type="hidden" name="msg" value="BD00">
     </form>
     <script>
         document.getElementById('myForm').submit();
-    </script> -->
+    </script>
 <?php
 }
 

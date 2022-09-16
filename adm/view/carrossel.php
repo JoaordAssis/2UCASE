@@ -51,7 +51,7 @@ $resultCarrosselList = $manager->listClient('adm_carrossel', 'id_carrossel');
                         </ul>
                         <div class="glide__bullets" data-glide-el="controls[nav]">
                             <?php for ($j = 0; $j < count($resultCarrosselList); $j++) : ?>
-                            <button class="glide__bullet" data-glide-dir="=<?=$j?>"></button>
+                                <button class="glide__bullet" data-glide-dir="=<?= $j ?>"></button>
                             <?php endfor; ?>
                         </div>
                     </div>
@@ -80,7 +80,7 @@ $resultCarrosselList = $manager->listClient('adm_carrossel', 'id_carrossel');
                             <button id="delete-prod" onclick="window.location.href='../controller/ControllerCarrosselADM.php?id=<?= $resultCarrosselList[$i]['id_carrossel'] ?>&action=deleteCarrosselADM'">
                                 <i class="fa-solid fa-trash-can"></i>
                             </button>
-                            <button id="edit-prod">
+                            <button id="edit-prod" onclick="window.location.href='./CRUDEditCarrossel.php?id=<?= $resultCarrosselList[$i]['id_carrossel'] ?>&action=editCarrosselADM'">
                                 <i class="fa-regular fa-pen-to-square"></i>
                             </button>
                         </div>
@@ -90,7 +90,7 @@ $resultCarrosselList = $manager->listClient('adm_carrossel', 'id_carrossel');
                 endif;
                 ?>
 
-                <button id="btn-new-produto">
+                <button id="btn-new-produto" onclick="window.location.href='./CRUDAddCarrossel.php'">
                     <div class="icon-container">
                         <i class="fa-regular fa-plus"></i>
                     </div>

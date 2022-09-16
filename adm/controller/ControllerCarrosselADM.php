@@ -32,11 +32,52 @@ if (isset($_REQUEST['action']) && $_REQUEST['action'] != '' && isset($_REQUEST['
         <script>
             document.getElementById('myForm').submit();
         </script>
-    <?php
+        <?php
     }
 
-    // EDITAR USUÁRIO ADMINISTRATIVO
+    // EDITAR CARROSSEL
 
+    if ($_REQUEST['action'] === 'editCarrosselADM') {
+        require_once "../model/Manager.class.php";
+        require_once "../model/Ferramentas.class.php";
+
+        $manager = new Manager();
+        $ferr = new Ferramentas();
+
+        $verificaNomeBanner = $ferr->antiInjection($_REQUEST['nome_carrossel']);
+
+
+        if ($verificaNomeBanner === 1) {
+
+            $idCarrossel = $_REQUEST['id'];
+            $imgRetrieveData = $manager->imgUpload('link_carrossel', $_REQUEST["nome_carrossel"]);
+
+            $dadosBannerADM['nome_carrossel'] = $_REQUEST['nome_carrossel'];
+            $dadosBannerADM['link_carrossel'] = $imgRetrieveData[0];
+            $dadosBannerADM['status'] = $_REQUEST['status'];
+
+
+            $manager->updateClient("adm_carrossel", $dadosBannerADM, $idCarrossel, 'id_carrossel');
+
+        ?>
+            <form action="../view/carrossel.php" name="myForm" id="myForm" method="post">
+                <input type="hidden" name="msg" value="BD53">
+            </form>
+            <script>
+                document.getElementById('myForm').submit();
+            </script>
+        <?php
+        }
+
+        ?>
+        <form action="../view/CRUDEditCarrossel.php" name="myForm" id="myForm" method="post">
+            <input type="hidden" name="msg" value="BD03">
+        </form>
+        <script>
+            document.getElementById('myForm').submit();
+        </script>
+    <?php
+    }
 } else {
     // Não existe requisição
     ?>
