@@ -5,6 +5,7 @@ $idProduto = $_REQUEST['id'];
 
 $exibCategoriaFilters = $manager->listClient('user_categoria', 'id_categoria');
 $exibModeloFilters = $manager->listClient('user_mod_celular', 'id_modelo_celular');
+$exibImagens = $manager->getInfo('user_produtos_img', 'id_produto', $idProduto);
 $exibProduto = $manager->getInfo('user_produto', 'id_produto', $idProduto);
 
 ?>
@@ -21,9 +22,10 @@ $exibProduto = $manager->getInfo('user_produto', 'id_produto', $idProduto);
 <body id="body-margin">
     <main class="container-new-produto">
         <h1>Editar Produto</h1>
-        <form action="../controller/ControllerAddProdutoADM.php" method="POST" class="form-add-produto" enctype="multipart/form-data">
+        <form action="../controller/ControllerProdutoADM.php" method="POST" class="form-add-produto" enctype="multipart/form-data">
 
-            <input type="hidden" name="editProdutoADM">
+            <input type="hidden" name="action" value="editProdutoADM">
+            <input type="hidden" name="id" value="<?= $idProduto ?>">
 
             <label for="nome_produto">
                 <input type="text" name="nome_produto" value="<?= $exibProduto[0]['nome_produto'] ?>" id="input-nome" placeholder="Nome do Produto">
@@ -131,7 +133,7 @@ $exibProduto = $manager->getInfo('user_produto', 'id_produto', $idProduto);
             </div>
 
             <select name="categoria_produto" id="select-categoria">
-                <option value="1" selected>Categoria</option>
+                <!-- <option value="1" selected>Categoria</option> -->
                 <?php
                 if (count($exibCategoriaFilters) > 0) :
                     for ($i = 0; $i < count($exibCategoriaFilters); $i++) :
@@ -163,7 +165,6 @@ $exibProduto = $manager->getInfo('user_produto', 'id_produto', $idProduto);
                 </label> -->
 
                 <select name="marca_celular" id="select-categoria">
-                    <option value="0" selected>Marcas</option>
                     <?php
                     if (count($exibModeloFilters) > 0) :
                         for ($i = 0; $i < count($exibModeloFilters); $i++) :
@@ -180,20 +181,38 @@ $exibProduto = $manager->getInfo('user_produto', 'id_produto', $idProduto);
 
             <label for="descricao_produto">Descrição
                 <textarea name="descricao_produto" id="textarea-desc" cols="30" rows="10">
-
+                    <?= $exibProduto[0]['descricao_produto'] ?>
                 </textarea>
             </label>
 
+
+
             <h3>Imagens</h3>
-            <label for="img_principal">Imagem Principal
+            <label for="imagem_principal_produto"><?= $exibProduto[0]['imagem_principal_produto'] ?>
                 <input type="file" name="imagem_principal_produto" id="input-img">
             </label>
 
-            <label for="img_principal">Outras Imagens
-                <input type="file" name="link_img[]" multiple onchange="newInput(this)" id="input-img-multiple">
-                <button style="width: 50%; padding: 1rem !important;" onclick="removeAllImages()" id="btn-remove-file">Remover todas as imagens</button>
-            </label>
-            <ul id="dp-files"></ul>
+
+
+            <h2>Imagens linkadas</h2>
+            <p style="font-size: 16px;">Se deseja alterar alguma imagem basta clicar no botão de <code>Escolher Arquivo</code></p>
+            <br>
+            <br>
+
+            <?php
+            for ($i = 0; $i < count($exibImagens); $i++) :
+            ?>
+
+                <!-- <label for="link_img[]"><?= $exibImagens[$i]['nome_img'] ?>
+                    <input type="file" name="link_img[]" value="<?= $exibImagens[$i]['link_img'] ?>" onchange="newInput(this)" id="input-img-multiple">
+                    <button type="button" style="width: 30%; padding: .8rem !important;" onclick="removerImagem(this)" id="btn-remove-file">Remover Imagem</button>
+                </label>
+                <ul id="dp-files"></ul> -->
+
+            <?php
+
+            endfor;
+            ?>
 
             <input type="submit" value="Adicionar">
         </form>

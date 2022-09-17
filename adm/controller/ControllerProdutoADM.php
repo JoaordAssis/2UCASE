@@ -44,8 +44,40 @@ if (isset($_REQUEST['action']) && $_REQUEST['action'] != '' && isset($_REQUEST['
     <?php
     }
 
-    // EDITAR MENU ADMINISTRATIVO
+    // EDITAR PRODUTO 
+    if ($_REQUEST['action'] === 'editProdutoADM') {
+        $idProdutoADM = $_REQUEST['id'];
+        require_once "../model/Manager.class.php";
 
+        $manager = new Manager();
+
+        $searchProduto = $manager->getInfo('user_produto', 'id_produto', $idProdutoADM);
+
+        $imgRetrieveData = $manager->imgUpload('imagem_principal_produto', $_REQUEST["nome_produto"]);
+
+      
+        $dadosProdutoADM['id_modelo_celular'] = $_REQUEST['marca_celular'];
+        $dadosProdutoADM['id_categoria'] = $_REQUEST['categoria_produto'];
+        $dadosProdutoADM['nome_produto'] = $_REQUEST['nome_produto'];
+        $dadosProdutoADM['preco_produto'] = $_REQUEST['preco_produto'];
+        $dadosProdutoADM['descricao_produto'] = $_REQUEST['descricao_produto'];
+        $dadosProdutoADM['quantidade_produto'] = $_REQUEST['quantidade_produto'];
+        $dadosProdutoADM['garantias_produto'] = $_REQUEST['garantias_produto'];
+        $dadosProdutoADM['status'] = $_REQUEST['status'];
+
+        $dadosProdutoADM['imagem_principal_produto'] = $imgRetrieveData[0];
+
+        $manager->updateClient("user_produto", $dadosProdutoADM, $idProdutoADM, 'id_produto');
+
+    ?>
+        <form action="../view/listProdutos.php" name="myForm" id="myForm" method="post">
+            <input type="hidden" name="msg" value="BD53">
+        </form>
+        <script>
+            document.getElementById('myForm').submit();
+        </script>
+    <?php
+    }
 } else {
     // Não existe requisição
     ?>

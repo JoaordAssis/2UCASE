@@ -63,3 +63,10 @@ function removeLi(e) {
 function removeAllImages() {
   document.getElementById("input-img-multiple").value = "";
 }
+
+// function removerImagem(input) {
+//   console.log(Node.appendChild(input));
+// }
+
+
+
