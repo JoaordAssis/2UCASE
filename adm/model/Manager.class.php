@@ -139,4 +139,51 @@ class Manager extends Conexao {
 		return $statement->fetch();
 	}
 
+	function selectLike($tabela, $columns, $search)
+	{
+		$sql = "SELECT * FROM $tabela WHERE ";
+		$queryDinamica = '';
+		$qd = '';
+
+		for ($i = 0; $i < count($columns); $i++) {
+			$bindParams = substr_replace($columns[$i]," LIKE '%$search%' OR ", -1);
+			$addPlus = $bindParams;
+			$qd .= $addPlus;
+			$queryDinamica = substr($qd, 0, -4);
+		}
+
+		$sqlQuery = $sql . $queryDinamica;
+
+		$res = array();
+		$cmd = $this->pdo->query($sqlQuery);
+		$res = $cmd->fetchAll(PDO::FETCH_ASSOC);
+		return $res;
+	}
+
+
+	public function selectWhere($numParams, $params, $paramPost, $tabela){
+		$queryDinamica = '';
+		$qd = '';
+		$pdo =  $this->pdo;
+
+
+		for ($i = 0; $i < $numParams; $i++) {
+			$bindParams = substr_replace($params[$i], ':', 0, 0);
+			$addPlus = $params[$i] . ' = ' . $bindParams . ' && ';
+			$qd .= $addPlus;
+			$queryDinamica = substr($qd, 0, -4);
+		}
+		$sql = "SELECT * FROM $tabela WHERE $queryDinamica";
+		$statement = $pdo->prepare($sql);
+
+		for ($i = 0; $i < $numParams; $i++) {
+			$statement->bindValue(
+				":" . $params[$i],
+				$paramPost[$i]
+			);
+		}
+		$statement->execute();
+		return $statement->fetchAll();
+	}
+
 }

@@ -64,7 +64,7 @@ if (isset($_REQUEST['action']) && $_REQUEST['action'] != '' && isset($_REQUEST['
         $dadosProdutoADM['quantidade_produto'] = $_REQUEST['quantidade_produto'];
         $dadosProdutoADM['garantias_produto'] = $_REQUEST['garantias_produto'];
         $dadosProdutoADM['status'] = $_REQUEST['status'];
-
+        $dados["categoria_special_produto"] = $_REQUEST["categoria_special_produto"];
         $dadosProdutoADM['imagem_principal_produto'] = $imgRetrieveData[0];
 
         $manager->updateClient("user_produto", $dadosProdutoADM, $idProdutoADM, 'id_produto');
@@ -78,6 +78,7 @@ if (isset($_REQUEST['action']) && $_REQUEST['action'] != '' && isset($_REQUEST['
         </script>
     <?php
     }
+    
 } else {
     // Não existe requisição
     ?>
@@ -88,4 +89,23 @@ if (isset($_REQUEST['action']) && $_REQUEST['action'] != '' && isset($_REQUEST['
         document.getElementById('myForm').submit();
     </script>
 <?php
+}
+
+
+// PESQUISA DE PRODUTOS
+
+if (isset($_REQUEST['searchBarProdutos'])) {
+    // require_once "../model/Manager.class.php";
+    // $manager = new Manager();
+    // $columns = ['nome_adm '];
+    // $resultSearchUsuario = $manager->selectLike('adm_administrador', 1, $columns, 'Davi');
+    // echo "<pre>";
+    // print_r($resultSearchUsuario);
+    // echo "<pre>";
+
+    $exibSearch = $_REQUEST['searchBarProdutos'];
+    $header = 'Location: ../view/listProdutos.php?searchBarProdutos=' . $exibSearch;
+
+    header($header);
+    exit();
 }

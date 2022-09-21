@@ -35,6 +35,7 @@ if (isset($_REQUEST['nome_produto']) && $_REQUEST['nome_produto'] != '') :
     $dados["imagem_principal_produto"] = $imgRetrieveData[0];
     $dados["quantidade_produto"] = $_REQUEST["quantidade_produto"];
     $dados["garantias_produto"] = $_REQUEST["garantias_produto"];
+    $dados["categoria_special_produto"] = $_REQUEST["categoria_special_produto"];
     $dados["status"] = $_REQUEST["status"];
 
     $manager->insertClient("user_produto", $dados);

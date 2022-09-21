@@ -1,3 +1,12 @@
+<?php
+require_once "../model/Manager.class.php";
+
+$manager = new Manager();
+
+$resultAvaliacao = $manager->listClient('user_avaliacao', 'id_avaliacao');
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -56,24 +65,50 @@
                     <tr>
                         <th>#</th>
                         <th>Avaliação</th>
-                        <th>Categoria</th>
+                        <th>Nome</th>
                         <th>Produto</th>
                         <th>Data</th>
                         <th>Status</th>
                         <th>Ações</th>
                     </tr>
-                    <tr>
-                        <!-- DADOS PARA MODIFICAR -->
-                        <td>1</td>
-                        <td> Sophiazinha</td>
-                        <td>sophia.perfeitaa@gmail.com</td>
-                        <td> 111.222.333-4 </td>
-                        <td>23/08/0001</td>
-                        <td>SOLTEIRA</td>
-                        <td id="btn-actions">
-                            <button id="search-client"><i class="fa-solid fa-magnifying-glass"></i></i></i></button>
-                        </td>
-                    </tr>
+                    <?php
+                    if (count($resultAvaliacao) > 0) :
+                        for ($i = 0; $i < count($resultAvaliacao); $i++) :
+
+                            $timestamp = strtotime($resultAvaliacao[$i]["data_avaliacao"]);
+                            $newDate = date("d-m-Y H:i:s", $timestamp);
+                            $dateExib = str_replace('-', '/', $newDate);
+
+                            $exibCliente = $manager->getInfo('user_cliente', 'id_cliente', $resultAvaliacao[$i]['id_cliente']);
+                            $exibProduto = $manager->getInfo('user_produto', 'id_produto', $resultAvaliacao[$i]['id_produto']);
+                            for ($j = 0; $j < count($exibCliente); $j++) :
+                                for ($k = 0; $k < count($exibProduto); $k++) :
+
+
+                    ?>
+                                    <tr>
+                                        <!-- DADOS PARA MODIFICAR -->
+                                        <td><?= $resultAvaliacao[$i]['id_avaliacao'] ?></td>
+                                        <td><?= $resultAvaliacao[$i]['nota_avaliacao'] ?> Estrelas</td>
+                                        <td><?= $exibCliente[$j]['nome_cliente'] ?></td>
+                                        <td><?= $exibProduto[$k]['nome_produto'] ?></td>
+                                        <td><?= $dateExib ?></td>
+                                        <td><?= $resultAvaliacao[$i]['status'] ?></td>
+                                        <td id="btn-actions" onclick="window.location.href='./DetailsComentarios.php?id=<?= $resultAvaliacao[$i]['id_avaliacao'] ?>'">
+                                            <button id="search-client">
+                                                <i class="fa-solid fa-magnifying-glass"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                    <?php
+                                endfor;
+                            endfor;
+                        endfor;
+                    else:
+                        echo "<td colspan=7>Nenhum comentário encontrado!</td>";
+                    endif;
+                    ?>
                 </table>
             </section>
         </section>

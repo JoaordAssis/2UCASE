@@ -4,6 +4,13 @@ $manager = new Manager();
 
 $resultProdutos = $manager->listClient('user_produto', 'id_produto');
 $exibCategoriaFilters = $manager->listClient('user_categoria', 'id_categoria');
+
+if (isset($_GET['searchBarProdutos']) && $_GET['searchBarProdutos'] != '') {
+
+    $columns = ['nome_produto ', 'preco_produto ', 'status ', 'categoria_special_produto '];
+    $resultSearchProdutos = $manager->selectLike('user_produto', $columns, $_GET['searchBarProdutos']);
+    $resultProdutos = $resultSearchProdutos;
+}
 ?>
 
 <!DOCTYPE html>
@@ -21,9 +28,9 @@ $exibCategoriaFilters = $manager->listClient('user_categoria', 'id_categoria');
         <h1>Produtos</h1>
         <!-- BARRA DE PESQUISA -->
         <article class="container-pesquisa">
-            <form action="#" method="POST">
+            <form action="../controller/ControllerProdutoADM.php" method="POST">
                 <div class="input-pesquisa">
-                    <input type="text" placeholder="Pesquisar" id="pesquisar-input">
+                    <input type="text" name="searchBarProdutos" placeholder="Pesquisar" id="pesquisar-input">
                     <input type="submit" value="">
                 </div>
             </form>

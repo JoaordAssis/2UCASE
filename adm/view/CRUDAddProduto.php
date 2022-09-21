@@ -65,6 +65,13 @@ $exibModeloFilters = $manager->listClient('user_mod_celular', 'id_modelo_celular
                 ?>
             </select>
 
+            <select required name="categoria_special_produto" id="select-status">
+                <option selected>Nenhuma</option>
+                <option>Mais Vendidos</option>
+                <option>Promoções</option>
+                <option>Novidades</option>
+            </select>
+
             <h3>Marcas</h3>
 
             <article class="row-marca">

@@ -31,7 +31,7 @@ $resultListUsuario = $manager->getInfo('adm_administrador', 'id_adm', $idUserADM
 
             <div class="row-nome-poder">
                 <!-- <label for="nome_usuario">Nome -->
-                <input type="text" name="nome_adm" value="<?= $resultListUsuario[0]['nome_adm'] ?>" id="input_nome_usuario" placeholder="Nome">
+                <input type="text" required name="nome_adm" value="<?= $resultListUsuario[0]['nome_adm'] ?>" id="input_nome_usuario" placeholder="Nome">
                 <!-- </label> -->
 
                 <!-- <label for="poder">Poder -->
@@ -71,7 +71,10 @@ $resultListUsuario = $manager->getInfo('adm_administrador', 'id_adm', $idUserADM
             </div>
 
             <!-- <label for="email">E-mail -->
-            <input type="email" name="email_adm" value="<?= $resultListUsuario[0]['email_adm'] ?>" id="input_email_usuario" placeholder="E-mail">
+            <input type="email" required name="email_adm" value="<?= $resultListUsuario[0]['email_adm'] ?>" id="input_email_usuario" placeholder="E-mail">
+            <input type="text" required name="senha_adm" id="input_senha_new" placeholder="Nova senha">
+            <!-- <input type="text" name="senha_adm" id="input_confirm_senha" placeholder="Confirme a senha"> -->
+
             <!-- </label> -->
 
             <!-- <label for="senha">Senha -->
@@ -116,5 +119,6 @@ $resultListUsuario = $manager->getInfo('adm_administrador', 'id_adm', $idUserADM
 
     </main>
 </body>
+<!-- <script src="../assets/js/CRUDEditUsuarioADM.js"></script> -->
 
 </html>

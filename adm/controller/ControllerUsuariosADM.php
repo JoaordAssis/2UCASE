@@ -96,6 +96,21 @@ if (isset($_REQUEST['action']) && $_REQUEST['action'] != '' && isset($_REQUEST['
     }
 
 
+    if(isset($_REQUEST['searchBarUsuarios'])){
+        // require_once "../model/Manager.class.php";
+        // $manager = new Manager();
+        // $columns = ['nome_adm '];
+        // $resultSearchUsuario = $manager->selectLike('adm_administrador', 1, $columns, 'Davi');
+        // echo "<pre>";
+        // print_r($resultSearchUsuario);
+        // echo "<pre>";
+
+        $exibSearch = $_REQUEST['searchBarUsuarios'];
+        $header = 'Location: ../view/listUsuariosADM.php?searchBarUsuarios='.$exibSearch;
+
+        header($header);
+        exit();
+    }
 }
 
 

@@ -3,6 +3,12 @@ require_once "../model/Manager.class.php";
 $manager = new Manager();
 
 $resultClienteList = $manager->listClient('user_cliente', 'id_cliente');
+
+if (isset($_GET['searchBarClientes']) && $_GET['searchBarClientes'] != '') {
+    $columns = ['nome_cliente ', 'email_cliente ', 'cpf_cliente ', 'telefone_cliente ', 'genero_cliente ', 'status '];
+    $resultSearchClient = $manager->selectLike('user_cliente', $columns, $_GET['searchBarClientes']);
+    $resultClienteList = $resultSearchClient;
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -45,9 +51,9 @@ $resultClienteList = $manager->listClient('user_cliente', 'id_cliente');
 
         <!-- BARRA DE PESQUISA -->
         <article class="container-pesquisa">
-            <form action="#" method="POST">
+            <form action="#" method="GET">
                 <div class="input-pesquisa">
-                    <input type="text" placeholder="Pesquisar" id="pesquisar-input">
+                    <input type="text" name="searchBarClientes" placeholder="Pesquisar" id="pesquisar-input">
                     <input type="submit" value="">
                 </div>
             </form>
@@ -90,6 +96,8 @@ $resultClienteList = $manager->listClient('user_cliente', 'id_cliente');
 
                     <?php
                         endfor;
+                    else:
+                        echo "<td colspan=7>Dados não encontrados!</td>";
                     endif;
                     ?>
                 </table>

@@ -55,9 +55,9 @@
                 <table class="table-clientes">
                     <tr>
                         <th>#</th>
-                        <th>Email Cliente</th>
-                        <th>Quantidade</th>
-                        <th>Valor</th>
+                        <th>CPF Cliente</th>
+                        <th>Quantidade de Produtos</th>
+                        <th>Valor Total</th>
                         <th>Data</th>
                         <th>Status</th>
                         <th>Ações</th>
@@ -65,11 +65,11 @@
                     <tr>
                         <!-- DADOS PARA MODIFICAR -->
                         <td>1</td>
-                        <td> Sophiazinha</td>
-                        <td>sophia.perfeitaa@gmail.com</td>
-                        <td> 111.222.333-4 </td>
-                        <td>23/08/0001</td>
-                        <td>SOLTEIRA</td>
+                        <td>49471488885</td>
+                        <td>1</td>
+                        <td>R$ 25,69</td>
+                        <td>24/08/1285</td>
+                        <td>Aprovada</td>
                         <td id="btn-actions">
                             <button id="search-client"><i class="fa-solid fa-magnifying-glass"></i></i></i></button>
                         </td>

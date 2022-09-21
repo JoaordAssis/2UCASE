@@ -3,6 +3,12 @@ require_once "../model/Manager.class.php";
 $manager = new Manager();
 
 $resultListUsuarios = $manager->listClient('adm_administrador', 'id_adm');
+
+if (isset($_GET['searchBarUsuarios']) && $_GET['searchBarUsuarios'] != '') {
+    $columns = ['nome_adm ', 'email_adm ', 'poder_adm ', 'status '];
+    $resultSearchUsuario = $manager->selectLike('adm_administrador', $columns, $_GET['searchBarUsuarios']);
+    $resultListUsuarios = $resultSearchUsuario;
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -19,9 +25,9 @@ $resultListUsuarios = $manager->listClient('adm_administrador', 'id_adm');
         <h1>Usuários Administrativos</h1>
         <!-- BARRA DE PESQUISA -->
         <article class="container-pesquisa">
-            <form action="#" method="POST">
+            <form action="../controller/ControllerUsuariosADM.php" method="POST">
                 <div class="input-pesquisa">
-                    <input type="text" placeholder="Pesquisar" id="pesquisar-input">
+                    <input type="text" name="searchBarUsuarios" placeholder="Pesquisar" id="pesquisar-input">
                     <input type="submit" value="">
                 </div>
             </form>
@@ -81,7 +87,7 @@ $resultListUsuarios = $manager->listClient('adm_administrador', 'id_adm');
                     <?php
                         endfor;
                     else :
-                        echo "<td>Sem usuários cadastrados!</td>";
+                        echo "<td style='margin-top: 20px;' colspan=7>Dados não encontrados!</td>";
                     endif;
                     ?>
                 </table>
