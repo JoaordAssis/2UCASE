@@ -161,13 +161,13 @@ class Manager extends Conexao {
 	}
 
 
-	public function selectWhere($numParams, $params, $paramPost, $tabela){
+	public function selectWhere($params, $paramPost, $tabela){
 		$queryDinamica = '';
 		$qd = '';
 		$pdo =  $this->pdo;
 
 
-		for ($i = 0; $i < $numParams; $i++) {
+		for ($i = 0; $i < count($params); $i++) {
 			$bindParams = substr_replace($params[$i], ':', 0, 0);
 			$addPlus = $params[$i] . ' = ' . $bindParams . ' && ';
 			$qd .= $addPlus;
@@ -176,7 +176,7 @@ class Manager extends Conexao {
 		$sql = "SELECT * FROM $tabela WHERE $queryDinamica";
 		$statement = $pdo->prepare($sql);
 
-		for ($i = 0; $i < $numParams; $i++) {
+		for ($i = 0; $i < count($params); $i++) {
 			$statement->bindValue(
 				":" . $params[$i],
 				$paramPost[$i]

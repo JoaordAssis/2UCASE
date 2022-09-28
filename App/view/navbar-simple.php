@@ -9,7 +9,7 @@
 
 <body>
     <header>
-        <h1 id="logo-site"><a href="./homepage.php">VILICAPAS</a></h1>
+        <h1 id="logo-site"><a href="./homepage.php">2UCASE</a></h1>
     </header>
 </body>
 

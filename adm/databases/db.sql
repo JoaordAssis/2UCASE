@@ -35,6 +35,9 @@ CREATE TABLE user_mod_celular(
 	modelo_celular VARCHAR(64) NOT NULL
 );
 
+-- TODO: Adicionar a coluna de método de pagamento
+-- TODO: Adicionar a coluna de bandeira de cartão
+
 CREATE TABLE user_forma_pagamento(
 	id_pagamento INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
 	descricao_pagamento VARCHAR(64) NOT NULL
@@ -120,7 +123,7 @@ CREATE TABLE user_cupom(
 	id_cupom INT NOT NULL,
 	id_categoria INT NOT NULL,
 	nome_cupom INT NOT NULL,
-	codigo_cupom INT NOT NULL,
+	codigo_cupom VARCHAR(200) NOT NULL,
 	data_expira_cupom DATE NOT NULL,
 	desconto_cupom VARCHAR(4) NOT NULL,
 	data_reg_cupom DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL COMMENT 'data e hora do registro',
@@ -128,6 +131,10 @@ CREATE TABLE user_cupom(
 
 	FOREIGN KEY ( id_categoria ) REFERENCES user_categoria( id_categoria )
 );
+
+
+-- TODO: Adicionar coluna, número do pedido
+-- TODO: Criar uma nova tabela
 
 CREATE TABLE adm_venda(
 	id_venda INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
@@ -153,7 +160,7 @@ CREATE TABLE user_avaliacao(
 	titulo_avaliacao VARCHAR(300) NOT NULL,
 	descricao VARCHAR(900) NOT NULL,
 	data_avaliacao DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL  COMMENT 'data e hora do registro',
-	status INT(1) NOT NULL COMMENT '1 - ativo; 0 - inativo'
+	status INT(1) NOT NULL COMMENT '1 - ativo; 0 - inativo',
 
 	FOREIGN KEY ( id_produto ) REFERENCES user_produto( id_produto ),
 	FOREIGN KEY ( id_cliente ) REFERENCES user_cliente( id_cliente )
@@ -171,7 +178,7 @@ INSERT INTO adm_administrador(nome_adm, email_adm, senha_adm, poder_adm, status)
 1);
 
 INSERT INTO adm_administrador(nome_adm, email_adm, senha_adm, poder_adm, status) VALUES(
-'Filipe Moreira',
+'Tetra Moreira',
 'davi@adm.com',
 '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5',
 9,
@@ -214,12 +221,15 @@ INSERT INTO user_endereco_cliente(logradouro_cliente, bairro_cliente, cep_client
 -- INSERTS CATEGORIA
 
 INSERT INTO user_categoria (nome_categoria, img_categoria) VALUES ('Times', '../assets/img/Banner1.png');
-INSERT INTO user_categoria (id_categoria, nome_categoria, img_categoria) VALUES (1, 'Animacoes', '../assets/img/Banner2.png');
+
+INSERT INTO user_categoria (nome_categoria, img_categoria) VALUES ( 'Animacoes', '../assets/img/Banner2.png');
 
 
 -- INSERTS CUPOM
 
-INSERT INTO user_cupom (id_cupom, id_categoria, nome_cupom, codigo_cupom, data_expira_cupom, desconto_cupom, status) VALUES (3, 0, 'So para quem me quiser', 'CARENTE25', '2022-09-30', '25', 1);
+INSERT INTO user_cupom (id_categoria, nome_cupom, codigo_cupom, data_expira_cupom, desconto_cupom, status) VALUES (2, 'So para quem me quiser', 'CARENTE25', '2022-09-30', '25', 1);
+
+
 INSERT INTO user_cupom (id_categoria, nome_cupom, codigo_cupom, data_expira_cupom, desconto_cupom, status) VALUES (1, 'So para quem não me quiser', 'CARENTENAO50', '2022-09-30', '50', 1);
 
 
@@ -247,13 +257,23 @@ INSERT INTO user_mod_celular (marca_celular, modelo_celular) VALUES ('Iphone', '
 
 --INSERT INTO PRODUTO
 
-INSERT INTO user_produto(id_modelo_celular, id_categoria, nome_produto, preco_produto, descricao_produto, imagem_principal_produto, quantidade_produto, garantias_produto, status)
-VALUES (1, 0, 'Capinha Flamengo 2022 - Seleção Oficial', 25.94, 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum facere aperiam dolor minus laudantium autem soluta eum, officia sunt ducimus sed. Possimus necessitatibus ex molestiae.', '../assets/img/Banner1.png', 10, '2 Meses', 1);
+INSERT INTO user_produto(id_modelo_celular, id_categoria, nome_produto, preco_produto, descricao_produto, imagem_principal_produto, quantidade_produto, garantias_produto, status, categoria_special_produto)
+VALUES (1, 0, 'Capinha Flamengo 2022 - Seleção Oficial', 25.94, 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum facere aperiam dolor minus laudantium autem soluta eum, officia sunt ducimus sed. Possimus necessitatibus ex molestiae.', '../assets/img/Banner1.png', 10, '2 Meses', 1, 'Mais Vendidos');
 
 
 -- INSERT INTO AVALIAÇÕES
 
 INSERT INTO user_avaliacao(id_produto, id_cliente,nota_avaliacao, titulo_avaliacao, descricao, status) VALUES (67, 5, 4, 'ótimo produto melhor que já comprei', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere dicta obcaecati ea eos sunt vel sequi non, harum hic possimus doloremque, inventore eaque, culpa veniam facilis libero mollitia laudantium numquam!', 1);
+
+
+-- INSERT INTO FORMA PAGAMENTO
+
+INSERT INTO user_forma_pagamento (descricao_pagamento) VALUES ('Cartão de Crédito - Mastercard');
+
+-- INSERT INTO VENDAS
+
+INSERT INTO adm_venda (id_produto, id_cliente, id_pagamento, status_venda, valor_desconto, valor_venda) VALUES (67, 1, 1, 'Aprovada', 0.00, 25.65);
+
 
 
 -- ALTERAÇÕES
@@ -262,7 +282,7 @@ ALTER TABLE user_cupom
 MODIFY COLUMN id_cupom INT AUTO_INCREMENT NOT NULL PRIMARY KEY;
 
 ALTER TABLE user_cupom
-MODIFY COLUMN nome_cupom VARCHAR(200) NOT NULL;
+MODIFY COLUMN nome_cupom VARCHAR(400) NOT NULL;
 
 ALTER TABLE user_cupom
 MODIFY COLUMN codigo_cupom VARCHAR(200) NOT NULL;
@@ -278,3 +298,4 @@ ADD COLUMN status INT(1) NOT NULL COMMENT '1 - ativo; 0 - inativo';
 
 
 ALTER DATABASE 2ucase_bd2 DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci; 
+

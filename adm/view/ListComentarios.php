@@ -4,6 +4,14 @@ require_once "../model/Manager.class.php";
 $manager = new Manager();
 
 $resultAvaliacao = $manager->listClient('user_avaliacao', 'id_avaliacao');
+$resultCategorias = $manager->listClient('user_categoria', 'id_categoria');
+
+
+if (isset($_GET['selectAvaliacao']) && $_GET['selectAvaliacao'] != '') {
+    $params = ['nota_avaliacao'];
+    $resultSearchAvalicao = $manager->selectWhere($params, $_GET['selectAvaliacao'], 'user_avaliacao');
+    $resultAvaliacao = $resultSearchAvalicao;
+}
 
 ?>
 
@@ -41,10 +49,13 @@ $resultAvaliacao = $manager->listClient('user_avaliacao', 'id_avaliacao');
 
                 <div class="box-faixa-preco box-filter">
                     <label for="select-faixa-preco">Categorias</label>
-                    <select id="boselectx-faixa-preco" name="select-faixa-preco">
-                        <option value="1">Categoria</option>
-                        <option value="2">Categ2</option>
-                        <option value="3">Categ3</option>
+                    <select id="boselectx-avaliacao" oninput="redirectCategoria()" name="select-avaliacao">
+                        <option>Todos</option>
+                        <option value="5">5 Estrelas</option>
+                        <option value="4">4 Estrelas</option>
+                        <option value="3">3 Estrelas</option>
+                        <option value="2">2 Estrelas</option>
+                        <option value="1">1 Estrelas</option>
                     </select>
                 </div>
 
@@ -105,7 +116,7 @@ $resultAvaliacao = $manager->listClient('user_avaliacao', 'id_avaliacao');
                                 endfor;
                             endfor;
                         endfor;
-                    else:
+                    else :
                         echo "<td colspan=7>Nenhum comentário encontrado!</td>";
                     endif;
                     ?>
@@ -114,6 +125,7 @@ $resultAvaliacao = $manager->listClient('user_avaliacao', 'id_avaliacao');
         </section>
     </main>
 </body>
+<script src="../assets/js/listComentarios.js"></script>
 <?php
 if (isset($_POST['msg'])) {
     require_once './msg.php';

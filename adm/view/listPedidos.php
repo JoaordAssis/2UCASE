@@ -1,3 +1,12 @@
+<?php
+require_once "../model/Manager.class.php";
+
+$manager = new Manager();
+
+$resultPedidos = $manager->listClient('adm_venda', 'id_venda');
+$resultSubMenu = $manager->listClient('adm_submenu', 'id_submenu');
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
