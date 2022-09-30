@@ -13,6 +13,13 @@ if (isset($_GET['selectAvaliacao']) && $_GET['selectAvaliacao'] != '') {
     $resultAvaliacao = $resultSearchAvalicao;
 }
 
+if (isset($_GET['selectStatus']) && $_GET['selectStatus'] != '') {
+    $params = ['status'];
+    $resultSearchAvalicao = $manager->selectWhere($params, $_GET['selectStatus'], 'user_avaliacao');
+    $resultAvaliacao = $resultSearchAvalicao;
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +48,8 @@ if (isset($_GET['selectAvaliacao']) && $_GET['selectAvaliacao'] != '') {
 
                 <div class="box-status box-filter">
                     <label for="select-status">Status</label>
-                    <select id="select-ordem" name="select-ordem">
+                    <select id="select-status" oninput="redirectStatus()" name="select-status">
+                        <option>Todos</option>
                         <option value="1">Disponivel</option>
                         <option value="0">Indisponivel</option>
                     </select>
@@ -49,7 +57,7 @@ if (isset($_GET['selectAvaliacao']) && $_GET['selectAvaliacao'] != '') {
 
                 <div class="box-faixa-preco box-filter">
                     <label for="select-faixa-preco">Categorias</label>
-                    <select id="boselectx-avaliacao" oninput="redirectCategoria()" name="select-avaliacao">
+                    <select id="boselectx-avaliacao" oninput="redirectAvaliacao()" name="select-avaliacao">
                         <option>Todos</option>
                         <option value="5">5 Estrelas</option>
                         <option value="4">4 Estrelas</option>
@@ -59,13 +67,10 @@ if (isset($_GET['selectAvaliacao']) && $_GET['selectAvaliacao'] != '') {
                     </select>
                 </div>
 
-                <div class="box-ordem box-filter">
-                    <label for="select-ordem">Ordenar Por</label>
-                    <select id="select-ordem" name="select-ordem">
-                        <option value="1">Maior Preço</option>
-                        <option value="2">Menor Preço</option>
-                        <option value="3">Mais Relevante</option>
-                    </select>
+                <div class="container-clean-filters box-filter">
+                    <button id="btn-clean-filters" onclick="cleanFilters()">
+                        Limpar Filtros
+                    </button>
                 </div>
             </section>
 

@@ -67,7 +67,7 @@
 }
 
 .box-filter select,
-.box-filter input[type="month"] {
+.box-filter input[type="month"], .box-filter button {
     padding: 1rem;
     border-radius: 15px;
     min-width: 10rem;

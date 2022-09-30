@@ -55,7 +55,7 @@ if (isset($_REQUEST['action']) && $_REQUEST['action'] != '' && isset($_REQUEST['
 
         $imgRetrieveData = $manager->imgUpload('imagem_principal_produto', $_REQUEST["nome_produto"]);
 
-      
+
         $dadosProdutoADM['id_modelo_celular'] = $_REQUEST['marca_celular'];
         $dadosProdutoADM['id_categoria'] = $_REQUEST['categoria_produto'];
         $dadosProdutoADM['nome_produto'] = $_REQUEST['nome_produto'];
@@ -78,7 +78,6 @@ if (isset($_REQUEST['action']) && $_REQUEST['action'] != '' && isset($_REQUEST['
         </script>
     <?php
     }
-    
 } else {
     // Não existe requisição
     ?>
@@ -107,5 +106,40 @@ if (isset($_REQUEST['searchBarProdutos'])) {
     $header = 'Location: ../view/listProdutos.php?searchBarProdutos=' . $exibSearch;
 
     header($header);
+    exit();
+}
+
+
+// FILTROS DE CATEGORIA
+
+if (isset($_REQUEST['selectOrdem']) && !empty($_REQUEST['selectOrdem'])) {
+    $exibSearch = $_REQUEST['selectOrdem'];
+    $header = 'Location: ../view/ListProdutos.php?selectOrdem=' . $exibSearch;
+
+    header($header);
+    exit();
+} else if (isset($_REQUEST['selectCategoria']) && !empty($_REQUEST['selectCategoria'])) {
+
+    $exibSearch = $_REQUEST['selectCategoria'];
+    $header = 'Location: ../view/ListProdutos.php?selectCategoria=' . $exibSearch;
+
+    header($header);
+    exit();
+} else if (isset($_REQUEST['selectStatus']) && !empty($_REQUEST['selectStatus'])) {
+
+    $exibSearch = $_REQUEST['selectStatus'];
+    $header = 'Location: ../view/ListProdutos.php?selectStatus=' . $exibSearch;
+
+    header($header);
+    exit();
+} else {
+?>
+    <form action="../view/ListProdutos.php" name="myForm" id="myForm" method="post">
+        <input type="hidden" name="msg" value="BD05">
+    </form>
+    <script>
+        document.getElementById('myForm').submit();
+    </script>
+<?php
     exit();
 }

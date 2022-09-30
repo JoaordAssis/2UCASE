@@ -11,6 +11,18 @@ if (isset($_GET['searchBarProdutos']) && $_GET['searchBarProdutos'] != '') {
     $resultSearchProdutos = $manager->selectLike('user_produto', $columns, $_GET['searchBarProdutos']);
     $resultProdutos = $resultSearchProdutos;
 }
+
+if (isset($_GET['selectCategoria']) && $_GET['selectCategoria'] != '') {
+    $params = ['id_categoria'];
+    $resultSearchAvalicao = $manager->selectWhere($params, $_GET['selectCategoria'], 'user_produto');
+    $resultProdutos = $resultSearchAvalicao;
+}
+
+if (isset($_GET['selectStatus']) && $_GET['selectStatus'] != '') {
+    $params = ['status'];
+    $resultSearchAvalicao = $manager->selectWhere($params, $_GET['selectStatus'], 'user_produto');
+    $resultProdutos = $resultSearchAvalicao;
+}
 ?>
 
 <!DOCTYPE html>
@@ -54,7 +66,8 @@ if (isset($_GET['searchBarProdutos']) && $_GET['searchBarProdutos'] != '') {
 
                 <div class="box-status box-filter">
                     <label for="select-status">Status</label>
-                    <select id="select-ordem" name="select-ordem">
+                    <select id="select-status" oninput="redirectStatus()" name="select-status">
+                        <option>Todos</option>
                         <option value="1">Disponivel</option>
                         <option value="0">Indisponivel</option>
                     </select>
@@ -62,8 +75,8 @@ if (isset($_GET['searchBarProdutos']) && $_GET['searchBarProdutos'] != '') {
 
                 <div class="box-faixa-preco box-filter">
                     <label for="select-faixa-preco">Categorias</label>
-                    <select id="boselectx-faixa-preco" name="select-faixa-preco">
-                        <option value="all" default>Todos</option>
+                    <select id="boselectx-categoria" oninput="redirectCategoria()" name="select-faixa-preco">
+                        <option>Todos</option>
                         <?php
                         if (count($exibCategoriaFilters) > 0) :
                             for ($i = 0; $i < count($exibCategoriaFilters); $i++) :
@@ -85,6 +98,12 @@ if (isset($_GET['searchBarProdutos']) && $_GET['searchBarProdutos'] != '') {
                         <option value="2">Menor Preço</option>
                         <option value="3">Mais Relevante</option>
                     </select>
+                </div>
+
+                <div class="container-clean-filters box-filter">
+                    <button id="btn-clean-filters" onclick="cleanFilters()">
+                        Limpar Filtros
+                    </button>
                 </div>
             </section>
 
@@ -134,6 +153,7 @@ if (isset($_GET['searchBarProdutos']) && $_GET['searchBarProdutos'] != '') {
         </section>
     </main>
 </body>
+<script src="../assets/js/listProdutos.js"></script>
 <?php
 if (isset($_POST['msg'])) {
     require_once './msg.php';

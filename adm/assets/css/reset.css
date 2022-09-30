@@ -106,3 +106,25 @@ main #btn-exit {
     border: 1px solid var(--cor-laranja);
     border-radius: 10px;
 }
+
+.container-clean-filters{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    align-items: center;
+}
+
+.container-clean-filters #btn-clean-filters {
+    background-color: var(--cor-laranja);
+    color: #fff;
+    border: 1px solid var(--cor-laranja);
+    padding: 1rem;
+    border-radius: 15px;
+    min-width: 10rem;
+}
+
+.container-clean-filters #btn-clean-filters:hover {
+    background-color: transparent;
+    color: var(--cor-laranja);
+    transition: ease .3s all;
+}

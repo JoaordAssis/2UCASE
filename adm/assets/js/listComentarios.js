@@ -1,9 +1,10 @@
-let selectCategoria = document.getElementById("boselectx-avaliacao");
+let selectAvaliacao = document.getElementById("boselectx-avaliacao");
+let selectStatus = document.getElementById("select-status");
 
-function redirectCategoria() {
+function redirectAvaliacao() {
 
     var opcaoTexto =
-      selectCategoria.options[selectCategoria.selectedIndex].value;
+      selectAvaliacao.options[selectAvaliacao.selectedIndex].value;
 
     if (opcaoTexto !== 'Todos') {
         
@@ -15,24 +16,28 @@ function redirectCategoria() {
     }
 }
 
+function redirectStatus() {
+  var opcaoTexto = selectStatus.options[selectStatus.selectedIndex].value;
 
-// $(document).ready(function () {
-//     /// Quando usuário clicar em salvar será feito todos os passo abaixo
-//     $('#selectCategoria').change(function () {
+  if (opcaoTexto !== "Todos") {
+    if (opcaoTexto === "1") {
+      window.location.href =
+        "../controller/ControllerComentarios.php?selectStatus=" + opcaoTexto;
+    }
 
-//         var dados = $('#selectCategoria').serialize();
+    if (opcaoTexto === "0") {
+      window.location.href =
+        "../controller/ControllerComentarios.php?selectStatus=0" + opcaoTexto;
+    }
 
-//         $.ajax({
-//             type: 'POST',
-//             dataType: 'json',
-//             url: '../controller/ControllerComentarios.php?selectAvaliacao=' + opcaoTexto,
-//             async: true,
-//             data: dados,
-//             success: function (response) {
-//                 location.reload();
-//             }
-//         });
+  }
 
-//         return false;
-//     });
-// });
+  if (opcaoTexto === "Todos") {
+    window.location.href =
+      "../controller/ControllerComentarios.php?selectStatus=";
+  }
+}
+
+function cleanFilters() {
+  window.location.href ="./ListComentarios.php";
+}

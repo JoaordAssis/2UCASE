@@ -13,12 +13,31 @@ if (!isset($_SESSION["ADM-ID"]) || empty($_SESSION["ADM-ID"])) {
     exit();
 }
 
-if (isset($_REQUEST['selectAvaliacao']) && !empty($_REQUEST['selectAvaliacao'])) {
+
+
+if (isset($_REQUEST['selectOrdem']) && !empty($_REQUEST['selectOrdem'])) {
+    $exibSearch = $_REQUEST['selectOrdem'];
+    $header = 'Location: ../view/ListComentarios.php?selectOrdem=' . $exibSearch;
+
+    header($header);
+    exit();
+
+} else if (isset($_REQUEST['selectAvaliacao']) && !empty($_REQUEST['selectAvaliacao'])) {
+
     $exibSearch = $_REQUEST['selectAvaliacao'];
     $header = 'Location: ../view/ListComentarios.php?selectAvaliacao=' . $exibSearch;
 
     header($header);
     exit();
+
+} else if (isset($_REQUEST['selectStatus']) && !empty($_REQUEST['selectStatus'])) {
+
+    $exibSearch = $_REQUEST['selectStatus'];
+    $header = 'Location: ../view/ListComentarios.php?selectStatus=' . $exibSearch;
+
+    header($header);
+    exit();
+
 } else {
 ?>
     <form action="../view/ListComentarios.php" name="myForm" id="myForm" method="post">
