@@ -15,9 +15,16 @@ if (isset($_GET['selectAvaliacao']) && $_GET['selectAvaliacao'] != '') {
 
 if (isset($_GET['selectStatus']) && $_GET['selectStatus'] != '') {
     $params = ['status'];
-    $resultSearchAvalicao = $manager->selectWhere($params, $_GET['selectStatus'], 'user_avaliacao');
-    $resultAvaliacao = $resultSearchAvalicao;
+    $resultSearchAvaliacao = $manager->selectWhere($params, $_GET['selectStatus'], 'user_avaliacao');
+    $resultAvaliacao = $resultSearchAvaliacao;
 }
+
+if (isset($_REQUEST['dataStart']) && !empty($_REQUEST['dataStart']) && isset($_REQUEST['dataEnd']) && !empty($_REQUEST['dataEnd'])){
+
+    $returnData = $manager->selectPerDate('user_avaliacao', 'data_avaliacao', $_REQUEST['dataStart'], $_REQUEST['dataEnd']);
+    $resultAvaliacao = $returnData;
+}
+
 
 
 ?>
@@ -43,8 +50,12 @@ if (isset($_GET['selectStatus']) && $_GET['selectStatus'] != '') {
             <section class="container-filters">
                 <div class="box-data box-filter">
                     <label for="input-data">Desde:</label>
-                    <input type="month" name="input-data" id="input-data">
+                    <input type="date" name="input-data" id="input-data-start">
+
+                    <label for="input-data">Até:</label>
+                    <input type="date" name="input-data" id="input-data-end">
                 </div>
+
 
                 <div class="box-status box-filter">
                     <label for="select-status">Status</label>
@@ -56,7 +67,7 @@ if (isset($_GET['selectStatus']) && $_GET['selectStatus'] != '') {
                 </div>
 
                 <div class="box-faixa-preco box-filter">
-                    <label for="select-faixa-preco">Categorias</label>
+                    <label for="select-faixa-preco">Avaliações</label>
                     <select id="boselectx-avaliacao" oninput="redirectAvaliacao()" name="select-avaliacao">
                         <option>Todos</option>
                         <option value="5">5 Estrelas</option>

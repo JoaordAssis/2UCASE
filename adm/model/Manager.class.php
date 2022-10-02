@@ -186,4 +186,32 @@ class Manager extends Conexao {
 		return $statement->fetchAll();
 	}
 
+	public function selectOrderBy($tabela, $column, $order){
+		$sql = "SELECT * FROM $tabela ORDER BY $column $order";
+
+		$res = array();
+		$cmd = $this->pdo->query($sql);
+		$res = $cmd->fetchAll(PDO::FETCH_ASSOC);
+		return $res;
+	}
+
+	public function dateCountClientes($tabela, $column, $dataAtual, $dataCount){
+		$sql = "SELECT COUNT(*) FROM $tabela WHERE $column < '$dataAtual' 
+		AND $column >= '$dataCount'";
+
+		$cmd = $this->pdo->query($sql);
+		$res = $cmd->fetch(PDO::FETCH_ASSOC);
+		return $res;
+	}
+
+
+	public function selectPerDate($tabela, $column, $dataAtual, $dataCount){
+		$sql = "SELECT * FROM $tabela WHERE $column BETWEEN '$dataAtual' 
+		AND '$dataCount'";
+
+		$res = array();
+		$cmd = $this->pdo->query($sql);
+		$res = $cmd->fetchAll(PDO::FETCH_ASSOC);
+		return $res;
+	}
 }

@@ -9,6 +9,29 @@ if (isset($_GET['searchBarClientes']) && $_GET['searchBarClientes'] != '') {
     $resultSearchClient = $manager->selectLike('user_cliente', $columns, $_GET['searchBarClientes']);
     $resultClienteList = $resultSearchClient;
 }
+
+
+
+$dataAtual = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
+$dataAtualN = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
+
+//* 24 HORAS
+$dataMinus = $dataAtual->modify('-1 day');
+$formatDataMinus = $dataMinus->format('Y-m-d H:i:s');
+$formatDataAtual = $dataAtualN->format('Y-m-d H:i:s');
+$returnData24 = $manager->dateCountClientes('user_cliente', 'data_reg_cliente', $formatDataAtual, $formatDataMinus);
+
+//* Ultima semana
+$dataMinusWeek = $dataAtual->modify('-1 week');
+$formatDataWeekMinus = $dataMinusWeek->format('Y-m-d H:i:s');
+
+$returnDataWeek = $manager->dateCountClientes('user_cliente', 'data_reg_cliente', $formatDataAtual, $formatDataWeekMinus);
+
+//* Ultimo mês
+$dataMinusWeek = $dataAtual->modify('-1 month');
+$formatDataMonthMinus = $dataMinusWeek->format('Y-m-d H:i:s');
+
+$returnDataMonth = $manager->dateCountClientes('user_cliente', 'data_reg_cliente', $formatDataAtual, $formatDataMonthMinus);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -23,28 +46,27 @@ if (isset($_GET['searchBarClientes']) && $_GET['searchBarClientes'] != '') {
 <body id="body-margin">
     <main class="container-produto">
         <h1>Clientes</h1>
-
         <!-- Métricas -->
 
         <section class="container-metricas">
             <div class="metrica-box metrica1">
                 <h4>Usuários nas últimas 24 horas</h4>
                 <div class="container-number">
-                    <h3>36</h3>
+                    <h3><?= $returnData24['COUNT(*)'] ?></h3>
                 </div>
             </div>
 
             <div class="metrica-box metrica2">
-                <h4>Usuários nas últimas 24 horas</h4>
+                <h4>Usuários na última semana</h4>
                 <div class="container-number">
-                    <h3>36</h3>
+                    <h3><?= $returnDataWeek['COUNT(*)'] ?></h3>
                 </div>
             </div>
 
             <div class="metrica-box metrica3">
-                <h4>Usuários nas últimas 24 horas</h4>
+                <h4>Usuários no último mês</h4>
                 <div class="container-number">
-                    <h3>36</h3>
+                    <h3><?= $returnDataMonth['COUNT(*)'] ?></h3>
                 </div>
             </div>
         </section>
@@ -96,7 +118,7 @@ if (isset($_GET['searchBarClientes']) && $_GET['searchBarClientes'] != '') {
 
                     <?php
                         endfor;
-                    else:
+                    else :
                         echo "<td colspan=7>Dados não encontrados!</td>";
                     endif;
                     ?>

@@ -38,7 +38,17 @@ if (isset($_REQUEST['selectOrdem']) && !empty($_REQUEST['selectOrdem'])) {
     header($header);
     exit();
 
-} else {
+} else if (isset($_REQUEST['dataStart']) && !empty($_REQUEST['dataStart']) && isset($_REQUEST['dataEnd']) && !empty($_REQUEST['dataEnd'])){
+    $exibSearchStart = $_REQUEST['dataStart'];
+    $exibSearchEnd = $_REQUEST['dataEnd'];
+
+    $header = 'Location: ../view/ListComentarios.php?dataStart=' . $exibSearchStart . '&dataEnd=' . $exibSearchEnd;
+
+    header($header);
+    exit();
+    
+}else{
+
 ?>
     <form action="../view/ListComentarios.php" name="myForm" id="myForm" method="post">
         <input type="hidden" name="msg" value="BD05">

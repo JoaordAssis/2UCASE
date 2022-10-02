@@ -23,6 +23,27 @@ if (isset($_GET['selectStatus']) && $_GET['selectStatus'] != '') {
     $resultSearchAvalicao = $manager->selectWhere($params, $_GET['selectStatus'], 'user_produto');
     $resultProdutos = $resultSearchAvalicao;
 }
+
+if (isset($_GET['selectOrdem']) && $_GET['selectOrdem'] != '') {
+
+    if ($_GET['selectOrdem'] === '1') {
+        // Maior preço
+        $resultSearchOrdem = $manager->selectOrderBy('user_produto', 'preco_produto', 'DESC');
+        $resultProdutos = $resultSearchOrdem;
+    }
+
+    if ($_GET['selectOrdem'] === '2') {
+        // Maior preço
+        $resultSearchOrdem = $manager->selectOrderBy('user_produto', 'preco_produto', 'ASC');
+        $resultProdutos = $resultSearchOrdem;
+    }
+
+    if ($_GET['selectOrdem'] === '3') {
+        // Maior preço
+        $resultSearchOrdem = $manager->selectOrderBy('user_produto', 'quantidade_produto', 'ASC');
+        $resultProdutos = $resultSearchOrdem;
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -93,7 +114,8 @@ if (isset($_GET['selectStatus']) && $_GET['selectStatus'] != '') {
 
                 <div class="box-ordem box-filter">
                     <label for="select-ordem">Ordenar Por</label>
-                    <select id="select-ordem" name="select-ordem">
+                    <select id="select-ordem" oninput="redirectOrdem()" name="select-ordem">
+                        <option>Todos</option>
                         <option value="1">Maior Preço</option>
                         <option value="2">Menor Preço</option>
                         <option value="3">Mais Relevante</option>
