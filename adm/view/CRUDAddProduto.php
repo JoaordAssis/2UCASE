@@ -95,7 +95,7 @@ $exibModeloFilters = $manager->listClient('user_mod_celular', 'id_modelo_celular
                         for ($i = 0; $i < count($exibModeloFilters); $i++) :
                     ?>
                             <option value="<?= $exibModeloFilters[$i]['id_modelo_celular'] ?>">
-                                <?= $exibModeloFilters[$i]['marca_celular'] ?>
+                                <?= $exibModeloFilters[$i]['modelo_celular'] ?>
                             </option>
                     <?php
                         endfor;

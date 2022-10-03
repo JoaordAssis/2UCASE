@@ -19,7 +19,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 CREATE SCHEMA IF NOT EXISTS `2ucase_bd3` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ;
 -- -----------------------------------------------------
--- Schema 2ucase_bd2
+-- Schema 2ucase_bd3
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
@@ -159,7 +159,7 @@ CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`user_produto` (
   `id_modelo_celular` INT NOT NULL,
   `id_categoria` INT NOT NULL,
   `nome_produto` VARCHAR(300) NOT NULL,
-  `preco_produto` DECIMAL NOT NULL,
+  `preco_produto` FLOAT NOT NULL,
   `descricao_produto` VARCHAR(900) NOT NULL,
   `imagem_principal_produto` VARCHAR(300) NOT NULL,
   `quantidade_produto` INT NOT NULL,
@@ -207,7 +207,7 @@ CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`user_cupom` (
   `nome_cupom` INT NOT NULL,
   `codigo_cupom` VARCHAR(200) NOT NULL,
   `data_expira_cupom` DATE NOT NULL,
-  `desconto_cupom` DECIMAL NOT NULL,
+  `desconto_cupom` FLOAT NOT NULL,
   `data_reg_cupom` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'data e hora do registro',
   `status` INT(1) NOT NULL COMMENT '1 - ativo; 0 - inativo',
   PRIMARY KEY (`id_cupom`),
@@ -217,26 +217,26 @@ CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`user_cupom` (
 
 
 -- -----------------------------------------------------
--- Table `2ucase_bd2`.`venda_status`
+-- Table `2ucase_bd3`.`venda_status`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `2ucase_bd2`.`venda_status` (
+CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`venda_status` (
   `id_status` INT NOT NULL AUTO_INCREMENT,
   `status_venda` VARCHAR(60) NOT NULL,
   `data_reg_status` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_status`));
 
 -- -----------------------------------------------------
--- Table `2ucase_bd2`.`user_carrinho`
+-- Table `2ucase_bd3`.`user_carrinho`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `2ucase_bd2`.`user_carrinho` (
+CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`user_carrinho` (
   `id_carrinho` INT NOT NULL AUTO_INCREMENT,
   `data_reg_carrinho` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `id_cliente` INT NOT NULL,
-  `total_carrinho` DECIMAL NOT NULL,
-  `desconto_carrinho` DECIMAL NOT NULL,
+  `total_carrinho` FLOAT NOT NULL,
+  `desconto_carrinho` FLOAT NOT NULL,
   `quant_carrinho` INT NOT NULL,
   `id_endereco` INT NOT NULL,
-  `frete_carrinho` DECIMAL NOT NULL,
+  `frete_carrinho` FLOAT NOT NULL,
   PRIMARY KEY (`id_carrinho`),
   CONSTRAINT `fk_user_carrinho_user_cliente`
     FOREIGN KEY (`id_cliente`)
@@ -273,12 +273,12 @@ CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`adm_venda` (
     ON UPDATE CASCADE,
   CONSTRAINT `fk_adm_venda_venda_status1`
     FOREIGN KEY (`id_status`)
-    REFERENCES `2ucase_bd2`.`venda_status` (`id_status`)
+    REFERENCES `2ucase_bd3`.`venda_status` (`id_status`)
     ON DELETE NO ACTION
     ON UPDATE CASCADE,
   CONSTRAINT `fk_adm_venda_user_carrinho1`
     FOREIGN KEY (`id_carrinho`)
-    REFERENCES `2ucase_bd2`.`user_carrinho` (`id_carrinho`)
+    REFERENCES `2ucase_bd3`.`user_carrinho` (`id_carrinho`)
     ON DELETE NO ACTION
     ON UPDATE RESTRICT);
 
@@ -314,13 +314,13 @@ CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`produto_carrinho` (
   `id_carrinho` INT NOT NULL,
   `id_produto` INT NOT NULL,
   `quant_carrinho` INT NOT NULL,
-  `preco_quant_prod` DECIMAL NOT NULL,
-  `preco_desconto_prod` DECIMAL NOT NULL,
+  `preco_quant_prod` FLOAT NOT NULL,
+  `preco_desconto_prod` FLOAT NOT NULL,
   `data_reg_Cprod` DATETIME NOT NULL,
   PRIMARY KEY (`id_produto_carrinho`),
   CONSTRAINT `fk_produto_carrinho_user_carrinho1`
     FOREIGN KEY (`id_carrinho`)
-    REFERENCES `2ucase_bd2`.`user_carrinho` (`id_carrinho`)
+    REFERENCES `2ucase_bd3`.`user_carrinho` (`id_carrinho`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_produto_carrinho_user_produto1`
@@ -332,3 +332,137 @@ CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`produto_carrinho` (
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+
+
+
+
+
+-- INSERTS
+
+
+
+-- INSERTS USUARIOS ADMINISTRATIVOS
+
+INSERT INTO adm_administrador(nome_adm, email_adm, senha_adm, poder_adm, status) VALUES(
+'Davi Moreira',
+'davi@adm.com',
+'5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5',
+9,
+1);
+
+INSERT INTO adm_administrador(nome_adm, email_adm, senha_adm, poder_adm, status) VALUES(
+'Tetra Moreira',
+'davi@adm.com',
+'5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5',
+9,
+1);
+
+-- INSERTS CLIENTE
+
+INSERT INTO user_cliente (nome_cliente, email_cliente, cpf_cliente, telefone_cliente, genero_cliente, senha_cliente, data_nasc_cliente, status)
+VALUES ('Davi Moreira', 'davisant6@gmail.com', '49471488885', '11996120093', '0', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', '2006-01-21', 1);
+
+INSERT INTO user_cliente (nome_cliente, email_cliente, cpf_cliente, telefone_cliente, genero_cliente, senha_cliente, data_nasc_cliente, status)
+VALUES ('Filipe Moreira', 'davisant6@gmail.com', '49471488885', '11996120093', '0', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', '2006-01-21', 1);
+
+INSERT INTO user_cliente (nome_cliente, email_cliente, cpf_cliente, telefone_cliente, genero_cliente, senha_cliente, data_nasc_cliente, status)
+VALUES ('Sophia', 'carro@gmail.com', '49471488885', '11996120093', '0', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', '2006-01-21', 1);
+
+INSERT INTO user_cliente (nome_cliente, email_cliente, cpf_cliente, telefone_cliente, genero_cliente, senha_cliente, data_nasc_cliente, status)
+VALUES ('Davi Moreira', 'davisant6@gmail.com', '49471488885', '118762123', '0', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', '2006-01-21', 1);
+
+
+INSERT INTO user_cliente (nome_cliente, email_cliente, cpf_cliente, telefone_cliente, genero_cliente, senha_cliente, data_nasc_cliente, status)
+VALUES ('Filipe Moreira', 'davisant6@gmail.com', '49471488885', '118762123', '0', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', '2006-01-21', 1);
+
+
+INSERT INTO user_cliente (nome_cliente, email_cliente, cpf_cliente, telefone_cliente, genero_cliente, senha_cliente, data_nasc_cliente, status)
+VALUES ('Carlos', 'davisant6@gmail.com', '55848621', '118762123', '0', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', '2006-01-21', 0);
+
+-- INSERTS ENDEREÇO CLIENTE
+
+INSERT INTO user_endereco_cliente(logradouro_cliente, bairro_cliente, cep_cliente, uf_cliente ,numero_cliente, complemento_cliente, id_cliente) VALUES(
+'Rua Ciclades',
+'Jardim Guaruja',
+'05876-040',
+'SP',
+'30',
+'Casa 4',
+1
+);
+
+-- INSERTS CATEGORIA
+
+INSERT INTO user_categoria (nome_categoria, img_categoria, link_categoria) VALUES ('Times', '../assets/img/Banner1.png', './home.php');
+
+INSERT INTO user_categoria (nome_categoria, img_categoria, link_categoria) VALUES ( 'Animacoes', '../assets/img/Banner2.png', './home.php');
+
+
+-- INSERTS CUPOM
+
+INSERT INTO user_cupom (id_categoria, nome_cupom, codigo_cupom, data_expira_cupom, desconto_cupom, status) VALUES (2, 'So para quem me quiser', 'CARENTE25', '2022-09-30', '25', 1);
+
+
+INSERT INTO user_cupom (id_categoria, nome_cupom, codigo_cupom, data_expira_cupom, desconto_cupom, status) VALUES (1, 'So para quem não me quiser', 'CARENTENAO50', '2022-09-30', '50', 1);
+
+
+-- INSERTS MENU E SUBMENU
+
+INSERT INTO adm_menu(nome_menu, link_menu, status) VALUES ('Teste delete', './categoria.php', 1);
+INSERT INTO adm_submenu(id_menu, nome_submenu, link_submenu, status) VALUES (1, 'Teste delete2', './categoria.php', 1);
+INSERT INTO adm_submenu(id_menu, nome_submenu, link_submenu, status) VALUES (1, 'Teste delete3', './categoria.php', 1);
+INSERT INTO adm_submenu(id_menu, nome_submenu, link_submenu, status) VALUES (1, 'Teste', './categoria.php', 1);
+
+-- INSERT INTO CARROSSEL
+
+INSERT INTO adm_carrossel (nome_carrossel, link_carrossel, status) VALUES ('Time Qualquer', '../assets/img/Banner1.png', 1);
+
+INSERT INTO adm_carrossel (nome_carrossel, link_carrossel, status) VALUES ('Time Qualquer', '../assets/img/Banner2.png', 1);
+
+INSERT INTO adm_carrossel (nome_carrossel, link_carrossel, status) VALUES ('Time Qualquer', '../assets/img/Banner3.png', 1);
+
+
+
+--INSERT INTO MODELO CELULAR
+
+INSERT INTO user_mod_celular (marca_celular, modelo_celular) VALUES ('Apple', 'Iphone 13 Pro Max');
+
+
+--INSERT INTO PRODUTO
+
+INSERT INTO user_produto(id_modelo_celular, id_categoria, nome_produto, preco_produto, descricao_produto, imagem_principal_produto, quantidade_produto, garantias_produto, status, categoria_special_produto)
+VALUES (1, 1, 'Capinha Flamengo 2022 - Seleção Oficial', 25.94, 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum facere aperiam dolor minus laudantium autem soluta eum, officia sunt ducimus sed. Possimus necessitatibus ex molestiae.', '../assets/img/Banner1.png', 10, '2 Meses', 1, 'Mais Vendidos');
+
+
+-- INSERT INTO AVALIAÇÕES
+
+INSERT INTO user_avaliacao(id_produto, id_cliente,nota_avaliacao, titulo_avaliacao, descricao, status) VALUES (1, 1, 4, 'ótimo produto melhor que já comprei', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere dicta obcaecati ea eos sunt vel sequi non, harum hic possimus doloremque, inventore eaque, culpa veniam facilis libero mollitia laudantium numquam!', 1);
+
+
+-- INSERT INTO FORMA PAGAMENTO
+
+INSERT INTO user_forma_pagamento (parcelamento_pagamento, metodo_pagamento) 
+VALUES (0, 'Cartão de Crédito - Mastercard');
+
+-- INSERT INTO CARRINHO DE COMPRAS
+
+INSERT INTO user_carrinho 
+(id_cliente, total_carrinho, desconto_carrinho, quant_carrinho, id_endereco, frete_carrinho)
+VALUES
+(1, 58.64, 12.69, 4, 1, 32.41);
+
+
+-- INSERT INTO PRODUTO CARRINHO
+
+INSERT INTO produto_carrinho
+(id_carrinho, id_produto, quant_carrinho, preco_quant_prod, preco_desconto_prod)
+VALUES
+(1, 4, 5, 21.24, 0.00);
+
+-- INSERT INTO VENDAS
+
+INSERT INTO adm_venda 
+(id_cliente, id_pagamento, valor_desconto_total, valor_venda_total, quant_produto_total, id_status, id_carrinho) 
+VALUES 
+(1, 1, 12.69, 78.36, 4, 2, 1);

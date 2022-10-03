@@ -26,10 +26,13 @@ if (isset($_REQUEST['nome_produto']) && $_REQUEST['nome_produto'] != '') :
 
     // Organizando os dados
 
+    $precoProdutoReplace = str_replace(',', '.', $_REQUEST["preco_produto"]);
+    // echo $precoProdutoReplace;
+
     $dados["id_modelo_celular"] = $_REQUEST["marca_celular"];
     $dados["id_categoria"] = $_REQUEST["categoria_produto"];
     $dados["nome_produto"] = $_REQUEST["nome_produto"];
-    $dados["preco_produto"] = $_REQUEST["preco_produto"];
+    $dados["preco_produto"] = $precoProdutoReplace;
     $dados["descricao_produto"] = $_REQUEST["descricao_produto"];
     $imgRetrieveData = $manager->imgUpload('imagem_principal_produto', $_REQUEST["nome_produto"]);
     $dados["imagem_principal_produto"] = $imgRetrieveData[0];

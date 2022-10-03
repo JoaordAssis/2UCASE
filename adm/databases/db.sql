@@ -168,8 +168,6 @@ CREATE TABLE user_avaliacao(
 
 -- INSERTS USUARIOS ADMINISTRATIVOS
 
-		-- Administrador
-
 INSERT INTO adm_administrador(nome_adm, email_adm, senha_adm, poder_adm, status) VALUES(
 'Davi Moreira',
 'davi@adm.com',
@@ -220,9 +218,9 @@ INSERT INTO user_endereco_cliente(logradouro_cliente, bairro_cliente, cep_client
 
 -- INSERTS CATEGORIA
 
-INSERT INTO user_categoria (nome_categoria, img_categoria) VALUES ('Times', '../assets/img/Banner1.png');
+INSERT INTO user_categoria (nome_categoria, img_categoria, link_categoria) VALUES ('Times', '../assets/img/Banner1.png', './home.php');
 
-INSERT INTO user_categoria (nome_categoria, img_categoria) VALUES ( 'Animacoes', '../assets/img/Banner2.png');
+INSERT INTO user_categoria (nome_categoria, img_categoria, link_categoria) VALUES ( 'Animacoes', '../assets/img/Banner2.png', './home.php');
 
 
 -- INSERTS CUPOM
@@ -252,13 +250,13 @@ INSERT INTO adm_carrossel (nome_carrossel, link_carrossel, status) VALUES ('Time
 
 --INSERT INTO MODELO CELULAR
 
-INSERT INTO user_mod_celular (marca_celular, modelo_celular) VALUES ('Iphone', 'Iphone 13 Pro Max');
+INSERT INTO user_mod_celular (marca_celular, modelo_celular) VALUES ('Apple', 'Iphone 13 Pro Max');
 
 
 --INSERT INTO PRODUTO
 
 INSERT INTO user_produto(id_modelo_celular, id_categoria, nome_produto, preco_produto, descricao_produto, imagem_principal_produto, quantidade_produto, garantias_produto, status, categoria_special_produto)
-VALUES (1, 0, 'Capinha Flamengo 2022 - Seleção Oficial', 25.94, 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum facere aperiam dolor minus laudantium autem soluta eum, officia sunt ducimus sed. Possimus necessitatibus ex molestiae.', '../assets/img/Banner1.png', 10, '2 Meses', 1, 'Mais Vendidos');
+VALUES (1, 1, 'Capinha Flamengo 2022 - Seleção Oficial', 25.94, 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum facere aperiam dolor minus laudantium autem soluta eum, officia sunt ducimus sed. Possimus necessitatibus ex molestiae.', '../assets/img/Banner1.png', 10, '2 Meses', 1, 'Mais Vendidos');
 
 
 -- INSERT INTO AVALIAÇÕES
@@ -266,14 +264,45 @@ VALUES (1, 0, 'Capinha Flamengo 2022 - Seleção Oficial', 25.94, 'Lorem, ipsum 
 INSERT INTO user_avaliacao(id_produto, id_cliente,nota_avaliacao, titulo_avaliacao, descricao, status) VALUES (67, 5, 4, 'ótimo produto melhor que já comprei', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere dicta obcaecati ea eos sunt vel sequi non, harum hic possimus doloremque, inventore eaque, culpa veniam facilis libero mollitia laudantium numquam!', 1);
 
 
+-- * NEW INSERTS
+
+
+-- INSERT INTO VENDA STATUS
+
+INSERT INTO venda_status (status_venda) VALUES ('Pendente');
+INSERT INTO venda_status (status_venda) VALUES ('Pagamento Aprovado');
+INSERT INTO venda_status (status_venda) VALUES ('Cancelada');
+INSERT INTO venda_status (status_venda) VALUES ('Enviada');
+INSERT INTO venda_status (status_venda) VALUES ('Entregue');
+INSERT INTO venda_status (status_venda) VALUES ('Reembolsada');
+
+
 -- INSERT INTO FORMA PAGAMENTO
 
-INSERT INTO user_forma_pagamento (descricao_pagamento) VALUES ('Cartão de Crédito - Mastercard');
+INSERT INTO user_forma_pagamento (parcelamento_pagamento, metodo_pagamento) 
+VALUES (0, 'Cartão de Crédito - Mastercard');
+
+-- INSERT INTO CARRINHO DE COMPRAS
+
+INSERT INTO user_carrinho 
+(id_cliente, total_carrinho, desconto_carrinho, quant_carrinho, id_endereco, frete_carrinho)
+VALUES
+(1, 58.64, 12.69, 4, 1, 32.41);
+
+
+-- INSERT INTO PRODUTO CARRINHO
+
+INSERT INTO produto_carrinho
+(id_carrinho, id_produto, quant_carrinho, preco_quant_prod, preco_desconto_prod)
+VALUES
+(1, 4, 5, 21.24, 0.00);
 
 -- INSERT INTO VENDAS
 
-INSERT INTO adm_venda (id_produto, id_cliente, id_pagamento, status_venda, valor_desconto, valor_venda) VALUES (67, 1, 1, 'Aprovada', 0.00, 25.65);
-
+INSERT INTO adm_venda 
+(id_cliente, id_pagamento, valor_desconto_total, valor_venda_total, quant_produto_total, id_status, id_carrinho) 
+VALUES 
+(1, 1, 12.69, 78.36, 4, 2, 1);
 
 
 -- ALTERAÇÕES

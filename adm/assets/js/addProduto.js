@@ -16,7 +16,6 @@ const masks = {
         return value
             .replace(/\D/g, "")
             .replace(/([0-9]{2})$/g, ",$1")
-        
     },
 
 };
