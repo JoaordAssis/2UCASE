@@ -132,7 +132,8 @@ if (isset($_GET['selectOrdem']) && $_GET['selectOrdem'] != '') {
                                 for ($j = 0; $j < count($resultCliente); $j++) :
                                     if (count($resultPedidoStatus) > 0) :
                                         for ($k = 0; $k < count($resultPedidoStatus); $k++) :
-
+                                            $timestampVenda = strtotime($resultPedidos[$i]['data_venda']);
+                                            $newDateVenda = date("d/m/Y H:i:s", $timestampVenda);
                     ?>
                                             <tr>
                                                 <!-- DADOS PARA MODIFICAR -->
@@ -140,7 +141,7 @@ if (isset($_GET['selectOrdem']) && $_GET['selectOrdem'] != '') {
                                                 <td><?= $resultCliente[$j]['cpf_cliente'] ?></td>
                                                 <td><?= $resultPedidos[$i]['quant_produto_total'] ?></td>
                                                 <td><?= $resultPedidos[$i]['valor_venda_total'] ?></td>
-                                                <td><?= $resultPedidos[$i]['data_venda'] ?></td>
+                                                <td><?= $newDateVenda ?></td>
                                                 <td><?= $resultPedidoStatus[$k]['status_venda'] ?></td>
                                                 <td id="btn-actions">
                                                     <button id="search-client" onclick="window.location.href='./DetailsPedidos.php?id=<?= $resultPedidos[$i]['id_venda'] ?>'">

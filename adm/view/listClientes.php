@@ -112,7 +112,9 @@ $returnDataMonth = $manager->dateCountClientes('user_cliente', 'data_reg_cliente
                                 <td><?= $dateExib ?></td>
                                 <td><?= $resultClienteList[$i]['status'] == 1 ? "Ativo" : "Inativo" ?></td>
                                 <td id="btn-actions">
-                                    <button id="search-client"><i class="fa-solid fa-magnifying-glass"></i></i></i></button>
+                                    <button id="search-client" onclick="window.location.href='./DetailsClientes.php?id=<?= $resultClienteList[$i]['id_cliente'] ?>'">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </button>
                                 </td>
                             </tr>
 

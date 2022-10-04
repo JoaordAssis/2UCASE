@@ -48,6 +48,9 @@ $resultListCupons = $manager->listClient('user_cupom', 'id_cupom');
                         for ($i = 0; $i < count($resultListCupons); $i++) :
                             $exibCategoria = $manager->getInfo('user_categoria', 'id_categoria', $resultListCupons[$i]['id_categoria']);
                             for ($jk = 0; $jk < count($exibCategoria); $jk++) :
+
+                                $timestampCupom = strtotime($resultListCupons[$i]['data_expira_cupom']);
+                                $newDateCupom = date("d/m/Y H:i:s", $timestampCupom);
                     ?>
                                 <tr>
                                     <!-- DADOS PARA MODIFICAR -->
@@ -55,7 +58,7 @@ $resultListCupons = $manager->listClient('user_cupom', 'id_cupom');
                                     <td><?= $resultListCupons[$i]['nome_cupom'] ?></td>
                                     <td><?= $resultListCupons[$i]['codigo_cupom'] ?></td>
                                     <td><?= $exibCategoria[$jk]['nome_categoria'] ?></td>
-                                    <td><?= $resultListCupons[$i]['data_expira_cupom'] ?></td>
+                                    <td><?= $newDateCupom ?></td>
                                     <td><?= $resultListCupons[$i]['status'] == 1 ? "Ativo" : "Inativo" ?></td>
                                     <td id="btn-actions">
                                         <button id="delete-prod" onclick="window.location.href='../controller/ControllerCupomADM.php?id=<?= $resultListCupons[$i]['id_cupom'] ?>&action=deleteCupomADM'">

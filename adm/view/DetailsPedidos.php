@@ -22,13 +22,18 @@ $exibProdutoCarrinho = $manager->getInfo('produto_carrinho', 'id_carrinho', $exi
     <main class="container-produto">
         <h1>Pedido N° <?= $exibPedidosDetails[0]['id_venda'] ?></h1>
 
+        <?php
+        $timestampVenda = strtotime($exibPedidosDetails[0]['data_venda']);
+        $newDateVenda = date("d/m/Y H:i:s", $timestampVenda);
+        ?>
+
         <!-- Exibir Venda -->
         <article class="info-comentario container-comment">
             <h2>Venda</h2>
 
             <div class="row-titulo-stars rows-comentarios">
                 <label>Data da venda
-                    <h3><?= $exibPedidosDetails[0]['data_venda'] ?></h3>
+                    <h3><?= $newDateVenda ?></h3>
                 </label>
 
                 <label>Valor total da venda
@@ -42,6 +47,11 @@ $exibProdutoCarrinho = $manager->getInfo('produto_carrinho', 'id_carrinho', $exi
         </article>
 
         <!-- Exibir informações do cliente -->
+
+        <?php
+        $timestampCliente = strtotime($exibPedidosDetails[0]['data_venda']);
+        $newDateCliente = date("d/m/Y", $timestampCliente);
+        ?>
 
         <article class="info-cliente container-comment">
             <h2>Cliente</h2>
@@ -62,7 +72,7 @@ $exibProdutoCarrinho = $manager->getInfo('produto_carrinho', 'id_carrinho', $exi
                 </label>
 
                 <label>Data de Nascimento
-                    <h3><?= $exibPedidosDetails[0]['data_nasc_cliente'] ?></h3>
+                    <h3><?= $newDateCliente ?></h3>
                 </label>
             </div>
 
@@ -120,6 +130,11 @@ $exibProdutoCarrinho = $manager->getInfo('produto_carrinho', 'id_carrinho', $exi
 
         </article>
 
+        <?php
+        $timestampCarrinho = strtotime($exibPedidosDetails[0]['data_venda']);
+        $newDateCarrinho = date("d/m/Y H:i:s", $timestampCarrinho);
+        ?>
+
 
         <!-- Exibir Carrinho -->
         <article class="info-comentario container-comment">
@@ -127,7 +142,7 @@ $exibProdutoCarrinho = $manager->getInfo('produto_carrinho', 'id_carrinho', $exi
 
             <div class="row-titulo-stars rows-comentarios">
                 <label>Data do carrinho
-                    <h3><?= $exibPedidosDetails[0]['data_reg_carrinho'] ?></h3>
+                    <h3><?= $newDateCarrinho ?></h3>
                 </label>
 
                 <label>Preço total do carrinho

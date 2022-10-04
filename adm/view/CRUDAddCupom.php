@@ -29,7 +29,7 @@ $exibCategoriaFilters = $manager->listClient('user_categoria', 'id_categoria');
             <input type="text" required name="codigo_cupom" id="input_link_menu" placeholder="Codigo do Cupom">
 
             <input type="date" required name="data_expira_cupom" id="input_data_cupom">
-            <input type="text" required name="desconto_cupom" placeholder="Desconto em porcentagem" id="input_desconto">
+            <input type="text" data-js="porcentagem" required name="desconto_cupom" placeholder="Desconto em porcentagem" id="input_desconto">
 
 
             <!-- </div> -->
@@ -65,6 +65,7 @@ $exibCategoriaFilters = $manager->listClient('user_categoria', 'id_categoria');
 
     </main>
 </body>
+<script src="../assets/js/listCupons.js"></script>
 
 </html>
 

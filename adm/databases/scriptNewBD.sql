@@ -204,7 +204,7 @@ CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`user_produtos_img` (
 CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`user_cupom` (
   `id_cupom` INT NOT NULL AUTO_INCREMENT,
   `id_categoria` INT NOT NULL,
-  `nome_cupom` INT NOT NULL,
+  `nome_cupom` VARCHAR(400) NOT NULL,
   `codigo_cupom` VARCHAR(200) NOT NULL,
   `data_expira_cupom` DATE NOT NULL,
   `desconto_cupom` FLOAT NOT NULL,
@@ -336,8 +336,6 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 
 
-
-
 -- INSERTS
 
 
@@ -401,10 +399,10 @@ INSERT INTO user_categoria (nome_categoria, img_categoria, link_categoria) VALUE
 
 -- INSERTS CUPOM
 
-INSERT INTO user_cupom (id_categoria, nome_cupom, codigo_cupom, data_expira_cupom, desconto_cupom, status) VALUES (2, 'So para quem me quiser', 'CARENTE25', '2022-09-30', '25', 1);
+INSERT INTO user_cupom (id_categoria, nome_cupom, codigo_cupom, data_expira_cupom, desconto_cupom, status) VALUES (2, 'So para quem me quiser', 'CARENTE25', '2022-09-30', 25, 1);
 
 
-INSERT INTO user_cupom (id_categoria, nome_cupom, codigo_cupom, data_expira_cupom, desconto_cupom, status) VALUES (1, 'So para quem não me quiser', 'CARENTENAO50', '2022-09-30', '50', 1);
+INSERT INTO user_cupom (id_categoria, nome_cupom, codigo_cupom, data_expira_cupom, desconto_cupom, status) VALUES (1, 'So para quem não me quiser', 'CARENTENAO50', '2022-09-30', 5.5, 1);
 
 
 -- INSERTS MENU E SUBMENU
@@ -432,7 +430,7 @@ INSERT INTO user_mod_celular (marca_celular, modelo_celular) VALUES ('Apple', 'I
 --INSERT INTO PRODUTO
 
 INSERT INTO user_produto(id_modelo_celular, id_categoria, nome_produto, preco_produto, descricao_produto, imagem_principal_produto, quantidade_produto, garantias_produto, status, categoria_special_produto)
-VALUES (1, 1, 'Capinha Flamengo 2022 - Seleção Oficial', 25.94, 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum facere aperiam dolor minus laudantium autem soluta eum, officia sunt ducimus sed. Possimus necessitatibus ex molestiae.', '../assets/img/Banner1.png', 10, '2 Meses', 1, 'Mais Vendidos');
+VALUES (1, 1, 'Capinha Flamengo 2022 - Selecao Oficial', 25.94, 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum facere aperiam dolor minus laudantium autem soluta eum, officia sunt ducimus sed. Possimus necessitatibus ex molestiae.', '../assets/img/Banner1.png', 10, '2 Meses', 1, 'Mais Vendidos');
 
 
 -- INSERT INTO AVALIAÇÕES
@@ -478,7 +476,10 @@ VALUES
 (1, 1, 12.69, 214.36, 4, 4, 1);
 
 
--- * VIEW PEDIDOS
+-- * VIEW PEDIDOS NÃO É NECESSARIO RODAR NO BD
+
+
+
 
 
 SELECT

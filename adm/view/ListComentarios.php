@@ -19,7 +19,7 @@ if (isset($_GET['selectStatus']) && $_GET['selectStatus'] != '') {
     $resultAvaliacao = $resultSearchAvaliacao;
 }
 
-if (isset($_REQUEST['dataStart']) && !empty($_REQUEST['dataStart']) && isset($_REQUEST['dataEnd']) && !empty($_REQUEST['dataEnd'])){
+if (isset($_REQUEST['dataStart']) && !empty($_REQUEST['dataStart']) && isset($_REQUEST['dataEnd']) && !empty($_REQUEST['dataEnd'])) {
 
     $returnData = $manager->selectPerDate('user_avaliacao', 'data_avaliacao', $_REQUEST['dataStart'], $_REQUEST['dataEnd']);
     $resultAvaliacao = $returnData;
@@ -121,8 +121,8 @@ if (isset($_REQUEST['dataStart']) && !empty($_REQUEST['dataStart']) && isset($_R
                                         <td><?= $exibProduto[$k]['nome_produto'] ?></td>
                                         <td><?= $dateExib ?></td>
                                         <td><?= $resultAvaliacao[$i]['status'] ?></td>
-                                        <td id="btn-actions" onclick="window.location.href='./DetailsComentarios.php?id=<?= $resultAvaliacao[$i]['id_avaliacao'] ?>'">
-                                            <button id="search-client">
+                                        <td id="btn-actions">
+                                            <button id="search-client" onclick="window.location.href='./DetailsComentarios.php?id=<?= $resultAvaliacao[$i]['id_avaliacao'] ?>'">
                                                 <i class="fa-solid fa-magnifying-glass"></i>
                                             </button>
                                         </td>

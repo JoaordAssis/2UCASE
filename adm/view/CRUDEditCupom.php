@@ -37,7 +37,7 @@ $exibCupons = $manager->getInfo('user_cupom', 'id_cupom', $idCupom);
             <input type="text" required name="codigo_cupom" value="<?= $exibCupons[0]['codigo_cupom'] ?>" id="input_link_menu" placeholder="Codigo do Cupom">
 
             <input type="date" required name="data_expira_cupom" value="<?= $exibCupons[0]['data_expira_cupom'] ?>" id="input_data_cupom">
-            <input type="text" required name="desconto_cupom" value="<?= $exibCupons[0]['desconto_cupom'] ?>" placeholder="Desconto em porcentagem" id="input_desconto">
+            <input type="text" data-js="porcentagem" required name="desconto_cupom" value="<?= $exibCupons[0]['desconto_cupom'] ?>" placeholder="Desconto em porcentagem" id="input_desconto">
 
 
             <!-- </div> -->
@@ -89,6 +89,7 @@ $exibCupons = $manager->getInfo('user_cupom', 'id_cupom', $idCupom);
 
     </main>
 </body>
+<script src="../assets/js/listCupons.js"></script>
 
 </html>
 
