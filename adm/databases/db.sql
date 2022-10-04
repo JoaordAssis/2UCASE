@@ -344,22 +344,29 @@ ON Menu.Id = SubMenu.idMenu;
 --* user_endereco_cliente
 
 SELECT
-
 -- TABELA ADM VENDA
 
-adm_venda.*,
+adm_venda.id_venda, adm_venda.id_cliente, adm_venda.id_pagamento, adm_venda.valor_desconto_total,
+adm_venda.data_venda, adm_venda.valor_venda_total, adm_venda.quant_produto_total,
+adm_venda.id_status, adm_venda.id_carrinho,
 
 -- TABELA STATUS VENDA
  venda_status.status_venda,
 
 --  TABELA USER CARRINHO
-user_carrinho.*,
+user_carrinho.data_reg_carrinho, user_carrinho.total_carrinho, user_carrinho.desconto_carrinho,
+user_carrinho.quant_carrinho, user_carrinho.id_endereco, user_carrinho.frete_carrinho,
 
 --  TABELA USER CLIENTE
-user_cliente.*,
+user_cliente.nome_cliente, user_cliente.email_cliente, user_cliente.cpf_cliente,
+user_cliente.telefone_cliente, user_cliente.genero_cliente, user_cliente.data_nasc_cliente,
+user_cliente.status,
 
 --  TABELA USER ENDERECO CLIENTE
-user_endereco_cliente.*
+user_endereco_cliente.logradouro_cliente, user_endereco_cliente.bairro_cliente,
+user_endereco_cliente.cep_cliente, user_endereco_cliente.uf_cliente, 
+user_endereco_cliente.numero_cliente, user_endereco_cliente.complemento_cliente,
+user_endereco_cliente.ponto_ref_cliente
 
 FROM adm_venda
 

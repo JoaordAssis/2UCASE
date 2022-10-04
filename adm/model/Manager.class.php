@@ -216,4 +216,35 @@ class Manager extends Conexao {
 		$res = $cmd->fetchAll(PDO::FETCH_ASSOC);
 		return $res;
 	}
+
+	public function innerJoinRunnerPedidos($id){
+		$sql = "SELECT
+		adm_venda.id_venda, adm_venda.id_cliente, adm_venda.id_pagamento, adm_venda.valor_desconto_total,
+		adm_venda.data_venda, adm_venda.valor_venda_total, adm_venda.quant_produto_total,
+		adm_venda.id_status, adm_venda.id_carrinho,
+		venda_status.status_venda,
+		user_carrinho.data_reg_carrinho, user_carrinho.total_carrinho, user_carrinho.desconto_carrinho,
+		user_carrinho.quant_carrinho, user_carrinho.id_endereco, user_carrinho.frete_carrinho,
+		user_cliente.nome_cliente, user_cliente.email_cliente, user_cliente.cpf_cliente,
+		user_cliente.telefone_cliente, user_cliente.genero_cliente, user_cliente.data_nasc_cliente,
+		user_cliente.status,
+		user_endereco_cliente.logradouro_cliente, user_endereco_cliente.bairro_cliente,
+		user_endereco_cliente.cep_cliente, user_endereco_cliente.uf_cliente, 
+		user_endereco_cliente.numero_cliente, user_endereco_cliente.complemento_cliente,
+		user_endereco_cliente.ponto_ref_cliente
+		FROM adm_venda
+		INNER JOIN venda_status
+		ON adm_venda.id_status = venda_status.id_status
+		INNER JOIN user_carrinho
+		ON adm_venda.id_carrinho = user_carrinho.id_carrinho
+		INNER JOIN user_cliente
+		ON adm_venda.id_cliente = user_cliente.id_cliente
+		INNER JOIN user_endereco_cliente
+		ON user_carrinho.id_endereco = user_endereco_cliente.id_endereco WHERE id_venda = $id";
+
+		$res = array();
+		$statement = $this->pdo->query($sql);
+		$res = $statement->fetchAll(PDO::FETCH_ASSOC);
+		return $res;
+	}
 }
