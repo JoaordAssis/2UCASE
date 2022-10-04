@@ -128,3 +128,19 @@ main #btn-exit {
     color: var(--cor-laranja);
     transition: ease .3s all;
 }
+
+.box-filter {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    align-items: center;
+}
+
+.box-filter select,
+.box-filter input[type="date"],
+.box-filter button {
+    padding: 1rem;
+    border-radius: 15px;
+    min-width: 10rem;
+    border: 1px solid #000;
+}

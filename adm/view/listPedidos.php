@@ -4,8 +4,39 @@ require_once "../model/Manager.class.php";
 $manager = new Manager();
 
 $resultPedidos = $manager->listClient('adm_venda', 'id_venda');
-$resultSubMenu = $manager->listClient('adm_submenu', 'id_submenu');
 
+// Status
+
+if (isset($_GET['selectStatus']) && $_GET['selectStatus'] != '') {
+    $params = ['id_status'];
+    $resultSearchStatus = $manager->selectWhere($params, $_GET['selectStatus'], 'adm_venda');
+    $resultPedidos = $resultSearchStatus;
+}
+
+// Data
+
+if (isset($_REQUEST['dataStart']) && !empty($_REQUEST['dataStart']) && isset($_REQUEST['dataEnd']) && !empty($_REQUEST['dataEnd'])) {
+
+    $returnData = $manager->selectPerDate('adm_venda', 'data_venda', $_REQUEST['dataStart'], $_REQUEST['dataEnd']);
+    $resultPedidos = $returnData;
+}
+
+// Ordem de relevancia
+
+if (isset($_GET['selectOrdem']) && $_GET['selectOrdem'] != '') {
+
+    if ($_GET['selectOrdem'] === '1') {
+        // Maior preço
+        $resultSearchOrdem = $manager->selectOrderBy('adm_venda', 'valor_venda_total', 'DESC');
+        $resultPedidos = $resultSearchOrdem;
+    }
+
+    if ($_GET['selectOrdem'] === '2') {
+        // Maior preço
+        $resultSearchOrdem = $manager->selectOrderBy('adm_venda', 'valor_venda_total', 'ASC');
+        $resultPedidos = $resultSearchOrdem;
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -26,35 +57,51 @@ $resultSubMenu = $manager->listClient('adm_submenu', 'id_submenu');
 
             <!-- FILTROS -->
             <section class="container-filters">
+
                 <div class="box-data box-filter">
                     <label for="input-data">Desde:</label>
-                    <input type="month" name="input-data" id="input-data">
+                    <input type="date" name="input-data" id="input-data-start">
+
+                    <label for="input-data">Até:</label>
+                    <input type="date" name="input-data" id="input-data-end">
                 </div>
+
+                <?php   //* EXIBIR STATUS DO PEDIDO
+                $resultPedidoStatusCategoria = $manager->listClient('venda_status', 'id_status');
+                ?>
 
                 <div class="box-status box-filter">
                     <label for="select-status">Status</label>
-                    <select id="select-ordem" name="select-ordem">
-                        <option value="1">Disponivel</option>
-                        <option value="0">Indisponivel</option>
+                    <select id="select-status" oninput="redirectStatus()" name="select-status">
+                        <option>Todos</option>
+                        <?php
+                        if (count($resultPedidoStatusCategoria) > 0) :
+                            for ($t = 0; $t < count($resultPedidoStatusCategoria); $t++) :
+                        ?>
+                                <option value="<?= $resultPedidoStatusCategoria[$t]['id_status'] ?>">
+                                    <?= $resultPedidoStatusCategoria[$t]['status_venda'] ?>
+                                </option>
+                        <?php
+                            endfor;
+                        endif;
+                        ?>
                     </select>
                 </div>
 
-                <div class="box-faixa-preco box-filter">
-                    <label for="select-faixa-preco">Categorias</label>
-                    <select id="boselectx-faixa-preco" name="select-faixa-preco">
-                        <option value="1">Categoria</option>
-                        <option value="2">Categ2</option>
-                        <option value="3">Categ3</option>
-                    </select>
-                </div>
 
                 <div class="box-ordem box-filter">
                     <label for="select-ordem">Ordenar Por</label>
-                    <select id="select-ordem" name="select-ordem">
+                    <select id="select-ordem" oninput="redirectOrdem()" name="select-ordem">
+                        <option>Todos</option>
                         <option value="1">Maior Preço</option>
                         <option value="2">Menor Preço</option>
-                        <option value="3">Mais Relevante</option>
                     </select>
+                </div>
+
+                <div class="container-clean-filters box-filter">
+                    <button id="btn-clean-filters" onclick="cleanFilters()">
+                        Limpar Filtros
+                    </button>
                 </div>
             </section>
 
@@ -71,23 +118,50 @@ $resultSubMenu = $manager->listClient('adm_submenu', 'id_submenu');
                         <th>Status</th>
                         <th>Ações</th>
                     </tr>
-                    <tr>
-                        <!-- DADOS PARA MODIFICAR -->
-                        <td>1</td>
-                        <td>49471488885</td>
-                        <td>1</td>
-                        <td>R$ 25,69</td>
-                        <td>24/08/1285</td>
-                        <td>Aprovada</td>
-                        <td id="btn-actions">
-                            <button id="search-client"><i class="fa-solid fa-magnifying-glass"></i></i></i></button>
-                        </td>
-                    </tr>
+
+                    <?php
+                    if (count($resultPedidos) > 0) :
+                        for ($i = 0; $i < count($resultPedidos); $i++) :
+                            //* EXIBIR CLIENTE
+                            $resultCliente = $manager->getInfo('user_cliente', 'id_cliente', $resultPedidos[$i]['id_cliente']);
+
+                            //* EXIBIR STATUS DO PEDIDO
+                            $resultPedidoStatus = $manager->getInfo('venda_status', 'id_status', $resultPedidos[$i]['id_status']);
+
+                            if (count($resultCliente) > 0) :
+                                for ($j = 0; $j < count($resultCliente); $j++) :
+                                    if (count($resultPedidoStatus) > 0) :
+                                        for ($k = 0; $k < count($resultPedidoStatus); $k++) :
+
+                    ?>
+                                            <tr>
+                                                <!-- DADOS PARA MODIFICAR -->
+                                                <td><?= $resultPedidos[$i]['id_venda'] ?></td>
+                                                <td><?= $resultCliente[$j]['cpf_cliente'] ?></td>
+                                                <td><?= $resultPedidos[$i]['quant_produto_total'] ?></td>
+                                                <td><?= $resultPedidos[$i]['valor_venda_total'] ?></td>
+                                                <td><?= $resultPedidos[$i]['data_venda'] ?></td>
+                                                <td><?= $resultPedidoStatus[$k]['status_venda'] ?></td>
+                                                <td id="btn-actions">
+                                                    <button id="search-client" onclick="window.location.href='./DetailsPedidos.php?id=<?= $resultPedidos[$i]['id_venda'] ?>'">
+                                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                    <?php
+                                        endfor;
+                                    endif;
+                                endfor;
+                            endif;
+                        endfor;
+                    endif;
+                    ?>
                 </table>
             </section>
         </section>
     </main>
 </body>
+<script src="../assets/js/listPedidos.js"></script>
 <?php
 if (isset($_POST['msg'])) {
     require_once './msg.php';

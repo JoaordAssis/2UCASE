@@ -59,21 +59,6 @@
     align-items: flex-end;
 }
 
-.box-filter {
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-    align-items: center;
-}
-
-.box-filter select,
-.box-filter input[type="date"], .box-filter button {
-    padding: 1rem;
-    border-radius: 15px;
-    min-width: 10rem;
-    border: 1px solid #000;
-}
-
 #btn-new-produto {
     display: flex;
     align-items: center;

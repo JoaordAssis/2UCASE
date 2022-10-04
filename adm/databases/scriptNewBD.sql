@@ -440,6 +440,16 @@ VALUES (1, 1, 'Capinha Flamengo 2022 - Seleção Oficial', 25.94, 'Lorem, ipsum 
 INSERT INTO user_avaliacao(id_produto, id_cliente,nota_avaliacao, titulo_avaliacao, descricao, status) VALUES (1, 1, 4, 'ótimo produto melhor que já comprei', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere dicta obcaecati ea eos sunt vel sequi non, harum hic possimus doloremque, inventore eaque, culpa veniam facilis libero mollitia laudantium numquam!', 1);
 
 
+-- INSERT INTO VENDA STATUS
+
+INSERT INTO venda_status (status_venda) VALUES ('Pendente');
+INSERT INTO venda_status (status_venda) VALUES ('Pagamento Aprovado');
+INSERT INTO venda_status (status_venda) VALUES ('Cancelada');
+INSERT INTO venda_status (status_venda) VALUES ('Enviada');
+INSERT INTO venda_status (status_venda) VALUES ('Entregue');
+INSERT INTO venda_status (status_venda) VALUES ('Reembolsada');
+
+
 -- INSERT INTO FORMA PAGAMENTO
 
 INSERT INTO user_forma_pagamento (parcelamento_pagamento, metodo_pagamento) 
@@ -450,7 +460,7 @@ VALUES (0, 'Cartão de Crédito - Mastercard');
 INSERT INTO user_carrinho 
 (id_cliente, total_carrinho, desconto_carrinho, quant_carrinho, id_endereco, frete_carrinho)
 VALUES
-(1, 58.64, 12.69, 4, 1, 32.41);
+(1, 84.64, 12.69, 4, 1, 32.41);
 
 
 -- INSERT INTO PRODUTO CARRINHO
@@ -458,11 +468,11 @@ VALUES
 INSERT INTO produto_carrinho
 (id_carrinho, id_produto, quant_carrinho, preco_quant_prod, preco_desconto_prod)
 VALUES
-(1, 4, 5, 21.24, 0.00);
+(1, 1, 5, 21.24, 0.00);
 
 -- INSERT INTO VENDAS
 
 INSERT INTO adm_venda 
 (id_cliente, id_pagamento, valor_desconto_total, valor_venda_total, quant_produto_total, id_status, id_carrinho) 
 VALUES 
-(1, 1, 12.69, 78.36, 4, 2, 1);
+(1, 1, 12.69, 214.36, 4, 4, 1);
