@@ -38,9 +38,9 @@ $exibModeloFilters = $manager->listClient('user_mod_celular', 'id_modelo_celular
                 <select required name="garantias_produto" id="select-garantia">
                     <option selected>Escolha a garantia</option>
                     <option>7 Dias</option>
-                    <option>1 Mês</option>
-                    <option>3 Mêses</option>
-                    <option>6 Mêses</option>
+                    <option>1 Mes</option>
+                    <option>3 Meses</option>
+                    <option>6 Meses</option>
                     <option>1 Ano</option>
                 </select>
 

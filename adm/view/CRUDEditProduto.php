@@ -49,48 +49,48 @@ $exibProduto = $manager->getInfo('user_produto', 'id_produto', $idProduto);
                     ?>
                         <option>Escolha a garantia</option>
                         <option selected>7 Dias</option>
-                        <option>1 Mês</option>
-                        <option>3 Mêses</option>
-                        <option>6 Mêses</option>
+                        <option>1 Meses</option>
+                        <option>3 Meses</option>
+                        <option>6 Meses</option>
                         <option>1 Ano</option>
                     <?php
                     }
                     ?>
 
                     <?php
-                    if ($exibProduto[0]['garantias_produto'] === '1 Mês') {
+                    if ($exibProduto[0]['garantias_produto'] === '1 Mes') {
                     ?>
                         <option>Escolha a garantia</option>
                         <option>7 Dias</option>
-                        <option selected>1 Mês</option>
-                        <option>3 Mêses</option>
-                        <option>6 Mêses</option>
+                        <option selected>1 Mes</option>
+                        <option>3 Meses</option>
+                        <option>6 Meses</option>
                         <option>1 Ano</option>
                     <?php
                     }
                     ?>
 
                     <?php
-                    if ($exibProduto[0]['garantias_produto'] === '3 Mêses') {
+                    if ($exibProduto[0]['garantias_produto'] === '3 Meses') {
                     ?>
                         <option>Escolha a garantia</option>
                         <option>7 Dias</option>
-                        <option>1 Mês</option>
-                        <option selected>3 Mêses</option>
-                        <option>6 Mêses</option>
+                        <option>1 Mes</option>
+                        <option selected>3 Meses</option>
+                        <option>6 Meses</option>
                         <option>1 Ano</option>
                     <?php
                     }
                     ?>
 
                     <?php
-                    if ($exibProduto[0]['garantias_produto'] === '6 Mesês') {
+                    if ($exibProduto[0]['garantias_produto'] === '6 Meses') {
                     ?>
                         <option>Escolha a garantia</option>
                         <option>7 Dias</option>
-                        <option>1 Mês</option>
-                        <option>3 Mêses</option>
-                        <option selected>6 Mêses</option>
+                        <option>1 Mes</option>
+                        <option>3 Meses</option>
+                        <option selected>6 Meses</option>
                         <option>1 Ano</option>
                     <?php
                     }
@@ -101,12 +101,12 @@ $exibProduto = $manager->getInfo('user_produto', 'id_produto', $idProduto);
                     ?>
                         <option>Escolha a garantia</option>
                         <option>7 Dias</option>
-                        <option>1 Mês</option>
-                        <option>3 Mêses</option>
-                        <option>6 Mêses</option>
+                        <option>1 Mes</option>
+                        <option>3 Meses</option>
+                        <option>6 Meses</option>
                         <option selected>1 Ano</option>
                     <?php
-                    }
+                    } 
                     ?>
                 </select>
 
@@ -200,6 +200,7 @@ $exibProduto = $manager->getInfo('user_produto', 'id_produto', $idProduto);
             <br>
 
             <?php
+            // ! ERRO: não é possivel apagar a imagem do BD, resolução posterior
             for ($i = 0; $i < count($exibImagens); $i++) :
             ?>
 
@@ -214,7 +215,7 @@ $exibProduto = $manager->getInfo('user_produto', 'id_produto', $idProduto);
             endfor;
             ?>
 
-            <input type="submit" value="Adicionar">
+            <input type="submit" value="Editar">
         </form>
         <button id="btn-exit" onclick="window.location.href='./listProdutos.php'">Voltar</button>
     </main>

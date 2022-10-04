@@ -430,7 +430,7 @@ INSERT INTO user_mod_celular (marca_celular, modelo_celular) VALUES ('Apple', 'I
 --INSERT INTO PRODUTO
 
 INSERT INTO user_produto(id_modelo_celular, id_categoria, nome_produto, preco_produto, descricao_produto, imagem_principal_produto, quantidade_produto, garantias_produto, status, categoria_special_produto)
-VALUES (1, 1, 'Capinha Flamengo 2022 - Selecao Oficial', 25.94, 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum facere aperiam dolor minus laudantium autem soluta eum, officia sunt ducimus sed. Possimus necessitatibus ex molestiae.', '../assets/img/Banner1.png', 10, '2 Meses', 1, 'Mais Vendidos');
+VALUES (1, 1, 'Capinha Flamengo 2022 - Selecao Oficial', 25.94, 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum facere aperiam dolor minus laudantium autem soluta eum, officia sunt ducimus sed. Possimus necessitatibus ex molestiae.', '../assets/img/Banner1.png', 10, '3 Meses', 1, 'Mais Vendidos');
 
 
 -- INSERT INTO AVALIAÇÕES
