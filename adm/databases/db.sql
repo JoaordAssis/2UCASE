@@ -328,3 +328,49 @@ ADD COLUMN status INT(1) NOT NULL COMMENT '1 - ativo; 0 - inativo';
 
 ALTER DATABASE 2ucase_bd2 DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci; 
 
+-- ! EXAMPLE: apagar posteriormente
+
+SELECT SubMenu.id, SubMenu.nomeSub, SubMenu.urlSub, SubMenu.SubstatusM, SubMenu.SubDataC, Menu.id AS idDoMenu, Menu.NOME, Menu.urlMenu
+FROM Menu
+INNER JOIN SubMenu
+ON Menu.Id = SubMenu.idMenu;
+
+--* TABELAS PARA SE JUNTAR:
+
+--* adm_venda
+--* user_carrinho
+--* venda_status
+--* user_cliente
+--* user_endereco_cliente
+
+SELECT
+
+-- TABELA ADM VENDA
+
+adm_venda.*,
+
+-- TABELA STATUS VENDA
+ venda_status.status_venda,
+
+--  TABELA USER CARRINHO
+user_carrinho.*,
+
+--  TABELA USER CLIENTE
+user_cliente.*,
+
+--  TABELA USER ENDERECO CLIENTE
+user_endereco_cliente.*
+
+FROM adm_venda
+
+INNER JOIN venda_status
+ON adm_venda.id_status = venda_status.id_status
+
+INNER JOIN user_carrinho
+ON adm_venda.id_carrinho = user_carrinho.id_carrinho
+
+INNER JOIN user_cliente
+ON adm_venda.id_cliente = user_cliente.id_cliente
+
+INNER JOIN user_endereco_cliente
+ON user_carrinho.id_endereco = user_endereco_cliente.id_endereco;

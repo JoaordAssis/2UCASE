@@ -476,3 +476,4 @@ INSERT INTO adm_venda
 (id_cliente, id_pagamento, valor_desconto_total, valor_venda_total, quant_produto_total, id_status, id_carrinho) 
 VALUES 
 (1, 1, 12.69, 214.36, 4, 4, 1);
+

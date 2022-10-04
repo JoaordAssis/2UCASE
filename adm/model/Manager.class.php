@@ -81,6 +81,8 @@ class Manager extends Conexao {
 		return $statement->fetchAll();
 	}
 
+	// TODO: Refazer a query para o novo BD
+
 	public function LeftJoinMenu(){
 		$sql = "SELECT SubMenu.id, SubMenu.nomeSub, SubMenu.urlSub, SubMenu.SubstatusM, SubMenu.SubDataC, Menu.id AS idDoMenu, Menu.NOME, Menu.urlMenu
 		FROM Menu
