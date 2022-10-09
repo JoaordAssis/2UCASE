@@ -92,6 +92,7 @@ CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`user_cliente` (
   `email_cliente` VARCHAR(300) NOT NULL COMMENT 'email do cliente',
   `cpf_cliente` VARCHAR(18) NOT NULL COMMENT 'cpf do cliente',
   `telefone_cliente` VARCHAR(18) NOT NULL COMMENT 'telefone do cliente',
+  `telefoneFixo_cliente` VARCHAR(14) NOT NULL COMMENT 'telefone fixo do         cliente',
   `genero_cliente` INT(1) NOT NULL COMMENT '1 - feminino; 0 - masculino; 2 - não informar',
   `senha_cliente` VARCHAR(256) NOT NULL COMMENT 'senha em sha256',
   `data_nasc_cliente` DATE NOT NULL COMMENT 'data de nascimente',
@@ -316,7 +317,7 @@ CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`produto_carrinho` (
   `quant_carrinho` INT NOT NULL,
   `preco_quant_prod` FLOAT NOT NULL,
   `preco_desconto_prod` FLOAT NOT NULL,
-  `data_reg_Cprod` DATETIME NOT NULL,
+  `data_reg_Cprod` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'data e hora do registro',
   PRIMARY KEY (`id_produto_carrinho`),
   CONSTRAINT `fk_produto_carrinho_user_carrinho1`
     FOREIGN KEY (`id_carrinho`)
@@ -358,25 +359,10 @@ INSERT INTO adm_administrador(nome_adm, email_adm, senha_adm, poder_adm, status)
 
 -- INSERTS CLIENTE
 
-INSERT INTO user_cliente (nome_cliente, email_cliente, cpf_cliente, telefone_cliente, genero_cliente, senha_cliente, data_nasc_cliente, status)
-VALUES ('Davi Moreira', 'davisant6@gmail.com', '49471488885', '11996120093', '0', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', '2006-01-21', 1);
-
-INSERT INTO user_cliente (nome_cliente, email_cliente, cpf_cliente, telefone_cliente, genero_cliente, senha_cliente, data_nasc_cliente, status)
-VALUES ('Filipe Moreira', 'davisant6@gmail.com', '49471488885', '11996120093', '0', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', '2006-01-21', 1);
-
-INSERT INTO user_cliente (nome_cliente, email_cliente, cpf_cliente, telefone_cliente, genero_cliente, senha_cliente, data_nasc_cliente, status)
-VALUES ('Sophia', 'carro@gmail.com', '49471488885', '11996120093', '0', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', '2006-01-21', 1);
-
-INSERT INTO user_cliente (nome_cliente, email_cliente, cpf_cliente, telefone_cliente, genero_cliente, senha_cliente, data_nasc_cliente, status)
-VALUES ('Davi Moreira', 'davisant6@gmail.com', '49471488885', '118762123', '0', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', '2006-01-21', 1);
+INSERT INTO user_cliente (nome_cliente, email_cliente, cpf_cliente, telefone_cliente, telefoneFixo_cliente, genero_cliente, senha_cliente, data_nasc_cliente, status)
+VALUES ('Filipe Moreira', 'davisant6@gmail.com', '49471488885', '11996120093','1158313380', '0', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', '2006-01-21', 1);
 
 
-INSERT INTO user_cliente (nome_cliente, email_cliente, cpf_cliente, telefone_cliente, genero_cliente, senha_cliente, data_nasc_cliente, status)
-VALUES ('Filipe Moreira', 'davisant6@gmail.com', '49471488885', '118762123', '0', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', '2006-01-21', 1);
-
-
-INSERT INTO user_cliente (nome_cliente, email_cliente, cpf_cliente, telefone_cliente, genero_cliente, senha_cliente, data_nasc_cliente, status)
-VALUES ('Carlos', 'davisant6@gmail.com', '55848621', '118762123', '0', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', '2006-01-21', 0);
 
 -- INSERTS ENDEREÇO CLIENTE
 
@@ -422,12 +408,12 @@ INSERT INTO adm_carrossel (nome_carrossel, link_carrossel, status) VALUES ('Time
 
 
 
---INSERT INTO MODELO CELULAR
+-- INSERT INTO MODELO CELULAR
 
 INSERT INTO user_mod_celular (marca_celular, modelo_celular) VALUES ('Apple', 'Iphone 13 Pro Max');
 
 
---INSERT INTO PRODUTO
+-- INSERT INTO PRODUTO
 
 INSERT INTO user_produto(id_modelo_celular, id_categoria, nome_produto, preco_produto, descricao_produto, imagem_principal_produto, quantidade_produto, garantias_produto, status, categoria_special_produto)
 VALUES (1, 1, 'Capinha Flamengo 2022 - Selecao Oficial', 25.94, 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum facere aperiam dolor minus laudantium autem soluta eum, officia sunt ducimus sed. Possimus necessitatibus ex molestiae.', '../assets/img/Banner1.png', 10, '3 Meses', 1, 'Mais Vendidos');
