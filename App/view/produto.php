@@ -60,7 +60,7 @@
                 </div>
             </section>
 
-            <section class="box-produto-info">
+            <form method="POST" action="#" class="box-produto-info">
                 <!-- Oferta Especial -->
                 <span id="special-condition">
                     <i class="fa-solid fa-fire-flame-curved"></i>
@@ -93,20 +93,28 @@
                 <!-- Seleção do Modelo -->
                 <div class="select-option-prod">
                     <label for="marcaProduto">Selecione a Marca
-                        <select name="marcaProduto" id="select-marca">
-                            <option value="apple">Iphone</option>
+                        <select name="marcaProduto" oninput="selectCelularCheck()" id="select-marca">
+                            <option>Apple</option>
+                            <option>Samsung</option>
+                        </select>
+                    </label>
+                        <!--Modelo Iphone-->
+                    <label id="select-modelo-iphone-label" for="modeloProduto">Selecione o Modelo
+                        <select name="modeloProduto" id="select-modelo-iphone">
+                            <option>Iphone 13</option>
                         </select>
                     </label>
 
-                    <label for="marcaProduto">Selecione o Modelo
-                        <select name="modeloProduto" id="select-modelo">
-                            <option value="I13">Iphone 13</option>
+                        <!--Modelo samsung-->
+                    <label style="display: none" id="select-modelo-samsung-label" for="modeloProduto">Selecione o Modelo
+                        <select name="modeloProduto" id="select-modelo-samsung">
+                            <option>Galaxy S20</option>
                         </select>
                     </label>
                 </div>
 
                 <!-- Adicionar ao Carrinho -->
-                <button id="btn-carrinho">
+                <button type="submit" id="btn-carrinho">
                     <i class="fa-solid fa-bag-shopping fa-2x"></i>
                     Adicionar ao Carrinho
                 </button>
@@ -122,7 +130,7 @@
                     </div>
                 </div>
 
-            </section>
+            </form>
         </article>
 
         <article class="homepage-prod-carrossel">
@@ -238,6 +246,8 @@
     </main>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+<script type="module" src="../assets/js/modules/correios-calc.mjs" async></script>
+<script defer src="../assets/js/produto.js"></script>
 <script>
     new Glide('.carousel-imgprod', {
         type: 'carousel',

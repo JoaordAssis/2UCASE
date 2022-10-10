@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "@glidejs/glide": "^3.5.2",
-    "jshint": "^2.13.5"
+    "correios-brasil": "^3.0.2",
+    "jshint": "^2.13.5",
+    "node-correios": "^3.0.2"
   }
 }
