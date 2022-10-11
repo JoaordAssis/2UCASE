@@ -13,7 +13,7 @@
     <main class="payment-all">
 
         <div class="process">
-            <img src="../assets/./img/Etapas.png" alt="etapa entrega" width="260" height="80">
+<!--            <img src="../assets/./img/Etapas.png" alt="etapa entrega" width="260" height="80">-->
         </div>
 
         <article class="payment">
@@ -42,7 +42,8 @@
                                 <div class="row-payment">
 
                                     <label for="venc">
-                                        <input type="text" name="venc" id="input-card" placeholder="Vencimento" class="input-payment">
+                                        <input type="month" name="venc" id="input-card" placeholder="Vencimento"
+                                               class="input-payment">
                                     </label>
                                     <label for="codS">
                                         <input type="text" name="codS" maxlength="3" id="input-card" placeholder="Código de Segurança" class="input-payment">

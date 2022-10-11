@@ -76,12 +76,24 @@
                     <input type="text" placeholder="Nome" id="input-nome" class="input-contact" name="nome">
 
                     <div class="row-contact">
-                        <input type="text" placeholder="Telefone" id="input-phone" class="input-contact" name="phone">
+
+                        <input type="text" data-js="phone" placeholder="Telefone" id="input-phone"
+                               class="input-contact"
+                               name="phone" maxlength="15">
                         <input type="text" placeholder="Número do Pedido" id="input-pedido" class="input-contact" name="nPedido">
                     </div>
 
                     <select name="assunto" id="select-assunto">
-                        <option value="1">Assunto</option>
+                        <option selected>Assunto</option>
+                        <option value="1">Cadastro</option>
+                        <option value="1">Cancelamento</option>
+                        <option value="1">Entrega</option>
+                        <option value="1">Serviços</option>
+                        <option value="1">Troca</option>
+                        <option value="1">Pagamento</option>
+                        <option value="1">Elogio</option>
+                        <option value="1">Reclamação</option>
+                        <option value="1">Trabalhe Conosoco</option>
                     </select>
                     <textarea name="mensagem" placeholder="Mensagem" id="msg-input" cols="30" rows="10"></textarea>
 

@@ -13,7 +13,7 @@
     <form action="#" method="POST" class="entrega-container">
         <div class="process">
             <!-- Icones da etapa do processo -->
-            <img src="../assets/./img/Etapas.png" alt="etapa entrega" width="210" height="80">
+<!--            <img src="../assets/./img/Etapas.png" alt="etapa entrega" width="210" height="80">-->
         </div>
 
 

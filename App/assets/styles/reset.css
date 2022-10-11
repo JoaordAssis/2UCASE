@@ -42,6 +42,7 @@ footer a:hover, header a:hover:not(#logo-site a) {
 
 :root{
     --cor-principal: #fb745d;
+    --svg-color: #f58e80;
     --cor-secundaria-background: rgb(16, 55, 65);
     --cor-secundaria-gradient: linear-gradient(90deg, rgba(16, 55, 65, 1) 32%, rgba(16, 77, 92, 1) 85%);
 }

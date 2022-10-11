@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="Teste commit 09/10/2022">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/assets/js/modules/correios-calc.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/assets/js/produto.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Vilicapas.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Vilicapas.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="AJUSTED: Realizando os ajustes contidos na lista de afazeres; Paginas: Payment, Contact, Produto.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/produto.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/produto.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/svg/Phone.svg" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/svg/Phone.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/assets/js/contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/js/contact.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/assets/styles/reset.css" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/styles/reset.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/assets/svg/Email.svg" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/svg/Email.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/assets/svg/Location.svg" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/svg/Location.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/assets/svg/Phone.svg" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/svg/Phone.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/view/contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/contact.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/view/entrega.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/entrega.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/view/pagamento.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/pagamento.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +60,6 @@
     <property name="DatabaseDriversLRU" value="mariadb" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
@@ -87,7 +84,8 @@
       <workItem from="1665345283489" duration="107000" />
       <workItem from="1665345394471" duration="1127000" />
       <workItem from="1665404571832" duration="5068000" />
-      <workItem from="1665423392405" duration="1032000" />
+      <workItem from="1665423392405" duration="1250000" />
+      <workItem from="1665450155387" duration="1410000" />
     </task>
     <task id="LOCAL-00001" summary="Teste commit 09/10/2022">
       <created>1665346468595</created>
@@ -103,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665346498886</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="AJUSTED: Realizando os ajustes contidos na lista de afazeres; Paginas: Payment, Contact, Produto.">
+      <created>1665424630898</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1665424630898</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,6 +131,7 @@
       <path value="$PROJECT_DIR$/../VilicapasProjetos" />
     </ignored-roots>
     <MESSAGE value="Teste commit 09/10/2022" />
-    <option name="LAST_COMMIT_MESSAGE" value="Teste commit 09/10/2022" />
+    <MESSAGE value="AJUSTED: Realizando os ajustes contidos na lista de afazeres; Paginas: Payment, Contact, Produto." />
+    <option name="LAST_COMMIT_MESSAGE" value="AJUSTED: Realizando os ajustes contidos na lista de afazeres; Paginas: Payment, Contact, Produto." />
   </component>
 </project>
