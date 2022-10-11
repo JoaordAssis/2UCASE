@@ -90,7 +90,7 @@
                             <button id="principal-button">Calcular</button>
                         </div>
 
-                        <a href="#">Não sei meu CEP</a>
+                        <a target="_blank" href="https://www2.correios.com.br/sistemas/buscacep/buscaCep.cfm">Não sei meu CEP</a>
                     </div>
                 </section>
             </section>

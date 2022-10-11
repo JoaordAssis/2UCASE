@@ -14,12 +14,12 @@
         <article class="login-container">
             <h1>Já tenho cadastro</h1>
 
-            <form action="#" method="post" id="form-login">
+            <form action="./carrinho.php" method="post" id="form-login">
                 <label for="email-cpf">
-                    <input type="text" name="email-cpf" id="input-login" placeholder="Email ou CPF">
+                    <input type="text" required name="email-cpf" id="input-login-emailcpf" placeholder="Email ou CPF">
                 </label>
                 <label for="senha">
-                    <input type="text" name="senha" id="input-login" placeholder="Senha">
+                    <input type="password" required name="senha" id="input-login-senha" placeholder="Senha">
                 </label>
                 <a href="./esqueceu-senha.php">Esqueceu sua senha?</a>
 
@@ -42,26 +42,28 @@
         <article class="sign-container">
             <h1>Quero me cadastrar</h1>
 
-            <form action="#" method="post" id="form-login">
+            <form action="./carrinho.php" method="post" id="form-sign">
 
                 <label for="nome">
-                    <input type="text" name="nome" id="input-login" placeholder="Nome">
+                    <input type="text" required name="nome" id="input-sign-nome" placeholder="Nome">
                 </label>
                 <label for="email">
-                    <input type="email" name="email" id="input-login" placeholder="Email">
+                    <input type="email" required name="email" id="input-sign-email" placeholder="Email">
                 </label>
 
                 <label for="confirmEmail">
-                    <input type="email" name="confirmEmail" id="input-login" placeholder="Confirme o Email">
+                    <input type="email" required name="confirmEmail" id="input-sign-email-confirma"
+                           placeholder="Confirme o Email">
                 </label>
 
                 <div class="row-sign">
                     <label for="senha">
-                        <input type="text" name="senha" id="input-login" placeholder="Senha">
+                        <input type="password" required  name="senha" id="input-sign-senha" placeholder="Senha">
                     </label>
 
                     <label for="senhaC">
-                        <input type="text" name="senhaC" id="input-login" placeholder="Confirme sua Senha">
+                        <input type="password" required  name="senhaC" id="input-sign-senha-confirma"
+                               placeholder="Confirme sua Senha">
                     </label>
                 </div>
 
@@ -82,6 +84,7 @@
         </article>
     </main>
 </body>
+<script src="../assets/js/login.js"></script>
 <!-- Footer -->
 <?php require_once './footer.php';
 ?>

@@ -44,12 +44,22 @@ const masks = {
       .replace(/\D/g, "")
       .replace(/(\d{2})(\d)/, "$1.$2")
       .replace(/(\d{3})(\d)/, "$1.$2")
-      .replace(/(\d{3})(\d{1})/, "$1-$2")
+      .replace(/(\d{3})(\d)/, "$1-$2")
       .replace(
-        /(\d{2}).(\d)(\d{2}).(\d)(\d{2})-(\d)(\d{1})/,
+        /(\d{2}).(\d)(\d{2}).(\d)(\d{2})-(\d)(\d)/,
         "$1$2.$3$4.$5$6-$7"
       )
       .replace(/(-\d{2})\d+?$/, "$1");
+  },
+  month(value){
+    return value
+        .replace(/\D/g, "")
+        .replace(/(\d{2})(\d{4})/, "$1/$2")
+  },
+
+  number(value){
+    return value
+        .replace(/\D/g, "");
   }
 };
 
@@ -61,6 +71,7 @@ document.querySelectorAll('input').forEach(($input) => {
 });
 
 let payment = new Payment();
+
 
 payment.accordionFunction();
 

@@ -32,7 +32,9 @@
                         <div class="panel">
                             <form action="#" method="POST" id="formulario-pagamento">
                                 <label for="card-number">
-                                    <input type="text" name="card-number" id="input-card" placeholder="Número do Cartão" class="input-payment">
+                                    <input type="text" name="card-number" maxlength="16" data-js="number"
+                                           id="input-card"
+                                           placeholder="Número do Cartão" class="input-payment">
                                 </label>
 
                                 <label for="titular">
@@ -42,11 +44,13 @@
                                 <div class="row-payment">
 
                                     <label for="venc">
-                                        <input type="month" name="venc" id="input-card" placeholder="Vencimento"
+                                        <input type="text" data-js="month" maxlength="7" name="venc" id="input-card"
+                                               placeholder="Vencimento"
                                                class="input-payment">
                                     </label>
                                     <label for="codS">
-                                        <input type="text" name="codS" maxlength="3" id="input-card" placeholder="Código de Segurança" class="input-payment">
+                                        <input type="text" data-js="number" name="codS" maxlength="10" id="input-card"
+                                               placeholder="Código de Segurança" class="input-payment">
                                     </label>
 
                                 </div>
@@ -62,7 +66,8 @@
                                 <div class="row-payment address-payment">
 
                                     <label for="numberPayment">
-                                        <input type="text" name="numberPayment" id="input-card" placeholder="Número" class="input-payment">
+                                        <input type="text" name="numberPayment" id="input-numberh"
+                                               placeholder="Número" class="input-payment">
                                     </label>
 
                                     <label for="compPayment">

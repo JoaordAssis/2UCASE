@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="AJUSTED: Realizando os ajustes contidos na lista de afazeres; Paginas: Payment, Contact, Produto.">
+    <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="Modificaões basicas">
+      <change afterPath="$PROJECT_DIR$/App/assets/js/login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/assets/js/contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/js/contact.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/assets/styles/reset.css" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/styles/reset.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/assets/svg/Email.svg" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/svg/Email.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/assets/svg/Location.svg" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/svg/Location.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/assets/svg/Phone.svg" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/svg/Phone.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/contact.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/entrega.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/entrega.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/assets/js/Payment.js" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/js/Payment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/view/carrinho.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/carrinho.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/view/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/view/pagamento.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/pagamento.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,6 +27,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
     <include_path>
@@ -62,7 +67,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2021.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -85,7 +90,8 @@
       <workItem from="1665345394471" duration="1127000" />
       <workItem from="1665404571832" duration="5068000" />
       <workItem from="1665423392405" duration="1250000" />
-      <workItem from="1665450155387" duration="1410000" />
+      <workItem from="1665450155387" duration="1455000" />
+      <workItem from="1665517419009" duration="5285000" />
     </task>
     <task id="LOCAL-00001" summary="Teste commit 09/10/2022">
       <created>1665346468595</created>
@@ -108,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665424630898</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Modificaões basicas">
+      <created>1665455008157</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1665455008157</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,6 +145,7 @@
     </ignored-roots>
     <MESSAGE value="Teste commit 09/10/2022" />
     <MESSAGE value="AJUSTED: Realizando os ajustes contidos na lista de afazeres; Paginas: Payment, Contact, Produto." />
-    <option name="LAST_COMMIT_MESSAGE" value="AJUSTED: Realizando os ajustes contidos na lista de afazeres; Paginas: Payment, Contact, Produto." />
+    <MESSAGE value="Modificaões basicas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modificaões basicas" />
   </component>
 </project>
