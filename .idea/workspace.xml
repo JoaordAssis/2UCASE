@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="Modificaões basicas">
-      <change afterPath="$PROJECT_DIR$/App/assets/js/login.js" afterDir="false" />
+    <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="REFATORED: Ajustes e formatações de inputs; carrinho.php, Login.js, login.php,&#10;pagamento.php, Payment.js.">
+      <change afterPath="$PROJECT_DIR$/App/class/CEP.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/assets/js/Payment.js" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/js/Payment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/carrinho.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/carrinho.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/pagamento.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/pagamento.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/assets/js/entrega.js" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/js/entrega.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/assets/js/modules/correios-calc.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/assets/js/produto.js" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/js/produto.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/view/entrega.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/entrega.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/view/produto.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/produto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,10 +74,18 @@
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2021.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Node.js.correios-calc.js">
+    <configuration name="correios-calc.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/app/assets/js/modules/correios-calc.js" working-dir="$PROJECT_DIR$/app/assets/js/modules">
+      <method v="2" />
+    </configuration>
     <configuration name="2UCASE Server" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" document_root="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.correios-calc.js" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -91,7 +102,8 @@
       <workItem from="1665404571832" duration="5068000" />
       <workItem from="1665423392405" duration="1250000" />
       <workItem from="1665450155387" duration="1455000" />
-      <workItem from="1665517419009" duration="5285000" />
+      <workItem from="1665517419009" duration="5581000" />
+      <workItem from="1665539910852" duration="6203000" />
     </task>
     <task id="LOCAL-00001" summary="Teste commit 09/10/2022">
       <created>1665346468595</created>
@@ -121,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665455008157</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="REFATORED: Ajustes e formatações de inputs; carrinho.php, Login.js, login.php,&#10;pagamento.php, Payment.js.">
+      <created>1665523026757</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1665523026757</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,6 +165,7 @@
     <MESSAGE value="Teste commit 09/10/2022" />
     <MESSAGE value="AJUSTED: Realizando os ajustes contidos na lista de afazeres; Paginas: Payment, Contact, Produto." />
     <MESSAGE value="Modificaões basicas" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modificaões basicas" />
+    <MESSAGE value="REFATORED: Ajustes e formatações de inputs; carrinho.php, Login.js, login.php,&#10;pagamento.php, Payment.js." />
+    <option name="LAST_COMMIT_MESSAGE" value="REFATORED: Ajustes e formatações de inputs; carrinho.php, Login.js, login.php,&#10;pagamento.php, Payment.js." />
   </component>
 </project>

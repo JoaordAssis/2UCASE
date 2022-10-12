@@ -23,5 +23,33 @@ function selectCelularCheck(){
     }
 }
 
+//Trocar imagens do produto
+
+let mainImageChange = document.getElementById("image-principal");
+
+function imgChange(current){
+    let mainImageChange = document.getElementById("image-principal");
+
+    mainImageChange.src= current.src;
+}
+
+
+//Máscaras de input
+
+const masks = {
+    cep(value){
+        return value
+            .replace(/\D/g, "")
+            .replace(/(\d{5})(\d)/, "$1-$2")
+            .replace(/(-\d{3})\d+?$/, "$1");
+    }
+};
+
+document.querySelectorAll('input').forEach(($input) => {
+    const field = $input.dataset.js;
+    $input.addEventListener('input', (e) => {
+        e.target.value = masks[field](e.target.value);
+    }, false);
+});
 
 

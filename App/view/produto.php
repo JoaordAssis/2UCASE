@@ -17,6 +17,7 @@
         <!-- Container Produto e valor -->
         <article class="container-produto">
             <section class="container-img-produto">
+                    <!--       Imagem do Produto         -->
                 <img id="image-principal" src="../assets/img/Time.png" alt="Capinha flamengo">
                 <!-- Carrossel -->
                 <div class="glide carousel-imgprod">
@@ -30,23 +31,22 @@
                     <div class="glide__track" data-glide-el="track">
                         <ul class="glide__slides img-carousel-btn">
 
+                            <!--Inicio For-->
                             <button id="btn-new-image">
-                                <img src="../assets/img/Time.png" alt="Capinha flamengo">
+                                <img src="../assets/img/Banner1.png" onclick="imgChange(this)" alt="Capinha flamengo">
                             </button>
 
                             <button id="btn-new-image">
-                                <img src="../assets/img/Time.png" alt="Capinha flamengo">
+                                <img src="../assets/img/Banner2.png" onclick="imgChange(this)" alt="Capinha flamengo">
                             </button>
 
                             <button id="btn-new-image">
-                                <img src="../assets/img/Time.png" alt="Capinha flamengo">
+                                <img src="../assets/img/Banner3.png" onclick="imgChange(this)" alt="Capinha flamengo">
                             </button>
-
-
+                            <!--Fim For-->
                             <button id="btn-new-image">
-                                <img src="../assets/img/Time.png" alt="Capinha flamengo">
+                                <img src="../assets/img/Time.png" onclick="imgChange(this)" alt="Capinha flamengo">
                             </button>
-
 
                         </ul>
                     </div>
@@ -124,10 +124,11 @@
                     <P>Calcule o Frete</P>
                     <div class="cep-container">
                         <label for="cep">
-                            <input type="text" name="cep" placeholder="CEP" id="input-entrega">
+                            <input data-js="cep" type="text" name="cep" placeholder="CEP" id="input-calcula-cep">
                         </label>
-                        <button id="principal-button">Calcular</button>
+                        <button type="button" id="principal-button">Calcular</button>
                     </div>
+                    <a target="_blank" href="https://www2.correios.com.br/sistemas/buscacep/buscaCep.cfm">Não sei meu CEP</a>
                 </div>
 
             </form>
@@ -240,14 +241,15 @@
                     <div class="data-comment">
                         <p>21/01/2006</p>
                     </div>
-                </section>
+                </section   >
             </section>
         </article>
     </main>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
-<script type="module" src="../assets/js/modules/correios-calc.mjs" async></script>
 <script defer src="../assets/js/produto.js"></script>
+
+
 <script>
     new Glide('.carousel-imgprod', {
         type: 'carousel',

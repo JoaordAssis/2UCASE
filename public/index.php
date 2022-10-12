@@ -1,5 +1,5 @@
 <?php
-use App\class\testeClass;
+use app\class\testeClass;
 require_once "../vendor/autoload.php";
 
 $exibTest = new testeClass();

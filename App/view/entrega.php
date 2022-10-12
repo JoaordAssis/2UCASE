@@ -24,10 +24,10 @@
 
             <div class="cep-calc">
                 <label for="cep">
-                    <input type="text" name="cep" min="0" maxlength="90" placeholder="CEP" id="cep">
+                    <input data-js="cep" type="text" name="cep" min="0" maxlength="90" placeholder="CEP" id="cep">
                 </label>
                 <button id="principal-button">Calcular</button>
-                <a href="#">Não sei meu CEP</a>
+                <a target="_blank" href="https://www2.correios.com.br/sistemas/buscacep/buscaCep.cfm">Não sei meu CEP</a>
             </div>
 
             <section class="columns-container">
