@@ -53,3 +53,62 @@ document.querySelectorAll('input').forEach(($input) => {
 });
 
 
+//Calculo de CEP e Prazo
+
+let cepInput = document.getElementById("input-calcula-cep");
+let buttonCep = document.querySelector(".button-cep-calc");
+
+//Elementos para exibição
+let valueSedex = document.getElementById("value-sedex");
+let prazoSedex = document.getElementById("prazo-sedex");
+let valuePAC = document.getElementById("value-pac");
+let prazoPAC = document.getElementById("prazo-pac");
+let txtObs = document.getElementById("text-obs");
+
+
+
+cepInput.addEventListener("blur", () => {
+   if (cepInput.value.length === 0){
+       buttonCep.disabled;
+       console.log(cepInput.value.length);
+
+   }else{
+       buttonCep.addEventListener('click', () => {
+           let cepValue = {
+               cep: cepInput.value
+           }
+
+           let data = JSON.stringify(cepValue);
+           let url  = '../../class/CEP.php?cep=' + cepInput.value;
+           let dataResponse = [];
+
+           fetch(url, {
+               method: 'POST',
+               body: data
+           }).then(response =>  response.json())
+               .then(response => {
+                   dataResponse = response;
+                   valueSedex.innerText = "Sedex - Valor: R$" + dataResponse[1]['Valor'];
+                   valuePAC.innerText = "PAC - Valor: R$" + dataResponse[0]['Valor'];
+
+                   prazoSedex.innerText = "Prazo de Entrega: " + dataResponse[1]['PrazoEntrega']
+                       + " Dias úteis";
+                   prazoPAC.innerText = "Prazo de Entrega: " + dataResponse[0]['PrazoEntrega']
+                       + " Dias úteis";
+
+                   if (Object.entries(dataResponse[0]['obsFim']).length !== 0 && dataResponse[0]['obsFim'].constructor !== Object){
+                       txtObs.innerText = dataResponse[0]['obsFim'];
+                   }
+
+
+               }).catch(error => console.log(error));
+       });
+   }
+});
+
+
+
+
+
+
+

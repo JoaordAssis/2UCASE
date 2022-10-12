@@ -1,6 +1,6 @@
 <?php
 
-namespace App\class;
+namespace app\class;
 
 class testeClass{
     public function exibirTeste(){

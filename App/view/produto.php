@@ -124,13 +124,26 @@
                     <P>Calcule o Frete</P>
                     <div class="cep-container">
                         <label for="cep">
-                            <input data-js="cep" type="text" name="cep" placeholder="CEP" id="input-calcula-cep">
+                            <input data-js="cep" type="text" name="cep" placeholder="CEP"
+                                   id="input-calcula-cep">
                         </label>
-                        <button type="button" id="principal-button">Calcular</button>
+                        <button type="button" class="button-cep-calc" id="principal-button">Calcular</button>
                     </div>
                     <a target="_blank" href="https://www2.correios.com.br/sistemas/buscacep/buscaCep.cfm">Não sei meu CEP</a>
-                </div>
 
+                    <div id="cep-info-sedex">
+                        <p id="value-sedex"></p>
+                        <p id="prazo-sedex"></p>
+                    </div>
+
+                    <div id="cep-info-pac">
+                        <p id="value-pac"></p>
+                        <p id="prazo-pac"></p>
+                        <br>
+                        <p id="text-obs"></p>
+                    </div>
+
+                </div>
             </form>
         </article>
 
@@ -241,7 +254,7 @@
                     <div class="data-comment">
                         <p>21/01/2006</p>
                     </div>
-                </section   >
+                </section>
             </section>
         </article>
     </main>
