@@ -47,11 +47,8 @@
                 <a href="./category.php">
                     <li>Pop Socket</li>
                 </a>
-                <a href="./category.php">
-                    <li>Carregadores</li>
-                </a>
-                <a href="./category.php">
-                    <li>Acessórios</li>
+                <a href="./about.php">
+                    <li>Sobre Nós</li>
                 </a>
             </ul>
         </nav>

@@ -155,6 +155,8 @@ CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`user_categoria` (
 -- -----------------------------------------------------
 -- Table `2ucase_bd3`.`user_produto`
 -- -----------------------------------------------------
+
+-- TODO: Criar coluna de peso na tabela user_produto
 CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`user_produto` (
   `id_produto` INT NOT NULL AUTO_INCREMENT,
   `id_modelo_celular` INT NOT NULL,

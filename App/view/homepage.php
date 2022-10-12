@@ -75,9 +75,9 @@
 
         <article class="homepage-about-section">
             <section class="texts-about">
-                <h1>Catch Phrase</h1>
-                <p>Simple example text, to gain the attention of the client.</p>
-                <button id="btn-about-more">Learn More</button>
+                <h1>Saiba mais sobre nós</h1>
+                <p>Empresa N° 1 No ramo de capinhas personalizadas.</p>
+                <button onclick="window.location.href='./about.php'" id="btn-about-more">Saiba Mais</button>
             </section>
 
             <img src="../assets/img/bannerAboutPage.jpg" alt="Mais sobre a loja.">
@@ -113,29 +113,47 @@
         <article class="homepage-category">
             <h1>Categorias</h1>
             <section class="homepage-category-cards">
-                <div class="card-category" id="card1">
-                    <img src="../assets/img/Banner1.png" alt="Banner 1">
-                </div>
+                <a href="#" class="card-category" id="card1">
+                    <div class="shadow-hover">
+                        <h2>Animações</h2>
+                    </div>
+                    <img src="../assets/img/Olafinho.png" alt="Banner 1">
+                </a>
 
-                <div class="card-category" id="card2">
-                    <img src="../assets/img/Banner2.png" alt="Banner 1">
-                </div>
+                <a href="#" class="card-category" id="card1">
+                    <div class="shadow-hover">
+                        <h2>Estampas</h2>
+                    </div>
+                    <img src="../assets/img/AmendoeiraVanGoghCase.png" alt="Banner 1">
+                </a>
 
-                <div class="card-category" id="card3">
-                    <img src="../assets/img/Banner3.png" alt="Banner 1">
-                </div>
+                <a href="#" class="card-category" id="card1">
+                    <div class="shadow-hover">
+                        <h2>Flork</h2>
+                    </div>
+                    <img src="../assets/img/Florkgirly.png" alt="Banner 1">
+                </a>
 
-                <div class="card-category" id="card4">
-                    <img src="../assets/img/Banner1.png" alt="Banner 1">
-                </div>
+                <a href="#" class="card-category" id="card1">
+                    <div class="shadow-hover">
+                        <h2>Heroís</h2>
+                    </div>
+                    <img src="../assets/img/BabyGrootParty.png" alt="Banner 1">
+                </a>
 
-                <div class="card-category" id="card5">
-                    <img src="../assets/img/Banner2.png" alt="Banner 1">
-                </div>
+                <a href="#" class="card-category" id="card1">
+                    <div class="shadow-hover">
+                        <h2>Times</h2>
+                    </div>
+                    <img src="../assets/img/GarotaCorinthiana.png" alt="Banner 1">
+                </a>
 
-                <div class="card-category" id="card6">
-                    <img src="../assets/img/Banner3.png" alt="Banner 1">
-                </div>
+                <a href="#" class="card-category" id="card1">
+                    <div class="shadow-hover">
+                        <h2>Pop Sockets</h2>
+                    </div>
+                    <img src="../assets/img/StitchAirpodscase.png" alt="Banner 1">
+                </a>
             </section>
         </article>
 
@@ -148,41 +166,15 @@
                 <div class="glide__track" data-glide-el="track">
 
                     <ul class="glide__slides">
-                        <a class="produto-box glide__slide" href="#">
-                            <img src="../assets/img/Time.png" alt="Capinha Flamengo">
-                            <h4>Capinha 2022 - Flamengo</h4>
-                            <p>R$ 23,59</p>
-                        </a>
+                        <?php for ($i = 0; $i < 6; $i++) : ?>
 
-                        <a class="produto-box glide__slide" href="#">
-                            <img src="../assets/img/Time.png" alt="Capinha Flamengo">
-                            <h4>Capinha 2022 - Flamengo</h4>
-                            <p>R$ 23,59</p>
-                        </a>
+                            <a class="produto-box glide__slide" href="./produto.php">
+                                <img src="../assets/img/Time.png" alt="Capinha Flamengo">
+                                <h4>Capinha 2022 - Flamengo</h4>
+                                <p>R$ 23,59</p>
+                            </a>
 
-                        <a class="produto-box glide__slide" href="#">
-                            <img src="../assets/img/Time.png" alt="Capinha Flamengo">
-                            <h4>Capinha 2022 - Flamengo</h4>
-                            <p>R$ 23,59</p>
-                        </a>
-
-                        <a class="produto-box glide__slide" href="#">
-                            <img src="../assets/img/Time.png" alt="Capinha Flamengo">
-                            <h4>Capinha 2022 - Flamengo</h4>
-                            <p>R$ 23,59</p>
-                        </a>
-
-                        <a class="produto-box glide__slide" href="#">
-                            <img src="../assets/img/Time.png" alt="Capinha Flamengo">
-                            <h4>Capinha 2022 - Flamengo</h4>
-                            <p>R$ 23,59</p>
-                        </a>
-
-                        <a class="produto-box glide__slide" href="#">
-                            <img src="../assets/img/Time.png" alt="Capinha Flamengo">
-                            <h4>Capinha 2022 - Flamengo</h4>
-                            <p>R$ 23,59</p>
-                        </a>
+                        <?php endfor; ?>
 
                     </ul>
                 </div>
@@ -202,41 +194,15 @@
                 <div class="glide__track" data-glide-el="track">
 
                     <ul class="glide__slides">
-                        <a class="produto-box glide__slide" href="#">
-                            <img src="../assets/img/Time.png" alt="Capinha Flamengo">
-                            <h4>Capinha 2022 - Flamengo</h4>
-                            <p>R$ 23,59</p>
-                        </a>
+                        <?php for ($i = 0; $i < 6; $i++) : ?>
 
-                        <a class="produto-box glide__slide" href="#">
-                            <img src="../assets/img/Time.png" alt="Capinha Flamengo">
-                            <h4>Capinha 2022 - Flamengo</h4>
-                            <p>R$ 23,59</p>
-                        </a>
+                            <a class="produto-box glide__slide" href="./produto.php">
+                                <img src="../assets/img/Time.png" alt="Capinha Flamengo">
+                                <h4>Capinha 2022 - Flamengo</h4>
+                                <p>R$ 23,59</p>
+                            </a>
 
-                        <a class="produto-box glide__slide" href="#">
-                            <img src="../assets/img/Time.png" alt="Capinha Flamengo">
-                            <h4>Capinha 2022 - Flamengo</h4>
-                            <p>R$ 23,59</p>
-                        </a>
-
-                        <a class="produto-box glide__slide" href="#">
-                            <img src="../assets/img/Time.png" alt="Capinha Flamengo">
-                            <h4>Capinha 2022 - Flamengo</h4>
-                            <p>R$ 23,59</p>
-                        </a>
-
-                        <a class="produto-box glide__slide" href="#">
-                            <img src="../assets/img/Time.png" alt="Capinha Flamengo">
-                            <h4>Capinha 2022 - Flamengo</h4>
-                            <p>R$ 23,59</p>
-                        </a>
-
-                        <a class="produto-box glide__slide" href="#">
-                            <img src="../assets/img/Time.png" alt="Capinha Flamengo">
-                            <h4>Capinha 2022 - Flamengo</h4>
-                            <p>R$ 23,59</p>
-                        </a>
+                        <?php endfor; ?>
 
                     </ul>
                 </div>

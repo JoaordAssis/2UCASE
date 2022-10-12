@@ -4,18 +4,18 @@ namespace app\class;
 
 class CEP{
 
-    const CEP_ORIGEM = '05876040';
-    const ALTURA = 8;
-    const LARGURA = 20;
-    const COMPRIMENTO = 20;
-    const FORMATO = 1;
-    const MAO_PROPRIA = 'n';
-    const AVISO_RECEBIMENTO = 'n';
-    const DIAMETRO = 0;
-    const RETORNO = 'xml';
+    public const CEP_ORIGEM = '05876040';
+    public const ALTURA = 8;
+    public const LARGURA = 20;
+    public const COMPRIMENTO = 20;
+    public const FORMATO = 1;
+    public const MAO_PROPRIA = 'n';
+    public const AVISO_RECEBIMENTO = 'n';
+    public const DIAMETRO = 0;
+    public const RETORNO = 'xml';
 
     public int $peso;
-    public int $cepDestino;
+    public string $cepDestino;
     public int $valor;
 
     public function __construct($peso, $cepDestino, $valor){
@@ -54,7 +54,22 @@ class CEP{
 //Sedex: 40010
 //Pac:  04510
 
-$val = (new CEP('2', '05876040', '145.69'))->calcFrete('04510');
+/*
+ Peso : constante passada nas configurações,
+ CEP : POST recebido da fetch API; digitado pelo usuário,
+ Valor: Recebido da fetch API; pego do banco de dados
+ Tipo de Frete: Constate passada direto nessa página
+*/
 
+
+
+$val[] = (new CEP('2', $_GET['cep'], '145.69'))->calcFrete('04510');
+$val[] = (new CEP('2', $_GET['cep'], '145.69'))->calcFrete('40010');
+
+try {
+    echo json_encode($val, JSON_THROW_ON_ERROR);
+} catch (\JsonException $e) {
+    echo $e->getMessage();
+}
 
 
