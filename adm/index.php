@@ -26,7 +26,7 @@
         if (isset($_POST['msg'])) {
             require_once 'view/msg.php';
             $msg = $_POST["msg"];
-            $msgExibir = $msg[$msg];
+            $msgExibir = $MSG[$msg];
             echo "<script>alert('" . $msgExibir . "');</script>";
         }
 

@@ -13,7 +13,8 @@
   "require": {
     "league/oauth2-google":"dev-main",
     "league/oauth2-facebook": "^2.0",
-    "ext-simplexml": "*"
+    "ext-simplexml": "*",
+    "ext-pdo": "*"
   }
   ,
   "require-dev": {

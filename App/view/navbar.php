@@ -1,8 +1,17 @@
+<?php
+require_once __DIR__ . "/../../vendor/autoload.php";
+
+use app\model\Manager;
+
+$manager = new Manager();
+$menuReturn = $manager->listClient('adm_menu', 'id_menu');
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
-    <?php require_once __DIR__ . "/../config/stylesConfig.php"  ?>
+    <?php require_once __DIR__ . "/../config/stylesConfig.php" ?>
     <link rel="stylesheet" href="../assets/styles/navbar.css">
 </head>
 
@@ -13,12 +22,12 @@
             <section class="input-search">
                 <input type="search" id="searchIn" placeholder="Pesquisar" name="search">
                 <button id="search-button">
-                    <img src="../assets/svg/search.svg" alt="icone de pesquisa" id="search-icon" width="40" height="40"></img>
+                    <img src="../assets/svg/search.svg" alt="icone de pesquisa" id="search-icon" width="40" height="40" />
                 </button>
             </section>
             <section class="user-login">
                 <button id="login-button" onclick="window.location.href='./login.php'">
-                    <img src="../assets/svg/Login.svg" alt="icone de login" id="login-icon" width="50" height="50"></img>
+                    <img src="../assets/svg/Login.svg" alt="icone de login" id="login-icon" width="50" height="50" />
                 </button>
                 <div class="login-links">
                     <a href="./login.php">Minha conta</a>
@@ -35,21 +44,55 @@
 
         <nav id="menu">
             <ul id="nav-links">
-                <a href="./homepage.php">
-                    <li>Página Inicial</li>
-                </a>
-                <a href="./category.php">
-                    <li>Promoções</li>
-                </a>
-                <a href="./category.php">
-                    <li>Capinhas</li>
-                </a>
-                <a href="./category.php">
-                    <li>Pop Socket</li>
-                </a>
-                <a href="./about.php">
-                    <li>Sobre Nós</li>
-                </a>
+                <?php
+                //FOR
+                if (count($menuReturn) > 0):
+                    for ($i = 0, $iMax = count($menuReturn); $i < $iMax; $i++):
+                        $subMenuReturn = $manager->getInfoSub('adm_submenu', $menuReturn[$i]['id_menu']);
+                ?>
+
+                <?php
+                    if(count($subMenuReturn) > 0){
+                ?>
+
+                <li class="menu-link">
+                    <a href="<?=$menuReturn[$i]['link_menu']?>" id="first-link">
+                        <?=$menuReturn[$i]['nome_menu']?>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </a>
+                    <ul class="container-submenu">
+                        <?php
+                        if (count($subMenuReturn) > 0):
+                            for ($j = 0, $jMax = count($subMenuReturn); $j < $jMax; $j++):
+                        //FOR
+                        ?>
+                        <li>
+                            <a href="<?=$subMenuReturn[$j]['link_submenu']?>">
+                                <?=$subMenuReturn[$j]['nome_submenu']?>
+                            </a>
+                        </li>
+                        <?php
+                            endfor;
+                        endif;
+
+                        //ENDFOR
+                        ?>
+                    </ul>
+                </li>
+                <?php
+                }else{
+                ?>
+                <li class="menu-link">
+                    <a href="<?=$menuReturn[$i]['link_menu']?>" class="unique-link" id="first-link">
+                        <?=$menuReturn[$i]['nome_menu']?>
+                    </a>
+                </li>
+                <?php
+                //ENDFOR
+                    }
+                    endfor;
+                endif;
+                ?>
             </ul>
         </nav>
     </header>
@@ -87,24 +130,58 @@
             </section>
 
             <ul id="links-mobile">
-                <a href="./homepage.php">
-                    <li>Página Inicial</li>
-                </a>
-                <a href="./category.php">
-                    <li>Promoções</li>
-                </a>
-                <a href="./category.php">
-                    <li>Capinhas</li>
-                </a>
-                <a href="./category.php">
-                    <li>Pop Socket</li>
-                </a>
-                <a href="./category.php">
-                    <li>Carregadores</li>
-                </a>
-                <a href="./category.php">
-                    <li>Acessórios</li>
-                </a>
+                <?php
+                //FOR
+                if (count($menuReturn) > 0):
+                    for ($t = 0, $iMax = count($menuReturn); $t < $iMax; $t++):
+                        $subMenuReturnM = $manager->getInfoSub('adm_submenu', $menuReturn[$t]['id_menu']);
+                ?>
+
+                <li>
+                    <?php
+                     if (count($subMenuReturnM) > 0){
+                    ?>
+                    <button id="btn-submenu" onclick="dropdownSubMenu(<?=$t?>)">
+                        <?=$menuReturn[$t]['nome_menu']?>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <?php
+                         //CASO NÃO HAJA SUBMENUS LINKADOS
+                     }else{
+                    ?>
+                    <a id="correct-padding" href="<?=$menuReturn[$t]['link_menu']?>">
+                        <?=$menuReturn[$t]['nome_menu']?>
+                    </a>
+                    <?php
+                     }
+                    ?>
+
+                    <ul id="submenu-container-call" class="container-submenu">
+                        <?php
+                        if (count($subMenuReturnM) > 0):
+                            for ($l = 0, $jMax = count($subMenuReturnM); $l < $jMax; $l++):
+                        //FOR
+                        ?>
+
+                        <li>
+                            <a href="<?=$subMenuReturnM[$l]['link_submenu']?>">
+                                <?=$subMenuReturnM[$l]['nome_submenu']?>
+                            </a>
+                        </li>
+
+                        <?php
+                            endfor;
+                        endif;
+                        //ENDFOR
+                        ?>
+                    </ul>
+                </li>
+
+                <?php
+                //ENDFOR
+                    endfor;
+                endif;
+                ?>
 
                 <section class="util-icons-xs">
                     <button id="bag-button" onclick="window.location.href='./carrinho.php'">

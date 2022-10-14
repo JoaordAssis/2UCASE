@@ -11,7 +11,14 @@
 <?php require_once "./navbar.php" ?>
 
 <body id="body-margin">
-    <form action="#" method="POST" class="entrega-container">
+    <form action="../controllers/ControllerAddUsuarioUser.php" method="POST" class="entrega-container">
+        <!--Requests sem corpo-->
+        <input type="hidden" name="cadastroCompletoForm">
+
+        <input type="hidden" name="emailUserVerify" value="<?=$_REQUEST['email']?>">
+        <input type="hidden" name="senhaUserVerify" value="<?=$_REQUEST['senhaCripto']?>">
+
+
 
         <article class="entrega">
             <!-- INformações do Cliente e contato -->
@@ -22,18 +29,20 @@
             <section class="columns-container">
                 <section class="address-column1 address">
                     <label for="nomeCompleto">
-                        <input type="text" name="nomeCompleto" id="nome-completo" placeholder="Nome Completo">
+                        <input type="text" required name="nomeCompleto" id="nome-completo" value="<?=$_REQUEST['nome']?>"
+                               placeholder="Nome
+                        Completo">
                     </label>
 
                     <label for="cpf">
-                        <input type="text" name="cpf" data-js="cpf" id="input-entrega" placeholder="CPF">
+                        <input required type="text" name="cpf" data-js="cpf" id="input-entrega" placeholder="CPF">
                     </label>
 
                     <div class="state-container">
                         <!-- Input Data de Nascimento -->
 
                         <label for="dataNasc" class="input-dataNasc">
-                            <input type="date" name="dataNasc" id="input-entrega" placeholder="Data de Nascimento">
+                            <input required type="date" name="dataNasc" id="input-entrega" placeholder="Data de Nascimento">
                         </label>
 
                     </div>
@@ -43,7 +52,8 @@
                     <div class="number-container">
 
                         <label for="numeroCelular">
-                            <input type="text" name="numeroCelular" required id="input-entrega" data-js="phone" maxlength="15" placeholder="Telefone Celular">
+                            <input required type="text" name="numeroCelular" required id="input-entrega"
+                                   data-js="phone" maxlength="15" placeholder="Telefone Celular">
                         </label>
 
                         <label for="numeroFixo">
@@ -52,7 +62,7 @@
                     </div>
 
                     <div class="gender-container">
-                        <select name="gender" id="gender-input">
+                        <select required name="gender" id="gender-input">
                             <option>Gênero</option>
                             <option value="0">Masculino</option>
                             <option value="1">Feminino</option>
@@ -70,16 +80,16 @@
 
             <div class="cep-calc">
                 <label for="cep">
-                    <input type="text" name="cep" min="0" maxlength="90" placeholder="CEP" id="cep">
+                    <input required type="text" name="cep" min="0" maxlength="90" placeholder="CEP" id="cep">
                 </label>
-                <button id="principal-button">Calcular</button>
+                <button type="button" id="principal-button">Calcular</button>
                 <a href="#">Não sei meu CEP</a>
             </div>
 
             <section class="columns-container">
                 <section class="address-column1 address">
                     <label for="logradouro">
-                        <input type="text" name="logradouro" id="logradouro" placeholder="Logradouro">
+                        <input required type="text" name="logradouro" id="logradouro" placeholder="Logradouro">
                     </label>
 
                     <label for="referencia">
@@ -89,12 +99,13 @@
                     <div class="state-container">
                         <!-- Input estado e cidade row -->
 
-                        <select name="state" id="state-input">
-                            <option value="0">Estado</option>
+                        <select required name="state" id="state-input">
+                            <option selected value="0">Estado</option>
+                            <option value="SP">SP</option>
                         </select>
 
                         <label for="cidade">
-                            <input type="text" name="cidade" id="localidade" placeholder="Cidade">
+                            <input required type="text" name="cidade" id="localidade" placeholder="Cidade">
                         </label>
                     </div>
                 </section>
@@ -103,7 +114,7 @@
                     <div class="number-container">
 
                         <label for="numero">
-                            <input type="text" name="numero" id="input-entrega" placeholder="Número">
+                            <input required type="text" name="numero" id="input-entrega" placeholder="Número">
                         </label>
 
                         <label for="complemento">
@@ -112,11 +123,11 @@
                     </div>
 
                     <label for="bairro">
-                        <input type="text" name="bairro" id="bairro" placeholder="Bairro">
+                        <input required type="text" name="bairro" id="bairro" placeholder="Bairro">
                     </label>
 
                     <label for="nomeR">
-                        <input type="text" name="nomeR" id="input-entrega" placeholder="Nome do Recebedor">
+                        <input required type="text" name="nomeR" id="input-entrega" placeholder="Nome do Recebedor">
                     </label>
                 </section>
             </section>

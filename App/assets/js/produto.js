@@ -79,7 +79,7 @@ cepInput.addEventListener("blur", () => {
            }
 
            let data = JSON.stringify(cepValue);
-           let url  = '../../class/CEP.php?cep=' + cepInput.value;
+           let url  = '../../model/CEP.php?cep=' + cepInput.value;
            let dataResponse = [];
 
            fetch(url, {

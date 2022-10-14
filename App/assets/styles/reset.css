@@ -25,7 +25,7 @@ header{
     margin-top: -148px;
 }
 
-footer a:hover, header a:hover:not(#logo-site a) {
+footer a:hover, header a:hover:not(#logo-site a, #first-link) {
     text-decoration: underline;
     transition: ease .4s;
 }
@@ -116,7 +116,7 @@ ul, li{
     }
 
     header{
-    margin-top: -80px;
+    /*margin-top: -80px;*/
     }
 }
 

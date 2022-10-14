@@ -12,5 +12,10 @@ class NavBarActive{
 }
 
 let navbar = new NavBarActive();
-
 navbar.ativarBarraNavegacao();
+
+let containerSubmenu = document.querySelectorAll("#submenu-container-call");
+
+function dropdownSubMenu(index){
+    containerSubmenu[index].classList.toggle('active');
+}

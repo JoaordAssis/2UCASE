@@ -14,12 +14,12 @@
         <article class="login-container">
             <h1>Já tenho cadastro</h1>
 
-            <form action="./carrinho.php" method="post" id="form-login">
+            <form action="../controllers/ControllerValidaLogin.php" method="POST" id="form-login">
                 <label for="email-cpf">
                     <input type="text" required name="email-cpf" id="input-login-emailcpf" placeholder="Email ou CPF">
                 </label>
                 <label for="senha">
-                    <input type="password" required name="senha" id="input-login-senha" placeholder="Senha">
+                    <input type="text" required name="senha-login" id="input-login-senha" placeholder="Senha">
                 </label>
                 <a href="./esqueceu-senha.php">Esqueceu sua senha?</a>
 
@@ -42,13 +42,14 @@
         <article class="sign-container">
             <h1>Quero me cadastrar</h1>
 
-            <form action="./carrinho.php" method="post" id="form-sign">
+            <form action="../controllers/ControllerAddUsuarioUser.php" method="post" id="form-sign">
+                <input type="hidden" name="cadastroFirstRequest">
 
                 <label for="nome">
-                    <input type="text" required name="nome" id="input-sign-nome" placeholder="Nome">
+                    <input type="text" required name="nomeUser" id="input-sign-nome" placeholder="Nome">
                 </label>
                 <label for="email">
-                    <input type="email" required name="email" id="input-sign-email" placeholder="Email">
+                    <input type="email" required name="emailUser" id="input-sign-email" placeholder="Email">
                 </label>
 
                 <label for="confirmEmail">
@@ -58,11 +59,11 @@
 
                 <div class="row-sign">
                     <label for="senha">
-                        <input type="password" required  name="senha" id="input-sign-senha" placeholder="Senha">
+                        <input type="text" required  name="senhaUser" id="input-sign-senha" placeholder="Senha">
                     </label>
 
                     <label for="senhaC">
-                        <input type="password" required  name="senhaC" id="input-sign-senha-confirma"
+                        <input type="text" required  name="senhaC" id="input-sign-senha-confirma"
                                placeholder="Confirme sua Senha">
                     </label>
                 </div>

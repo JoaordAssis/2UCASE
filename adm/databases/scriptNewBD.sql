@@ -54,6 +54,8 @@ CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`adm_menu` (
 -- -----------------------------------------------------
 -- Table `2ucase_bd3`.`adm_carrossel`
 -- -----------------------------------------------------
+
+-- TODO: Criar coluna de link para o banner;
 CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`adm_carrossel` (
   `id_carrossel` INT NOT NULL AUTO_INCREMENT,
   `nome_carrossel` VARCHAR(200) NOT NULL,
@@ -92,7 +94,7 @@ CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`user_cliente` (
   `email_cliente` VARCHAR(300) NOT NULL COMMENT 'email do cliente',
   `cpf_cliente` VARCHAR(18) NOT NULL COMMENT 'cpf do cliente',
   `telefone_cliente` VARCHAR(18) NOT NULL COMMENT 'telefone do cliente',
-  `telefoneFixo_cliente` VARCHAR(14) NOT NULL COMMENT 'telefone fixo do         cliente',
+  `telefoneFixo_cliente` VARCHAR(14) NOT NULL COMMENT 'telefone fixo do cliente',
   `genero_cliente` INT(1) NOT NULL COMMENT '1 - feminino; 0 - masculino; 2 - não informar',
   `senha_cliente` VARCHAR(256) NOT NULL COMMENT 'senha em sha256',
   `data_nasc_cliente` DATE NOT NULL COMMENT 'data de nascimente',
@@ -100,7 +102,6 @@ CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`user_cliente` (
   `status` INT(1) NOT NULL COMMENT '1 - ativo; 0 - inativo',
   PRIMARY KEY (`id_cliente`)
 );
-
 
 -- -----------------------------------------------------
 -- Table `2ucase_bd3`.`user_endereco_cliente`
@@ -149,7 +150,8 @@ CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`user_categoria` (
   `img_categoria` VARCHAR(300) NOT NULL,
   `data_reg_cupom` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'data e hora do registro',
   `link_categoria` VARCHAR(300) NOT NULL,
-  PRIMARY KEY (`id_categoria`));
+  PRIMARY KEY (`id_categoria`)
+);
 
 
 -- -----------------------------------------------------
@@ -157,6 +159,8 @@ CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`user_categoria` (
 -- -----------------------------------------------------
 
 -- TODO: Criar coluna de peso na tabela user_produto
+-- TODO: Criar coluna de cod_produto na tabela user_produto
+
 CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`user_produto` (
   `id_produto` INT NOT NULL AUTO_INCREMENT,
   `id_modelo_celular` INT NOT NULL,

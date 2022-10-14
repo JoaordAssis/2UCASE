@@ -22,7 +22,7 @@ let carrosselProdFirst = new Glide(carrosselProd, {
   type: "carousel",
   startAt: 0,
   perView: 4,
-  autoplay: 2000,
+  autoplay: 1500,
   gap: 2,
   breakpoints: {
     800: {
@@ -45,7 +45,7 @@ let carrosselProdLikes = new Glide(carrossel3Like, {
   type: "carousel",
   startAt: 0,
   perView: 4,
-  autoplay: 2000,
+  autoplay: 1700,
   gap: 2,
   breakpoints: {
     800: {

@@ -1,6 +1,13 @@
+<?php
+require_once __DIR__ . "/../../vendor/autoload.php";
+use app\model\Manager;
+
+$manager  = new Manager();
+$returnBanners = $manager->listClient("adm_carrossel", 'id_carrossel');
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <?php require_once __DIR__ . "/../config/stylesConfig.php"  ?>
     <link rel="stylesheet" href="../../node_modules/@glidejs/glide/dist/css/glide.core.min.css">
@@ -16,6 +23,9 @@
 
             <section class="carrossel-container">
 
+                <?php
+                if(count($returnBanners) > 0):
+                ?>
                 <section class="glide carrossel-container-box">
                     <div class="glide__arrows left" data-glide-el="controls">
                         <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
@@ -24,23 +34,28 @@
 
                         <ul class="glide__slides">
 
-                            <div class="carrossel-box glide__slide">
-                                <img src="../assets/img/Banner1.png" alt="Banner1">
-                            </div>
+                            <?php
+                            for ($i = 0, $iMax = count($returnBanners); $i < $iMax; $i++):
+                            ?>
 
                             <div class="carrossel-box glide__slide">
-                                <img src="../assets/img/Banner2.png" alt="Banner1">
+                                <img src="../../adm/databases/<?=$returnBanners[$i]['link_carrossel']?>"
+                                     alt="<?=$returnBanners[$i]['nome_carrossel']?>">
                             </div>
 
-                            <div class="carrossel-box glide__slide">
-                                <img src="../assets/img/Banner3.png" alt="Banner1">
-                            </div>
+                            <?php
+                            endfor;
+                            ?>
 
                         </ul>
                         <div class="glide__bullets" data-glide-el="controls[nav]">
-                            <button class="glide__bullet" data-glide-dir="=0"></button>
-                            <button class="glide__bullet" data-glide-dir="=1"></button>
-                            <button class="glide__bullet" data-glide-dir="=2"></button>
+                            <?php
+                            for ($j = 0, $jMax = count($returnBanners); $j < $jMax; $j++):
+                            ?>
+                            <button class="glide__bullet" data-glide-dir="=<?=$j?>"></button>
+                            <?php
+                            endfor;
+                            ?>
                         </div>
                     </div>
 
@@ -50,13 +65,16 @@
                 </section>
 
             </section>
+                <?php
+                endif;
+                ?>
 
         </article>
 
         <article class="homepage-beneficios">
             <section class="container-beneficio" id="beneficio1">
                 <img src="../assets/img/fast-time-icon.png" alt="Entregas rápidas para todo o Brasil">
-                <h3>Jajá na sua casa</h3>
+                <h3>Jajá na sua casas</h3>
                 <p>Entrega rápida para todo o Brasil.</p>
             </section>
 
