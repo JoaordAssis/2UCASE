@@ -16,7 +16,7 @@ if (!isset($_SESSION["ADM-ID"]) || empty($_SESSION["ADM-ID"])) {
 
 }
 
-if (isset($_REQUEST['nome_produto']) && $_REQUEST['nome_produto'] != '') :
+if (isset($_REQUEST['nome_produto']) && $_REQUEST['nome_produto'] !== '') :
 
     require_once '../model/Manager.class.php';
     require_once '../model/Ferramentas.class.php';
@@ -32,6 +32,8 @@ if (isset($_REQUEST['nome_produto']) && $_REQUEST['nome_produto'] != '') :
     $dados["id_modelo_celular"] = $_REQUEST["marca_celular"];
     $dados["id_categoria"] = $_REQUEST["categoria_produto"];
     $dados["nome_produto"] = $_REQUEST["nome_produto"];
+    $dados["peso_produto"] = $_REQUEST["peso_produto"];
+    $dados["cod_produto"] = $_REQUEST["cod_produto"];
     $dados["preco_produto"] = $precoProdutoReplace;
     $dados["descricao_produto"] = $_REQUEST["descricao_produto"];
     $imgRetrieveData = $manager->imgUpload('imagem_principal_produto', $_REQUEST["nome_produto"]);

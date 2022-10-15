@@ -28,6 +28,12 @@ $exibCarrossel = $manager->getInfo('adm_carrossel', 'id_carrossel', $idCarrossel
 
             <input type="text" name="nome_carrossel" value="<?= $exibCarrossel[0]['nome_carrossel'] ?>" id="input_nome_menu" placeholder="Nome da Imagem">
 
+            <input type="text" name="link_promo_carrossel" value="<?= $exibCarrossel[0]['link_promo_carrossel'] ?>" id="input_link" placeholder="Link Promocional">
+            <br>
+
+            <p>Por Favor, adicione novamente a imagem</p>
+
+
             <label for="img_principal">Imagem Principal
                 <input type="file" name="link_carrossel" value="<?= $exibCarrossel[0]['link_carrossel'] ?>" id="input-img">
             </label>
@@ -57,7 +63,7 @@ $exibCarrossel = $manager->getInfo('adm_carrossel', 'id_carrossel', $idCarrossel
                     ?>
                 </select>
 
-                <input type="submit" value="Adicionar" id="adcionar_menu">
+                <input type="submit" value="Editar" id="adcionar_menu">
             </div>
 
 

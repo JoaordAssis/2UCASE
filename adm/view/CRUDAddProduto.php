@@ -34,6 +34,8 @@ $exibModeloFilters = $manager->listClient('user_mod_celular', 'id_modelo_celular
                 </label>
             </div>
 
+
+
             <div class="row-garantia-status row-inputs">
                 <select required name="garantias_produto" id="select-garantia">
                     <option selected>Escolha a garantia</option>
@@ -54,7 +56,7 @@ $exibModeloFilters = $manager->listClient('user_mod_celular', 'id_modelo_celular
             <select required name="categoria_produto" id="select-categoria">
                 <?php
                 if (count($exibCategoriaFilters) > 0) :
-                    for ($i = 0; $i < count($exibCategoriaFilters); $i++) :
+                    for ($i = 0, $iMax = count($exibCategoriaFilters); $i < $iMax; $i++) :
                 ?>
                         <option value="<?= $exibCategoriaFilters[$i]['id_categoria'] ?>">
                             <?= $exibCategoriaFilters[$i]['nome_categoria'] ?>
@@ -64,6 +66,16 @@ $exibModeloFilters = $manager->listClient('user_mod_celular', 'id_modelo_celular
                 endif;
                 ?>
             </select>
+
+            <div class="row-preco-quant row-inputs">
+                <label for="peso_produto">
+                    <input type="number" required name="peso_produto" id="input-peso" placeholder="Peso em gramas">
+                </label>
+
+                <label for="cod_produto">
+                    <input type="number" required name="cod_produto" min="0" id="input-cod" placeholder="Codigo do Produto">
+                </label>
+            </div>
 
             <select required name="categoria_special_produto" id="select-status">
                 <option selected>Nenhuma</option>

@@ -118,6 +118,16 @@ class Manager extends Conexao {
 		
 	}
 
+    /*
+     * @ Método de Teste
+     *
+     */
+
+    public function testClass($sql){
+        $statement = $this->pdo->query($sql);
+        $statement->execute();
+    }
+
 	public function lastInsertId($table, $columnName){
 		$sql = "SELECT $columnName FROM $table ORDER BY $columnName DESC LIMIT 1";
 		$statement = $this->pdo->prepare($sql);

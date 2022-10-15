@@ -18,6 +18,9 @@
 
             <input type="text" name="nome_carrossel" id="input_nome_menu" placeholder="Nome da Imagem">
 
+            <input type="text" name="link_promo_carrossel" id="input_link" placeholder="Link Promocional">
+
+
             <label for="img_principal">Imagem Principal
                 <input type="file" name="imagem_carrossel" id="input-img">
             </label>

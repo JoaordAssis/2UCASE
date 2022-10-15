@@ -1,32 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="WORKING: Sistema de login">
-      <change afterPath="$PROJECT_DIR$/adm/assets/css/detailsComentarios.css" afterDir="false" />
+    <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="FINALIZED: Sistema de login">
+      <change afterPath="$PROJECT_DIR$/adm/databases/img-database/Imagem Legal---15-10-2022 16-48-38/Imagem Legal-1003875857.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/adm/databases/img-database/Imagem Triste---15-10-2022 16-47-12/Imagem Triste-187388722.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/adm/databases/img-database/Imagem Triste---15-10-2022 16-51-43/Imagem Triste-688747537.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/assets/styles/navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/styles/navbar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/assets/styles/reset.css" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/styles/reset.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/controllers/ControllerAddUsuarioUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controllers/ControllerAddUsuarioUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/controllers/ControllerValidaLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controllers/ControllerValidaLogin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/model/Clientes.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/model/Clientes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/model/Ferramentas.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/model/Ferramentas.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/model/Manager.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/model/Manager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/about.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/about.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/carrinho.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/carrinho.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/category.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/contact.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/entrega.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/entrega.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/esqueceu-senha.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/esqueceu-senha.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/navbar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/pagamento.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/pagamento.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/produto.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/produto.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm/assets/css/cupons.css" beforeDir="false" afterPath="$PROJECT_DIR$/adm/assets/css/cupons.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/view/homepage.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/homepage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adm/controller/ControllerAddCarrossel.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/controller/ControllerAddCarrossel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adm/controller/ControllerAddProdutoADM.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/controller/ControllerAddProdutoADM.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adm/controller/ControllerCarrosselADM.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/controller/ControllerCarrosselADM.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adm/controller/ControllerProdutoADM.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/controller/ControllerProdutoADM.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adm/databases/db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/adm/databases/db.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adm/databases/scriptNewBD.sql" beforeDir="false" afterPath="$PROJECT_DIR$/adm/databases/scriptNewBD.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adm/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adm/model/Manager.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/model/Manager.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm/view/DetailsComentarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/view/DetailsComentarios.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adm/view/CRUDAddCarrossel.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/view/CRUDAddCarrossel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adm/view/CRUDAddProduto.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/view/CRUDAddProduto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adm/view/CRUDEditCarrossel.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/view/CRUDEditCarrossel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adm/view/CRUDEditProduto.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/view/CRUDEditProduto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/navbar.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +147,9 @@
       <workItem from="1665767042593" duration="334000" />
       <workItem from="1665769071262" duration="1758000" />
       <workItem from="1665830956499" duration="9765000" />
-      <workItem from="1665851358537" duration="2095000" />
+      <workItem from="1665851358537" duration="2504000" />
+      <workItem from="1665862599002" duration="1546000" />
+      <workItem from="1665869404534" duration="2971000" />
     </task>
     <task id="LOCAL-00001" summary="Teste commit 09/10/2022">
       <created>1665346468595</created>
@@ -219,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665770833424</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="FINALIZED: Sistema de login">
+      <created>1665853864667</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1665853864667</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,6 +253,7 @@
     <MESSAGE value="FINALIZED: Sistema de busca de valor e prazo por CEP, product page" />
     <MESSAGE value="REFATORED: Cards de categoria na homepage e mudança das imagens" />
     <MESSAGE value="WORKING: Sistema de login" />
-    <option name="LAST_COMMIT_MESSAGE" value="WORKING: Sistema de login" />
+    <MESSAGE value="FINALIZED: Sistema de login" />
+    <option name="LAST_COMMIT_MESSAGE" value="FINALIZED: Sistema de login" />
   </component>
 </project>

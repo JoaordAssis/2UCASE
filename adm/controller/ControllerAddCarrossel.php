@@ -28,6 +28,7 @@ if (isset($_REQUEST['nome_carrossel']) && $_REQUEST['nome_carrossel'] != '') :
     $imgRetrieveData = $manager->imgUpload('imagem_carrossel', $_REQUEST["nome_carrossel"]);
 
     $dadosCarrossel["nome_carrossel"] = $_REQUEST["nome_carrossel"];
+    $dadosBannerADM['link_promo_carrossel'] = $_REQUEST['link_promo_carrossel'];
     $dadosCarrossel["link_carrossel"] = $imgRetrieveData[0];
     $dadosCarrossel["status"] = $_REQUEST["status"];
 

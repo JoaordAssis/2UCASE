@@ -53,6 +53,7 @@ if (isset($_REQUEST['action']) && $_REQUEST['action'] != '' && isset($_REQUEST['
             $imgRetrieveData = $manager->imgUpload('link_carrossel', $_REQUEST["nome_carrossel"]);
 
             $dadosBannerADM['nome_carrossel'] = $_REQUEST['nome_carrossel'];
+            $dadosBannerADM['link_promo_carrossel'] = $_REQUEST['link_promo_carrossel'];
             $dadosBannerADM['link_carrossel'] = $imgRetrieveData[0];
             $dadosBannerADM['status'] = $_REQUEST['status'];
 

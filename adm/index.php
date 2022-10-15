@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+require_once "./model/Manager.class.php";
+?>
 <head>
     <link rel="stylesheet" href="assets/css/index.css">
     <title>Login Administrativo</title>
@@ -23,13 +25,14 @@
     </main>
 </body>
 <?php
-        if (isset($_POST['msg'])) {
-            require_once 'view/msg.php';
-            $msg = $_POST["msg"];
-            $msgExibir = $MSG[$msg];
-            echo "<script>alert('" . $msgExibir . "');</script>";
-        }
+
+    if (isset($_POST['msg'])) {
+        require_once 'view/msg.php';
+        $msg = $_POST["msg"];
+        $msgExibir = $MSG[$msg];
+        echo "<script>alert('" . $msgExibir . "');</script>";
+    }
 
 
-        ?>
+    ?>
 </html>

@@ -5,6 +5,15 @@ use app\model\Manager;
 $manager  = new Manager();
 $returnBanners = $manager->listClient("adm_carrossel", 'id_carrossel');
 session_start();
+
+//Novidades
+$returnNovidades = $manager->exibProductsHomepage('Novidades', 'preco_produto',5);
+
+//Mais Vendidos
+$returnVendidos = $manager->exibProductsHomepage('Mais Vendidos', 'preco_produto',5);
+
+//Promoções
+$returnPromos = $manager->exibProductsHomepage('Promoções', 'preco_produto ASC',5);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -39,8 +48,11 @@ session_start();
                             ?>
 
                             <div class="carrossel-box glide__slide">
-                                <img src="../../adm/databases/<?=$returnBanners[$i]['link_carrossel']?>"
-                                     alt="<?=$returnBanners[$i]['nome_carrossel']?>">
+                                <a href="<?=$returnBanners[$i]['link_promo_carrossel']?>">
+                                    <img src="../../adm/databases/<?=$returnBanners[$i]['link_carrossel']?>"
+                                         alt="<?=$returnBanners[$i]['nome_carrossel']?>">
+                                </a>
+
                             </div>
 
                             <?php
@@ -102,23 +114,31 @@ session_start();
         </article>
 
         <article class="homepage-prod-carrossel">
-            <h1>Mais vendidos</h1>
+            <h1>Novidades</h1>
             <section class="glide prod-container-box">
                 <div class="glide__arrows left" data-glide-el="controls">
                     <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fa-solid fa-angle-left fa-2x"></i></button>
                 </div>
                 <div class="glide__track" data-glide-el="track">
+                        <?php
+                        if (count($returnNovidades) > 0):
+                        ?>
 
                     <ul class="glide__slides">
-                        <?php for ($i = 0; $i < 6; $i++) : ?>
+                        <?php
+                            for ($i = 0, $iMax = count($returnNovidades); $i < $iMax; $i++) :
+                        ?>
 
-                            <a class="produto-box glide__slide" href="./produto.php">
-                                <img src="../assets/img/Time.png" alt="Capinha Flamengo">
-                                <h4>Capinha 2022 - Flamengo</h4>
-                                <p>R$ 23,59</p>
+                            <a class="produto-box glide__slide" href="./produto.php?idProduto=<?=$returnNovidades[$i]['id_produto']?>">
+                                <img src="<?=$returnNovidades[$i]['imagem_principal_produto']?>" alt="<?=$returnNovidades[$i]['nome_produto']?>">
+                                <h4><?=$returnNovidades[$i]['nome_produto']?></h4>
+                                <p>R$ <?=$returnNovidades[$i]['preco_produto']?></p>
                             </a>
 
-                        <?php endfor; ?>
+                        <?php
+                            endfor;
+                        endif;
+                        ?>
                     </ul>
                 </div>
 
@@ -183,17 +203,25 @@ session_start();
                 </div>
                 <div class="glide__track" data-glide-el="track">
 
-                    <ul class="glide__slides">
-                        <?php for ($i = 0; $i < 6; $i++) : ?>
+                    <?php
+                    if (count($returnVendidos) > 0):
+                    ?>
 
-                            <a class="produto-box glide__slide" href="./produto.php">
-                                <img src="../assets/img/Time.png" alt="Capinha Flamengo">
-                                <h4>Capinha 2022 - Flamengo</h4>
-                                <p>R$ 23,59</p>
+                    <ul class="glide__slides">
+                        <?php
+                        for ($i = 0, $iMax = count($returnVendidos); $i < $iMax; $i++) :
+                            ?>
+
+                            <a class="produto-box glide__slide" href="./produto.php?idProduto=<?=$returnVendidos[$i]['id_produto']?>">
+                                <img src="<?=$returnVendidos[$i]['imagem_principal_produto']?>" alt="<?=$returnVendidos[$i]['nome_produto']?>">
+                                <h4><?=$returnVendidos[$i]['nome_produto']?></h4>
+                                <p>R$ <?=$returnVendidos[$i]['preco_produto']?></p>
                             </a>
 
-                        <?php endfor; ?>
-
+                        <?php
+                        endfor;
+                        endif;
+                        ?>
                     </ul>
                 </div>
 
@@ -204,24 +232,32 @@ session_start();
         </article>
 
         <article class="homepage-prod-carrossel">
-            <h1>Mais vendidos</h1>
+            <h1>Promoções</h1>
             <section class="glide prod-container-box-sell">
                 <div class="glide__arrows left" data-glide-el="controls">
                     <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fa-solid fa-angle-left fa-2x"></i></button>
                 </div>
                 <div class="glide__track" data-glide-el="track">
 
-                    <ul class="glide__slides">
-                        <?php for ($i = 0; $i < 6; $i++) : ?>
+                    <?php
+                    if (count($returnPromos) > 0):
+                    ?>
 
-                            <a class="produto-box glide__slide" href="./produto.php">
-                                <img src="../assets/img/Time.png" alt="Capinha Flamengo">
-                                <h4>Capinha 2022 - Flamengo</h4>
-                                <p>R$ 23,59</p>
+                    <ul class="glide__slides">
+                        <?php
+                        for ($i = 0, $iMax = count($returnPromos); $i < $iMax; $i++) :
+                            ?>
+
+                            <a class="produto-box glide__slide" href="./produto.php?idProduto=<?=$returnPromos[$i]['id_produto']?>">
+                                <img src="<?=$returnPromos[$i]['imagem_principal_produto']?>" alt="<?=$returnPromos[$i]['nome_produto']?>">
+                                <h4><?=$returnPromos[$i]['nome_produto']?></h4>
+                                <p>R$ <?=$returnPromos[$i]['preco_produto']?></p>
                             </a>
 
-                        <?php endfor; ?>
-
+                        <?php
+                        endfor;
+                        endif;
+                        ?>
                     </ul>
                 </div>
 

@@ -422,13 +422,19 @@ INSERT INTO user_mod_celular (marca_celular, modelo_celular) VALUES ('Apple', 'I
 
 -- INSERT INTO PRODUTO
 
-INSERT INTO user_produto(id_modelo_celular, id_categoria, nome_produto, preco_produto, descricao_produto, imagem_principal_produto, quantidade_produto, garantias_produto, status, categoria_special_produto)
-VALUES (1, 1, 'Capinha Flamengo 2022 - Selecao Oficial', 25.94, 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum facere aperiam dolor minus laudantium autem soluta eum, officia sunt ducimus sed. Possimus necessitatibus ex molestiae.', '../assets/img/Banner1.png', 10, '3 Meses', 1, 'Mais Vendidos');
+INSERT INTO user_produto(id_modelo_celular, id_categoria, nome_produto, preco_produto,
+descricao_produto, imagem_principal_produto,
+quantidade_produto, garantias_produto, status, categoria_special_produto, peso_produto, cod_produto)
+VALUES (1, 1, 'Capinha Flamengo 2022 - Selecao Oficial', 25.94,
+'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum facere aperiam dolor minus laudantium autem soluta eum, officia sunt ducimus sed. Possimus necessitatibus ex molestiae.'
+, '../assets/img/Banner1.png', 10, '3 Meses', 1, 'Novidades', 20, 420);
 
 
 -- INSERT INTO AVALIAÇÕES
 
-INSERT INTO user_avaliacao(id_produto, id_cliente,nota_avaliacao, titulo_avaliacao, descricao, status) VALUES (1, 1, 4, 'ótimo produto melhor que já comprei', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere dicta obcaecati ea eos sunt vel sequi non, harum hic possimus doloremque, inventore eaque, culpa veniam facilis libero mollitia laudantium numquam!', 1);
+INSERT INTO user_avaliacao(id_produto, id_cliente,nota_avaliacao, titulo_avaliacao, descricao, status) VALUES
+(1, 1, 4,
+'ótimo produto melhor que já comprei', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere dicta obcaecati ea eos sunt vel sequi non, harum hic possimus doloremque, inventore eaque, culpa veniam facilis libero mollitia laudantium numquam!', 1);
 
 
 -- INSERT INTO VENDA STATUS

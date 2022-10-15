@@ -147,6 +147,18 @@ $exibProduto = $manager->getInfo('user_produto', 'id_produto', $idProduto);
                 ?>
             </select>
 
+            <div class="row-preco-quant row-inputs">
+                <label for="peso_produto">
+                    <input type="number" required value="<?= $exibProduto[0]['peso_produto'] ?>" name="peso_produto"
+                           id="input-peso" placeholder="Peso em gramas">
+                </label>
+
+                <label for="cod_produto">
+                    <input type="number" required value="<?= $exibProduto[0]['cod_produto'] ?>" name="cod_produto"
+                           min="0" id="input-cod" placeholder="Codigo do Produto">
+                </label>
+            </div>
+
             <h3>Marcas</h3>
 
             <article class="row-marca">
