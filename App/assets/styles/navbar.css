@@ -42,6 +42,25 @@
     font-size: 1rem;
 }
 
+.login-session #menu{
+    padding: 0;
+    display: block;
+    margin-left: -10px;
+}
+
+.login-session #menu #nav-links{
+    padding: 0;
+    margin: 0 0 0 -10px;
+    display: block;
+}
+
+.login-session #menu .menu-link{
+    display: block;
+    padding: .5rem;
+}
+
+
+
 /* Parte de Baixo */
 
 .header-navbar #menu{
@@ -382,3 +401,5 @@ transform: rotate(135deg);
         max-width: 100vw;
     }
 }
+
+

@@ -17,7 +17,7 @@ class Ferramentas {
         return hash('sha256', $string);
     }
 
-    public function antiInjection($param): string {
+    public function antiInjection($param): string|int {
         // verifica se informações de formulário possui injection
         $strParam = strlen($param);
         $palavras = array("from","select","insert","delete","where","drop","table","show","update","declare","exec","set","alter","cst","union","column","\"","'","\\","--");

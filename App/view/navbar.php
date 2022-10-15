@@ -29,9 +29,50 @@ $menuReturn = $manager->listClient('adm_menu', 'id_menu');
                 <button id="login-button" onclick="window.location.href='./login.php'">
                     <img src="../assets/svg/Login.svg" alt="icone de login" id="login-icon" width="50" height="50" />
                 </button>
-                <div class="login-links">
-                    <a href="./login.php">Minha conta</a>
-                    <a href="./login.php" id="login-sign">Entre ou Cadastre-se</a>
+                <?php
+                //START SESSION
+                //Verificando se existe sessão
+                if (!isset($_SESSION['USER-ID'])) {
+                ?>
+                    <div class="login-links">
+                        <a href="./login.php">Minha conta</a>
+                        <a href="./login.php" id="login-sign">Entre ou Cadastre-se</a>
+                    </div>
+                <?php
+                }
+                ?>
+                <div class="login-session">
+                    <nav id="menu">
+                        <ul id="nav-links">
+                            <li class="menu-link">
+                                <a href="#" id="first-link">
+                                    Meus Pedidos
+                                </a>
+                                <ul class="container-submenu">
+                                    <li>
+                                        <a href="#">
+                                            Meus Pedidos
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Alterar Dados
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Minhas compras
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Sair
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
             </section>
             <button id="favorito-button">
@@ -46,50 +87,50 @@ $menuReturn = $manager->listClient('adm_menu', 'id_menu');
             <ul id="nav-links">
                 <?php
                 //FOR
-                if (count($menuReturn) > 0):
-                    for ($i = 0, $iMax = count($menuReturn); $i < $iMax; $i++):
+                if (count($menuReturn) > 0) :
+                    for ($i = 0, $iMax = count($menuReturn); $i < $iMax; $i++) :
                         $subMenuReturn = $manager->getInfoSub('adm_submenu', $menuReturn[$i]['id_menu']);
                 ?>
 
-                <?php
-                    if(count($subMenuReturn) > 0){
-                ?>
-
-                <li class="menu-link">
-                    <a href="<?=$menuReturn[$i]['link_menu']?>" id="first-link">
-                        <?=$menuReturn[$i]['nome_menu']?>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </a>
-                    <ul class="container-submenu">
                         <?php
-                        if (count($subMenuReturn) > 0):
-                            for ($j = 0, $jMax = count($subMenuReturn); $j < $jMax; $j++):
-                        //FOR
+                        if (count($subMenuReturn) > 0) {
                         ?>
-                        <li>
-                            <a href="<?=$subMenuReturn[$j]['link_submenu']?>">
-                                <?=$subMenuReturn[$j]['nome_submenu']?>
-                            </a>
-                        </li>
-                        <?php
-                            endfor;
-                        endif;
 
-                        //ENDFOR
+                            <li class="menu-link">
+                                <a href="<?= $menuReturn[$i]['link_menu'] ?>" id="first-link">
+                                    <?= $menuReturn[$i]['nome_menu'] ?>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </a>
+                                <ul class="container-submenu">
+                                    <?php
+                                    if (count($subMenuReturn) > 0) :
+                                        for ($j = 0, $jMax = count($subMenuReturn); $j < $jMax; $j++) :
+                                            //FOR
+                                    ?>
+                                            <li>
+                                                <a href="<?= $subMenuReturn[$j]['link_submenu'] ?>">
+                                                    <?= $subMenuReturn[$j]['nome_submenu'] ?>
+                                                </a>
+                                            </li>
+                                    <?php
+                                        endfor;
+                                    endif;
+
+                                    //ENDFOR
+                                    ?>
+                                </ul>
+                            </li>
+                        <?php
+                        } else {
                         ?>
-                    </ul>
-                </li>
+                            <li class="menu-link">
+                                <a href="<?= $menuReturn[$i]['link_menu'] ?>" class="unique-link" id="first-link">
+                                    <?= $menuReturn[$i]['nome_menu'] ?>
+                                </a>
+                            </li>
                 <?php
-                }else{
-                ?>
-                <li class="menu-link">
-                    <a href="<?=$menuReturn[$i]['link_menu']?>" class="unique-link" id="first-link">
-                        <?=$menuReturn[$i]['nome_menu']?>
-                    </a>
-                </li>
-                <?php
-                //ENDFOR
-                    }
+                            //ENDFOR
+                        }
                     endfor;
                 endif;
                 ?>
@@ -104,7 +145,11 @@ $menuReturn = $manager->listClient('adm_menu', 'id_menu');
                 <button id="menu-button">
                     <span id="hamburguer"></span>
                 </button>
-                <h2 id="logo-mobile">VILICAPAS</h2>
+                <h2 id="logo-site">
+                    <a href="./homepage.php">
+                        VILICAPAS
+                    </a>
+                </h2>
             </section>
 
             <section class="util-icons">
@@ -117,6 +162,18 @@ $menuReturn = $manager->listClient('adm_menu', 'id_menu');
                 <button id="login-button" onclick="window.location.href='./login.php'">
                     <img src="../assets/svg/Login.svg" alt="icone de login" id="login-icon" width="40" height="40"></img>
                 </button>
+                <?php
+                //START SESSION
+                //Verificando se existe sessão
+                if (!isset($_SESSION['USER-ID'])) {
+                ?>
+                <button id="login-button" onclick="window.location.href='./register.php.php'">
+                    <img src="../assets/svg/Login.svg" alt="icone de login" id="login-icon" width="40" height="40"></img>
+                </button>
+                <?php
+                }
+                //END SESSION
+                ?>
             </section>
 
         </header>
@@ -132,53 +189,53 @@ $menuReturn = $manager->listClient('adm_menu', 'id_menu');
             <ul id="links-mobile">
                 <?php
                 //FOR
-                if (count($menuReturn) > 0):
-                    for ($t = 0, $iMax = count($menuReturn); $t < $iMax; $t++):
+                if (count($menuReturn) > 0) :
+                    for ($t = 0, $iMax = count($menuReturn); $t < $iMax; $t++) :
                         $subMenuReturnM = $manager->getInfoSub('adm_submenu', $menuReturn[$t]['id_menu']);
                 ?>
 
-                <li>
-                    <?php
-                     if (count($subMenuReturnM) > 0){
-                    ?>
-                    <button id="btn-submenu" onclick="dropdownSubMenu(<?=$t?>)">
-                        <?=$menuReturn[$t]['nome_menu']?>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </button>
-                    <?php
-                         //CASO NÃO HAJA SUBMENUS LINKADOS
-                     }else{
-                    ?>
-                    <a id="correct-padding" href="<?=$menuReturn[$t]['link_menu']?>">
-                        <?=$menuReturn[$t]['nome_menu']?>
-                    </a>
-                    <?php
-                     }
-                    ?>
-
-                    <ul id="submenu-container-call" class="container-submenu">
-                        <?php
-                        if (count($subMenuReturnM) > 0):
-                            for ($l = 0, $jMax = count($subMenuReturnM); $l < $jMax; $l++):
-                        //FOR
-                        ?>
-
                         <li>
-                            <a href="<?=$subMenuReturnM[$l]['link_submenu']?>">
-                                <?=$subMenuReturnM[$l]['nome_submenu']?>
-                            </a>
+                            <?php
+                            if (count($subMenuReturnM) > 0) {
+                            ?>
+                                <button id="btn-submenu" onclick="dropdownSubMenu(<?= $t ?>)">
+                                    <?= $menuReturn[$t]['nome_menu'] ?>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </button>
+                            <?php
+                                //CASO NÃO HAJA SUBMENUS LINKADOS
+                            } else {
+                            ?>
+                                <a id="correct-padding" href="<?= $menuReturn[$t]['link_menu'] ?>">
+                                    <?= $menuReturn[$t]['nome_menu'] ?>
+                                </a>
+                            <?php
+                            }
+                            ?>
+
+                            <ul id="submenu-container-call" class="container-submenu">
+                                <?php
+                                if (count($subMenuReturnM) > 0) :
+                                    for ($l = 0, $jMax = count($subMenuReturnM); $l < $jMax; $l++) :
+                                        //FOR
+                                ?>
+
+                                        <li>
+                                            <a href="<?= $subMenuReturnM[$l]['link_submenu'] ?>">
+                                                <?= $subMenuReturnM[$l]['nome_submenu'] ?>
+                                            </a>
+                                        </li>
+
+                                <?php
+                                    endfor;
+                                endif;
+                                //ENDFOR
+                                ?>
+                            </ul>
                         </li>
 
-                        <?php
-                            endfor;
-                        endif;
-                        //ENDFOR
-                        ?>
-                    </ul>
-                </li>
-
                 <?php
-                //ENDFOR
+                    //ENDFOR
                     endfor;
                 endif;
                 ?>

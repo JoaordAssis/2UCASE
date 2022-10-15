@@ -116,21 +116,6 @@ class Manager extends Conexao {
         return $statement->fetchAll();
     }
 
-    // TODO: Refazer a query para o novo BD
-
-    public function LeftJoinMenu(): bool|array {
-        $sql = /** @lang text */
-            "SELECT SubMenu.id, SubMenu.nomeSub, SubMenu.urlSub, SubMenu.SubstatusM, SubMenu.SubDataC, Menu.id AS idDoMenu, Menu.NOME, Menu.urlMenu
-		FROM Menu
-		INNER JOIN SubMenu
-		ON Menu.Id = SubMenu.idMenu;";
-
-        $res = array();
-        $cmd = $this->pdo->query($sql);
-        return $cmd->fetchAll(PDO::FETCH_ASSOC);
-    }
-
-
     public function imgUpload($name, $nome_produto): array {
 
         $ext = strtolower(substr($_FILES[$name]['name'], -4)); //Pegando extensão do arquivo
@@ -210,7 +195,7 @@ class Manager extends Conexao {
         $sql = "SELECT * FROM $tabela WHERE $queryDinamica";
         $statement = $pdo->prepare($sql);
 
-        for ($i = 0, $iMax = count($params); $i < $iMax; $i++) {
+        for ($i = 0, $iMax = count($paramPost); $i < $iMax; $i++) {
             $statement->bindValue(":" . $params[$i], $paramPost[$i]);
         }
         $statement->execute();

@@ -1,0 +1,27 @@
+@import "./reset.css";
+
+.container-comment {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.rows-comentarios {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+label {
+    border: 1px solid #000;
+    padding: 1rem;
+}
+
+.container-comment {
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-top: 3rem;
+}

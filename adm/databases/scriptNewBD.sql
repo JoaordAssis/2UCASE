@@ -55,11 +55,11 @@ CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`adm_menu` (
 -- Table `2ucase_bd3`.`adm_carrossel`
 -- -----------------------------------------------------
 
--- TODO: Criar coluna de link para o banner;
 CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`adm_carrossel` (
   `id_carrossel` INT NOT NULL AUTO_INCREMENT,
   `nome_carrossel` VARCHAR(200) NOT NULL,
   `link_carrossel` VARCHAR(300) NOT NULL,
+  `link_promo_carrossel` VARCHAR(300) NOT NULL,
   `status` INT(1) NOT NULL COMMENT '1 - ativo; 0 - inativo',
   `data_reg_adm` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'data e hora do registro',
   PRIMARY KEY (`id_carrossel`));
@@ -90,6 +90,7 @@ CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`user_forma_pagamento` (
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`user_cliente` (
   `id_cliente` INT NOT NULL AUTO_INCREMENT,
+  `token_email` VARCHAR(60) NOT NULL,
   `nome_cliente` VARCHAR(300) NOT NULL COMMENT 'nome do cliente',
   `email_cliente` VARCHAR(300) NOT NULL COMMENT 'email do cliente',
   `cpf_cliente` VARCHAR(18) NOT NULL COMMENT 'cpf do cliente',
@@ -158,15 +159,15 @@ CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`user_categoria` (
 -- Table `2ucase_bd3`.`user_produto`
 -- -----------------------------------------------------
 
--- TODO: Criar coluna de peso na tabela user_produto
--- TODO: Criar coluna de cod_produto na tabela user_produto
 
 CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`user_produto` (
   `id_produto` INT NOT NULL AUTO_INCREMENT,
   `id_modelo_celular` INT NOT NULL,
   `id_categoria` INT NOT NULL,
   `nome_produto` VARCHAR(300) NOT NULL,
+  `cod_produto` INT(4) ZEROFILL NOT NULL,
   `preco_produto` FLOAT NOT NULL,
+  `peso_produto` INT NOT NULL COMMENT 'Peso em Gramas',
   `descricao_produto` VARCHAR(900) NOT NULL,
   `imagem_principal_produto` VARCHAR(300) NOT NULL,
   `quantidade_produto` INT NOT NULL,

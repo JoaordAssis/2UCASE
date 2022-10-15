@@ -15,7 +15,7 @@ $resultDetailCategoria = $manager->getInfo('user_categoria', 'id_categoria', $re
 
 <head>
     <?php require_once "../config/config.php"; ?>
-    <link rel="stylesheet" href="../assets/css/cupons.css">
+    <link rel="stylesheet" href="../assets/css/detailsComentarios.css">
     <style>
         .container-comment{
             background-color: #fff;
@@ -141,7 +141,9 @@ $resultDetailCategoria = $manager->getInfo('user_categoria', 'id_categoria', $re
 if (isset($_POST['msg'])) {
     require_once './msg.php';
     $msg = $_POST["msg"];
-    $msgExibir = $MSG[$msg];
+    if (!empty($MSG)) {
+        $msgExibir = $MSG[$msg];
+    }
     echo "<script>alert('" . $msgExibir . "');</script>";
 }
 

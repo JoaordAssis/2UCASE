@@ -9,11 +9,15 @@ class Clientes {
 
 
     public function CPFVerify($cpf): bool {
-        $formatFields = ['-', '.', ','];
-        $cpfReplace = str_replace($formatFields, '', $cpf);
+        $cpfReplace = $this->sanitizeField($cpf);
 
         //Retorna true se estiver correto
         return !empty($cpfReplace) && strlen($cpfReplace) === 11;
+    }
+
+    public function sanitizeField($input): array|string {
+        $formatFields = ['-', '.', ',', '(', ')', '+', ' '];
+        return str_replace($formatFields, '', $input);
     }
 
     public function validaEmail($email) {

@@ -20,9 +20,9 @@ if (!empty($_REQUEST['email-cpf']) && !empty($_REQUEST['senha-login'])) {
     $senhaHash = $ferramentas->hash256($_REQUEST['senha-login']);
 
     if ($antiSql === "0"){
-        //TODO: Tratamento de Erro
+        //Tentativa de SQL Injection
         session_destroy();
-        header("Location: ../view/login.php");
+        header("Location: ../view/login.php?error-code=FR24");
         exit();
     }
 
@@ -34,10 +34,9 @@ if (!empty($_REQUEST['email-cpf']) && !empty($_REQUEST['senha-login'])) {
 
         if ($validaEmail === false){
             //EMAIL invalido
-            //TODO: Tratamento de Erro
 
             session_destroy();
-            header("Location: ../view/login.php");
+            header("Location: ../view/login.php?error-code=FR09");
             exit();
         }
 
@@ -53,14 +52,13 @@ if (!empty($_REQUEST['email-cpf']) && !empty($_REQUEST['senha-login'])) {
 
 
             //SUCESSO
-            header("Location: ../view/homepage.php");
+            header("Location: ../view/homepage.php?sucess-code=OA50");
             exit();
         }
 
         //Não existe no BD
-        //TODO: Tratamento de Erro
         session_destroy();
-        header("Location: ../view/login.php");
+        header("Location: ../view/login.php?error-code=FR25");
         exit();
 
 
@@ -72,44 +70,50 @@ if (!empty($_REQUEST['email-cpf']) && !empty($_REQUEST['senha-login'])) {
 
         if ($validaCPF !== true){
             //CPF invalido
-            //TODO: Tratamento de Erro
-
             session_destroy();
-            header("Location: ../view/login.php");
+            header("Location: ../view/login.php?error-code=FR07");
             exit();
         }
 
+        $formatCpf = $user->sanitizeField($_REQUEST['email-cpf']);
         //Checar se o CPF existe no BD
-        $paramsPostCheckCPFExist = [$senhaHash, $_REQUEST['email-cpf']];
-        //TODO: Formatar o campo de CPF para comparação
-        $paramsCheckCPFExist = ['senha_cliente', 'cpf_cliente'];
+        $paramsPostCheckCPFExist = [$formatCpf, $senhaHash];
+        $paramsCheckCPFExist = ['cpf_cliente', 'senha_cliente'];
 
         $checkCPFExist = $manager->selectWhere($paramsCheckCPFExist, $paramsPostCheckCPFExist, 'user_cliente');
 
         if (count($checkCPFExist) > 0){
-            $_SESSION['USER-ID'] = $checkCPFExist['id_cliente'];
-            $_SESSION['USER-NAME'] = $checkCPFExist['nome_cliente'];
-            $_SESSION['USER-EMAIL'] = $checkCPFExist['email_cliente'];
-            $_SESSION['USER-CPF'] = $checkCPFExist['cpf_cliente'];
+            $_SESSION['USER-ID'] = $checkCPFExist[0]['id_cliente'];
+            $_SESSION['USER-NAME'] = $checkCPFExist[0]['nome_cliente'];
+            $_SESSION['USER-EMAIL'] = $checkCPFExist[0]['email_cliente'];
+            $_SESSION['USER-CPF'] = $checkCPFExist[0]['cpf_cliente'];
 
 
             //SUCESSO
-            header("Location: ../view/homepage.php");
+            header("Location: ../view/homepage.php?sucess-code=OA50");
             exit();
         }
 
         //Não existe no BD
-        //TODO: Tratamento de Erro
         session_destroy();
-        header("Location: ../view/login.php");
+        header("Location: ../view/login.php?error-code=FR25");
         exit();
 
     }
 }else{
     //Inputs não recebidos corretamente
-    //TODO: Tratamento de Erro
     session_destroy();
-    header("Location: ../view/login.php");
+    header("Location: ../view/login.php?error-code=FR00");
     exit();
 }
 
+
+
+//LOGOUT
+
+if (!empty($_REQUEST['exit'])){
+    session_destroy();
+    //Exibit mensagem
+    header("Location: ../view/homepage.php?sucess-code=OA51");
+    exit();
+}

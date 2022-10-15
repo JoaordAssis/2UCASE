@@ -35,8 +35,6 @@ CREATE TABLE user_mod_celular(
 	modelo_celular VARCHAR(64) NOT NULL
 );
 
--- TODO: Adicionar a coluna de método de pagamento
--- TODO: Adicionar a coluna de bandeira de cartão
 
 CREATE TABLE user_forma_pagamento(
 	id_pagamento INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
@@ -132,9 +130,6 @@ CREATE TABLE user_cupom(
 	FOREIGN KEY ( id_categoria ) REFERENCES user_categoria( id_categoria )
 );
 
-
--- TODO: Adicionar coluna, número do pedido
--- TODO: Criar uma nova tabela
 
 CREATE TABLE adm_venda(
 	id_venda INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
@@ -248,12 +243,12 @@ INSERT INTO adm_carrossel (nome_carrossel, link_carrossel, status) VALUES ('Time
 
 
 
---INSERT INTO MODELO CELULAR
+-- INSERT INTO MODELO CELULAR
 
 INSERT INTO user_mod_celular (marca_celular, modelo_celular) VALUES ('Apple', 'Iphone 13 Pro Max');
 
 
---INSERT INTO PRODUTO
+-- INSERT INTO PRODUTO
 
 INSERT INTO user_produto(id_modelo_celular, id_categoria, nome_produto, preco_produto, descricao_produto, imagem_principal_produto, quantidade_produto, garantias_produto, status, categoria_special_produto)
 VALUES (1, 1, 'Capinha Flamengo 2022 - Seleção Oficial', 25.94, 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum facere aperiam dolor minus laudantium autem soluta eum, officia sunt ducimus sed. Possimus necessitatibus ex molestiae.', '../assets/img/Banner1.png', 10, '2 Meses', 1, 'Mais Vendidos');
@@ -335,13 +330,13 @@ FROM Menu
 INNER JOIN SubMenu
 ON Menu.Id = SubMenu.idMenu;
 
---* TABELAS PARA SE JUNTAR:
+-- * TABELAS PARA SE JUNTAR:
 
---* adm_venda
---* user_carrinho
---* venda_status
---* user_cliente
---* user_endereco_cliente
+-- * adm_venda
+-- * user_carrinho
+-- * venda_status
+-- * user_cliente
+-- * user_endereco_cliente
 
 SELECT
 -- TABELA ADM VENDA

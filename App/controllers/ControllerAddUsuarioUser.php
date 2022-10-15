@@ -8,11 +8,11 @@ use app\model\Manager;
 
 session_start();
 
-if (!empty($_SESSION["USER-D"])) {
+if (!empty($_SESSION["USER-ID"])) {
 
     ?>
 
-    <form action="../view/login.php" name="myForm" id="myForm" method="post">
+    <form action="../view/login.php?030" name="myForm" id="myForm" method="post">
         <input type="hidden" name="msg" value="Você já esta logado">
     </form>
     <script>
@@ -22,7 +22,6 @@ if (!empty($_SESSION["USER-D"])) {
     <?php
 
 }
-
 
 //////////////CADASTRO DE NOVO USUARIO//////////
 //Verificar recebimento do formulario
@@ -38,12 +37,8 @@ if (isset($_REQUEST['cadastroFirstRequest'])){
     $ferrNome = $ferramentas->antiInjection($_REQUEST['nomeUser']);
 
     if ($ferrEmail === 0 || $ferrNome === 0){
-        //Retornar à pagina de login
-        //Tentativa de antiinjection
-        $msgError = '25';
-
-        //TODO: Fazer tratamento de Erro
-        header("Location: ../view/login.php?msgERROR=$msgError");
+        //Tentativa de SQL Injection
+        header("Location: ../view/login.php?error-code=FR24");
         exit();
     }
 
@@ -54,24 +49,38 @@ if (isset($_REQUEST['cadastroFirstRequest'])){
     //Checar se o email já existe no banco
     $checkEmail = $user->checkEmailExist($verifyEmail);
     if ($checkEmail === 0){
-        //TODO: Tratamento de Erro
-        header("Location: ../view/login.php");
+        header("Location: ../view/login.php?error-code=FR06");
         exit();
     }
 
     if ($verifyEmail !== false && $verifySenha === 1){
 
-        $senhaHash = $ferramentas->hash256($verifySenha);
+        $senhaHash = $ferramentas->hash256($_REQUEST['senhaUser']);
 
         $dadosUsuario[] = $_REQUEST['nomeUser'];
         $dadosUsuario[] = $verifyEmail;
         $dadosUsuario[] = $senhaHash;
 
+        //Sucesso: Prosseguir com o cadastro
         header("Location: ../view/register.php?nome=$dadosUsuario[0]&email=$dadosUsuario[1]&senhaCripto=$dadosUsuario[2]");
         exit();
+
     }
+
+    if ($verifySenha !== 1){
+        header("Location: ../view/login.php?error-code=FR26");
+        exit();
+    }
+
+    if ($verifyEmail === false){
+        header("Location: ../view/login.php?error-code=FR27");
+        exit();
+    }
+
+
 }
 
+//Cadastro Completo
 
 if (isset($_REQUEST['cadastroCompletoForm'])){
     $user = new Clientes();
@@ -83,25 +92,27 @@ if (isset($_REQUEST['cadastroCompletoForm'])){
 
     if ($cpfVerify !== true){
 
-        //TODO: Tratamento de Erro
-        header("Location: ../view/register.php");
+        header("Location: ../view/register.php?error-code=FR28");
         exit();
     }
 
+    $sanitizeCPF = $user->sanitizeField($_REQUEST['cpf']);
+    $sanitizeNumber = $user->sanitizeField($_REQUEST['numeroCelular']);
+    $sanitizeNumeroFixo = $user->sanitizeField($_REQUEST['numeroFixo']);
 
     //Assinalando os dados
     $dadosUsuario['nome_cliente'] = $_REQUEST['nomeCompleto'];
     $dadosUsuario['email_cliente'] = $_REQUEST['emailUserVerify'];
     $dadosUsuario['senha_cliente'] = $_REQUEST['senhaUserVerify'];
-    $dadosUsuario['cpf_cliente'] = $_REQUEST['cpf'];
+    $dadosUsuario['cpf_cliente'] = $sanitizeCPF;
     $dadosUsuario['data_nasc_cliente'] = $_REQUEST['dataNasc'];
-    $dadosUsuario['telefone_cliente'] = $_REQUEST['numeroCelular'];
-    $dadosUsuario['telefoneFixo_cliente'] = $_REQUEST['numeroFixo'] !== '' ? $_REQUEST['numeroFixo'] : 'NULL';
+    $dadosUsuario['telefone_cliente'] = $sanitizeNumber;
+    $dadosUsuario['telefoneFixo_cliente'] =$sanitizeNumeroFixo !== '' ? $sanitizeNumeroFixo : 'NULL';
     $dadosUsuario['genero_cliente'] = $_REQUEST['gender'];
 
     //INSERT USUARIO
     try {
-        $manager->insertClient("user_cliente", $dadosUsuario);
+       $manager->insertClient("user_cliente", $dadosUsuario);
         //TODO: Tratamento de Erros
     }catch (PDOException $exception){
         return $exception->getMessage();
@@ -111,15 +122,17 @@ if (isset($_REQUEST['cadastroCompletoForm'])){
 
     if ($cepVerify !== true){
 
-        //TODO: Tratamento de Erro
-        header("Location: ../view/register.php");
+        //CEP está incorreto
+        header("Location: ../view/register.php?error-code=FR29");
         exit();
     }
 
     $lastInsert = $manager->lastInsertId('user_cliente', 'id_cliente');
+    $sanitizeCEP = $user->sanitizeField($_REQUEST['cep']);
+
 
     $dadosEndereco['id_cliente'] = $lastInsert[0];
-    $dadosEndereco['cep_cliente'] = $_REQUEST['cep'];
+    $dadosEndereco['cep_cliente'] = $sanitizeCEP;
     $dadosEndereco['logradouro_cliente'] = $_REQUEST['logradouro'];
     $dadosEndereco['ponto_ref_cliente'] = $_REQUEST['referencia'] !== '' ? $_REQUEST['referencia'] : NULL;
     $dadosEndereco['uf_cliente'] = $_REQUEST['state'];
@@ -132,10 +145,10 @@ if (isset($_REQUEST['cadastroCompletoForm'])){
     //INSERT ENDERECO USUARIO
     try {
         $manager->insertClient("user_endereco_cliente", $dadosEndereco);
-        header("Location: ../view/homepage.php");
+        header("Location: ../view/homepage.php?sucess-code=FR50");
         exit();
-        //TODO: Tratamento de Erro
     }catch (PDOException $exception){
+        //TODO: Tratamento de Erro
         echo $exception->getMessage();
     }
 
