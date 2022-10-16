@@ -214,6 +214,14 @@ class Manager extends Conexao {
         return $cmd->fetchAll(PDO::FETCH_ASSOC);
     }
 
+
+    public function selectCategoriaOrder($tabela, $column, $order, $categoria, $postCategoria): bool|array {
+        $sql = "SELECT * FROM $tabela WHERE $categoria = $postCategoria ORDER BY $column $order";
+
+        $cmd = $this->pdo->query($sql);
+        return $cmd->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function dateCountClientes($tabela, $column, $dataAtual, $dataCount) {
         $sql = "SELECT COUNT(*) FROM $tabela WHERE $column < '$dataAtual' 
 		AND $column >= '$dataCount'";

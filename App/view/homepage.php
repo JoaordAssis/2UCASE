@@ -7,13 +7,13 @@ $returnBanners = $manager->listClient("adm_carrossel", 'id_carrossel');
 session_start();
 
 //Novidades
-$returnNovidades = $manager->exibProductsHomepage('Novidades', 'preco_produto',5);
+$returnNovidades = $manager->exibProducts('categoria_special_produto', 'Novidades', 'preco_produto',5);
 
 //Mais Vendidos
-$returnVendidos = $manager->exibProductsHomepage('Mais Vendidos', 'preco_produto',5);
+$returnVendidos = $manager->exibProducts('categoria_special_produto','Mais Vendidos', 'preco_produto',5);
 
 //Promoções
-$returnPromos = $manager->exibProductsHomepage('Promoções', 'preco_produto ASC',5);
+$returnPromos = $manager->exibProducts('categoria_special_produto','Promoções', 'preco_produto ASC',5);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -151,7 +151,7 @@ $returnPromos = $manager->exibProductsHomepage('Promoções', 'preco_produto ASC
         <article class="homepage-category">
             <h1>Categorias</h1>
             <section class="homepage-category-cards">
-                <a href="#" class="card-category" id="card1">
+                <a href="./category.php?category=Animacoes" class="card-category" id="card1">
                     <div class="shadow-hover">
                         <h2>Animações</h2>
                     </div>
@@ -179,7 +179,7 @@ $returnPromos = $manager->exibProductsHomepage('Promoções', 'preco_produto ASC
                     <img src="../assets/img/BabyGrootParty.png" alt="Banner 1">
                 </a>
 
-                <a href="#" class="card-category" id="card1">
+                <a href="./category.php?category=Times" class="card-category" id="card1">
                     <div class="shadow-hover">
                         <h2>Times</h2>
                     </div>

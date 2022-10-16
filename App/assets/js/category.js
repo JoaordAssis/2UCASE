@@ -42,3 +42,26 @@ let accordion = new categoryAnimation();
 
 accordion.accordionFunction();
 accordion.accordionAnimation();
+
+
+//Redirect por ordem
+let selectOrdem = document.getElementById("order-select");
+
+function redirectOrdem(categoria) {
+  let opcaoTexto = selectOrdem.options[selectOrdem.selectedIndex].value;
+
+  if (opcaoTexto !== "Todos") {
+    if (opcaoTexto === "0") {
+      window.location.href =
+          "../controllers/ControllerCategoria.php?category=" + categoria + "&selectOrdem=0" + opcaoTexto;
+    } else {
+      window.location.href =
+          "../controllers/ControllerCategoria.php?category=" + categoria + "&selectOrdem=" + opcaoTexto;
+    }
+  }
+
+  if (opcaoTexto === "Todos") {
+    window.location.href =
+        "../controllers/ControllerCategoria.php?category=" + categoria + "&selectOrdem=" + opcaoTexto;
+  }
+}

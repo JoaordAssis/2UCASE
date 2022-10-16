@@ -1,5 +1,26 @@
 <?php
 session_start();
+require_once __DIR__ ."/../../vendor/autoload.php";
+use app\model\Manager;
+
+$manager = new Manager();
+
+
+if (isset($_GET['idProduto'])){
+    $idProduto = $_GET['idProduto'];
+    $returnProduto = $manager->getInfo('user_produto', 'id_produto', $idProduto);
+
+    $returnImagemProduto = $manager->getInfo('user_produtos_img', 'id_produto', $idProduto);
+}
+
+//Produtos Similares
+$returnSimilares = $manager->exibProducts('id_categoria', $returnProduto[0]['id_categoria'], 'preco_produto',6);
+
+//Comentarios
+$paramComentario = ['id_produto'];
+$paramPostComentario = [$idProduto];
+$returnComentarios = $manager->selectWhere($paramComentario, $paramPostComentario, 'user_avaliacao',);
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -21,7 +42,8 @@ session_start();
         <article class="container-produto">
             <section class="container-img-produto">
                     <!--       Imagem do Produto         -->
-                <img id="image-principal" src="../assets/img/Time.png" alt="Capinha flamengo">
+                <img id="image-principal" src="<?=$returnProduto[0]['imagem_principal_produto']?>" alt="Capinha
+                flamengo">
                 <!-- Carrossel -->
                 <div class="glide carousel-imgprod">
 
@@ -34,22 +56,27 @@ session_start();
                     <div class="glide__track" data-glide-el="track">
                         <ul class="glide__slides img-carousel-btn">
 
-                            <!--Inicio For-->
-                            <button id="btn-new-image">
-                                <img src="../assets/img/Banner1.png" onclick="imgChange(this)" alt="Capinha flamengo">
-                            </button>
-
-                            <button id="btn-new-image">
-                                <img src="../assets/img/Banner2.png" onclick="imgChange(this)" alt="Capinha flamengo">
-                            </button>
-
-                            <button id="btn-new-image">
-                                <img src="../assets/img/Banner3.png" onclick="imgChange(this)" alt="Capinha flamengo">
-                            </button>
-                            <!--Fim For-->
+                            <!--Imagem Principal-->
                             <button id="btn-new-image">
                                 <img src="../assets/img/Time.png" onclick="imgChange(this)" alt="Capinha flamengo">
                             </button>
+
+                            <!--Inicio For-->
+                            <?php
+                            if (count($returnImagemProduto) > 0):
+                                for ($i = 0, $iMax = count($returnImagemProduto); $i < $iMax; $i++):
+                            ?>
+                            <button id="btn-new-image">
+                                <img src="<?=$returnImagemProduto[0]['link_img']?>" onclick="imgChange(this)"
+                                     alt="<?=$returnImagemProduto[0]['nome_img']?>" >
+                            </button>
+
+                            <?php
+                                endfor;
+                            endif;
+                            ?>
+                            <!--Fim For-->
+
 
                         </ul>
                     </div>
@@ -65,19 +92,33 @@ session_start();
 
             <form method="POST" action="#" class="box-produto-info">
                 <!-- Oferta Especial -->
+                <?php
+                if ($returnProduto[0]['categoria_special_produto'] === 'Promoções'):
+                ?>
                 <span id="special-condition">
                     <i class="fa-solid fa-fire-flame-curved"></i>
                     <p>Oferta Especial</p>
                 </span>
+                <?php
+                endif;
+                ?>
 
                 <!-- Nome do Produto -->
-                <h2>Capinha Flamengo - 2022 Oficial Seleção</h2>
+                <h2><?=$returnProduto[0]['nome_produto']?></h2>
 
                 <!-- Valor e Avaliação -->
                 <div class="box-value-stars">
                     <div class="box-value">
+                        <?php
+                        if ($returnProduto[0]['categoria_special_produto'] === 'Promoções'):
+                            //Exibir o preço antigo
+                            //TODO: Criar uma nova coluna para isso
+                        ?>
                         <p id="last-price">R$ 20,00</p>
-                        <h3>R$ 25,00</h3>
+                        <?php
+                        endif;
+                        ?>
+                        <h3>R$ <?=$returnProduto[0]['preco_produto']?></h3>
                     </div>
 
                     <div class="box-stars">
@@ -92,6 +133,23 @@ session_start();
                         <p>200 Avaliações</p>
                     </div>
                 </div>
+
+                <div class="select-quant-prod">
+                    <label for="marcaProduto">Selecione a Quantidade
+                        <select name="quantProduto" id="select-quant">
+                            <?php
+                            for ($i = 0; $i < $returnProduto[0]['quantidade_produto']; $i++):
+                            ?>
+
+                            <option><?=($i + 1)?></option>
+
+                            <?php
+                            endfor;
+                            ?>
+                        </select>
+                    </label>
+                </div>
+
 
                 <!-- Seleção do Modelo -->
                 <div class="select-option-prod">
@@ -134,6 +192,7 @@ session_start();
                     </div>
                     <a target="_blank" href="https://www2.correios.com.br/sistemas/buscacep/buscaCep.cfm">Não sei meu CEP</a>
 
+                    <!--Exibir informações de prazo e valor-->
                     <div id="cep-info-sedex">
                         <p id="value-sedex"></p>
                         <p id="prazo-sedex"></p>
@@ -159,15 +218,21 @@ session_start();
                 <div class="glide__track" data-glide-el="track">
 
                     <ul class="glide__slides">
-                        <?php for ($i = 0; $i < 6; $i++) : ?>
+                        <?php
+                        if (count($returnSimilares) > 0):
+                            for ($i = 0, $iMax = count($returnSimilares); $i < $iMax; $i++) :
+                        ?>
 
-                            <a class="produto-box glide__slide" href="./produto.php">
-                                <img src="../assets/img/Time.png" alt="Capinha Flamengo">
-                                <h4>Capinha 2022 - Flamengo</h4>
-                                <p>R$ 23,59</p>
+                            <a class="produto-box glide__slide" href="./produto.php?idProduto=<?=$returnSimilares[0]['id_produto']?>">
+                                <img src="<?=$returnSimilares[0]['imagem_principal_produto']?>" alt="<?=$returnSimilares[0]['nome_produto']?>">
+                                <h4><?=$returnSimilares[0]['nome_produto']?></h4>
+                                <p>R$ <?=$returnSimilares[0]['preco_produto']?></p>
                             </a>
 
-                        <?php endfor; ?>
+                        <?php
+                            endfor;
+                        endif;
+                        ?>
                     </ul>
                 </div>
 
@@ -181,7 +246,7 @@ session_start();
             <h1>Informações sobre o Produto</h1>
             <section class="box-about">
                 <div class="text-about">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio minus excepturi quasi blanditiis aperiam non harum animi sit nulla, ex quo ab, voluptas inventore reprehenderit iure illo sapiente fugit! Repudiandae accusamus recusandae sunt asperiores molestias, dolore impedit, ea harum numquam saepe nihil explicabo itaque rem quia vero magni?<br><br> Voluptatem rerum molestiae repudiandae perferendis tempora praesentium possimus officiis corrupti. Nemo reprehenderit voluptatum quo fuga dolore omnis odit officiis nulla, veritatis repellat, adipisci doloremque, dolores eius ipsa perferendis cupiditate at veniam. Pariatur dolor illo ullam quidem beatae similique commodi laudantium. Alias, mollitia dolor molestias placeat libero harum hic assumenda consequuntur maiores eius quod aperiam dignissimos magnam soluta facere laudantium explicabo, provident autem ratione voluptatibus veritatis illum, voluptate id. Saepe neque nobis facilis!</p>
+                    <p><?=$returnProduto[0]['descricao_produto']?></p>
                 </div>
 
                 <div class="container-image-about">
@@ -214,6 +279,10 @@ session_start();
             <h1>Avaliações de quem comprou</h1>
             <section class="container-dados-rating">
                 <div class="box-total-rating">
+                    <!--Tirar a média de todas as notas e exibir aqui-->
+                    <?php
+                    if (count($returnComentarios) > 0){
+                    ?>
                     <h2>5,0</h2>
                     <div class="container-stars">
                         <i class="fa-solid fa-star fa-2x"></i>
@@ -223,25 +292,42 @@ session_start();
                         <i class="fa-solid fa-star fa-2x"></i>
                     </div>
                     <p>200 avaliações</p>
+                    <?php
+                    }else{
+                    ?>
+                    <h2>Seja o primeiro a avaliar esse produto!</h2>
+                    <?php
+                    }
+                    ?>
                 </div>
             </section>
 
             <section class="container-users-rating">
+                <?php
+                if (count($returnComentarios) > 0):
+                    for ($i = 0, $iMax = count($returnComentarios); $i < $iMax; $i++):
+                        //Exibir Cliente
+                        $returnCliente = $manager->getInfo('user_cliente', 'id_cliente', $returnComentarios[$i]['id_cliente']);
+                ?>
+
                 <section class="user-rating usr1">
                     <div class="user-total-rating">
-                        <h3>5,0</h3>
+                        <h3><?=$returnComentarios[$i]['nota_avaliacao']?>,0</h3>
                         <div class="container-stars">
+                            <?php
+                            for ($j = 0; $j < $returnComentarios[$i]['nota_avaliacao']; $j++):
+                            ?>
                             <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
+                            <?php
+                            endfor;
+                            ?>
                         </div>
                     </div>
 
                     <div class="user-rat-info">
-                        <h3>Camargo Davi</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore aliquid officiis accusantium dolorem voluptas pariatur, dicta maiores consectetur iste ipsum consequatur voluptates sint magnam possimus numquam ducimus fugit earum officia laboriosam totam natus! Repellendus ullam rerum nobis ex fugiat illo mollitia. Commodi possimus dolorem reiciendis obcaecati numquam temporibus ea repellat.</p>
+                        <h3><?=$returnCliente[0]['nome_cliente']?></h3>
+                        <h4><strong><?=$returnComentarios[$i]['titulo_avaliacao']?></strong></h4>
+                        <p><?=$returnComentarios[$i]['descricao']?></p>
                         <div class="container-comment">
                             <p id="quest-comment">Esse comentário foi útil?</p>
                             <button id="like-comment">
@@ -254,10 +340,22 @@ session_start();
                         </div>
                     </div>
 
+                    <?php
+                    //Nova Data e Hora
+                    $timestamp = strtotime($returnComentarios[$i]["data_avaliacao"]);
+                    $newDate = date("d-m-Y H:i:s", $timestamp);
+                    $dateExib = str_replace('-', '/', $newDate);
+                    ?>
+
                     <div class="data-comment">
-                        <p>21/01/2006</p>
+                        <p><?=$dateExib?></p>
                     </div>
                 </section>
+
+                <?php
+                    endfor;
+                endif;
+                ?>
             </section>
         </article>
     </main>

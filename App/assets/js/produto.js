@@ -107,6 +107,28 @@ cepInput.addEventListener("blur", () => {
 });
 
 
+//Redirect por ordem
+
+function redirectOrdem() {
+    let opcaoTexto = selectOrdem.options[selectOrdem.selectedIndex].value;
+
+    if (opcaoTexto !== "Todos") {
+        if (opcaoTexto === "0") {
+            window.location.href =
+                "../controller/ControllerProdutoADM.php?selectOrdem=0" + opcaoTexto;
+        } else {
+            window.location.href =
+                "../controller/ControllerProdutoADM.php?selectOrdem=" + opcaoTexto;
+        }
+    }
+
+    if (opcaoTexto === "Todos") {
+        window.location.href =
+            "../controller/ControllerProdutoADM.php?selectOrdem=" + opcaoTexto;
+    }
+}
+
+
 
 
 

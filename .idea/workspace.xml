@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="FINALIZED: Exibição dos produtos na ‘homepage’">
-      <change afterPath="$PROJECT_DIR$/adm/databases/img-database/Camisa Selecao---15-10-2022 18-31-16/Camisa Selecao-13123.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/adm/databases/img-database/Camisa Selecao---15-10-2022 18-31-16/Camisa Selecao-157351937.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/adm/databases/img-database/Camisa Selecao---15-10-2022 18-31-16/Camisa Selecao-20001.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/adm/databases/img-database/Camisa Selecao---15-10-2022 18-31-16/Camisa Selecao-8193.png" afterDir="false" />
+    <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="FINALIZED: Exibição do Produto por ‘id’ e as suas informações">
+      <change afterPath="$PROJECT_DIR$/App/controllers/ControllerCategoria.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/assets/js/category.js" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/js/category.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/assets/js/produto.js" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/js/produto.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/assets/styles/produto.css" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/styles/produto.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/model/Manager.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/model/Manager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/navbar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/produto.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/produto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/view/category.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/view/homepage.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/homepage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/view/produto.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/produto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adm/databases/scriptNewBD.sql" beforeDir="false" afterPath="$PROJECT_DIR$/adm/databases/scriptNewBD.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +84,7 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\xampp\htdocs\VilicapasProjeto\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.PHP" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2021.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -140,7 +143,8 @@
       <workItem from="1665851358537" duration="2504000" />
       <workItem from="1665862599002" duration="1546000" />
       <workItem from="1665869404534" duration="3141000" />
-      <workItem from="1665877919783" duration="4100000" />
+      <workItem from="1665877919783" duration="4225000" />
+      <workItem from="1665930195594" duration="3130000" />
     </task>
     <task id="LOCAL-00001" summary="Teste commit 09/10/2022">
       <created>1665346468595</created>
@@ -219,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665873433264</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="FINALIZED: Exibição do Produto por ‘id’ e as suas informações">
+      <created>1665884803479</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1665884803479</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,6 +264,7 @@
     <MESSAGE value="WORKING: Sistema de login" />
     <MESSAGE value="FINALIZED: Sistema de login" />
     <MESSAGE value="FINALIZED: Exibição dos produtos na ‘homepage’" />
-    <option name="LAST_COMMIT_MESSAGE" value="FINALIZED: Exibição dos produtos na ‘homepage’" />
+    <MESSAGE value="FINALIZED: Exibição do Produto por ‘id’ e as suas informações" />
+    <option name="LAST_COMMIT_MESSAGE" value="FINALIZED: Exibição do Produto por ‘id’ e as suas informações" />
   </component>
 </project>
