@@ -130,7 +130,7 @@ session_start();
     </main>
 </body>
 
-<script src="../assets/./js/./contact.js"></script>
+<script src="../assets/js/contact.js"></script>
 
 <!-- Footer -->
 <?php require_once './footer.php'; ?>
