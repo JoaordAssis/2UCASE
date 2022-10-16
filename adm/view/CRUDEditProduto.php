@@ -192,9 +192,7 @@ $exibProduto = $manager->getInfo('user_produto', 'id_produto', $idProduto);
             </article>
 
             <label for="descricao_produto">Descrição
-                <textarea name="descricao_produto" id="textarea-desc" cols="30" rows="10">
-                    <?= $exibProduto[0]['descricao_produto'] ?>
-                </textarea>
+                <textarea name="descricao_produto" id="textarea-desc" cols="30" rows="10"><?= $exibProduto[0]['descricao_produto'] ?></textarea>
             </label>
 
 

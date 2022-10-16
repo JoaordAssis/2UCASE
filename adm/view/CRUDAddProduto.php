@@ -117,9 +117,7 @@ $exibModeloFilters = $manager->listClient('user_mod_celular', 'id_modelo_celular
             </article>
 
             <label for="descricao_produto">Descrição
-                <textarea required name="descricao_produto" id="textarea-desc" cols="30" rows="10">
-
-                </textarea>
+                <textarea required name="descricao_produto" id="textarea-desc" cols="30" rows="10"></textarea>
             </label>
 
             <h3>Imagens</h3>
