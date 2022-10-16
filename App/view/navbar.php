@@ -39,7 +39,7 @@ $menuReturn = $manager->listClient('adm_menu', 'id_menu');
                         <a href="./login.php" id="login-sign">Entre ou Cadastre-se</a>
                     </div>
                 <?php
-                }
+                }else{
                 ?>
                 <div class="login-session">
                     <nav id="menu">
@@ -65,7 +65,7 @@ $menuReturn = $manager->listClient('adm_menu', 'id_menu');
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a href="../controllers/ControllerValidaLogin.php?exit">
                                             Sair
                                         </a>
                                     </li>
@@ -74,6 +74,9 @@ $menuReturn = $manager->listClient('adm_menu', 'id_menu');
                         </ul>
                     </nav>
                 </div>
+                <?php
+                }
+                ?>
             </section>
             <button id="favorito-button">
                 <img src="../assets/svg/CoracaoFavoritos.svg" alt="Icone de favoritos" id="coracaoSVG" width="40" height="40"></img>

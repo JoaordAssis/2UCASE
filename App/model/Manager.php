@@ -116,6 +116,11 @@ class Manager extends Conexao {
         return $statement->fetchAll();
     }
 
+    public function exibProducts($column, $categoria, $orderBy, $limit): bool|array {
+        $sql = "SELECT * FROM user_produto WHERE $column = '$categoria' ORDER BY $orderBy LIMIT $limit";
+        return $this->pdo->query($sql)->fetchAll();
+    }
+
     public function imgUpload($name, $nome_produto): array {
 
         $ext = strtolower(substr($_FILES[$name]['name'], -4)); //Pegando extensão do arquivo
