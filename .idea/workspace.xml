@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="FINALIZED: Pagina de avaliação do produto">
-      <change afterPath="$PROJECT_DIR$/App/assets/img/lupapesquisa.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/assets/styles/meus-pedidos.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/view/meus-pedidos.php" afterDir="false" />
+    <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="FINALIZED: Pagina de Meus Pedidos">
+      <change afterPath="$PROJECT_DIR$/App/assets/js/meus-pedidos.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/assets/styles/carrinho.css" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/styles/carrinho.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,6 +142,9 @@
       <workItem from="1665950588161" duration="784000" />
       <workItem from="1665951714741" duration="22000" />
       <workItem from="1665952100169" duration="574000" />
+      <workItem from="1665960459136" duration="63000" />
+      <workItem from="1665963114224" duration="5000" />
+      <workItem from="1665963288324" duration="46000" />
     </task>
     <task id="LOCAL-00001" summary="Teste commit 09/10/2022">
       <created>1665346468595</created>
@@ -243,7 +244,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665942814373</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="FINALIZED: Pagina de Meus Pedidos">
+      <created>1665960507821</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1665960507821</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,6 +288,7 @@
     <MESSAGE value="FINALIZED: Exibição do Produto por ‘id’ e as suas informações" />
     <MESSAGE value="FINALIZED: Sistema de categorias, ainda falta os filtros laterais" />
     <MESSAGE value="FINALIZED: Pagina de avaliação do produto" />
-    <option name="LAST_COMMIT_MESSAGE" value="FINALIZED: Pagina de avaliação do produto" />
+    <MESSAGE value="FINALIZED: Pagina de Meus Pedidos" />
+    <option name="LAST_COMMIT_MESSAGE" value="FINALIZED: Pagina de Meus Pedidos" />
   </component>
 </project>
