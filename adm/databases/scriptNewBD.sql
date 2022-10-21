@@ -29,26 +29,26 @@ USE `2ucase_bd3` ;
 -- Table `2ucase_bd3`.`adm_administrador`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`adm_administrador` (
-  `id_adm` INT NOT NULL AUTO_INCREMENT,
-  `nome_adm` VARCHAR(300) NOT NULL COMMENT 'nome do administrador',
-  `email_adm` VARCHAR(300) NOT NULL COMMENT 'email do administrador',
-  `senha_adm` VARCHAR(64) NOT NULL COMMENT 'senha em sha256',
-  `poder_adm` INT(1) NOT NULL COMMENT 'abrangencia do usuario no sistema',
-  `status` INT(1) NOT NULL COMMENT '1 - ativo; 0 - inativo',
-  `data_reg_adm` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'data e hora do registro',
-  PRIMARY KEY (`id_adm`));
+                                                                `id_adm` INT NOT NULL AUTO_INCREMENT,
+                                                                `nome_adm` VARCHAR(300) NOT NULL COMMENT 'nome do administrador',
+                                                                `email_adm` VARCHAR(300) NOT NULL COMMENT 'email do administrador',
+                                                                `senha_adm` VARCHAR(64) NOT NULL COMMENT 'senha em sha256',
+                                                                `poder_adm` INT(1) NOT NULL COMMENT 'abrangencia do usuario no sistema',
+                                                                `status` INT(1) NOT NULL COMMENT '1 - ativo; 0 - inativo',
+                                                                `data_reg_adm` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'data e hora do registro',
+                                                                PRIMARY KEY (`id_adm`));
 
 
 -- -----------------------------------------------------
 -- Table `2ucase_bd3`.`adm_menu`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`adm_menu` (
-  `id_menu` INT NOT NULL AUTO_INCREMENT,
-  `nome_menu` VARCHAR(300) NOT NULL,
-  `link_menu` VARCHAR(300) NOT NULL,
-  `status` INT(1) NOT NULL COMMENT '1 - ativo; 0 - inativo',
-  `data_reg_menu` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'data e hora do registro',
-  PRIMARY KEY (`id_menu`));
+                                                       `id_menu` INT NOT NULL AUTO_INCREMENT,
+                                                       `nome_menu` VARCHAR(300) NOT NULL,
+                                                       `link_menu` VARCHAR(300) NOT NULL,
+                                                       `status` INT(1) NOT NULL COMMENT '1 - ativo; 0 - inativo',
+                                                       `data_reg_menu` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'data e hora do registro',
+                                                       PRIMARY KEY (`id_menu`));
 
 
 -- -----------------------------------------------------
@@ -56,102 +56,102 @@ CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`adm_menu` (
 -- -----------------------------------------------------
 
 CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`adm_carrossel` (
-  `id_carrossel` INT NOT NULL AUTO_INCREMENT,
-  `nome_carrossel` VARCHAR(200) NOT NULL,
-  `link_carrossel` VARCHAR(300) NOT NULL,
-  `link_promo_carrossel` VARCHAR(300) NOT NULL,
-  `status` INT(1) NOT NULL COMMENT '1 - ativo; 0 - inativo',
-  `data_reg_adm` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'data e hora do registro',
-  PRIMARY KEY (`id_carrossel`));
+                                                            `id_carrossel` INT NOT NULL AUTO_INCREMENT,
+                                                            `nome_carrossel` VARCHAR(200) NOT NULL,
+                                                            `link_carrossel` VARCHAR(300) NOT NULL,
+                                                            `link_promo_carrossel` VARCHAR(300) NOT NULL,
+                                                            `status` INT(1) NOT NULL COMMENT '1 - ativo; 0 - inativo',
+                                                            `data_reg_adm` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'data e hora do registro',
+                                                            PRIMARY KEY (`id_carrossel`));
 
 
 -- -----------------------------------------------------
 -- Table `2ucase_bd3`.`user_mod_celular`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`user_mod_celular` (
-  `id_modelo_celular` INT NOT NULL AUTO_INCREMENT,
-  `marca_celular` VARCHAR(64) NOT NULL,
-  `modelo_celular` VARCHAR(300) NOT NULL,
-  PRIMARY KEY (`id_modelo_celular`));
+                                                               `id_modelo_celular` INT NOT NULL AUTO_INCREMENT,
+                                                               `marca_celular` VARCHAR(64) NOT NULL,
+                                                               `modelo_celular` VARCHAR(300) NOT NULL,
+                                                               PRIMARY KEY (`id_modelo_celular`));
 
 
 -- -----------------------------------------------------
 -- Table `2ucase_bd3`.`user_forma_pagamento`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`user_forma_pagamento` (
-  `id_pagamento` INT NOT NULL AUTO_INCREMENT,
-  `parcelamento_pagamento` INT(1) NOT NULL,
-  `metodo_pagamento` VARCHAR(120) NOT NULL,
-  PRIMARY KEY (`id_pagamento`));
+                                                                   `id_pagamento` INT NOT NULL AUTO_INCREMENT,
+                                                                   `parcelamento_pagamento` INT(1) NOT NULL,
+                                                                   `metodo_pagamento` VARCHAR(120) NOT NULL,
+                                                                   PRIMARY KEY (`id_pagamento`));
 
 
 -- -----------------------------------------------------
 -- Table `2ucase_bd3`.`user_cliente`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`user_cliente` (
-  `id_cliente` INT NOT NULL AUTO_INCREMENT,
-  `token_email` VARCHAR(60) NOT NULL,
-  `nome_cliente` VARCHAR(300) NOT NULL COMMENT 'nome do cliente',
-  `email_cliente` VARCHAR(300) NOT NULL COMMENT 'email do cliente',
-  `cpf_cliente` VARCHAR(18) NOT NULL COMMENT 'cpf do cliente',
-  `telefone_cliente` VARCHAR(18) NOT NULL COMMENT 'telefone do cliente',
-  `telefoneFixo_cliente` VARCHAR(14) NOT NULL COMMENT 'telefone fixo do cliente',
-  `genero_cliente` INT(1) NOT NULL COMMENT '1 - feminino; 0 - masculino; 2 - não informar',
-  `senha_cliente` VARCHAR(256) NOT NULL COMMENT 'senha em sha256',
-  `data_nasc_cliente` DATE NOT NULL COMMENT 'data de nascimente',
-  `data_reg_cliente` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'data e hora do registro',
-  `status` INT(1) NOT NULL COMMENT '1 - ativo; 0 - inativo',
-  PRIMARY KEY (`id_cliente`)
+                                                           `id_cliente` INT NOT NULL AUTO_INCREMENT,
+                                                           `token_email` VARCHAR(60) NOT NULL,
+                                                           `nome_cliente` VARCHAR(300) NOT NULL COMMENT 'nome do cliente',
+                                                           `email_cliente` VARCHAR(300) NOT NULL COMMENT 'email do cliente',
+                                                           `cpf_cliente` VARCHAR(18) NOT NULL COMMENT 'cpf do cliente',
+                                                           `telefone_cliente` VARCHAR(18) NOT NULL COMMENT 'telefone do cliente',
+                                                           `telefoneFixo_cliente` VARCHAR(14) NOT NULL COMMENT 'telefone fixo do cliente',
+                                                           `genero_cliente` INT(1) NOT NULL COMMENT '1 - feminino; 0 - masculino; 2 - não informar',
+                                                           `senha_cliente` VARCHAR(256) NOT NULL COMMENT 'senha em sha256',
+                                                           `data_nasc_cliente` DATE NOT NULL COMMENT 'data de nascimente',
+                                                           `data_reg_cliente` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'data e hora do registro',
+                                                           `status` INT(1) NOT NULL COMMENT '1 - ativo; 0 - inativo',
+                                                           PRIMARY KEY (`id_cliente`)
 );
 
 -- -----------------------------------------------------
 -- Table `2ucase_bd3`.`user_endereco_cliente`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`user_endereco_cliente` (
-  `id_endereco` INT NOT NULL AUTO_INCREMENT,
-  `id_cliente` INT NOT NULL,
-  `logradouro_cliente` VARCHAR(900) NOT NULL,
-  `bairro_cliente` VARCHAR(100) NOT NULL,
-  `cep_cliente` VARCHAR(15) NOT NULL,
-  `uf_cliente` VARCHAR(2) NOT NULL,
-  `numero_cliente` INT(5) NOT NULL,
-  `complemento_cliente` VARCHAR(150) NULL DEFAULT NULL,
-  `ponto_ref_cliente` VARCHAR(300) NULL DEFAULT NULL,
-  `data_endereco_cliente` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'data e hora do registro',
-  PRIMARY KEY (`id_endereco`),
-  CONSTRAINT `fk_id_cliente`
-    FOREIGN KEY (`id_cliente`)
-    REFERENCES `2ucase_bd3`.`user_cliente` (`id_cliente`)
-    ON UPDATE CASCADE);
+                                                                    `id_endereco` INT NOT NULL AUTO_INCREMENT,
+                                                                    `id_cliente` INT NOT NULL,
+                                                                    `logradouro_cliente` VARCHAR(900) NOT NULL,
+                                                                    `bairro_cliente` VARCHAR(100) NOT NULL,
+                                                                    `cep_cliente` VARCHAR(15) NOT NULL,
+                                                                    `uf_cliente` VARCHAR(2) NOT NULL,
+                                                                    `numero_cliente` INT(5) NOT NULL,
+                                                                    `complemento_cliente` VARCHAR(150) NULL DEFAULT NULL,
+                                                                    `ponto_ref_cliente` VARCHAR(300) NULL DEFAULT NULL,
+                                                                    `data_endereco_cliente` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'data e hora do registro',
+                                                                    PRIMARY KEY (`id_endereco`),
+                                                                    CONSTRAINT `fk_id_cliente`
+                                                                        FOREIGN KEY (`id_cliente`)
+                                                                            REFERENCES `2ucase_bd3`.`user_cliente` (`id_cliente`)
+                                                                            ON UPDATE CASCADE);
 
 
 -- -----------------------------------------------------
 -- Table `2ucase_bd3`.`adm_submenu`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`adm_submenu` (
-  `id_submenu` INT NOT NULL AUTO_INCREMENT,
-  `id_menu` INT NOT NULL,
-  `nome_submenu` VARCHAR(300) NOT NULL,
-  `link_submenu` VARCHAR(300) NOT NULL,
-  `status` INT(1) NOT NULL COMMENT '1 - ativo; 0 - inativo',
-  `data_reg_submenu` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'data e hora do registro',
-  PRIMARY KEY (`id_submenu`),
-  CONSTRAINT `fk_id_menu`
-    FOREIGN KEY (`id_menu`)
-    REFERENCES `2ucase_bd3`.`adm_menu` (`id_menu`)
-    ON UPDATE CASCADE);
+                                                          `id_submenu` INT NOT NULL AUTO_INCREMENT,
+                                                          `id_menu` INT NOT NULL,
+                                                          `nome_submenu` VARCHAR(300) NOT NULL,
+                                                          `link_submenu` VARCHAR(300) NOT NULL,
+                                                          `status` INT(1) NOT NULL COMMENT '1 - ativo; 0 - inativo',
+                                                          `data_reg_submenu` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'data e hora do registro',
+                                                          PRIMARY KEY (`id_submenu`),
+                                                          CONSTRAINT `fk_id_menu`
+                                                              FOREIGN KEY (`id_menu`)
+                                                                  REFERENCES `2ucase_bd3`.`adm_menu` (`id_menu`)
+                                                                  ON UPDATE CASCADE);
 
 
 -- -----------------------------------------------------
 -- Table `2ucase_bd3`.`user_categoria`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`user_categoria` (
-  `id_categoria` INT NOT NULL AUTO_INCREMENT,
-  `nome_categoria` VARCHAR(200) NOT NULL,
-  `img_categoria` VARCHAR(300) NOT NULL,
-  `data_reg_cupom` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'data e hora do registro',
-  `link_categoria` VARCHAR(300) NOT NULL,
-  PRIMARY KEY (`id_categoria`)
+                                                             `id_categoria` INT NOT NULL AUTO_INCREMENT,
+                                                             `nome_categoria` VARCHAR(200) NOT NULL,
+                                                             `img_categoria` VARCHAR(300) NOT NULL,
+                                                             `data_reg_cupom` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'data e hora do registro',
+                                                             `link_categoria` VARCHAR(300) NOT NULL,
+                                                             PRIMARY KEY (`id_categoria`)
 );
 
 
@@ -161,181 +161,181 @@ CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`user_categoria` (
 
 
 CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`user_produto` (
-  `id_produto` INT NOT NULL AUTO_INCREMENT,
-  `id_modelo_celular` INT NOT NULL,
-  `id_categoria` INT NOT NULL,
-  `nome_produto` VARCHAR(300) NOT NULL,
-  `cod_produto` INT(4) ZEROFILL NOT NULL,
-  `preco_produto` FLOAT NOT NULL,
-  `peso_produto` INT NOT NULL COMMENT 'Peso em Gramas',
-  `descricao_produto` VARCHAR(900) NOT NULL,
-  `imagem_principal_produto` VARCHAR(300) NOT NULL,
-  `quantidade_produto` INT NOT NULL,
-  `categoria_special_produto` VARCHAR(200) NOT NULL,
-  `garantias_produto` VARCHAR(300) NOT NULL COMMENT 'beneficios - ex - garantia 3 dias',
-  `status` INT(1) NOT NULL COMMENT '2 - oferta 1 - disponivel 0 - indisponivel',
-  `data_reg_produto` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'data e hora do registro',
-  PRIMARY KEY (`id_produto`),
-  CONSTRAINT `fk_id_modelo_celular`
-    FOREIGN KEY (`id_modelo_celular`)
-    REFERENCES `2ucase_bd3`.`user_mod_celular` (`id_modelo_celular`)
-    ON DELETE RESTRICT
-    ON UPDATE CASCADE,
-  CONSTRAINT `fk_id_categoria`
-    FOREIGN KEY (`id_categoria`)
-    REFERENCES `2ucase_bd3`.`user_categoria` (`id_categoria`)
-    ON DELETE RESTRICT
-    ON UPDATE CASCADE);
+                                                           `id_produto` INT NOT NULL AUTO_INCREMENT,
+                                                           `id_modelo_celular` INT NOT NULL,
+                                                           `id_categoria` INT NOT NULL,
+                                                           `nome_produto` VARCHAR(300) NOT NULL,
+                                                           `cod_produto` INT(4) ZEROFILL NOT NULL,
+                                                           `preco_produto` FLOAT NOT NULL,
+                                                           `peso_produto` INT NOT NULL COMMENT 'Peso em Gramas',
+                                                           `descricao_produto` VARCHAR(900) NOT NULL,
+                                                           `imagem_principal_produto` VARCHAR(300) NOT NULL,
+                                                           `quantidade_produto` INT NOT NULL,
+                                                           `categoria_special_produto` VARCHAR(200) NOT NULL,
+                                                           `garantias_produto` VARCHAR(300) NOT NULL COMMENT 'beneficios - ex - garantia 3 dias',
+                                                           `status` INT(1) NOT NULL COMMENT '2 - oferta 1 - disponivel 0 - indisponivel',
+                                                           `data_reg_produto` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'data e hora do registro',
+                                                           PRIMARY KEY (`id_produto`),
+                                                           CONSTRAINT `fk_id_modelo_celular`
+                                                               FOREIGN KEY (`id_modelo_celular`)
+                                                                   REFERENCES `2ucase_bd3`.`user_mod_celular` (`id_modelo_celular`)
+                                                                   ON DELETE RESTRICT
+                                                                   ON UPDATE CASCADE,
+                                                           CONSTRAINT `fk_id_categoria`
+                                                               FOREIGN KEY (`id_categoria`)
+                                                                   REFERENCES `2ucase_bd3`.`user_categoria` (`id_categoria`)
+                                                                   ON DELETE RESTRICT
+                                                                   ON UPDATE CASCADE);
 
 
 -- -----------------------------------------------------
 -- Table `2ucase_bd3`.`user_produtos_img`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`user_produtos_img` (
-  `id_img` INT NOT NULL AUTO_INCREMENT,
-  `id_produto` INT NOT NULL,
-  `nome_img` VARCHAR(300) NOT NULL,
-  `link_img` VARCHAR(300) NOT NULL,
-  `status` INT(1) NOT NULL COMMENT '1 - ativo; 0 - inativo',
-  `data_reg_img` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'data e hora do registro',
-  PRIMARY KEY (`id_img`),
-  CONSTRAINT `fk_id_produto`
-    FOREIGN KEY (`id_produto`)
-    REFERENCES `2ucase_bd3`.`user_produto` (`id_produto`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE);
+                                                                `id_img` INT NOT NULL AUTO_INCREMENT,
+                                                                `id_produto` INT NOT NULL,
+                                                                `nome_img` VARCHAR(300) NOT NULL,
+                                                                `link_img` VARCHAR(300) NOT NULL,
+                                                                `status` INT(1) NOT NULL COMMENT '1 - ativo; 0 - inativo',
+                                                                `data_reg_img` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'data e hora do registro',
+                                                                PRIMARY KEY (`id_img`),
+                                                                CONSTRAINT `fk_id_produto`
+                                                                    FOREIGN KEY (`id_produto`)
+                                                                        REFERENCES `2ucase_bd3`.`user_produto` (`id_produto`)
+                                                                        ON DELETE CASCADE
+                                                                        ON UPDATE CASCADE);
 
 
 -- -----------------------------------------------------
 -- Table `2ucase_bd3`.`user_cupom`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`user_cupom` (
-  `id_cupom` INT NOT NULL AUTO_INCREMENT,
-  `id_categoria` INT NOT NULL,
-  `nome_cupom` VARCHAR(400) NOT NULL,
-  `codigo_cupom` VARCHAR(200) NOT NULL,
-  `data_expira_cupom` DATE NOT NULL,
-  `desconto_cupom` FLOAT NOT NULL,
-  `data_reg_cupom` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'data e hora do registro',
-  `status` INT(1) NOT NULL COMMENT '1 - ativo; 0 - inativo',
-  PRIMARY KEY (`id_cupom`),
-  CONSTRAINT `fk1_id_categoria`
-    FOREIGN KEY (`id_categoria`)
-    REFERENCES `2ucase_bd3`.`user_categoria` (`id_categoria`));
+                                                         `id_cupom` INT NOT NULL AUTO_INCREMENT,
+                                                         `id_categoria` INT NOT NULL,
+                                                         `nome_cupom` VARCHAR(400) NOT NULL,
+                                                         `codigo_cupom` VARCHAR(200) NOT NULL,
+                                                         `data_expira_cupom` DATE NOT NULL,
+                                                         `desconto_cupom` FLOAT NOT NULL,
+                                                         `data_reg_cupom` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'data e hora do registro',
+                                                         `status` INT(1) NOT NULL COMMENT '1 - ativo; 0 - inativo',
+                                                         PRIMARY KEY (`id_cupom`),
+                                                         CONSTRAINT `fk1_id_categoria`
+                                                             FOREIGN KEY (`id_categoria`)
+                                                                 REFERENCES `2ucase_bd3`.`user_categoria` (`id_categoria`));
 
 
 -- -----------------------------------------------------
 -- Table `2ucase_bd3`.`venda_status`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`venda_status` (
-  `id_status` INT NOT NULL AUTO_INCREMENT,
-  `status_venda` VARCHAR(60) NOT NULL,
-  `data_reg_status` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id_status`));
+                                                           `id_status` INT NOT NULL AUTO_INCREMENT,
+                                                           `status_venda` VARCHAR(60) NOT NULL,
+                                                           `data_reg_status` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                                                           PRIMARY KEY (`id_status`));
 
 -- -----------------------------------------------------
 -- Table `2ucase_bd3`.`user_carrinho`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`user_carrinho` (
-  `id_carrinho` INT NOT NULL AUTO_INCREMENT,
-  `data_reg_carrinho` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `id_cliente` INT NOT NULL,
-  `total_carrinho` FLOAT NOT NULL,
-  `desconto_carrinho` FLOAT NOT NULL,
-  `quant_carrinho` INT NOT NULL,
-  `id_endereco` INT NOT NULL,
-  `frete_carrinho` FLOAT NOT NULL,
-  PRIMARY KEY (`id_carrinho`),
-  CONSTRAINT `fk_user_carrinho_user_cliente`
-    FOREIGN KEY (`id_cliente`)
-    REFERENCES `2ucase_bd3`.`user_cliente` (`id_cliente`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
-  CONSTRAINT `fk_user_carrinho_user_endereco_cliente1`
-    FOREIGN KEY (`id_endereco`)
-    REFERENCES `2ucase_bd3`.`user_endereco_cliente` (`id_endereco`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION);
+                                                            `id_carrinho` INT NOT NULL AUTO_INCREMENT,
+                                                            `data_reg_carrinho` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                                                            `id_cliente` INT NOT NULL,
+                                                            `total_carrinho` FLOAT NOT NULL,
+                                                            `desconto_carrinho` FLOAT NOT NULL,
+                                                            `quant_carrinho` INT NOT NULL,
+                                                            PRIMARY KEY (`id_carrinho`),
+                                                            CONSTRAINT `fk_user_carrinho_user_cliente`
+                                                                FOREIGN KEY (`id_cliente`)
+                                                                    REFERENCES `2ucase_bd3`.`user_cliente` (`id_cliente`)
+                                                                    ON DELETE CASCADE
+                                                                    ON UPDATE CASCADE);
 
 -- -----------------------------------------------------
 -- Table `2ucase_bd3`.`adm_venda`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`adm_venda` (
-  `id_venda` INT NOT NULL AUTO_INCREMENT,
-  `id_cliente` INT NOT NULL,
-  `id_pagamento` INT NOT NULL,
-  `valor_desconto_total` DOUBLE NOT NULL,
-  `data_venda` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'data e hora do registro',
-  `valor_venda_total` DOUBLE NOT NULL,
-  `quant_produto_total` INT NOT NULL,
-  `id_status` INT NOT NULL,
-  `id_carrinho` INT NOT NULL,
-  PRIMARY KEY (`id_venda`),
-  CONSTRAINT `fk_id_pagamento`
-    FOREIGN KEY (`id_pagamento`)
-    REFERENCES `2ucase_bd3`.`user_forma_pagamento` (`id_pagamento`)
-    ON UPDATE CASCADE,
-  CONSTRAINT `fk1_id_cliente`
-    FOREIGN KEY (`id_cliente`)
-    REFERENCES `2ucase_bd3`.`user_cliente` (`id_cliente`)
-    ON UPDATE CASCADE,
-  CONSTRAINT `fk_adm_venda_venda_status1`
-    FOREIGN KEY (`id_status`)
-    REFERENCES `2ucase_bd3`.`venda_status` (`id_status`)
-    ON DELETE NO ACTION
-    ON UPDATE CASCADE,
-  CONSTRAINT `fk_adm_venda_user_carrinho1`
-    FOREIGN KEY (`id_carrinho`)
-    REFERENCES `2ucase_bd3`.`user_carrinho` (`id_carrinho`)
-    ON DELETE NO ACTION
-    ON UPDATE RESTRICT);
+                                                        `id_venda` INT NOT NULL AUTO_INCREMENT,
+                                                        `id_cliente` INT NOT NULL,
+                                                        `id_pagamento` INT NOT NULL,
+                                                        `valor_desconto_total` DOUBLE NOT NULL,
+                                                        `data_venda` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'data e hora do registro',
+                                                        `valor_venda_total` DECIMAL NOT NULL,
+                                                        `quant_produto_total` INT NOT NULL,
+                                                        `id_status` INT NOT NULL,
+                                                        `id_carrinho` INT NOT NULL,
+                                                        `id_endereco` INT NOT NULL,
+                                                        `frete_carrinho` DECIMAL NOT NULL,
+                                                        PRIMARY KEY (`id_venda`),
+                                                        CONSTRAINT `fk_id_pagamento`
+                                                            FOREIGN KEY (`id_pagamento`)
+                                                                REFERENCES `2ucase_bd3`.`user_forma_pagamento` (`id_pagamento`)
+                                                                ON UPDATE CASCADE,
+                                                        CONSTRAINT `fk1_id_cliente`
+                                                            FOREIGN KEY (`id_cliente`)
+                                                                REFERENCES `2ucase_bd3`.`user_cliente` (`id_cliente`)
+                                                                ON UPDATE CASCADE,
+                                                        CONSTRAINT `fk_adm_venda_venda_status1`
+                                                            FOREIGN KEY (`id_status`)
+                                                                REFERENCES `2ucase_bd3`.`venda_status` (`id_status`)
+                                                                ON DELETE NO ACTION
+                                                                ON UPDATE CASCADE,
+                                                        CONSTRAINT `fk_adm_venda_user_carrinho1`
+                                                            FOREIGN KEY (`id_carrinho`)
+                                                                REFERENCES `2ucase_bd3`.`user_carrinho` (`id_carrinho`)
+                                                                ON DELETE NO ACTION
+                                                                ON UPDATE RESTRICT,
+                                                        CONSTRAINT `fk_adm_venda_user_endereco_cliente1`
+                                                            FOREIGN KEY (`id_endereco`)
+                                                                REFERENCES `2ucase_bd3`.`user_endereco_cliente` (`id_endereco`)
+                                                                ON DELETE NO ACTION
+                                                                ON UPDATE NO ACTION);
 
 
 -- -----------------------------------------------------
 -- Table `2ucase_bd3`.`user_avaliacao`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`user_avaliacao` (
-  `id_avaliacao` INT NOT NULL AUTO_INCREMENT,
-  `id_produto` INT NOT NULL,
-  `id_cliente` INT NOT NULL,
-  `nota_avaliacao` INT(1) NOT NULL COMMENT 'avaliação de 1 - 5',
-  `titulo_avaliacao` VARCHAR(300) NOT NULL,
-  `descricao` VARCHAR(900) NOT NULL,
-  `data_avaliacao` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'data e hora do registro',
-  `status` INT(1) NOT NULL COMMENT '1 - ativo; 0 - inativo',
-  PRIMARY KEY (`id_avaliacao`),
-  CONSTRAINT `fk1_id_produto`
-    FOREIGN KEY (`id_produto`)
-    REFERENCES `2ucase_bd3`.`user_produto` (`id_produto`)
-    ON UPDATE CASCADE,
-  CONSTRAINT `fk2_id_cliente`
-    FOREIGN KEY (`id_cliente`)
-    REFERENCES `2ucase_bd3`.`user_cliente` (`id_cliente`)
-    ON UPDATE CASCADE);
+                                                             `id_avaliacao` INT NOT NULL AUTO_INCREMENT,
+                                                             `id_produto` INT NOT NULL,
+                                                             `id_cliente` INT NOT NULL,
+                                                             `nota_avaliacao` INT(1) NOT NULL COMMENT 'avaliação de 1 - 5',
+                                                             `titulo_avaliacao` VARCHAR(300) NOT NULL,
+                                                             `descricao` VARCHAR(900) NOT NULL,
+                                                             `data_avaliacao` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'data e hora do registro',
+                                                             `status` INT(1) NOT NULL COMMENT '1 - ativo; 0 - inativo',
+                                                             PRIMARY KEY (`id_avaliacao`),
+                                                             CONSTRAINT `fk1_id_produto`
+                                                                 FOREIGN KEY (`id_produto`)
+                                                                     REFERENCES `2ucase_bd3`.`user_produto` (`id_produto`)
+                                                                     ON UPDATE CASCADE,
+                                                             CONSTRAINT `fk2_id_cliente`
+                                                                 FOREIGN KEY (`id_cliente`)
+                                                                     REFERENCES `2ucase_bd3`.`user_cliente` (`id_cliente`)
+                                                                     ON UPDATE CASCADE);
 
 
 -- -----------------------------------------------------
 -- Table `2ucase_bd3`.`produto_carrinho`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`produto_carrinho` (
-  `id_produto_carrinho` INT NOT NULL AUTO_INCREMENT,
-  `id_carrinho` INT NOT NULL,
-  `id_produto` INT NOT NULL,
-  `quant_carrinho` INT NOT NULL,
-  `preco_quant_prod` FLOAT NOT NULL,
-  `preco_desconto_prod` FLOAT NOT NULL,
-  `data_reg_Cprod` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'data e hora do registro',
-  PRIMARY KEY (`id_produto_carrinho`),
-  CONSTRAINT `fk_produto_carrinho_user_carrinho1`
-    FOREIGN KEY (`id_carrinho`)
-    REFERENCES `2ucase_bd3`.`user_carrinho` (`id_carrinho`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_produto_carrinho_user_produto1`
-    FOREIGN KEY (`id_produto`)
-    REFERENCES `2ucase_bd3`.`user_produto` (`id_produto`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION);
+                                                               `id_produto_carrinho` INT NOT NULL AUTO_INCREMENT,
+                                                               `id_carrinho` INT NOT NULL,
+                                                               `id_produto` INT NOT NULL,
+                                                               `quant_carrinho` INT NOT NULL,
+                                                               `preco_quant_prod` FLOAT NOT NULL,
+                                                               `preco_desconto_prod` FLOAT NOT NULL,
+                                                               `data_reg_Cprod` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'data e hora do registro',
+                                                               PRIMARY KEY (`id_produto_carrinho`),
+                                                               CONSTRAINT `fk_produto_carrinho_user_carrinho1`
+                                                                   FOREIGN KEY (`id_carrinho`)
+                                                                       REFERENCES `2ucase_bd3`.`user_carrinho` (`id_carrinho`)
+                                                                       ON DELETE NO ACTION
+                                                                       ON UPDATE NO ACTION,
+                                                               CONSTRAINT `fk_produto_carrinho_user_produto1`
+                                                                   FOREIGN KEY (`id_produto`)
+                                                                       REFERENCES `2ucase_bd3`.`user_produto` (`id_produto`)
+                                                                       ON DELETE NO ACTION
+                                                                       ON UPDATE NO ACTION);
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
@@ -351,18 +351,18 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- INSERTS USUARIOS ADMINISTRATIVOS
 
 INSERT INTO adm_administrador(nome_adm, email_adm, senha_adm, poder_adm, status) VALUES(
-'Davi Moreira',
-'davi@adm.com',
-'5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5',
-9,
-1);
+                                                                                           'Davi Moreira',
+                                                                                           'davi@adm.com',
+                                                                                           '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5',
+                                                                                           9,
+                                                                                           1);
 
 INSERT INTO adm_administrador(nome_adm, email_adm, senha_adm, poder_adm, status) VALUES(
-'Tetra Moreira',
-'davi@adm.com',
-'5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5',
-9,
-1);
+                                                                                           'Tetra Moreira',
+                                                                                           'davi@adm.com',
+                                                                                           '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5',
+                                                                                           9,
+                                                                                           1);
 
 -- INSERTS CLIENTE
 
@@ -374,14 +374,14 @@ VALUES ('Filipe Moreira', 'davisant6@gmail.com', '49471488885', '11996120093','1
 -- INSERTS ENDEREÇO CLIENTE
 
 INSERT INTO user_endereco_cliente(logradouro_cliente, bairro_cliente, cep_cliente, uf_cliente ,numero_cliente, complemento_cliente, id_cliente) VALUES(
-'Rua Ciclades',
-'Jardim Guaruja',
-'05876-040',
-'SP',
-'30',
-'Casa 4',
-1
-);
+                                                                                                                                                          'Rua Ciclades',
+                                                                                                                                                          'Jardim Guaruja',
+                                                                                                                                                          '05876-040',
+                                                                                                                                                          'SP',
+                                                                                                                                                          '30',
+                                                                                                                                                          'Casa 4',
+                                                                                                                                                          1
+                                                                                                                                                      );
 
 -- INSERTS CATEGORIA
 
@@ -418,23 +418,27 @@ INSERT INTO adm_carrossel (nome_carrossel, link_carrossel, status) VALUES ('Time
 -- INSERT INTO MODELO CELULAR
 
 INSERT INTO user_mod_celular (marca_celular, modelo_celular) VALUES ('Apple', 'Iphone 13 Pro Max');
+INSERT INTO user_mod_celular (marca_celular, modelo_celular) VALUES ('Apple', 'Iphone 12');
+INSERT INTO user_mod_celular (marca_celular, modelo_celular) VALUES ('Apple', 'Iphone 11');
+
+
 
 
 -- INSERT INTO PRODUTO
 
 INSERT INTO user_produto(id_modelo_celular, id_categoria, nome_produto, preco_produto,
-descricao_produto, imagem_principal_produto,
-quantidade_produto, garantias_produto, status, categoria_special_produto, peso_produto, cod_produto)
+                         descricao_produto, imagem_principal_produto,
+                         quantidade_produto, garantias_produto, status, categoria_special_produto, peso_produto, cod_produto)
 VALUES (1, 2, 'Capinha Flamengo 2022 - Selecao Oficial', 148.94,
-'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum facere aperiam dolor minus laudantium autem soluta eum, officia sunt ducimus sed. Possimus necessitatibus ex molestiae.'
-, '../assets/img/Banner2.png', 10, '3 Meses', 1, 'Novidades', 20, 420);
+        'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum facere aperiam dolor minus laudantium autem soluta eum, officia sunt ducimus sed. Possimus necessitatibus ex molestiae.'
+           , '../assets/img/Banner2.png', 10, '3 Meses', 1, 'Novidades', 20, 420);
 
 
 -- INSERT INTO AVALIAÇÕES
 
 INSERT INTO user_avaliacao(id_produto, id_cliente,nota_avaliacao, titulo_avaliacao, descricao, status) VALUES
-(1, 1, 4,
-'ótimo produto melhor que já comprei', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere dicta obcaecati ea eos sunt vel sequi non, harum hic possimus doloremque, inventore eaque, culpa veniam facilis libero mollitia laudantium numquam!', 1);
+    (1, 1, 4,
+     'ótimo produto melhor que já comprei', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere dicta obcaecati ea eos sunt vel sequi non, harum hic possimus doloremque, inventore eaque, culpa veniam facilis libero mollitia laudantium numquam!', 1);
 
 
 -- INSERT INTO VENDA STATUS
@@ -449,15 +453,15 @@ INSERT INTO venda_status (status_venda) VALUES ('Reembolsada');
 
 -- INSERT INTO FORMA PAGAMENTO
 
-INSERT INTO user_forma_pagamento (parcelamento_pagamento, metodo_pagamento) 
+INSERT INTO user_forma_pagamento (parcelamento_pagamento, metodo_pagamento)
 VALUES (0, 'Cartão de Crédito - Mastercard');
 
 -- INSERT INTO CARRINHO DE COMPRAS
 
-INSERT INTO user_carrinho 
+INSERT INTO user_carrinho
 (id_cliente, total_carrinho, desconto_carrinho, quant_carrinho, id_endereco, frete_carrinho)
 VALUES
-(1, 84.64, 12.69, 4, 1, 32.41);
+    (1, 84.64, 12.69, 4, 1, 32.41);
 
 
 -- INSERT INTO PRODUTO CARRINHO
@@ -465,14 +469,14 @@ VALUES
 INSERT INTO produto_carrinho
 (id_carrinho, id_produto, quant_carrinho, preco_quant_prod, preco_desconto_prod)
 VALUES
-(1, 1, 5, 21.24, 0.00);
+    (1, 1, 5, 21.24, 0.00);
 
 -- INSERT INTO VENDAS
 
-INSERT INTO adm_venda 
-(id_cliente, id_pagamento, valor_desconto_total, valor_venda_total, quant_produto_total, id_status, id_carrinho) 
-VALUES 
-(1, 1, 12.69, 214.36, 4, 4, 1);
+INSERT INTO adm_venda
+(id_cliente, id_pagamento, valor_desconto_total, valor_venda_total, quant_produto_total, id_status, id_carrinho)
+VALUES
+    (1, 1, 12.69, 214.36, 4, 4, 1);
 
 
 -- * VIEW PEDIDOS NÃO É NECESSARIO RODAR NO BD
@@ -489,7 +493,7 @@ adm_venda.data_venda, adm_venda.valor_venda_total, adm_venda.quant_produto_total
 adm_venda.id_status, adm_venda.id_carrinho,
 
 -- TABELA STATUS VENDA
- venda_status.status_venda,
+venda_status.status_venda,
 
 --  TABELA USER CARRINHO
 user_carrinho.data_reg_carrinho, user_carrinho.total_carrinho, user_carrinho.desconto_carrinho,
@@ -502,22 +506,22 @@ user_cliente.status,
 
 --  TABELA USER ENDERECO CLIENTE
 user_endereco_cliente.logradouro_cliente, user_endereco_cliente.bairro_cliente,
-user_endereco_cliente.cep_cliente, user_endereco_cliente.uf_cliente, 
+user_endereco_cliente.cep_cliente, user_endereco_cliente.uf_cliente,
 user_endereco_cliente.numero_cliente, user_endereco_cliente.complemento_cliente,
 user_endereco_cliente.ponto_ref_cliente
 
 FROM adm_venda
 
-INNER JOIN venda_status
-ON adm_venda.id_status = venda_status.id_status
+         INNER JOIN venda_status
+                    ON adm_venda.id_status = venda_status.id_status
 
-INNER JOIN user_carrinho
-ON adm_venda.id_carrinho = user_carrinho.id_carrinho
+         INNER JOIN user_carrinho
+                    ON adm_venda.id_carrinho = user_carrinho.id_carrinho
 
-INNER JOIN user_cliente
-ON adm_venda.id_cliente = user_cliente.id_cliente
+         INNER JOIN user_cliente
+                    ON adm_venda.id_cliente = user_cliente.id_cliente
 
-INNER JOIN user_endereco_cliente
-ON user_carrinho.id_endereco = user_endereco_cliente.id_endereco
+         INNER JOIN user_endereco_cliente
+                    ON user_carrinho.id_endereco = user_endereco_cliente.id_endereco
 WHERE adm_venda.id_venda = :id;
 

@@ -129,7 +129,7 @@ $returnPromos = $manager->exibProducts('categoria_special_produto','Promoções'
                             for ($i = 0, $iMax = count($returnNovidades); $i < $iMax; $i++) :
                         ?>
 
-                            <a class="produto-box glide__slide" href="./produto.php?idProduto=<?=$returnNovidades[$i]['id_produto']?>">
+                            <a class="produto-box glide__slide" href="./produto.php?pd=<?=$returnNovidades[$i]['id_produto']?>">
                                 <img src="<?=$returnNovidades[$i]['imagem_principal_produto']?>" alt="<?=$returnNovidades[$i]['nome_produto']?>">
                                 <h4><?=$returnNovidades[$i]['nome_produto']?></h4>
                                 <p>R$ <?=$returnNovidades[$i]['preco_produto']?></p>
@@ -212,7 +212,7 @@ $returnPromos = $manager->exibProducts('categoria_special_produto','Promoções'
                         for ($i = 0, $iMax = count($returnVendidos); $i < $iMax; $i++) :
                             ?>
 
-                            <a class="produto-box glide__slide" href="./produto.php?idProduto=<?=$returnVendidos[$i]['id_produto']?>">
+                            <a class="produto-box glide__slide" href="./produto.php?pd=<?=$returnVendidos[$i]['id_produto']?>">
                                 <img src="<?=$returnVendidos[$i]['imagem_principal_produto']?>" alt="<?=$returnVendidos[$i]['nome_produto']?>">
                                 <h4><?=$returnVendidos[$i]['nome_produto']?></h4>
                                 <p>R$ <?=$returnVendidos[$i]['preco_produto']?></p>
@@ -248,7 +248,7 @@ $returnPromos = $manager->exibProducts('categoria_special_produto','Promoções'
                         for ($i = 0, $iMax = count($returnPromos); $i < $iMax; $i++) :
                             ?>
 
-                            <a class="produto-box glide__slide" href="./produto.php?idProduto=<?=$returnPromos[$i]['id_produto']?>">
+                            <a class="produto-box glide__slide" href="./produto.php?pd=<?=$returnPromos[$i]['id_produto']?>">
                                 <img src="<?=$returnPromos[$i]['imagem_principal_produto']?>" alt="<?=$returnPromos[$i]['nome_produto']?>">
                                 <h4><?=$returnPromos[$i]['nome_produto']?></h4>
                                 <p>R$ <?=$returnPromos[$i]['preco_produto']?></p>

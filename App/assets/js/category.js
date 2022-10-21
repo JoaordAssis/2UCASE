@@ -65,3 +65,19 @@ function redirectOrdem(categoria) {
         "../controllers/ControllerCategoria.php?category=" + categoria + "&selectOrdem=" + opcaoTexto;
   }
 }
+
+// Bloquear select PRODUTO
+
+let selectModelo = document.getElementById("select-modelo-samsung-label");
+let formProduto = document.getElementById("form-prod-carrinho");
+
+// formProduto.addEventListener('submit', (e) => {
+//   let opcaoTexto = selectModelo.options[selectModelo.selectedIndex].value;
+//
+//   if (opcaoTexto === "0"){
+//     e.preventDefault();
+//   }
+//
+// });
+//
+//

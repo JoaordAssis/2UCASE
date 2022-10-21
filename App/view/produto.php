@@ -5,13 +5,15 @@ use app\model\Manager;
 
 $manager = new Manager();
 
-
-if (isset($_GET['idProduto'])){
-    $idProduto = $_GET['idProduto'];
-    $returnProduto = $manager->getInfo('user_produto', 'id_produto', $idProduto);
-
-    $returnImagemProduto = $manager->getInfo('user_produtos_img', 'id_produto', $idProduto);
+if (empty($_GET['pd'])){
+    header("Location: ./homepage.php?Nao-tem-id");
+    exit();
 }
+
+$idProduto = $_GET['pd'];
+$returnProduto = $manager->getInfo('user_produto', 'id_produto', $idProduto);
+
+$returnImagemProduto = $manager->getInfo('user_produtos_img', 'id_produto', $idProduto);
 
 //Produtos Similares
 $returnSimilares = $manager->exibProducts('id_categoria', $returnProduto[0]['id_categoria'], 'preco_produto',6);
@@ -90,7 +92,10 @@ $returnComentarios = $manager->selectWhere($paramComentario, $paramPostComentari
                 </div>
             </section>
 
-            <form method="POST" action="#" class="box-produto-info">
+            <form method="POST" action="../controllers/ControllerAddprodutoCarrinho.php" class="box-produto-info" id="form-prod-carrinho">
+
+                <input type="hidden" name="idProduto" value="<?=$idProduto?>">
+
                 <!-- Oferta Especial -->
                 <?php
                 if ($returnProduto[0]['categoria_special_produto'] === 'Promoções'):
@@ -156,20 +161,25 @@ $returnComentarios = $manager->selectWhere($paramComentario, $paramPostComentari
                     <label for="marcaProduto">Selecione a Marca
                         <select name="marcaProduto" oninput="selectCelularCheck()" id="select-marca">
                             <option>Apple</option>
-                            <option>Samsung</option>
+<!--                            <option>Samsung</option>-->
                         </select>
                     </label>
                         <!--Modelo Iphone-->
                     <label id="select-modelo-iphone-label" for="modeloProduto">Selecione o Modelo
                         <select name="modeloProduto" id="select-modelo-iphone">
-                            <option>Iphone 13</option>
+                            <?php
+                            //Exibir os valores conforme contido no BD
+                            $returnModelProduto = $manager->getInfo('user_mod_celular',
+                                'id_modelo_celular', $returnProduto[0]['id_modelo_celular']);
+                            ?>
+                            <option><?=$returnModelProduto[0]['modelo_celular']?></option>
                         </select>
                     </label>
 
                         <!--Modelo samsung-->
                     <label style="display: none" id="select-modelo-samsung-label" for="modeloProduto">Selecione o Modelo
                         <select name="modeloProduto" id="select-modelo-samsung">
-                            <option>Galaxy S20</option>
+                            <option value="0" selected>Indisponível</option>
                         </select>
                     </label>
                 </div>
@@ -361,6 +371,7 @@ $returnComentarios = $manager->selectWhere($paramComentario, $paramPostComentari
     </main>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+<script src="../assets/js/category.js"></script>
 <script defer src="../assets/js/produto.js"></script>
 
 
