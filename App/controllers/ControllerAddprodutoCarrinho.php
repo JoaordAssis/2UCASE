@@ -7,12 +7,14 @@ use app\model\Ferramentas;
 
 if (empty($_SESSION['USER-ID'])){
     //Usuário não logado
+    //TODO: Tratar erro
     header("Location: ../view/login.php");
     exit();
 }
 
 if (empty($_REQUEST['idProduto'])){
     //Produto não existente, BUG do site ou falha de segurança
+    //TODO: Tratar erro
     header("Location: ../view/produto.php");
     exit();
 }
@@ -27,6 +29,7 @@ $quantidadeProduto = $_REQUEST['quantProduto'];
 
 if (empty($quantidadeProduto)){
     //Falha no recebimento
+    //TODO: Tratar erro
     header("Location: ../view/produto.php");
 }
 
@@ -47,22 +50,20 @@ if (count($selectCarrinhoVerify) > 0){
 //Calcular o subtotal do produto
 $precoQuantProduto = $getInfoProduto[0]['preco_produto'] * $quantidadeProduto;
 
-//Calcular o total do carrinho
-$totalCarrinho = $precoQuantProduto - 0;
 
 
 //Dados Insert USER_CARRINHO - Criando o carrinho do zero
 $dadosCarrinho['id_cliente'] = $_SESSION['USER-ID'];
-$dadosCarrinho['total_carrinho'] = $totalCarrinho;
-$dadosCarrinho['desconto_carrinho'] = 0;
+$dadosCarrinho['total_carrinho'] = $precoQuantProduto;
 $dadosCarrinho['quant_carrinho'] = $quantidadeProduto;
 $dadosCarrinho['id_status'] = 1;
 
 try {
     $insertCarrinho = $manager->insertClient('user_carrinho', $dadosCarrinho);
 }catch (PDOException $e){
-    //Tratar o erro
+    //TODO: Tratar erro
     echo $e->getMessage();
+    exit();
 }
 
 
@@ -73,17 +74,18 @@ $dadosProdCarrinho['id_carrinho'] = $lastInsertIDCarrinho[0];
 $dadosProdCarrinho['id_produto'] = $getInfoProduto[0]['id_produto'];
 $dadosProdCarrinho['quant_carrinho'] = $quantidadeProduto;
 $dadosProdCarrinho['preco_quant_prod'] = $precoQuantProduto;
-$dadosProdCarrinho['preco_desconto_prod'] = 0;
 $dadosProdCarrinho['marca_celular'] = $returnModelProduto[0]['modelo_celular'];
 
 
 try {
     $insertProdCarrinho = $manager->insertClient('produto_carrinho', $dadosProdCarrinho);
     header('Location: ../view/carrinho.php');
+    //TODO: Tratar erro
     exit();
 
 }catch (PDOException $e){
     echo $e->getMessage();
+    //TODO: Tratar erro
     header('Location: ../view/produto.php');
     exit();
 }

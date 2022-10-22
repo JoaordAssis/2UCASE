@@ -14,7 +14,7 @@ class Manager extends Conexao {
         return $cmd->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function insertClient($table, $data): void {
+    public function insertClient($table, $data): bool {
         $fields = implode(", ", array_keys($data));
         $values = ":" . implode(", :", array_keys($data));
         $sql = "INSERT INTO $table ($fields) VALUES ($values)";
@@ -22,7 +22,7 @@ class Manager extends Conexao {
         foreach ($data as $key => $value) {
             $statement->bindValue(":$key", $value, PDO::PARAM_STR);
         }
-        $statement->execute();
+        return $statement->execute();
     }
 
     public function getInfo($table, $columnName, $id): bool|array {
@@ -39,7 +39,7 @@ class Manager extends Conexao {
 
     }
 
-    public function updateClient($table, $data, $id, $columnName): void {
+    public function updateClient($table, $data, $id, $columnName): bool {
         $new_values = "";
         foreach ($data as $key => $value) {
             $new_values .= "$key=:$key, ";
@@ -51,14 +51,14 @@ class Manager extends Conexao {
         foreach ($data as $key => $value) {
             $statement->bindValue(":$key", $value, PDO::PARAM_STR);
         }
-        $statement->execute();
+        return $statement->execute();
     }
 
-    public function deleteClient($table, $columnName, $id): void {
+    public function deleteClient($table, $columnName, $id): bool {
         $sql = "DELETE FROM $table WHERE {$columnName} = :id";
         $statement = $this->pdo->prepare($sql);
         $statement->bindValue(":id", $id);
-        $statement->execute();
+        return $statement->execute();
     }
 
     public function selectEmail($email): bool|array {

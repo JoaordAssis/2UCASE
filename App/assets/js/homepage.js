@@ -19,7 +19,7 @@ carrosselBanner.mount();
 // Segundo carrosel Produtos
 
 let carrosselProdFirst = new Glide(carrosselProd, {
-  type: "carousel",
+  type: "slide",
   startAt: 0,
   perView: 4,
   autoplay: 1500,

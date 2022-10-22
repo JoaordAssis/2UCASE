@@ -33,6 +33,11 @@
     margin-top: 6rem;
 }
 
+.produto-for-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
 /* Produto */
 
 .prod-carrinho{
@@ -60,7 +65,7 @@
 
 #fechar-btn i:hover{
     color: var(--cor-principal);
-    transition: ease .4s all;
+    transition: ease .4s;
 }
 
 .produto-info img{
