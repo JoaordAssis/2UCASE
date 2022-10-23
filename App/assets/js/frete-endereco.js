@@ -23,20 +23,14 @@ function freteCalc(cep) {
       .then((response) => response.json())
       .then((response) => {
         dataResponse = response;
-          let pacObject = dataResponse[0]['Codigo'];
-          let pacObjectV = dataResponse[0]['Valor'];
-
           let sedexObject = dataResponse[1]['Codigo'];
           let sedexObjectV = dataResponse[1]['Valor'];
 
+          let pacObject = dataResponse[0]['Codigo'];
+          let pacObjectV = dataResponse[0]['Valor'];
 
-          let arraySedex =  [JSON.stringify(sedexObject)];
-          let arrayPac = [JSON.stringify(pacObject)];
-          arrayPac.push(pacObjectV);
-          arraySedex.push(sedexObjectV);
-
-          sedexInput.value = [...arraySedex];
-          pacInput.value = arrayPac;
+          sedexInput.value = sedexObject + " " + sedexObjectV;
+          pacInput.value = pacObject + " " + pacObjectV;
 
 
           sedexValue.innerText = "R$ " + dataResponse[1]['Valor'];

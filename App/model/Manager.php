@@ -238,4 +238,11 @@ class Manager extends Conexao {
         $cmd = $this->pdo->query($sql);
         return $cmd->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function countProdutoCarrinho($table, $countColumn, $columnWhere, $param): bool|array {
+        $sql = "SELECT COUNT($countColumn) FROM $table WHERE $columnWhere = $param";
+
+        $cmd = $this->pdo->query($sql);
+        return $cmd->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

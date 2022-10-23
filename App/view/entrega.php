@@ -1,5 +1,19 @@
 <?php
 session_start();
+
+if (empty($_SESSION['USER-ID'])){
+    //Não está logado
+    header("Location: ./carrinho.php?error-code=OA00");
+    exit();
+}
+
+if (empty($_REQUEST['carrinho'])){
+    //Não enviou o ID do carrinho
+    header("Location: ./carrinho.php?error-code=CP01");
+    exit();
+}
+
+$idCarrinho = $_REQUEST['carrinho'];
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -14,6 +28,10 @@ session_start();
 
 <body id="body-margin">
     <form action="../controllers/ControllerAddEndereco.php" method="POST" class="entrega-container">
+
+        <input type="hidden" name="id_carrinho" value="<?=$idCarrinho?>">
+
+
         <div class="process">
             <!-- Icones da etapa do processo -->
 <!--            <img src="../assets/./img/Etapas.png" alt="etapa entrega" width="210" height="80">-->

@@ -7,11 +7,51 @@ if (empty($_SESSION['USER-ID'])){
     exit();
 }
 
-if (empty($_REQUEST['id_endereco'])){
+if (empty($_REQUEST['id_endereco']) || empty($_REQUEST['id_carrinho'])){
     //Não Recebeu o ID Endereço
     header("Location: ./carrinho.php");
     exit();
 }
+require_once __DIR__ . "/../../vendor/autoload.php";
+use app\model\Manager;
+
+$manager = new Manager();
+
+$idEndereco = $_REQUEST['id_endereco'];
+$idCarrinho = $_REQUEST['id_carrinho'];
+
+$returnProdutoCarrinho = $manager->countProdutoCarrinho("produto_carrinho", 'id_produto', 'id_carrinho', $idCarrinho);
+$returnCarrinho = $manager->getInfo('user_carrinho', 'id_carrinho', $idCarrinho);
+
+if (isset($_REQUEST['action'])) {
+
+    if (empty($_REQUEST['frete'])){
+        //Não recebeu o frete
+        header("Location: ./show-enderecos.php");
+        exit();
+    }
+
+    //Chave 0 é o codigo de entrega
+    //Chave 1 é o valor do frete
+    $frete = $_REQUEST['frete'];
+    $explodeCep = explode(" ", $frete);
+
+    $intValue = (int)$explodeCep[1];
+    $totalCarrinho = $intValue + $returnCarrinho[0]['total_carrinho'];
+    $valorFrete = $explodeCep[1];
+    $codFrete = $explodeCep[0];
+
+}else{
+    $codFrete = $_REQUEST['codFrete'];
+    $valorFrete = $_REQUEST['frete'];
+    $totalCarrinho = $valorFrete + $returnCarrinho[0]['total_carrinho'];
+}
+
+
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -45,43 +85,50 @@ if (empty($_REQUEST['id_endereco'])){
                             Cartão de Crédito
                         </button>
                         <div class="panel">
-                            <form action="#" method="POST" id="formulario-pagamento">
+                            <form action="../controllers/ControllerPagamento.php" method="POST" id="formulario-pagamento">
+                                <!--INPUTS HIDDEN-->
+                                <input type="hidden" name="id_endereco" value="<?=$idEndereco?>">
+                                <input type="hidden" name="id_carrinho" value="<?=$idCarrinho?>">
+                                <input type="hidden" name="frete" value="<?=$valorFrete?>">
+                                <input type="hidden" name="codFrete" value="<?=$codFrete?>">
+
+
                                 <label for="card-number">
-                                    <input type="text" name="card-number" maxlength="16" data-js="number"
+                                    <input type="text" name="card-number" required maxlength="16" data-js="number"
                                            id="input-card"
                                            placeholder="Número do Cartão" class="input-payment">
                                 </label>
 
                                 <label for="titular">
-                                    <input type="text" name="titular" id="input-card" placeholder="Nome do Titular" class="input-payment">
+                                    <input type="text" name="titular" required id="input-card" placeholder="Nome do Titular" class="input-payment">
                                 </label>
 
                                 <div class="row-payment">
 
                                     <label for="venc">
-                                        <input type="text" data-js="month" maxlength="7" name="venc" id="input-card"
+                                        <input type="text" data-js="month" required maxlength="7" name="venc" id="input-card"
                                                placeholder="Vencimento"
                                                class="input-payment">
                                     </label>
                                     <label for="codS">
-                                        <input type="text" data-js="number" name="codS" maxlength="10" id="input-card"
+                                        <input type="text" data-js="number" required name="codS" maxlength="10" id="input-card"
                                                placeholder="Código de Segurança" class="input-payment">
                                     </label>
 
                                 </div>
 
                                 <label for="cpf">
-                                    <input type="text" name="cpf" id="input-card" placeholder="CPF" data-js="cpf" class="input-payment">
+                                    <input type="text" name="cpf" required id="input-card" placeholder="CPF" data-js="cpf" class="input-payment">
                                 </label>
 
                                 <label for="logPayment">
-                                    <input type="text" name="logPayment" id="input-card" placeholder="Endereço de Cobrança" class="input-payment">
+                                    <input type="text" name="logPayment" required id="input-card" placeholder="Endereço de Cobrança" class="input-payment">
                                 </label>
 
                                 <div class="row-payment address-payment">
 
                                     <label for="numberPayment">
-                                        <input type="text" name="numberPayment" id="input-numberh"
+                                        <input type="text" name="numberPayment" required id="input-numberh"
                                                placeholder="Número" class="input-payment">
                                     </label>
 
@@ -126,7 +173,17 @@ if (empty($_REQUEST['id_endereco'])){
                 <section class="detail-order">
 
                     <div class="detalhe-produto">
-                        <p>2 Items</p>
+                        <?php
+                        if ($returnProdutoCarrinho[0]['COUNT(id_produto)'] > 1):
+                        ?>
+                        <p><?=$returnProdutoCarrinho[0]['COUNT(id_produto)']?> Items</p>
+                        <?php
+                        else:
+                        ?>
+                        <p><?=$returnProdutoCarrinho[0]['COUNT(id_produto)']?> Item</p>
+                        <?php
+                        endif;
+                        ?>
                         <span id="color-payment">
                             <button id="link-detail">Ver detalhes</button>
                         </span>
@@ -135,32 +192,32 @@ if (empty($_REQUEST['id_endereco'])){
                     <div class="subtotal">
                         <p>SUBTOTAL:</p>
                         <span id="color-payment">
-                            <p>R$ 241,65</p>
+                            <p>R$ <?=$returnCarrinho[0]['total_carrinho']?></p>
                         </span>
                     </div>
 
                     <div class="frete-payment">
                         <p>FRETE:</p>
                         <span id="color-payment">
-                            <p>R$ 41,75</p>
+                            <p>R$ <?=$valorFrete?></p>
                         </span>
                     </div>
 
                     <div class="desconto">
                         <p>DESCONTO:</p>
                         <span id="color-payment">
-                            <p>R$ 00,00</p>
+                            <p>R$ <?=$returnCarrinho[0]['desconto_carrinho']?></p>
                         </span>
                     </div>
 
                     <div class="total">
                         <p>TOTAL:</p>
                         <span id="color-payment">
-                            <p>R$ 241,65</p>
+                            <p>R$ <?=$totalCarrinho?></p>
                         </span>
                     </div>
 
-                    <button id="principal-button">Finalizar Compra</button>
+                    <button id="principal-button" type="submit" form="formulario-pagamento">Finalizar Compra</button>
                 </section>
             </section>
 

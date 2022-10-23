@@ -84,7 +84,7 @@ $returnEnderecos = $manager->getInfo('user_endereco_cliente', 'id_cliente', $_SE
 
 
 
-            <button id="btn-add-endereco" onclick="window.location.href='./entrega.php'">Adicionar outro Endereco</button>
+            <button id="btn-add-endereco" onclick='window.location.href="./entrega.php?carrinho=<?=$idCarrinho?>"'>Adicionar outro Endereco</button>
 
             <button id="btn-exit" onclick="window.location.href='./carrinho.php'">Voltar</button>
         </article>

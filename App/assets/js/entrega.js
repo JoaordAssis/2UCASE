@@ -107,8 +107,8 @@ cepInput.addEventListener("blur", () => {
                     freteSedex.innerText = "R$ " + dataResponse[1]['Valor'];
                     fretePAC.innerText = "R$ " + dataResponse[0]['Valor'];
 
-                    radioSedex.value = dataResponse[1]['Valor'];
-                    radioPac.value = dataResponse[0]['Valor'];
+                    radioSedex.value = dataResponse[1]['Valor'] + " " + dataResponse[1]['Codigo'];
+                    radioPac.value = dataResponse[0]['Valor'] + " " + dataResponse[0]['Codigo'];
 
                     tempoSedex.innerText = "Sedex: " + dataResponse[1]['PrazoEntrega']
                         + " Dias úteis";

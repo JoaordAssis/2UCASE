@@ -39,11 +39,11 @@ $filterCep = str_replace($searchFilter, "", $cepCliente);
     <main class="container-new-produto">
         <h1>Escolha o frete</h1>
 
-        <form class="form-frete-select" method="POST" action="./pagamento.php">
+        <form class="form-frete-select" method="POST" action="./pagamento.php?action=frete-endereco">
             <div class="column-frete">
                 <h3>Sedex</h3>
                 <label class="label-frete" for="frete">
-                    <input type="radio" name="frete[]" id="sedex-cod" value="[]">
+                    <input type="radio" name="frete" id="sedex-cod" value="[]">
                     <p id="sedex-value"></p>
                     <p id="sedex-prazo"></p>
                 </label>
@@ -56,7 +56,7 @@ $filterCep = str_replace($searchFilter, "", $cepCliente);
             <div class="column-frete">
                 <h3>PAC</h3>
                 <label class="label-frete" for="frete">
-                    <input type="radio" name="frete[]" id="pac-cod" value="">
+                    <input type="radio" name="frete" id="pac-cod" value="">
                     <p id="pac-value"></p>
                     <p id="pac-prazo"></p>
                 </label>
