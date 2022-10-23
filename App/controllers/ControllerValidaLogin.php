@@ -113,7 +113,7 @@ if (!empty($_REQUEST['email-cpf']) && !empty($_REQUEST['senha-login'])) {
 
 if (!empty($_REQUEST['exit'])){
     session_destroy();
-    //Exibit mensagem
+    //Exibir mensagem
     header("Location: ../view/homepage.php?sucess-code=OA51");
     exit();
 }

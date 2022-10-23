@@ -1,4 +1,11 @@
-const cepInput = document.getElementById('cep');
+const cepInput = document.getElementById('input-calcula-cep');
+let buttonCep = document.querySelector(".button-cep-calc");
+let tempoSedex = document.getElementById("tempo-entrega-sedex");
+let tempoPac = document.getElementById("tempo-entrega-pac");
+let freteSedex = document.getElementById("valor-sedex");
+let fretePAC = document.getElementById("valor-pac");
+let radioSedex = document.getElementById("radio-input-sedex");
+let radioPac = document.getElementById("radio-input-pac");
 
 const showData = (result) => {
     for (const campo in result) {
@@ -70,4 +77,47 @@ document.querySelectorAll('input').forEach(($input) => {
     $input.addEventListener('input', (e) => {
         e.target.value = masks[field](e.target.value);
     }, false);
+});
+
+
+
+
+//Calcular CEP
+cepInput.addEventListener("blur", () => {
+    if (cepInput.value.length === 0){
+        buttonCep.disabled;
+        console.log(cepInput.value.length);
+
+    }else{
+        buttonCep.addEventListener('click', () => {
+            let cepValue = {
+                cep: cepInput.value
+            }
+
+            let data = JSON.stringify(cepValue);
+            let url  = '../../model/CEP.php?cep=' + cepInput.value;
+            let dataResponse = [];
+
+            fetch(url, {
+                method: 'POST',
+                body: data
+            }).then(response =>  response.json())
+                .then(response => {
+                    dataResponse = response;
+                    freteSedex.innerText = "R$ " + dataResponse[1]['Valor'];
+                    fretePAC.innerText = "R$ " + dataResponse[0]['Valor'];
+
+                    radioSedex.value = dataResponse[1]['Valor'];
+                    radioPac.value = dataResponse[0]['Valor'];
+
+                    tempoSedex.innerText = "Sedex: " + dataResponse[1]['PrazoEntrega']
+                        + " Dias úteis";
+                    tempoPac.innerText = "PAC: " + dataResponse[0]['PrazoEntrega']
+                        + " Dias úteis";
+
+
+
+                }).catch(error => console.log(error));
+        });
+    }
 });

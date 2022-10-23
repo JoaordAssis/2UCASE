@@ -8,6 +8,7 @@ if (empty($_GET['category'])){
     //Criar uma nova pagina pra isso
     header("Location: ./homepage.php");
 }
+
 $manager = new Manager();
 $category = $_REQUEST['category'];
 $returnCategory = $manager->selectWhere(['nome_categoria'], [$category], 'user_categoria');

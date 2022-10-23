@@ -13,7 +13,7 @@ session_start();
 <?php require_once "./navbar-simple.php" ?>
 
 <body id="body-margin">
-    <form action="#" method="POST" class="entrega-container">
+    <form action="../controllers/ControllerAddEndereco.php" method="POST" class="entrega-container">
         <div class="process">
             <!-- Icones da etapa do processo -->
 <!--            <img src="../assets/./img/Etapas.png" alt="etapa entrega" width="210" height="80">-->
@@ -27,9 +27,10 @@ session_start();
 
             <div class="cep-calc">
                 <label for="cep">
-                    <input data-js="cep" type="text" name="cep" min="0" maxlength="90" placeholder="CEP" id="cep">
+                    <input data-js="cep" type="text" name="cep" placeholder="CEP"
+                           id="input-calcula-cep">
                 </label>
-                <button id="principal-button">Calcular</button>
+                <button type="button" class="button-cep-calc" id="principal-button">Calcular</button>
                 <a target="_blank" href="https://www2.correios.com.br/sistemas/buscacep/buscaCep.cfm">Não sei meu CEP</a>
             </div>
 
@@ -60,6 +61,7 @@ session_start();
                     <div class="number-container">
 
                         <label for="numero">
+                            <!--Todo: Formatar o valor do input numero-->
                             <input type="text" name="numero" id="input-entrega" placeholder="Número">
                         </label>
 
@@ -78,33 +80,25 @@ session_start();
 
                 </section>
             </section>
-
-
-            <div class="checkbox principal-address">
-                <input type="checkbox" name="time" id="input-checkbox-payment">
-                <p>Tornar esse endereço o principal?</p>
-            </div>
         </article>
 
         <article class="frete-container">
             <h1>Frete</h1>
 
             <div class="frete-option" id="sedex">
-                <label for="frete">
-                    <input type="radio" name="frete" id="radio-input">
-                    Sedex - <span id="time-entrega">7 Dias úteis</span>
+                <label class="label-values-entrega" for="frete">
+                    <input type="radio" name="frete" value="" id="radio-input-sedex">
+                    <p id="tempo-entrega-sedex"></p>
+                    <p id="valor-sedex"></p>
                 </label>
-
-                <p>R$ 21,54</p>
             </div>
 
             <div class="frete-option" id="sedex">
-                <label for="frete">
-                    <input type="radio" name="frete" id="radio-input">
-                    Loggi - <span id="time-entrega">7 Dias úteis</span>
+                <label class="label-values-entrega" for="frete">
+                    <input type="radio" name="frete" value="" id="radio-input-pac">
+                    <p id="tempo-entrega-pac"></p>
+                    <p id="valor-pac"></p>
                 </label>
-
-                <p>R$ 21,54</p>
             </div>
         </article>
         <button id="principal-button" class="form-submit" type="submit">

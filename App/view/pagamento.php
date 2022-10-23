@@ -1,5 +1,17 @@
 <?php
 session_start();
+
+if (empty($_SESSION['USER-ID'])){
+    //Não está logado
+    header("Location: ./carrinho.php");
+    exit();
+}
+
+if (empty($_REQUEST['id_endereco'])){
+    //Não Recebeu o ID Endereço
+    header("Location: ./carrinho.php");
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

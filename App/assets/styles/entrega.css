@@ -101,6 +101,11 @@
     color: var(--cor-principal);
 }
 
+.label-values-entrega{
+    display: flex;
+    gap: .8rem;
+}
+
 /* Componentes */
 
 input::placeholder, select{

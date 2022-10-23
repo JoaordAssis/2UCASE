@@ -142,7 +142,9 @@ $checkProdCarrinho = $manager->getInfo('produto_carrinho', 'id_carrinho', $selec
                     endif;
                     ?>
 
-                    <button id="principal-button">Finalizar Compra</button>
+                    <button id="principal-button" onclick="window.location.href='show-enderecos.php?carrinho=<?=$selectCarrinhoVerify[0]['id_carrinho']?>'">
+                        Finalizar Compra
+                    </button>
 
                     <div class="cep-calc">
                         <div class="cep-container">
