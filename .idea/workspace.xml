@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="FINALIZED: Adição de produto no carrinho, faltas as tratativas de erros e a aplicação do cupom de desconto">
-      <change afterPath="$PROJECT_DIR$/App/controllers/ControllerAddEndereco.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/view/show-enderecos.php" afterDir="false" />
+    <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="WORKING: Processo de pagamento e compra do produto">
+      <change afterPath="$PROJECT_DIR$/App/assets/js/frete-endereco.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/assets/styles/frete-endereco.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/view/frete-endereco.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/assets/js/entrega.js" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/js/entrega.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/assets/styles/entrega.css" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/styles/entrega.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/controllers/ControllerValidaLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controllers/ControllerValidaLogin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/view/carrinho.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/carrinho.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/category.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/entrega.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/entrega.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/pagamento.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/pagamento.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/view/show-enderecos.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/show-enderecos.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +161,9 @@
       <workItem from="1666469763143" duration="5216000" />
       <workItem from="1666479482820" duration="2935000" />
       <workItem from="1666482967513" duration="257000" />
-      <workItem from="1666484756515" duration="298000" />
+      <workItem from="1666484756515" duration="412000" />
+      <workItem from="1666488897131" duration="1738000" />
+      <workItem from="1666527414054" duration="5971000" />
     </task>
     <task id="LOCAL-00001" summary="Teste commit 09/10/2022">
       <created>1665346468595</created>
@@ -286,7 +284,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666463739890</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="WORKING: Processo de pagamento e compra do produto">
+      <created>1666485152046</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1666485152046</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -326,6 +331,7 @@
     <MESSAGE value="FINALIZED: Pagina de Meus Pedidos" />
     <MESSAGE value="REFATORED: Utilizado o backup do arquivo para retornar a versões anteriores devido a problemas com as atualizações feitas" />
     <MESSAGE value="FINALIZED: Adição de produto no carrinho, faltas as tratativas de erros e a aplicação do cupom de desconto" />
-    <option name="LAST_COMMIT_MESSAGE" value="FINALIZED: Adição de produto no carrinho, faltas as tratativas de erros e a aplicação do cupom de desconto" />
+    <MESSAGE value="WORKING: Processo de pagamento e compra do produto" />
+    <option name="LAST_COMMIT_MESSAGE" value="WORKING: Processo de pagamento e compra do produto" />
   </component>
 </project>

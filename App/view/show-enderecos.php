@@ -38,7 +38,7 @@ $returnEnderecos = $manager->getInfo('user_endereco_cliente', 'id_cliente', $_SE
     <main class="container-new-produto">
         <article class="container-enderecos">
             <h1>Meus Endereços</h1>
-            <form method="POST" action="./pagamento.php" class="form-select-endereco">
+            <form method="POST" action="./frete-endereco.php" class="form-select-endereco">
                 <input type="hidden" name="id_carrinho" value="<?=$idCarrinho?>">
                 <section class="debugger-container">
                 <?php
@@ -90,3 +90,4 @@ $returnEnderecos = $manager->getInfo('user_endereco_cliente', 'id_cliente', $_SE
         </article>
     </main>
 </body>
+</html>

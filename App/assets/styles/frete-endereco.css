@@ -1,0 +1,41 @@
+@import './reset.css';
+
+.container-new-produto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8rem;
+    margin-top: 2rem;
+}
+
+.form-frete-select{
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.form-frete-select label{
+    display: flex;
+    gap: .5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.form-frete-select input[type=radio]{
+    width: 5rem;
+}
+
+.column-frete{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .8rem;
+}
+
+#principal-button{
+    margin: 0 auto;
+    width: 100%;
+}

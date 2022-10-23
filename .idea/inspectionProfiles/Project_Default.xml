@@ -5,7 +5,7 @@
       <Languages>
         <language minSize="89" name="HTML" />
         <language minSize="13" name="Style Sheets" />
-        <language minSize="135" name="JavaScript" />
+        <language minSize="166" name="JavaScript" />
         <language minSize="156" name="PHP" />
       </Languages>
     </inspection_tool>

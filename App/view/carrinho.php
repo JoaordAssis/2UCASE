@@ -16,8 +16,12 @@ if (empty($_SESSION['USER-ID'])) {
 $paramsSelectCarrinho = ['id_cliente', 'id_status'];
 $paramsPostSelect = [$_SESSION['USER-ID'], 1];
 $selectCarrinhoVerify = $manager->selectWhere($paramsSelectCarrinho, $paramsPostSelect, 'user_carrinho');
+$checkProdCarrinho = [];
 
-$checkProdCarrinho = $manager->getInfo('produto_carrinho', 'id_carrinho', $selectCarrinhoVerify[0]['id_carrinho']);
+if(count($selectCarrinhoVerify) > 0){
+    $checkProdCarrinho = $manager->getInfo('produto_carrinho', 'id_carrinho', $selectCarrinhoVerify[0]['id_carrinho']);
+}
+
 
 
 ?>
@@ -99,9 +103,7 @@ $checkProdCarrinho = $manager->getInfo('produto_carrinho', 'id_carrinho', $selec
                         //ENDFOR
                             endfor;
                         endfor;
-                    endif;
                     ?>
-                    <h1>Nenhum produto foi adicionado ainda!</h1>
                 </article>
 
 
@@ -157,8 +159,17 @@ $checkProdCarrinho = $manager->getInfo('produto_carrinho', 'id_carrinho', $selec
 
                         <a target="_blank" href="https://www2.correios.com.br/sistemas/buscacep/buscaCep.cfm">Não sei meu CEP</a>
                     </div>
+                    <?php
+                    else:
+                    ?>
+                    <h1>Nenhum produto adicionado ainda!</h1>
+                    <?php
+                    endif;
+                    ?>
                 </section>
             </section>
+
+
 
         </article>
 
