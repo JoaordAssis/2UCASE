@@ -7,15 +7,13 @@ use app\model\Ferramentas;
 
 if (empty($_SESSION['USER-ID'])){
     //Usuário não logado
-    //TODO: Tratar erro
-    header("Location: ../view/login.php");
+    header("Location: ../view/login.php?error-code=OA00");
     exit();
 }
 
 if (empty($_REQUEST['idProduto'])){
     //Produto não existente, BUG do site ou falha de segurança
-    //TODO: Tratar erro
-    header("Location: ../view/produto.php");
+    header("Location: ../view/produto.php?error-code=FR30");
     exit();
 }
 
@@ -29,8 +27,7 @@ $quantidadeProduto = $_REQUEST['quantProduto'];
 
 if (empty($quantidadeProduto)){
     //Falha no recebimento
-    //TODO: Tratar erro
-    header("Location: ../view/produto.php");
+    header("Location: ../view/produto.php?error-code=CP02");
 }
 
 //Verificar se o cliente já adicionou algo no carrinho antes
@@ -61,8 +58,8 @@ $dadosCarrinho['id_status'] = 1;
 try {
     $insertCarrinho = $manager->insertClient('user_carrinho', $dadosCarrinho);
 }catch (PDOException $e){
-    //TODO: Tratar erro
-    echo $e->getMessage();
+    echo $e->getCode();
+    header("Location: ../view/carrinho.php?error-code=CP02");
     exit();
 }
 
@@ -79,14 +76,12 @@ $dadosProdCarrinho['marca_celular'] = $returnModelProduto[0]['modelo_celular'];
 
 try {
     $insertProdCarrinho = $manager->insertClient('produto_carrinho', $dadosProdCarrinho);
-    header('Location: ../view/carrinho.php');
-    //TODO: Tratar erro
+    header("Location: ../view/carrinho.php?sucess-code=CP50");
     exit();
 
 }catch (PDOException $e){
-    echo $e->getMessage();
-    //TODO: Tratar erro
-    header('Location: ../view/produto.php');
+    echo $e->getCode();
+    header('Location: ../view/produto.php?error-code=CP02');
     exit();
 }
 

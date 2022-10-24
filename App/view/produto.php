@@ -6,8 +6,7 @@ use app\model\Manager;
 $manager = new Manager();
 
 if (empty($_GET['pd'])){
-    //TODO: Tratar erro
-    header("Location: ./homepage.php?Nao-tem-id");
+    header("Location: ./homepage.php?error-code?FR30");
     exit();
 }
 

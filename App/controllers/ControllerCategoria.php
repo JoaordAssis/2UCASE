@@ -32,6 +32,5 @@ if (!empty($_REQUEST['selectStatus'])) {
     exit();
 }
 
-//TODO: Tratar o erro
-header("Location: ../view/category.php?category=$categorySearch&error-code=nao-sei");
+header("Location: ../view/category.php?category=$categorySearch&error-code=PG02");
 exit();

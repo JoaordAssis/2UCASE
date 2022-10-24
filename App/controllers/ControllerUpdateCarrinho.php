@@ -6,15 +6,13 @@ use app\model\Ferramentas;
 
 if (empty($_SESSION['USER-ID'])){
     //Usuário não logado
-    //TODO: Tratar erro
-    header("Location: ../view/login.php?logue-logue-imediatamente");
+    header("Location: ../view/login.php?error-code=OA00");
     exit();
 }
 
 if (empty($_REQUEST['pd'])){
     //Produto não existente, BUG do site ou falha de segurança
-    //TODO: Tratar erro
-    header("Location: ../view/produto.php?bugadinho-pai");
+    header("Location: ../view/produto.php?error-code=FR30");
     exit();
 }
 
@@ -29,15 +27,94 @@ if ($quantProd === '0'){
     exit();
 }
 
-if (empty($quantProd)){
+if (empty($quantProd) && !isset($_REQUEST['cupom'])){
     //Falha no recebimento
-    //TODO: Tratar erro
-    header("Location: ../view/produto.php?falha-recebimento");
+    header("Location: ../view/produto.php?error-code=FR30");
     exit();
 }
 
-$checkProd = $manager->getInfo('produto_carrinho', 'id_produto', $produtoId);
+
+//Pegar o carrinho do cliente
+$paramsSelectCarrinho = ['id_cliente', 'id_status'];
+$paramsPostSelect = [$_SESSION['USER-ID'], 1];
+$selectCarrinhoVerify = $manager->selectWhere($paramsSelectCarrinho, $paramsPostSelect, 'user_carrinho');
+
+//Pegar o produto do carrinho do cliente
+$paramsSelectProdutoCarrinho = ['id_produto', 'id_carrinho'];
+$paramsPostSelectProduto = [$produtoId, $selectCarrinhoVerify[0]['id_carrinho']];
+
+$checkProd = $manager->selectWhere($paramsSelectProdutoCarrinho, $paramsPostSelectProduto, 'produto_carrinho');
 $getInfoProduto = $manager->getInfo('user_produto', 'id_produto', $produtoId);
+
+
+//ADICIONANDO O CUPOM
+
+if (isset($_REQUEST['cupom'])){
+    $produtoParams = ['id_carrinho', 'id_produto'];
+    $produtoPostparams = [$selectCarrinhoVerify[0]['id_carrinho'], $produtoId];
+    $checkProdCarrinho = $manager->selectWhere($produtoParams, $produtoPostparams, 'produto_carrinho');
+
+    $checkProdProd = $manager->getInfo('user_produto', 'id_produto', $produtoId);
+    $returnCupom = $manager->cupomSelect('codigo_cupom', 'CARENTE45');
+
+
+    if ($returnCupom[0]['id_categoria'] === $checkProdProd[0]['id_categoria'] && $checkProdCarrinho[0]['used_cupom'] === 0){
+
+
+        $dadosUpdate['preco_quant_prod'] = $checkProdCarrinho[0]['preco_quant_prod'];
+        //Valor do produto divido por 100 vezes a porcentagem
+        $dadosUpdate['preco_desconto_prod'] = ($getInfoProduto[0]['preco_produto'] / 100 * $returnCupom[0]['desconto_cupom']);
+        //Valor da quantidade do produto menos o valor com o desconto
+        $dadosUpdate['preco_total'] = ($dadosUpdate['preco_quant_prod'] - $dadosUpdate['preco_desconto_prod']);
+        $dadosUpdate['used_cupom'] = 1;
+
+
+        try {
+            $updateQuery = $manager->updateClient('produto_carrinho', $dadosUpdate,
+                $checkProd[0]['id_produto_carrinho'], 'id_produto_carrinho');
+
+        } catch (PDOException $e) {
+            echo $e->getCode();
+            header("Location: ../view/carrinho.php?error-code=CP04");
+            exit();
+        }
+
+        //Mudar o valor total no carrinho após o cupom
+        $saveValoresTotal = [];
+        $saveValoresDeconto = [];
+        $saveValoresQauntidade = [];
+        $returnProdutoCarrinho = $manager->getInfo('produto_carrinho', 'id_carrinho', $selectCarrinhoVerify[0]['id_carrinho']);
+
+        for ($i = 0, $iMax = count($returnProdutoCarrinho); $i < $iMax; $i++){
+            $saveValoresTotal[$i] = $returnProdutoCarrinho[$i]['preco_total'];
+            $saveValoresDeconto[$i] = $returnProdutoCarrinho[$i]['preco_desconto_prod'];
+            $saveValoresQauntidade[$i] = $returnProdutoCarrinho[$i]['quant_carrinho'];
+        }
+
+        //SOMANDO OS VALORES DO ARRAY PARA ADICIONAR À TABELA DE USER_CARRINHO
+        $updateCarrinho['total_carrinho'] = array_sum($saveValoresTotal);
+        $updateCarrinho['desconto_carrinho']  = array_sum($saveValoresDeconto);
+        $updateCarrinho['quant_carrinho']  = array_sum($saveValoresQauntidade);
+
+
+        //Update no user_carrinho
+        try {
+            $updateUserCarrinho = $manager->updateClient('user_carrinho', $updateCarrinho, $selectCarrinhoVerify[0]['id_carrinho'], 'id_carrinho');
+            header("Location: ../view/carrinho.php?sucess-code=CP53");
+            exit();
+        }catch (PDOException $e){
+            echo $e->getCode();
+            header("Location: ../view/carrinho.php?error-code=CP04");
+            exit();
+        }
+
+    }else{
+        //TODO: Mensagem de erro
+        header("Location: ../view/carrinho.php?error-code=CUPOM-INVALIDO");
+        exit();
+    }
+
+}
 
 
 //MUDAR A QUANTIDADE DO PRODUTO
@@ -54,10 +131,12 @@ if (!empty($_REQUEST['changeQuant'])) {
     $dadosUpdate['preco_total'] = ($dadosUpdate['preco_quant_prod'] - $checkProd[0]['preco_desconto_prod']);
 
     try {
-        $updateQuery = $manager->updateClient('produto_carrinho', $dadosUpdate, $checkProd[0]['id_produto_carrinho'], 'id_produto_carrinho');
+        $updateQuery = $manager->updateClient('produto_carrinho', $dadosUpdate,
+            $checkProd[0]['id_produto_carrinho'], 'id_produto_carrinho');
+
     } catch (PDOException $e) {
-        echo $e->getMessage();
-        //TODO: Tratar erro
+        echo $e->getCode();
+        header("Location: ../view/carrinho.php?error-code=CP04");
         exit();
     }
 
@@ -85,11 +164,11 @@ if (!empty($_REQUEST['changeQuant'])) {
     //Update no user_carrinho
     try {
         $updateUserCarrinho = $manager->updateClient('user_carrinho', $updateCarrinho, $selectCarrinhoVerify[0]['id_carrinho'], 'id_carrinho');
-        header("Location: ../view/carrinho.php?Deu-certo");
+        header("Location: ../view/carrinho.php?sucess-code=CP53");
         exit();
     }catch (PDOException $e){
-        echo $e->getMessage();
-        //TODO: Tratar erro
+        echo $e->getCode();
+        header("Location: ../view/carrinho.php?error-code=CP04");
         exit();
     }
 }
@@ -122,8 +201,8 @@ if (count($checkProd) > 0){
         try {
             $updateQuery = $manager->updateClient('produto_carrinho', $dadosUpdate, $checkProd[0]['id_produto_carrinho'], 'id_produto_carrinho');
         }catch (PDOException $e){
-            echo $e->getMessage();
-            //TODO: Tratar erro
+            echo $e->getCode();
+            header("Location: ../view/carrinho.php?error-code=CP04");
             exit();
         }
     }else {
@@ -141,17 +220,13 @@ if (count($checkProd) > 0){
         try {
             $updateQuery = $manager->updateClient('produto_carrinho', $dadosUpdate, $checkProd[0]['id_produto_carrinho'], 'id_produto_carrinho');
         } catch (PDOException $e) {
-            echo $e->getMessage();
-            //TODO: Tratar erro
+            echo $e->getCode();
+            header("Location: ../view/carrinho.php?error-code=CP04");
             exit();
         }
     }
 
 
-    //Mudar o valor total no carrinho
-    $paramsSelectCarrinho = ['id_cliente', 'id_status'];
-    $paramsPostSelect = [$_SESSION['USER-ID'], 1];
-    $selectCarrinhoVerify = $manager->selectWhere($paramsSelectCarrinho, $paramsPostSelect, 'user_carrinho');
     $saveValoresTotal = [];
     $saveValoresDeconto = [];
     $saveValoresQauntidade = [];
@@ -172,11 +247,12 @@ if (count($checkProd) > 0){
     //Update no user_carrinho
     try {
         $updateUserCarrinho = $manager->updateClient('user_carrinho', $updateCarrinho, $selectCarrinhoVerify[0]['id_carrinho'], 'id_carrinho');
+        //TODO: Mensagem de erro
         header("Location: ../view/carrinho.php?Deu-certo");
         exit();
     }catch (PDOException $e){
-        echo $e->getMessage();
-        //TODO: Tratar erro
+        echo $e->getCode();
+        header("Location: ../view/carrinho.php?error-code=CP04");
         exit();
     }
 
@@ -204,8 +280,8 @@ $dadosInsert['marca_celular'] = $returnModelProduto[0]['modelo_celular'];
 try {
     $inserNewProd = $manager->insertClient('produto_carrinho', $dadosInsert);
 }catch (PDOException $e){
-    echo $e->getMessage();
-    //TODO: Tratar errro
+    echo $e->getCode();
+    header("Location: ../view/carrinho.php?error-code=CP02");
     exit();
 }
 
@@ -232,12 +308,8 @@ try {
     $updateUserCarrinho = $manager->updateClient('user_carrinho', $updateCarrinho, $selectCarrinhoVerifyInsert[0]['id_carrinho'], 'id_carrinho');
     header("Location: ../view/carrinho.php?Deu-certo");
 }catch (PDOException $e){
-    echo $e->getMessage();
-    //TODO: Tratar erro
+    echo $e->getCode();
+    header("Location: ../view/carrinho.php?error-code=CP02");
     exit();
 }
 
-
-
-
-//TODO: Adicionar o cupom

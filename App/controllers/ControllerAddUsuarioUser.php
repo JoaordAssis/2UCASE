@@ -113,9 +113,9 @@ if (isset($_REQUEST['cadastroCompletoForm'])){
     //INSERT USUARIO
     try {
        $manager->insertClient("user_cliente", $dadosUsuario);
-        //TODO: Tratamento de Erros
     }catch (PDOException $exception){
-        return $exception->getMessage();
+         echo $exception->getCode();
+         header("Location: ../view/register.php?error-code=FR31");
     }
 
     $cepVerify = $endereco->verifyCEP($_REQUEST['cep']);
@@ -148,8 +148,8 @@ if (isset($_REQUEST['cadastroCompletoForm'])){
         header("Location: ../view/homepage.php?sucess-code=FR50");
         exit();
     }catch (PDOException $exception){
-        //TODO: Tratamento de Erro
         echo $exception->getMessage();
+        header("Location: ../view/login.php?error-code=FR32");
     }
 
 

@@ -5,15 +5,13 @@ use app\model\Manager;
 
 if (empty($_SESSION['USER-ID'])){
     //Usuário não logado
-    //TODO: Tratar erro
-    header("Location: ../view/login.php?logue-logue-imediatamente");
+    header("Location: ../view/login.php?error-code=OA00");
     exit();
 }
 
 if (empty($_REQUEST['pd'])){
     //Produto não existente, BUG do site ou falha de segurança
-    //TODO: Tratar erro
-    header("Location: ../view/produto.php?bugadinho-pai");
+    header("Location: ../view/produto.php?error-code=FR30");
     exit();
 }
 
@@ -25,8 +23,8 @@ if (isset($_REQUEST['action'])){
     try {
         $deleteFrom = $manager->deleteClient('produto_carrinho', 'id_produto', $produtoId);
     }catch (PDOException $e){
-        echo $e->getMessage();
-        //TODO: Tratar erro
+        echo $e->getCode();
+        header("Location: ../view/carrinho.php?error-code=CP03");
         exit();
     }
 
@@ -55,17 +53,16 @@ if (isset($_REQUEST['action'])){
     //Update no user_carrinho
     try {
         $updateUserCarrinho = $manager->updateClient('user_carrinho', $updateCarrinho, $selectCarrinhoVerifyInsert[0]['id_carrinho'], 'id_carrinho');
-        header("Location: ../view/carrinho.php?Deu-certo");
+        header("Location: ../view/carrinho.php?sucess-code=CP51");
     }catch (PDOException $e){
-        echo $e->getMessage();
-        //TODO: Tratar erro
+        echo $e->getCode();
+        header("Location: ../view/carrinho.php?error-code=CP04");
         exit();
     }
 
 }else{
     //Falha ao enviar o action voltar ao carrinho
-    //TODO: Tratar erro
-    header("Location: ../view/carrinho.php?bugadinho-pai");
+    header("Location: ../view/carrinho.php?error-code=CP03");
     exit();
 }
 

@@ -7,8 +7,7 @@ use app\model\Manager;
 $manager = new Manager();
 
 if (empty($_SESSION['USER-ID'])) {
-    //TODO: Tratar erro
-    header("Location: ./homepage.php?nao-logado");
+    header("Location: ./homepage.php?error-code=OA00");
     exit();
 }
 
@@ -55,7 +54,6 @@ if(count($selectCarrinhoVerify) > 0){
                         for ($i = 0, $iMax = count($checkProdCarrinho); $i < $iMax; $i++) :
                             $getInfoProduto = $manager->getInfo('user_produto', 'id_produto', $checkProdCarrinho[$i]['id_produto']);
                             $returnModelProduto = $manager->getInfo('user_mod_celular', 'id_modelo_celular', $getInfoProduto[0]['id_modelo_celular']);
-                            //TODO: Formatar números
                             for ($j = 0, $jMax = count($getInfoProduto); $j < $jMax; $j++) :
                             ?>
                             <section class="prod-carrinho">
@@ -93,10 +91,11 @@ if(count($selectCarrinhoVerify) > 0){
                                     </div>
                                 </div>
 
-                                <div class="cupom-container">
-                                    <input type="text" name="cupom" id="input-cupom" placeholder="Cupom de Desconto">
-                                    <button id="principal-button" class="cupom-btn">Aplicar Cupom</button>
-                                </div>
+                                <form class="cupom-container" method="post" action="../controllers/ControllerUpdateCarrinho.php?cupom=true">
+                                    <input type="text" required name="cupom" id="input-cupom" placeholder="Cupom de Desconto">
+                                    <input type="hidden" name="pd" value="<?=$getInfoProduto[$j]['id_produto']?>">
+                                    <button type="submit" id="principal-button" class="cupom-btn">Aplicar Cupom</button>
+                                </form>
                             </section>
 
                     <?php

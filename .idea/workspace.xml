@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="WORKING: ENVIAR O FRETE E O CODIGO DO FRETE JUNTOS">
-      <change afterPath="$PROJECT_DIR$/App/controllers/ControllerPagamento.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="FINALIZED: Sistema de pagamento, carrinho e mensagens de erro">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/assets/js/entrega.js" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/js/entrega.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/assets/js/frete-endereco.js" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/js/frete-endereco.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/controllers/ControllerAddEndereco.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controllers/ControllerAddEndereco.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/model/Manager.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/model/Manager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/entrega.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/entrega.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/frete-endereco.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/frete-endereco.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/pagamento.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/pagamento.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/show-enderecos.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/show-enderecos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/ControllerUpdateCarrinho.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/ControllerUpdateCarrinho.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/controllers/ControllerAddUsuarioUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controllers/ControllerAddUsuarioUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/controllers/ControllerAddprodutoCarrinho.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controllers/ControllerAddprodutoCarrinho.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/controllers/ControllerCategoria.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controllers/ControllerCategoria.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/controllers/ControllerDeleteCarrinho.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controllers/ControllerDeleteCarrinho.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/controllers/ControllerUpdateCarrinho.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controllers/ControllerUpdateCarrinho.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/view/carrinho.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/carrinho.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/view/produto.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/produto.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +165,8 @@
       <workItem from="1666484756515" duration="412000" />
       <workItem from="1666488897131" duration="1738000" />
       <workItem from="1666527414054" duration="6298000" />
-      <workItem from="1666550182621" duration="11005000" />
+      <workItem from="1666550182621" duration="11352000" />
+      <workItem from="1666644782161" duration="5391000" />
     </task>
     <task id="LOCAL-00001" summary="Teste commit 09/10/2022">
       <created>1665346468595</created>
@@ -304,7 +301,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666534328822</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="FINALIZED: Sistema de pagamento, carrinho e mensagens de erro">
+      <created>1666563402284</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1666563402284</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -346,6 +350,7 @@
     <MESSAGE value="FINALIZED: Adição de produto no carrinho, faltas as tratativas de erros e a aplicação do cupom de desconto" />
     <MESSAGE value="WORKING: Processo de pagamento e compra do produto" />
     <MESSAGE value="WORKING: ENVIAR O FRETE E O CODIGO DO FRETE JUNTOS" />
-    <option name="LAST_COMMIT_MESSAGE" value="WORKING: ENVIAR O FRETE E O CODIGO DO FRETE JUNTOS" />
+    <MESSAGE value="FINALIZED: Sistema de pagamento, carrinho e mensagens de erro" />
+    <option name="LAST_COMMIT_MESSAGE" value="FINALIZED: Sistema de pagamento, carrinho e mensagens de erro" />
   </component>
 </project>
