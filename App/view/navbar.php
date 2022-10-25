@@ -39,46 +39,41 @@ $menuReturn = $manager->listClient('adm_menu', 'id_menu');
                         <a href="./login.php" id="login-sign">Entre ou Cadastre-se</a>
                     </div>
                 <?php
-                }else{
+                } else {
                 ?>
-                <div class="login-session">
-                    <nav id="menu">
-                        <ul id="nav-links">
-                            <li class="menu-link">
-                                <a href="#" id="first-link">
-                                    Meus Pedidos
-                                </a>
-                                <ul class="container-submenu">
-                                    <li>
-                                        <a href="#">
-                                            Meus Pedidos
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            Alterar Dados
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            Minhas compras
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="../controllers/ControllerValidaLogin.php?exit">
-                                            Sair
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
+                    <div class="login-session">
+                        <nav id="menu">
+                            <ul id="nav-links">
+                                <li class="menu-link">
+                                    <a href="#" id="first-link">
+                                        Meus Pedidos
+                                    </a>
+                                    <ul class="container-submenu">
+                                        <li>
+                                            <a href="./meus-pedidos.php">
+                                                Meus Pedidos
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="./my-info.php">
+                                                Alterar Dados
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="../controllers/ControllerValidaLogin.php?exit">
+                                                Sair
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
                 <?php
                 }
                 ?>
             </section>
-            <button id="favorito-button">
+            <button id="favorito-button" onclick="window.location.href='./favoritos.php'">
                 <img src="../assets/svg/CoracaoFavoritos.svg" alt="Icone de favoritos" id="coracaoSVG" width="40" height="40"></img>
             </button>
             <button id="bag-button" onclick="window.location.href='./carrinho.php'">
@@ -159,7 +154,7 @@ $menuReturn = $manager->listClient('adm_menu', 'id_menu');
                 <button id="bag-button" onclick="window.location.href='./carrinho.php'">
                     <img src="../assets/svg/BagCarrinho.svg" alt="icone do carrinho de compras" id="carrinhoSVG" width="30" height="30"></img>
                 </button>
-                <button id="favorito-button">
+                <button id="favorito-button" onclick="window.location.href='./favoritos.php'">
                     <img src="../assets/svg/CoracaoFavoritos.svg" alt="Icone de favoritos" id="coracaoSVG" width="30" height="30"></img>
                 </button>
                 <button id="login-button" onclick="window.location.href='./login.php'">
@@ -170,9 +165,9 @@ $menuReturn = $manager->listClient('adm_menu', 'id_menu');
                 //Verificando se existe sessão
                 if (!isset($_SESSION['USER-ID'])) {
                 ?>
-                <button id="login-button" onclick="window.location.href='./register.php.php'">
-                    <img src="../assets/svg/Login.svg" alt="icone de login" id="login-icon" width="40" height="40"></img>
-                </button>
+                    <button id="login-button" onclick="window.location.href='./register.php.php'">
+                        <img src="../assets/svg/Login.svg" alt="icone de login" id="login-icon" width="40" height="40"></img>
+                    </button>
                 <?php
                 }
                 //END SESSION
@@ -247,7 +242,7 @@ $menuReturn = $manager->listClient('adm_menu', 'id_menu');
                     <button id="bag-button" onclick="window.location.href='./carrinho.php'">
                         <img src="../assets/svg/BagCarrinho.svg" alt="icone do carrinho de compras" id="carrinhoSVG" width="30" height="30"></img>
                     </button>
-                    <button id="favorito-button">
+                    <button id="favorito-button" onclick="window.location.href='./favoritos.php'">
                         <img src="../assets/svg/CoracaoFavoritos.svg" alt="Icone de favoritos" id="coracaoSVG" width="30" height="30"></img>
                     </button>
                     <button id="login-button" onclick="window.location.href='./login.php'">

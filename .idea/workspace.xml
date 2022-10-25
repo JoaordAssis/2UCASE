@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="FINALIZED: Sistema de pagamento, carrinho e mensagens de erro">
+    <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="FINALIZED: Sistema de cupons">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/controllers/ControllerAddUsuarioUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controllers/ControllerAddUsuarioUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/controllers/ControllerAddprodutoCarrinho.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controllers/ControllerAddprodutoCarrinho.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/controllers/ControllerCategoria.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controllers/ControllerCategoria.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/controllers/ControllerDeleteCarrinho.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controllers/ControllerDeleteCarrinho.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/controllers/ControllerUpdateCarrinho.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controllers/ControllerUpdateCarrinho.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/carrinho.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/carrinho.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/produto.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/produto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/model/Manager.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/model/Manager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/view/meus-pedidos.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/meus-pedidos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/view/navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/navbar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/styles/favoritos.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/styles/favoritos.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/favoritos.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/favoritos.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -166,7 +164,8 @@
       <workItem from="1666488897131" duration="1738000" />
       <workItem from="1666527414054" duration="6298000" />
       <workItem from="1666550182621" duration="11352000" />
-      <workItem from="1666644782161" duration="5391000" />
+      <workItem from="1666644782161" duration="5435000" />
+      <workItem from="1666657636422" duration="571000" />
     </task>
     <task id="LOCAL-00001" summary="Teste commit 09/10/2022">
       <created>1665346468595</created>
@@ -308,7 +307,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666563402284</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="FINALIZED: Sistema de cupons">
+      <created>1666650255247</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1666650255247</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,6 +357,7 @@
     <MESSAGE value="WORKING: Processo de pagamento e compra do produto" />
     <MESSAGE value="WORKING: ENVIAR O FRETE E O CODIGO DO FRETE JUNTOS" />
     <MESSAGE value="FINALIZED: Sistema de pagamento, carrinho e mensagens de erro" />
-    <option name="LAST_COMMIT_MESSAGE" value="FINALIZED: Sistema de pagamento, carrinho e mensagens de erro" />
+    <MESSAGE value="FINALIZED: Sistema de cupons" />
+    <option name="LAST_COMMIT_MESSAGE" value="FINALIZED: Sistema de cupons" />
   </component>
 </project>

@@ -245,4 +245,11 @@ class Manager extends Conexao {
         $cmd = $this->pdo->query($sql);
         return $cmd->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function cupomSelect($coluna, $post): bool|array {
+        $sql = "SELECT * FROM user_cupom WHERE $coluna = '$post' AND status = 1";
+
+        $cmd = $this->pdo->query($sql);
+        return $cmd->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

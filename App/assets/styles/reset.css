@@ -208,3 +208,16 @@ ul, li{
     max-width: 150px;
     text-align: center;
 }
+
+
+/* Botão de Favoritos */
+
+#favorite-button{
+    background-color: #fff;
+    border: none;
+}
+
+.box-produto-info #favorite-button{
+   align-self: flex-start;
+   margin: 0;
+}

@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+if(empty($_SESSION['USER-ID'])){
+    header("Location: ./homepage.php?error-code=OA00");
+    exit();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
