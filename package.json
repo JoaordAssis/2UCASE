@@ -3,7 +3,8 @@
     "@glidejs/glide": "^3.5.2",
     "correios-brasil": "^3.0.2",
     "jshint": "^2.13.5",
-    "node-correios": "^3.0.2"
+    "node-correios": "^3.0.2",
+    "sql-formatter": "^11.0.2"
   },
   "devDependencies": {
     "prettier": "^2.7.1"

@@ -1,3 +1,35 @@
+<?php
+session_start();
+
+if(empty($_SESSION['USER-ID'])){
+    header("Location: ./login.php?error-code=OA00");
+    exit();
+}
+
+if(empty($_REQUEST['pd'])){
+    header("Location: ./meus-pedidos.php?error-code=FR34");
+    exit();
+}
+
+if(empty($_REQUEST['cart'])){
+    header("Location: ./meus-pedidos.php?error-code=FR34");
+    exit();
+}
+
+require_once __DIR__ . '/../../vendor/autoload.php';
+use app\model\Manager;
+$manager = new Manager();
+$idProduto = $_REQUEST['pd'];
+$idCarrinho = $_REQUEST['cart'];
+
+
+$getProduto = $manager->getInfo('user_produto', 'id_produto', $idProduto);
+$params = ['id_produto', 'id_carrinho'];
+$paramsPost = [$idProduto, $idCarrinho];
+$getCarrinho = $manager->selectWhere($params, $paramsPost, 'produto_carrinho');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,50 +48,59 @@
             <div class="produto-info">
                 <img src="../assets/./img/./Time.png" alt="Alt dinâmico">
                 <div class="titles-column">
-                    <h4>Flamengo - Uniforme 1 2022 Personalizado</h4>
-                    <p id="p-opaco">Iphone 13 Max</p>
+                    <h4><?=$getProduto[0]['nome_produto']?></h4>
+                    <p id="p-opaco"><?=$getCarrinho[0]['marca_celular']?></p>
                 </div>
 
                 <div class="quantidade">
                     <p id="p-opaco">QUANTIDADE</p>
-                    <p>2</p>
+                    <p><?=$getCarrinho[0]['quant_carrinho']?></p>
                 </div>
 
                 <div class="valor">
                     <p id="p-opaco">VALOR</p>
-                    <P>R$ 36,65</P>
+                    <P>R$ <?=$getProduto[0]['preco_produto']?></P>
                 </div>
             </div>
         </section>
+        <form action="../controllers/ControllerAddAvaliacao.php" method="POST" class="form-add-menu">
 
         <section class="avaliar-container">
             <p>Clique para dar sua nota</p>
-            <div class="container-stars">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
+
+            <div class="estrelas">
+                <input type="radio" id="vazio" name="estrela" value="" checked>
+
+                <label for="estrela_um"><i class="fa"></i></label>
+                <input type="radio" id="estrela_um" name="estrela" value="1">
+
+                <label for="estrela_dois"><i class="fa"></i></label>
+                <input type="radio" id="estrela_dois" name="estrela" value="2">
+
+                <label for="estrela_tres"><i class="fa"></i></label>
+                <input type="radio" id="estrela_tres" name="estrela" value="3">
+
+                <label for="estrela_quatro"><i class="fa"></i></label>
+                <input type="radio" id="estrela_quatro" name="estrela" value="4">
+
+                <label for="estrela_cinco"><i class="fa"></i></label>
+                <input type="radio" id="estrela_cinco" name="estrela" value="5">
+
             </div>
         </section>
 
 
-        <form action="#" method="POST" class="form-add-menu" enctype="multipart/form-data">
+            <input type="text" required name="titulo_avaliacao" id="input_nome_menu" placeholder="Titulo">
+            <input type="hidden" name="pd" value="<?=$getProduto[0]['id_produto']?>">
 
-            <input type="text" name="titulo_avaliacao" id="input_nome_menu" placeholder="Titulo">
 
-            <input type="text" name="link_menu" id="input_link_menu" placeholder="Link do menu">
-
-            <textarea placeholder="Mensagem" name="avaliacao-txt"></textarea>
+            <textarea required placeholder="Mensagem" name="avaliacao-txt"></textarea>
 
             <input type="submit" value="Adicionar" id="adcionar_menu">
-            </div>
-
 
         </form>
 
-        <button id="btn-exit" onclick="window.location.href='./listMenus.php'">Voltar</button>
-
+        <button id="btn-exit" onclick="window.location.href='./meus-pedidos.php'">Voltar</button>
 
 </main>
 </body>

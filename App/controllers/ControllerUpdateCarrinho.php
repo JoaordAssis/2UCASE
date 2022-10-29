@@ -120,7 +120,6 @@ if (isset($_REQUEST['cupom'])){
 //MUDAR A QUANTIDADE DO PRODUTO
 if (!empty($_REQUEST['changeQuant'])) {
 
-
     //Conferir a quantidade do produto na tabela produto_carrinho
     $dadosUpdate['quant_carrinho'] = $quantProd;
     $dadosUpdate['preco_quant_prod'] = ($getInfoProduto[0]['preco_produto'] * $quantProd);
@@ -141,8 +140,6 @@ if (!empty($_REQUEST['changeQuant'])) {
     }
 
     //Mudar o valor total no carrinho
-    $paramsSelectCarrinho = ['id_cliente', 'id_status'];
-    $paramsPostSelect = [$_SESSION['USER-ID'], 1];
     $selectCarrinhoVerify = $manager->selectWhere($paramsSelectCarrinho, $paramsPostSelect, 'user_carrinho');
     $saveValoresTotal = [];
     $saveValoresDeconto = [];
@@ -292,9 +289,9 @@ $saveValoresQauntidade = [];
 $returnProdutoCarrinho = $manager->getInfo('produto_carrinho', 'id_carrinho', $selectCarrinhoVerifyInsert[0]['id_carrinho']);
 
 for ($i = 0, $iMax = count($returnProdutoCarrinho); $i < $iMax; $i++){
-    $saveValoresTotal[$i] = $returnProdutoCarrinho[$i]['preco_total'];
-    $saveValoresDeconto[$i] = $returnProdutoCarrinho[$i]['preco_desconto_prod'];
-    $saveValoresQauntidade[$i] = $returnProdutoCarrinho[$i]['quant_carrinho'];
+    $saveValoresTotal[] = $returnProdutoCarrinho[$i]['preco_total'];
+    $saveValoresDeconto[] = $returnProdutoCarrinho[$i]['preco_desconto_prod'];
+    $saveValoresQauntidade[] = $returnProdutoCarrinho[$i]['quant_carrinho'];
 }
 
 //SOMANDO OS VALORES DO ARRAY PARA ADICIONAR À TABELA DE USER_CARRINHO

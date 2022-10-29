@@ -68,7 +68,8 @@ if(count($selectCarrinhoVerify) > 0){
                                         <p id="p-opaco"><?=$returnModelProduto[$j]['modelo_celular']?></p>
                                     </div>
 
-                                    <form class="quantidade" id="form-change-quant" method="post" action="../controllers/ControllerUpdateCarrinho.php">
+                                    <form class="quantidade" id="form-change-quant" method="post" onchange="submitForm(this)"
+                                          action="../controllers/ControllerUpdateCarrinho.php?changeQuant=change">
                                         <p id="p-opaco">QUANT</p>
                                         <input type="hidden" name="pd" value="<?=$getInfoProduto[$j]['id_produto']?>">
                                         <input type="hidden" name="changeQuant" value="change">

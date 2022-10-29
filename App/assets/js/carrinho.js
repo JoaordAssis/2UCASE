@@ -7,9 +7,10 @@ let replacedVariable = +textReplace.replace("R$", "");
 let formSelectQuant = document.getElementById("form-change-quant");
 let quantSelect = document.getElementById("quant-select");
 
-quantSelect.addEventListener("change", () => {
-    formSelectQuant.submit();
-})
+
+function submitForm(event){
+    event.submit();
+}
 
 
 //Calcular CEP
