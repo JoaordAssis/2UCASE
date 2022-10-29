@@ -315,14 +315,15 @@ body{
 
 .user-rating{
     display: flex;
-    align-items: center;
     gap: 1rem;
+    align-items: center;
 }
 
 .user-total-rating{
     display: flex;
     flex-direction: column;
     align-items: center;
+    align-content: center;
 }
 
 .user-total-rating .container-stars{
