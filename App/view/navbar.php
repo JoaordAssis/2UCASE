@@ -19,12 +19,12 @@ $menuReturn = $manager->listClient('adm_menu', 'id_menu');
     <header class="header-navbar header-primario">
         <nav id="logo-informations">
             <h1 id="logo-site"><a href="./homepage.php">2UCASE</a></h1>
-            <section class="input-search">
+            <form class="input-search" method="post" action="../controllers/ControllerSearchBar.php">
                 <input type="search" id="searchIn" placeholder="Pesquisar" name="search">
                 <button id="search-button">
                     <img src="../assets/svg/search.svg" alt="icone de pesquisa" id="search-icon" width="40" height="40" />
                 </button>
-            </section>
+            </form>
             <section class="user-login">
                 <button id="login-button" onclick="window.location.href='./login.php'">
                     <img src="../assets/svg/Login.svg" alt="icone de login" id="login-icon" width="50" height="50" />
@@ -177,12 +177,12 @@ $menuReturn = $manager->listClient('adm_menu', 'id_menu');
         </header>
         <nav id="nav-mobile" class="header-navbar">
 
-            <section class="input-search">
+            <form method="post" action="../controllers/ControllerSearchBar.php" class="input-search">
                 <input type="search" id="searchIn" placeholder="Pesquisar" name="search">
                 <button id="search-button">
                     <img src="../assets/svg/search.svg" alt="icone de pesquisa" id="search-icon" width="40" height="40"></img>
                 </button>
-            </section>
+            </form>
 
             <ul id="links-mobile">
                 <?php

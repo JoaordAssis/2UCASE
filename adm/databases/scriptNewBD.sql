@@ -24,9 +24,8 @@ CREATE SCHEMA IF NOT EXISTS `2ucase_bd3` DEFAULT CHARACTER SET utf8 COLLATE utf8
 
 -- -----------------------------------------------------
 USE `2ucase_bd3` ;
-
 -- -----------------------------------------------------
--- Table `2ucase_bd3`.`adm_administrador`
+-- Table `2ucase_bd3`.`adm_administrador`  
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `2ucase_bd3`.`adm_administrador` (
                                                                 `id_adm` INT NOT NULL AUTO_INCREMENT,

@@ -1,24 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="FINALIZED: Sistema de favoritos">
-      <change afterPath="$PROJECT_DIR$/App/assets/js/avaliacao.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/controllers/ControllerAddAvaliacao.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/controllers/ControllerUpdateCliente.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VilicapasProjeto.zip" afterDir="false" />
+    <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="FINALIZED: Sistema de avaliação, pagina de pedidos do cliente e atualização cadastral. Faltar fazer o sistema de erro e o login social.">
+      <change afterPath="$PROJECT_DIR$/App/controllers/ControllerSearchBar.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/assets/js/carrinho.js" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/js/carrinho.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/assets/styles/avaliacao.css" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/styles/avaliacao.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/assets/styles/meus-pedidos.css" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/styles/meus-pedidos.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/controllers/ControllerUpdateCarrinho.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controllers/ControllerUpdateCarrinho.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/avaliacao.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/avaliacao.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/carrinho.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/carrinho.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/meus-pedidos.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/meus-pedidos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/styles/produto.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/styles/produto.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/view/navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/navbar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adm/databases/scriptNewBD.sql" beforeDir="false" afterPath="$PROJECT_DIR$/adm/databases/scriptNewBD.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/category.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +170,9 @@
       <workItem from="1666828795898" duration="604000" />
       <workItem from="1666955492752" duration="7394000" />
       <workItem from="1667039671592" duration="3114000" />
-      <workItem from="1667045518233" duration="4569000" />
+      <workItem from="1667045518233" duration="4823000" />
+      <workItem from="1667088658814" duration="140000" />
+      <workItem from="1667249977738" duration="4326000" />
     </task>
     <task id="LOCAL-00001" summary="Teste commit 09/10/2022">
       <created>1665346468595</created>
@@ -338,7 +328,21 @@
       <option name="project" value="LOCAL" />
       <updated>1666733786767</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="FINALIZED: Sistema de avaliação, pagina de pedidos do cliente e atualização cadastral. Faltar fazer o sistema de erro e o login social.">
+      <created>1667050710284</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1667050710284</updated>
+    </task>
+    <task id="LOCAL-00024" summary="FINALIZED: Sistema de avaliação, pagina de pedidos do cliente e atualização cadastral. Faltar fazer o sistema de erro e o login social.">
+      <created>1667050738054</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1667050738054</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -383,6 +387,7 @@
     <MESSAGE value="FINALIZED: Sistema de pagamento, carrinho e mensagens de erro" />
     <MESSAGE value="FINALIZED: Sistema de cupons" />
     <MESSAGE value="FINALIZED: Sistema de favoritos" />
-    <option name="LAST_COMMIT_MESSAGE" value="FINALIZED: Sistema de favoritos" />
+    <MESSAGE value="FINALIZED: Sistema de avaliação, pagina de pedidos do cliente e atualização cadastral. Faltar fazer o sistema de erro e o login social." />
+    <option name="LAST_COMMIT_MESSAGE" value="FINALIZED: Sistema de avaliação, pagina de pedidos do cliente e atualização cadastral. Faltar fazer o sistema de erro e o login social." />
   </component>
 </project>
