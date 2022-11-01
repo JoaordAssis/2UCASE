@@ -166,7 +166,9 @@ class Manager extends Conexao {
         return $this->pdo->query($sql)->fetch();
     }
 
-    function selectLike($tabela, $columns, $search): bool|array {
+
+    //AO DECLARAR AS COLUNAS, COLOCAR UM ESPAÇAMENTO APÓS A ULTIMA LETRA!!!
+    public function selectLike($tabela, $columns, $search): bool|array {
         $sql = "SELECT * FROM $tabela WHERE ";
         $queryDinamica = '';
         $qd = '';

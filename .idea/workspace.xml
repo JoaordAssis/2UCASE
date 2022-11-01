@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="FINALIZED: Sistema de avaliação, pagina de pedidos do cliente e atualização cadastral. Faltar fazer o sistema de erro e o login social.">
-      <change afterPath="$PROJECT_DIR$/App/controllers/ControllerSearchBar.php" afterDir="false" />
+    <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="FINALIZED: Sistema de busca">
+      <change afterPath="$PROJECT_DIR$/App/assets/js/error-handling.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/navbar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm/databases/scriptNewBD.sql" beforeDir="false" afterPath="$PROJECT_DIR$/adm/databases/scriptNewBD.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/assets/2UCASE.docx" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/2UCASE.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/model/Manager.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/model/Manager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/view/category.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/styles/reset.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/styles/reset.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,8 +91,11 @@
       <recent name="C:\xampp\htdocs\VilicapasProjeto\app\assets\img" />
     </key>
   </component>
-  <component name="RunManager" selected="PHP Built-in Web Server.2UCASE Server">
+  <component name="RunManager" selected="Node.js.error-handling.js">
     <configuration name="correios-calc.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/app/assets/js/modules/correios-calc.js" working-dir="$PROJECT_DIR$/app/assets/js/modules">
+      <method v="2" />
+    </configuration>
+    <configuration name="error-handling.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/app/assets/js/error-handling.js" working-dir="$PROJECT_DIR$/app/assets/js">
       <method v="2" />
     </configuration>
     <configuration name="2UCASE Server" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" document_root="$PROJECT_DIR$">
@@ -99,6 +103,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.error-handling.js" />
         <item itemvalue="Node.js.correios-calc.js" />
       </list>
     </recent_temporary>
@@ -172,7 +177,9 @@
       <workItem from="1667039671592" duration="3114000" />
       <workItem from="1667045518233" duration="4823000" />
       <workItem from="1667088658814" duration="140000" />
-      <workItem from="1667249977738" duration="4326000" />
+      <workItem from="1667249977738" duration="4550000" />
+      <workItem from="1667263284107" duration="1001000" />
+      <workItem from="1667331112664" duration="3066000" />
     </task>
     <task id="LOCAL-00001" summary="Teste commit 09/10/2022">
       <created>1665346468595</created>
@@ -342,7 +349,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667050738054</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="FINALIZED: Sistema de busca">
+      <created>1667259971541</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1667259971541</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -388,6 +402,7 @@
     <MESSAGE value="FINALIZED: Sistema de cupons" />
     <MESSAGE value="FINALIZED: Sistema de favoritos" />
     <MESSAGE value="FINALIZED: Sistema de avaliação, pagina de pedidos do cliente e atualização cadastral. Faltar fazer o sistema de erro e o login social." />
-    <option name="LAST_COMMIT_MESSAGE" value="FINALIZED: Sistema de avaliação, pagina de pedidos do cliente e atualização cadastral. Faltar fazer o sistema de erro e o login social." />
+    <MESSAGE value="FINALIZED: Sistema de busca" />
+    <option name="LAST_COMMIT_MESSAGE" value="FINALIZED: Sistema de busca" />
   </component>
 </project>
