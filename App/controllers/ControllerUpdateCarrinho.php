@@ -109,8 +109,7 @@ if (isset($_REQUEST['cupom'])){
         }
 
     }else{
-        //TODO: Mensagem de erro
-        header("Location: ../view/carrinho.php?error-code=CUPOM-INVALIDO");
+        header("Location: ../view/carrinho.php?error-code=PG04");
         exit();
     }
 
@@ -244,8 +243,7 @@ if (count($checkProd) > 0){
     //Update no user_carrinho
     try {
         $updateUserCarrinho = $manager->updateClient('user_carrinho', $updateCarrinho, $selectCarrinhoVerify[0]['id_carrinho'], 'id_carrinho');
-        //TODO: Mensagem de erro
-        header("Location: ../view/carrinho.php?Deu-certo");
+        header("Location: ../view/carrinho.php?sucess-code=CP53");
         exit();
     }catch (PDOException $e){
         echo $e->getCode();

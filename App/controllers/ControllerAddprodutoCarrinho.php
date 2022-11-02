@@ -21,13 +21,15 @@ $manager = new Manager();
 $ferramentas = new Ferramentas();
 $getInfoProduto = $manager->getInfo('user_produto', 'id_produto', $_REQUEST['idProduto']);
 $returnModelProduto = $manager->getInfo('user_mod_celular', 'id_modelo_celular', $getInfoProduto[0]['id_modelo_celular']);
+$idProduto = $_REQUEST['idProduto'];
 
 //Adicionar no produto carrinho
 $quantidadeProduto = $_REQUEST['quantProduto'];
 
 if (empty($quantidadeProduto)){
     //Falha no recebimento
-    header("Location: ../view/produto.php?error-code=CP02");
+    header("Location: ../view/produto.php?error-code=CP02&pd=$idProduto");
+    exit();
 }
 
 //Verificar se o cliente já adicionou algo no carrinho antes
@@ -35,7 +37,7 @@ $paramsSelectCarrinho = ['id_cliente', 'id_status'];
 $paramsPostSelect = [$_SESSION['USER-ID'], 1];
 $selectCarrinhoVerify = $manager->selectWhere($paramsSelectCarrinho, $paramsPostSelect, 'user_carrinho');
 
-$idProduto = $_REQUEST['idProduto'];
+
 
 if (count($selectCarrinhoVerify) > 0){
     //Redirecionar para o controller update

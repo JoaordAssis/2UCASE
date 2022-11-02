@@ -80,25 +80,23 @@ class Manager extends Conexao {
 		return $statement->fetchAll();
 	}
 
-	public function imgUpload($name, $nome_produto){
+	public function imgUpload($name, $nome_produto): array {
 
 			$ext = strtolower(substr($_FILES[$name]['name'], -4)); //Pegando extensão do arquivo
 			$roundNumber = random_int(100, 200);
 			$x = $roundNumber ** 4;
 			date_default_timezone_set('America/Sao_Paulo');
 			$date = date('d-m-Y H-i-s');
-			$dirName = '../databases/img-database/' . $nome_produto . '---' . $date . '/';
+			$dirName = '../../adm/databases/img-database/' . $nome_produto . '---' . $date . '/';
 			$new_name = $nome_produto . "-" . ++$x . $ext; //Definindo um novo nome para o arquivo
-			if(!is_dir($dirName)){
-				mkdir($dirName, 0777, true); 
-			}
+            mkdir($dirName, 0777, true);
 
-			move_uploaded_file($_FILES[$name]['tmp_name'], $dirName . $new_name);
+            move_uploaded_file($_FILES[$name]['tmp_name'], $dirName . $new_name);
 
-			$dataReturn[0] = $dirName . $new_name;
-			$dataReturn[1] = $dirName;
+            $dataReturn[0] = $dirName . $new_name;
+            $dataReturn[1] = $dirName;
 
-			return $dataReturn;
+            return $dataReturn;
 	}
 
 	public function imgMultipleUpload($name, $nome_produto){

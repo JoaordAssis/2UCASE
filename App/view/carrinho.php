@@ -44,6 +44,9 @@ if(count($selectCarrinhoVerify) > 0){
         <article class="carrinho-container">
             <h1>Seu Carrinho</h1>
             <p>Não está pronto para finalizar a sua compra?<a href="./category.php"> Continuar Comprando.</a></p>
+            <div id="container-error">
+                <p id="error-exib"></p>
+            </div>
 
             <section class="body-parts">
 
@@ -205,9 +208,11 @@ if(count($selectCarrinhoVerify) > 0){
 <!-- Footer -->
 <?php require_once './footer.php';
 ?>
-
+<script src="../assets/js/error-handling.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
 <script defer src="../assets/js/carrinho.js"></script>
+
+
 <script>
     new Glide('.prod-container-box', {
         type: 'carousel',

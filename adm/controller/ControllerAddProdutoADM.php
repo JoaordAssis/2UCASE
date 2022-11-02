@@ -35,6 +35,7 @@ if (isset($_REQUEST['nome_produto']) && $_REQUEST['nome_produto'] !== '') :
     $dados["peso_produto"] = $_REQUEST["peso_produto"];
     $dados["cod_produto"] = $_REQUEST["cod_produto"];
     $dados["preco_produto"] = $precoProdutoReplace;
+    //TODO: BUG ao add produto na classe promoções ele nao aparece
     $dados["descricao_produto"] = $_REQUEST["descricao_produto"];
     $imgRetrieveData = $manager->imgUpload('imagem_principal_produto', $_REQUEST["nome_produto"]);
     $dados["imagem_principal_produto"] = $imgRetrieveData[0];
@@ -50,7 +51,7 @@ if (isset($_REQUEST['nome_produto']) && $_REQUEST['nome_produto'] !== '') :
 
     if (isset($_FILES['link_img']) && $_FILES['link_img']['name'][0] != '') {
         $uploadMultipleImageT = $manager->imgMultipleUpload('link_img', $_REQUEST["nome_produto"]);
-        for ($i = 0; $i < count($uploadMultipleImageT); $i++) :
+        for ($i = 0, $iMax = count($uploadMultipleImageT); $i < $iMax; $i++) :
             $lastId = $manager->lastInsertId('user_produto', 'id_produto');
             $dadosImg['id_produto'] = $lastId[0];
             $dadosImg['nome_img'] = $_FILES['link_img']['name'][$i];

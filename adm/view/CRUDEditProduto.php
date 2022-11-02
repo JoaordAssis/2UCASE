@@ -147,6 +147,13 @@ $exibProduto = $manager->getInfo('user_produto', 'id_produto', $idProduto);
                 ?>
             </select>
 
+            <select required name="categoria_special_produto" id="select-status">
+                <option selected>Nenhuma</option>
+                <option>Mais Vendidos</option>
+                <option>Promoções</option>
+                <option>Novidades</option>
+            </select>
+
             <div class="row-preco-quant row-inputs">
                 <label for="peso_produto">
                     <input type="number" required value="<?= $exibProduto[0]['peso_produto'] ?>" name="peso_produto"

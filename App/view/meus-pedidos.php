@@ -47,7 +47,12 @@ $returnVenda = $manager->getInfo('adm_venda', 'id_cliente', $_SESSION['USER-ID']
                     <option>Todos</option>
                 </select>
             </div>
+
+            <div id="container-error">
+                <p id="error-exib"></p>
+            </div>
         </section>
+
 
         <!-- Meus Pedidos -->
 
@@ -60,6 +65,9 @@ $returnVenda = $manager->getInfo('adm_venda', 'id_cliente', $_SESSION['USER-ID']
                     $getCarrinho = $manager->getInfo('user_carrinho', 'id_carrinho', $returnVenda[$i]['id_carrinho']);
                     $getStatusVenda = $manager->getInfo('venda_status', 'id_status', $returnVenda[$i]['id_status']);
                     $getCarrinhoProduto = $manager->getInfo('produto_carrinho', 'id_carrinho', $returnVenda[$i]['id_carrinho']);
+
+                    if (isset($getCarrinhoProduto[0])):
+                        //TODO: Verificar bug: Testar se o problema ocorre quando é deletado um produto do carrinho
             ?>
             <div class="box-pedido">
                 <button class="accordion">
@@ -116,14 +124,14 @@ $returnVenda = $manager->getInfo('adm_venda', 'id_cliente', $_SESSION['USER-ID']
 
                             <p>Digite o codigo de rastreio enviado ao seu email:</p>
 
-                            <div class="container-cod-rastreio">
+                            <form method="post" action="meus-pedidos.php?error-code=CP05" class="container-cod-rastreio">
 
                                 <input type="text" name="codigo-rastreio" id="input-rastreio" placeholder="Codigo de Rastreio">
 
                                 <button id="btn-rastreio">
                                     Rastrear
                                 </button>
-                            </div>
+                            </form>
                         </section>
 
                         <article class="container-produtos">
@@ -177,8 +185,9 @@ $returnVenda = $manager->getInfo('adm_venda', 'id_cliente', $_SESSION['USER-ID']
             </div>
             <?php
             //END FOR ADM_VENDAS
+                    endif;
                 endfor;
-                else:
+            else:
                 ?>
             <h1>Você não comprou nada ainda!</h1>
                 <?php
@@ -188,5 +197,6 @@ $returnVenda = $manager->getInfo('adm_venda', 'id_cliente', $_SESSION['USER-ID']
     </main>
 </body>
 <script src="../assets/js/meus-pedidos.js"></script>
+<script src="../assets/js/error-handling.js"></script>
 
 </html>

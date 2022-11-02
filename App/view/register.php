@@ -33,8 +33,7 @@ session_start();
                 <section class="address-column1 address">
                     <label for="nomeCompleto">
                         <input type="text" required name="nomeCompleto" id="nome-completo" value="<?=$_REQUEST['nome']?>"
-                               placeholder="Nome
-                        Completo">
+                               placeholder="Nome Completo">
                     </label>
 
                     <label for="cpf">
@@ -77,6 +76,9 @@ session_start();
         </article>
 
         <article class="entrega">
+            <div id="container-error">
+                <p id="error-exib"></p>
+            </div>
 
             <h1>Entrega</h1>
             <!-- Flex direction Column -->
@@ -142,6 +144,7 @@ session_start();
     </form>
 </body>
 <script src="../assets/js/entrega.js"></script>
+<script src="../assets/js/error-handling.js"></script>
 <!-- Footer -->
 <?php require_once './footer.php'; ?>
 

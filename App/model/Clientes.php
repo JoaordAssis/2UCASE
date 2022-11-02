@@ -29,7 +29,7 @@ class Clientes {
     //Mínimo de 8 e maximo de 10 caracteres, pelo menos uma letra maiúscula, uma minúscula, um número e um caractere
     // especial
     public function validaSenha($senha): bool|int {
-        $regex = "/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])[0-9a-zA-Z$*&@#]{8,}$/";
+        $regex = "/^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{6,15}$/";
         return preg_match($regex, $senha);
         //Returna 1 se estiver ok, 0 Se não estiver correta
     }

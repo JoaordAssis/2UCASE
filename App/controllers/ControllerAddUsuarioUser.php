@@ -11,7 +11,7 @@ session_start();
 if (!empty($_SESSION["USER-ID"])) {
 
     ?>
-
+<!--Ja esta logado-->
     <form action="../view/login.php?030" name="myForm" id="myForm" method="post">
         <input type="hidden" name="msg" value="Você já esta logado">
     </form>
@@ -38,7 +38,7 @@ if (isset($_REQUEST['cadastroFirstRequest'])){
 
     if ($ferrEmail === 0 || $ferrNome === 0){
         //Tentativa de SQL Injection
-        header("Location: ../view/login.php?error-code=FR24");
+        header("Location: ../view/login.php?error-code=FR24&form");
         exit();
     }
 
@@ -49,7 +49,7 @@ if (isset($_REQUEST['cadastroFirstRequest'])){
     //Checar se o email já existe no banco
     $checkEmail = $user->checkEmailExist($verifyEmail);
     if ($checkEmail === 0){
-        header("Location: ../view/login.php?error-code=FR06");
+        header("Location: ../view/login.php?error-code=FR06&form");
         exit();
     }
 
@@ -68,12 +68,12 @@ if (isset($_REQUEST['cadastroFirstRequest'])){
     }
 
     if ($verifySenha !== 1){
-        header("Location: ../view/login.php?error-code=FR26");
+        header("Location: ../view/login.php?error-code=FR26&form");
         exit();
     }
 
     if ($verifyEmail === false){
-        header("Location: ../view/login.php?error-code=FR27");
+        header("Location: ../view/login.php?error-code=FR27&form");
         exit();
     }
 
@@ -88,13 +88,34 @@ if (isset($_REQUEST['cadastroCompletoForm'])){
     $ferramentas = new Ferramentas();
     $manager = new Manager();
 
+    $nome = $_REQUEST['nome'];
+    $email = $_REQUEST['email'];
+    $senhaCripto = $_REQUEST['senhaCripto'];
+
+    $injectionCheckLog = $ferramentas->antiInjection($_REQUEST['logradouro']);
+    $injectionCheckBairro = $ferramentas->antiInjection($_REQUEST['bairro'] );
+    $injectionCheckRef = $ferramentas->antiInjection($_REQUEST['referencia']);
+    $injectionCheckCidade = $ferramentas->antiInjection($_REQUEST['cidade']);
+    $injectionCheckNomeR = $ferramentas->antiInjection($_REQUEST['nomeR']);
+    $injectionCheckComp = $ferramentas->antiInjection($_REQUEST['complemento']);
+
+
+    if ($injectionCheckLog === 0 || $injectionCheckBairro === 0 || $injectionCheckRef === 0 ||
+        $injectionCheckCidade === 0 || $injectionCheckNomeR === 0 || $injectionCheckComp === 0)
+    {
+
+        header("Location: ../view/register.php?error-code=FR24&nome=$nome&email=$email&senhaCripto=$senhaCripto");
+        exit();
+    }
+
     $cpfVerify = $user->CPFVerify($_REQUEST['cpf']);
 
     if ($cpfVerify !== true){
 
-        header("Location: ../view/register.php?error-code=FR28");
+        header("Location: ../view/register.php?error-code=FR28&nome=$nome&email=$email&senhaCripto=$senhaCripto");
         exit();
     }
+
 
     $sanitizeCPF = $user->sanitizeField($_REQUEST['cpf']);
     $sanitizeNumber = $user->sanitizeField($_REQUEST['numeroCelular']);
@@ -115,7 +136,7 @@ if (isset($_REQUEST['cadastroCompletoForm'])){
        $manager->insertClient("user_cliente", $dadosUsuario);
     }catch (PDOException $exception){
          echo $exception->getCode();
-         header("Location: ../view/register.php?error-code=FR31");
+         header("Location: ../view/register.php?error-code=FR31&nome=$nome&email=$email&senhaCripto=$senhaCripto");
     }
 
     $cepVerify = $endereco->verifyCEP($_REQUEST['cep']);
@@ -123,7 +144,7 @@ if (isset($_REQUEST['cadastroCompletoForm'])){
     if ($cepVerify !== true){
 
         //CEP está incorreto
-        header("Location: ../view/register.php?error-code=FR29");
+        header("Location: ../view/register.php?error-code=FR29&nome=$nome&email=$email&senhaCripto=$senhaCripto");
         exit();
     }
 

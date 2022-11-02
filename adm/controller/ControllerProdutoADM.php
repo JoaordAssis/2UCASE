@@ -14,9 +14,9 @@ if (!isset($_SESSION["ADM-ID"]) || empty($_SESSION["ADM-ID"])) {
     exit();
 }
 
-if (isset($_REQUEST['action']) && $_REQUEST['action'] != '' && isset($_REQUEST['id']) && $_REQUEST['id'] != '') {
+if (isset($_REQUEST['action'], $_REQUEST['id']) && $_REQUEST['action'] !== '' && $_REQUEST['id'] !== '') {
 
-    // DELETAR MENU ADMINISTRATIVO
+    // DELETAR PRODUTO
     if ($_REQUEST['action'] === 'deleteProdutoADM') {
         $idProdutoADM = $_REQUEST['id'];
         require_once "../model/Manager.class.php";
@@ -26,7 +26,7 @@ if (isset($_REQUEST['action']) && $_REQUEST['action'] != '' && isset($_REQUEST['
         $searchSubMenus = $manager->getInfo('user_produtos_img', 'id_produto', $idProdutoADM);
 
         if (count($searchSubMenus) > 0) {
-            for ($ssm = 0; $ssm < count($searchSubMenus); $ssm++) {
+            for ($ssm = 0, $ssmMax = count($searchSubMenus); $ssm < $ssmMax; $ssm++) {
                 $deleteSubImgADM = $manager->deleteClient('user_produtos_img', 'id_produto', $searchSubMenus[$ssm]['id_produto']);
             }
         }
@@ -53,12 +53,24 @@ if (isset($_REQUEST['action']) && $_REQUEST['action'] != '' && isset($_REQUEST['
 
         $searchProduto = $manager->getInfo('user_produto', 'id_produto', $idProdutoADM);
 
-        $imgRetrieveData = $manager->imgUpload('imagem_principal_produto', $_REQUEST["nome_produto"]);
+
+
+        if ($_REQUEST["categoria_special_produto"] === 'Nenhuma'){
+            ?>
+            <form action="../view/listProdutos.php" name="myForm" id="myForm" method="post">
+                <input type="hidden" name="msg" value="BD54">
+            </form>
+            <script>
+                document.getElementById('myForm').submit();
+            </script>
+            <?php
+        }
 
 
         $dadosProdutoADM['id_modelo_celular'] = $_REQUEST['marca_celular'];
         $dadosProdutoADM['id_categoria'] = $_REQUEST['categoria_produto'];
         $dadosProdutoADM['nome_produto'] = $_REQUEST['nome_produto'];
+        //Criar inputs para esses dados
         $dados["peso_produto"] = $_REQUEST["peso_produto"];
         $dados["cod_produto"] = $_REQUEST["cod_produto"];
         $dadosProdutoADM['preco_produto'] = $_REQUEST['preco_produto'];
@@ -66,8 +78,16 @@ if (isset($_REQUEST['action']) && $_REQUEST['action'] != '' && isset($_REQUEST['
         $dadosProdutoADM['quantidade_produto'] = $_REQUEST['quantidade_produto'];
         $dadosProdutoADM['garantias_produto'] = $_REQUEST['garantias_produto'];
         $dadosProdutoADM['status'] = $_REQUEST['status'];
-        $dados["categoria_special_produto"] = $_REQUEST["categoria_special_produto"];
-        $dadosProdutoADM['imagem_principal_produto'] = $imgRetrieveData[0];
+        $dadosProdutoADM["categoria_special_produto"] = $_REQUEST["categoria_special_produto"];
+        $dadosProdutoADM["last_price_produto"] = 0.00;
+        if ($_REQUEST['imagem_principal_produto'] === ''){
+            $imgRetrieveData = $manager->imgUpload('imagem_principal_produto', $_REQUEST["nome_produto"]);
+            $dadosProdutoADM['imagem_principal_produto'] = $imgRetrieveData[0];
+        }
+
+        if ($_REQUEST["categoria_special_produto"] === 'Promoções'){
+            $dadosProdutoADM["last_price_produto"] = $searchProduto[0]['preco_produto'];
+        }
 
         $manager->updateClient("user_produto", $dadosProdutoADM, $idProdutoADM, 'id_produto');
 

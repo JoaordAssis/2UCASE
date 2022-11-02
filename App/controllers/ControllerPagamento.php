@@ -24,6 +24,8 @@ $ferramentas = new Ferramentas();
 
 $idCarrinho = $_REQUEST['id_carrinho'];
 $idEndereco = $_REQUEST['id_endereco'];
+$valorFrete = $_REQUEST['frete'];
+$codFrete = $_REQUEST['codFrete'];
 
 $checkLogradouro = $ferramentas->antiInjection($_REQUEST['logPayment']);
 $checkComplemento = $ferramentas->antiInjection($_REQUEST['compPayment']);
@@ -32,15 +34,13 @@ $checkNome = $ferramentas->antiInjection($_REQUEST['titular']);
 
 if ($checkLogradouro === 0 || $checkComplemento === 0){
     //Tentiva de Injection
-    header("Location: ./pagamento.php");
+    header("Location: ../view/pagamento.php?error-code=FR24&id_carrinho=$idCarrinho&id_endereco=$idEndereco&frete=$valorFrete&codFrete=$codFrete");
     exit();
 }
 
 $returnCarrinho = $manager->getInfo('user_carrinho', 'id_carrinho', $idCarrinho);
 $returnProdutoCarrinho = $manager->getInfo('produto_carrinho', 'id_carrinho', $idCarrinho);
 
-
-$valorFrete = $_REQUEST['frete'];
 $replaceValueFrete = str_replace(",", ".", $valorFrete);
 $valorTotal = $returnCarrinho[0]['total_carrinho'] + $replaceValueFrete;
 
@@ -54,11 +54,8 @@ $insertVendas['id_carrinho'] = $idCarrinho;
 $insertVendas['numero_venda'] = random_int(1000, 10000);
 $insertVendas['frete_carrinho'] = $replaceValueFrete;
 $insertVendas['id_endereco'] = $idEndereco;
+$insertVendas['cod_frete_venda'] = $codFrete;
 
-
-//echo "<pre>";
-//print_r($returnProdutoCarrinho);
-//echo "<pre>";
 
 
 try {
@@ -73,6 +70,7 @@ try {
     $changeStatus['id_status'] = 5;
     $updateCarrinho = $manager->updateClient("user_carrinho", $changeStatus, $idCarrinho, 'id_carrinho');
     //Criar uma pagina de compra sucedida
+    //TODO: Criar pagina de compra sucedida
     header("Location: ../view/homepage.php?sucess-code=CP52");
     exit();
 

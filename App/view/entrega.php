@@ -52,6 +52,10 @@ $idCarrinho = $_REQUEST['carrinho'];
                 <a target="_blank" href="https://www2.correios.com.br/sistemas/buscacep/buscaCep.cfm">Não sei meu CEP</a>
             </div>
 
+            <div id="container-error">
+                <p id="error-exib"></p>
+            </div>
+
             <section class="columns-container">
                 <section class="address-column1 address">
                     <label for="logradouro">
@@ -125,6 +129,8 @@ $idCarrinho = $_REQUEST['carrinho'];
     </form>
 </body>
 <script src="../assets/js/entrega.js"></script>
+<script src="../assets/js/error-handling.js"></script>
+
 <!-- Footer -->
 <?php require_once './footer.php'; ?>
 

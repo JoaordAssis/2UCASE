@@ -9,7 +9,7 @@ if (empty($_SESSION['USER-ID'])){
 
 if (empty($_REQUEST['id_endereco']) || empty($_REQUEST['id_carrinho'])){
     //Não Recebeu o ID Endereço
-    header("Location: ./carrinho.php");
+    header("Location: ./carrinho.php?error-code=FR30");
     exit();
 }
 require_once __DIR__ . "/../../vendor/autoload.php";
@@ -44,12 +44,9 @@ if (isset($_REQUEST['action'])) {
 }else{
     $codFrete = $_REQUEST['codFrete'];
     $valorFrete = $_REQUEST['frete'];
-    $totalCarrinho = $valorFrete + $returnCarrinho[0]['total_carrinho'];
+    $replaceValueFrete = str_replace(",", ".", $valorFrete);
+    $totalCarrinho = $replaceValueFrete + $returnCarrinho[0]['total_carrinho'];
 }
-
-
-
-
 
 
 ?>
@@ -145,6 +142,9 @@ if (isset($_REQUEST['action'])) {
                                     <input type="checkbox" name="checkCard" id="radio-card">
                                     Deseja Salvar esse cartão para agilizar resgates futuros, sem precisar preencher novamente as informações?
                                 </label>
+                                <div id="container-error">
+                                    <p id="error-exib"></p>
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -185,6 +185,7 @@ if (isset($_REQUEST['action'])) {
                         endif;
                         ?>
                         <span id="color-payment">
+                            <!--TODO: Criar modal para ver mais-->
                             <button id="link-detail">Ver detalhes</button>
                         </span>
                     </div>
@@ -225,7 +226,8 @@ if (isset($_REQUEST['action'])) {
     </main>
 </body>
 
-<script src="../assets/./js/Payment.js"></script>
+<script src="../assets/js/Payment.js"></script>
+<script src="../assets/js/error-handling.js"></script>
 
 <!-- Footer -->
 <?php //require_once './footer.php'; 

@@ -27,7 +27,7 @@ $codigoFrete = $explodeCep[1];
 
 if (empty($valueFrete)) {
     //Não recebido o valor frete
-    header("Location: ../view/entrega.php?error-code=FR30");
+    header("Location: ../view/entrega.php?error-code=FR33&carrinho=$idCarrinho");
     exit();
 }
 
@@ -53,7 +53,7 @@ $injectionCheckComp = $ferramentas->antiInjection($inputEntrega['complemento_cli
 if ($injectionCheckBairro === 0 || $injectionCheckCidade === 0 || $injectionCheckLog === 0
     || $injectionCheckNomeR === 0 || $injectionCheckRef === 0 || $injectionCheckComp === 0) {
     //Tentativa de Injection
-    header("Location: ../view/entrega.php?error-code=FR24");
+    header("Location: ../view/entrega.php?error-code=FR24?carrinho=$idCarrinho");
     exit();
 }
 
@@ -65,5 +65,6 @@ try {
     exit();
 }catch (PDOException $e){
     echo $e->getMessage();
+    header("Location: ../view/carrinho.php");
     exit();
 }

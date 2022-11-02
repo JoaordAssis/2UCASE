@@ -7,7 +7,7 @@ use app\model\Manager;
 $manager = new Manager();
 
 if (empty($_GET['pd'])) {
-    header("Location: ./homepage.php?error-code?FR30");
+    header("Location: ./homepage.php?error-code=FR30");
     exit();
 }
 
@@ -50,12 +50,12 @@ $returnComentarios = $manager->selectWhere($paramComentario, $paramPostComentari
 
 <body id="body-margin">
     <main class="produto-page">
+
         <!-- Container Produto e valor -->
         <article class="container-produto">
             <section class="container-img-produto">
                 <!--       Imagem do Produto         -->
-                <img id="image-principal" src="<?= $returnProduto[0]['imagem_principal_produto'] ?>" alt="Capinha
-                flamengo">
+                <img id="image-principal" src="<?=$returnProduto[0]['imagem_principal_produto']?>" alt="<?= $returnProduto[0]['nome_produto'] ?>">
                 <!-- Carrossel -->
                 <div class="glide carousel-imgprod">
 
@@ -69,9 +69,8 @@ $returnComentarios = $manager->selectWhere($paramComentario, $paramPostComentari
                         <ul class="glide__slides img-carousel-btn">
 
                             <!--Imagem Principal-->
-                            <!-- TODO: Trocar imagem -->
                             <button id="btn-new-image">
-                                <img src="../assets/img/Time.png" onclick="imgChange(this)" alt="Capinha flamengo">
+                                <img src="<?= $returnProduto[0]['imagem_principal_produto'] ?>" onclick="imgChange(this)" alt="<?= $returnProduto[0]['nome_produto'] ?>">
                             </button>
 
                             <!--Inicio For-->
@@ -80,7 +79,7 @@ $returnComentarios = $manager->selectWhere($paramComentario, $paramPostComentari
                                 for ($i = 0, $iMax = count($returnImagemProduto); $i < $iMax; $i++) :
                             ?>
                                     <button id="btn-new-image">
-                                        <img src="<?= $returnImagemProduto[0]['link_img'] ?>" onclick="imgChange(this)" alt="<?= $returnImagemProduto[0]['nome_img'] ?>">
+                                        <img src="<?= $returnImagemProduto[$i]['link_img'] ?>" onclick="imgChange(this)" alt="<?= $returnImagemProduto[$i]['nome_img'] ?>">
                                     </button>
 
                             <?php
@@ -106,6 +105,32 @@ $returnComentarios = $manager->selectWhere($paramComentario, $paramPostComentari
 
                 <input type="hidden" name="idProduto" value="<?= $idProduto ?>">
 
+                <!-- BOTÃO DE FAVORITOS -->
+                <?php
+                //Não está logado
+                if (!isset($_SESSION['USER-ID'])) {
+                    ?>
+                    <button type="button" id="favorite-button" onclick="window.location.href='../controllers/ControllerCRUDFavorito.php?action=add&idProduto=<?= $idProduto ?>'">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                    <?php
+                } elseif (isset($_SESSION['USER-ID']) && count($returnFavoritos) > 0) {
+                    ?>
+                    <button type="button" id="favorite-button" onclick="window.location.href='../controllers/ControllerCRUDFavorito.php?action=delete&idProduto=<?= $idProduto ?>'">
+                        <img width="40" height="40" src="../assets/svg/coracao-icone.svg" alt="Favoritado">
+                    </button>
+                    <?php
+                } else {
+                    ?>
+
+                    <button type="button" id="favorite-button" onclick="window.location.href='../controllers/ControllerCRUDFavorito.php?action=add&idProduto=<?= $idProduto ?>'">
+                        <i class="fa-regular fa-heart fa-2x"></i>
+                    </button>
+
+                    <?php
+                }
+                ?>
+
                 <!-- Oferta Especial -->
                 <?php
                 if ($returnProduto[0]['categoria_special_produto'] === 'Promoções') :
@@ -116,32 +141,6 @@ $returnComentarios = $manager->selectWhere($paramComentario, $paramPostComentari
                     </span>
                 <?php
                 endif;
-                ?>
-
-                <!-- BOTÃO DE FAVORITOS -->
-                <?php
-                //Não está logado
-                if (!isset($_SESSION['USER-ID'])) {
-                ?>
-                    <button type="button" id="favorite-button" onclick="window.location.href='../controllers/ControllerCRUDFavorito.php?action=add&idProduto=<?= $idProduto ?>'">
-                        <i class="fa-regular fa-heart"></i>
-                    </button>
-                <?php
-                } elseif (isset($_SESSION['USER-ID']) && count($returnFavoritos) > 0) {
-                ?>
-                    <button type="button" id="favorite-button" onclick="window.location.href='../controllers/ControllerCRUDFavorito.php?action=delete&idProduto=<?= $idProduto ?>'">
-                        <img width="40" height="40" src="../assets/svg/coracao-icone.svg" alt="Favoritado">
-                    </button>
-                <?php
-                } else {
-                ?>
-
-                    <button type="button" id="favorite-button" onclick="window.location.href='../controllers/ControllerCRUDFavorito.php?action=add&idProduto=<?= $idProduto ?>'">
-                        <i class="fa-regular fa-heart fa-2x"></i>
-                    </button>
-
-                <?php
-                }
                 ?>
 
                 <!-- Nome do Produto -->
@@ -155,9 +154,8 @@ $returnComentarios = $manager->selectWhere($paramComentario, $paramPostComentari
                         <?php
                         if ($returnProduto[0]['categoria_special_produto'] === 'Promoções') :
                             //Exibir o preço antigo
-                            //TODO: Criar uma nova coluna para isso
                         ?>
-                            <p id="last-price">R$ 20,00</p>
+                            <p id="last-price">R$ <?= $returnProduto[0]['last_price_produto'] ?></p>
                         <?php
                         endif;
                         ?>
@@ -173,6 +171,7 @@ $returnComentarios = $manager->selectWhere($paramComentario, $paramPostComentari
                             <i class="fa-solid fa-star"></i>
                         </div>
 
+                        <!--Executar um count-->
                         <p>200 Avaliações</p>
                     </div>
                 </div>
@@ -241,6 +240,9 @@ $returnComentarios = $manager->selectWhere($paramComentario, $paramPostComentari
                         <button type="button" class="button-cep-calc" id="principal-button">Calcular</button>
                     </div>
                     <a target="_blank" href="https://www2.correios.com.br/sistemas/buscacep/buscaCep.cfm">Não sei meu CEP</a>
+                    <div id="container-error">
+                        <p id="error-exib"></p>
+                    </div>
 
                     <!--Exibir informações de prazo e valor-->
                     <div id="cep-info-sedex">
@@ -412,13 +414,14 @@ $returnComentarios = $manager->selectWhere($paramComentario, $paramPostComentari
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
 <script src="../assets/js/category.js"></script>
+<script src="../assets/js/error-handling.js"></script>
 <script defer src="../assets/js/produto.js"></script>
 
 
 <script>
     new Glide('.carousel-imgprod', {
-        type: 'carousel',
-        startAt: 0,
+        type: 'slide',
+        startAt: -1,
         perView: 4
 
     }).mount();

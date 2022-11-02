@@ -157,9 +157,6 @@ $menuReturn = $manager->listClient('adm_menu', 'id_menu');
                 <button id="favorito-button" onclick="window.location.href='./favoritos.php'">
                     <img src="../assets/svg/CoracaoFavoritos.svg" alt="Icone de favoritos" id="coracaoSVG" width="30" height="30"></img>
                 </button>
-                <button id="login-button" onclick="window.location.href='./login.php'">
-                    <img src="../assets/svg/Login.svg" alt="icone de login" id="login-icon" width="40" height="40"></img>
-                </button>
                 <?php
                 //START SESSION
                 //Verificando se existe sessão

@@ -270,15 +270,6 @@ $returnPromos = $manager->exibProducts('categoria_special_produto','Promoções'
 
     <!--MODAL DE ERRO-->
 
-    <div class="modal-error" id="modal-container">
-        <button id="close-modal">
-            <i class="fa-regular fa-xmark"></i>
-        </button>
-
-        <h3 id="error-msg">Erro:</h3>
-        <h3 id="sucess-msg">Sucesso:</h3>
-        <p id="handling-message">Erro efetuado com sucesso!</p>
-    </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
 <script src="../assets/js/homepage.js"></script>
