@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="FINALIZED: Sistema de busca">
-      <change afterPath="$PROJECT_DIR$/App/assets/js/error-handling.js" afterDir="false" />
+    <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="WORKING: Sistema de exibição de erros">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/assets/2UCASE.docx" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/2UCASE.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/model/Manager.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/model/Manager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/category.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/styles/reset.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/styles/reset.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/assets/js/error-handling.js" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/js/error-handling.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/assets/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/js/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/assets/styles/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/styles/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/assets/styles/reset.css" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/styles/reset.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/controllers/ControllerValidaLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controllers/ControllerValidaLogin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/view/homepage.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/homepage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/view/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/login.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +181,10 @@
       <workItem from="1667088658814" duration="140000" />
       <workItem from="1667249977738" duration="4550000" />
       <workItem from="1667263284107" duration="1001000" />
-      <workItem from="1667331112664" duration="3066000" />
+      <workItem from="1667331112664" duration="3516000" />
+      <workItem from="1667391516713" duration="1987000" />
+      <workItem from="1667398728856" duration="3756000" />
+      <workItem from="1667405908637" duration="6681000" />
     </task>
     <task id="LOCAL-00001" summary="Teste commit 09/10/2022">
       <created>1665346468595</created>
@@ -356,7 +361,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667259971541</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="WORKING: Sistema de exibição de erros">
+      <created>1667334461784</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1667334461784</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -403,6 +415,7 @@
     <MESSAGE value="FINALIZED: Sistema de favoritos" />
     <MESSAGE value="FINALIZED: Sistema de avaliação, pagina de pedidos do cliente e atualização cadastral. Faltar fazer o sistema de erro e o login social." />
     <MESSAGE value="FINALIZED: Sistema de busca" />
-    <option name="LAST_COMMIT_MESSAGE" value="FINALIZED: Sistema de busca" />
+    <MESSAGE value="WORKING: Sistema de exibição de erros" />
+    <option name="LAST_COMMIT_MESSAGE" value="WORKING: Sistema de exibição de erros" />
   </component>
 </project>

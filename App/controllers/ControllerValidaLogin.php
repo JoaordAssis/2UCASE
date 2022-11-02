@@ -19,7 +19,7 @@ if (!empty($_REQUEST['email-cpf']) && !empty($_REQUEST['senha-login'])) {
     //Criptografar Senha
     $senhaHash = $ferramentas->hash256($_REQUEST['senha-login']);
 
-    if ($antiSql === "0"){
+    if ($antiSql === 0){
         //Tentativa de SQL Injection
         session_destroy();
         header("Location: ../view/login.php?error-code=FR24");

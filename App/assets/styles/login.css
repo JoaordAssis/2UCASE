@@ -125,6 +125,23 @@
     border: none;
 }
 
+
+/* Error Handler */
+
+#container-error, #container-error-login{
+    display: none;
+    width: 100%;
+    background-color: #ffcccc;
+    padding: .5rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#error-exib, #error-exib-login{
+    font-size: 14px;
+    color: #ff0000;
+}
+
 @media (max-width: 1010px){
     .line{
         display: none;

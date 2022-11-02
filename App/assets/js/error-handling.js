@@ -28,6 +28,7 @@ let errors = {
     "FR30" : "Dados não recebidos corretamente, por favor tente novamente em alguns instantes!",
     "FR31" : "Falha ao criar a sua conta, tente novamente em alguns instantes!",
     "FR32" : "Falha ao armazenar o seu endereço, tente novamente em alguns instantes!",
+    "FR33" : "Verifique se o CEP foi digitado corretamente e clique novamente no botão",
     "FR50" : "Conta criada com sucesso.",
     "FR51" : "Arquivo enviado com sucesso.",
     "OA00" : "Erro de acesso.",
@@ -49,9 +50,14 @@ let errors = {
     "PG50" : "Produto adicionado ao seu carrinho com sucesso!"
 };
 
-
-
+let containerError = document.getElementById("container-error");
+let textError = document.getElementById("error-exib");
 let urlObject = new URL(window.location.href);
-let data = urlObject.searchParams.has('error-code');
+let dataError = urlObject.searchParams.has('error-code');
 
+if (dataError === true){
+    let errorGet = urlObject.searchParams.get('error-code');
+    containerError.style.display = 'block';
+    textError.innerText = errors[errorGet];
+}
 

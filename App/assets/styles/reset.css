@@ -221,3 +221,32 @@ ul, li{
    align-self: flex-start;
    margin: 0;
 }
+
+
+/* Error Handler */
+
+#container-error, #container-error-login{
+    display: none;
+    width: 100%;
+    background-color: #ffcccc;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#error-exib, #error-exib-login{
+    font-size: 14px;
+    color: #ff0000;
+}
+
+#close-error{
+    margin-right: 99%;
+    margin-bottom: 5px;
+    background-color: #ffcccc;
+    border: none;
+    width: 0;
+}
+
+#close-error i{
+    color: #ff0000;
+}

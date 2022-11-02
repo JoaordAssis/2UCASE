@@ -24,10 +24,14 @@ session_start();
                 <label for="senha">
                     <input type="text" required name="senha-login" id="input-login-senha" placeholder="Senha">
                 </label>
+                <div id="container-error-login">
+                    <p id="error-exib-login"></p>
+                </div>
+
                 <a href="./esqueceu-senha.php">Esqueceu sua senha?</a>
 
                 <button type="submit" id="principal-button">Entrar</button>
-                <p>Ou entre com suas redes sociais</p>
+                <p>Ou entre com as suas redes sociais</p>
                 <section class="social-media">
 
                     <button id="social" class="facebook">
@@ -71,6 +75,9 @@ session_start();
                     </label>
                 </div>
 
+                <div id="container-error">
+                    <p id="error-exib"></p>
+                </div>
 
                 <button type="submit" id="principal-button">Continuar</button>
 
