@@ -3,8 +3,7 @@
 session_start();
 
 if (empty($_REQUEST['search'])){
-    //Todo: Tratamento de erro
-    header("Location: ../view/homepage.php");
+    header("Location: ../view/homepage.php?error-code=PG02");
     exit();
 }
 
@@ -19,8 +18,7 @@ $searchQuery = $_REQUEST['search'];
 $filterSearch = $ferramentas->antiInjection($searchQuery);
 
 if ($filterSearch === 0){
-    //Todo: Tratamento de erro: Tentativa de injection
-    header("Location: ../view/homepage.php");
+    header("Location: ../view/homepage.php?error-code=FR24");
     exit();
 }
 

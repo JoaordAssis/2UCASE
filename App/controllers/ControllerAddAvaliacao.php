@@ -34,8 +34,7 @@ $cleanTitulo = $ferramentas->antiInjection($inputTitulo);
 $cleanDesc = $ferramentas->antiInjection($descAvaliacao);
 
 if ($cleanTitulo === 0 || $cleanDesc === 0){
-    //TODO: Tentativa de Injection
-    header("Location: ../view/meus-pedidos.php?error-code=FR34");
+    header("Location: ../view/meus-pedidos.php?error-code=FR24");
     exit();
 }
 
@@ -48,12 +47,11 @@ $dadosAvaliacao['status'] = 1;
 
 try {
     $insertAvaliacao = $manager->insertClient('user_avaliacao', $dadosAvaliacao);
-    //TODO: Sucess Code
-    header("Location: ../view/meus-pedidos.php?sucess-code=FR34");
+    header("Location: ../view/meus-pedidos.php?sucess-code=PG51");
     exit();
 
 }catch (PDOException $e){
     echo $e->getCode();
-    header("Location: ../view/meus-pedidos.php?error-code=FR34");
+    header("Location: ../view/meus-pedidos.php?error-code=PG03");
     exit();
 }

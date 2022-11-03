@@ -29,8 +29,10 @@ let errors = {
     "FR31" : "Falha ao criar a sua conta, tente novamente em alguns instantes!",
     "FR32" : "Falha ao armazenar o seu endereço, tente novamente em alguns instantes!",
     "FR33" : "Verifique se o CEP foi digitado corretamente e clique novamente no botão",
+    "FR34" : "Não foi possível atualizar as suas informações, tente novamente em alguns instantes!",
     "FR50" : "Conta criada com sucesso.",
     "FR51" : "Arquivo enviado com sucesso.",
+    "FR52" : "Informações atualizadas com sucesso!",
     "OA00" : "Erro de acesso.",
     "OA01" : "Não há autorização para acessar a área solicitada.",
     "OA02" : "Erro: não foi possível efetuar o login. Tente novamente em alguns instantes",
@@ -47,7 +49,10 @@ let errors = {
     "CP53" : "Produto atualizado com sucesso!",
     "PG01" : "Pagina não encontrada.",
     "PG02" : "Não foi possivel encontrar os resultados desejados!.",
-    "PG50" : "Produto adicionado ao seu carrinho com sucesso!"
+    "PG03" : "Não foi possivel avaliar o produto, tente novamente em alguns instantes!.",
+    "PG04" : "Cupom inválido, verifique se o digitou corretamente ou ele é valido para esse produto!",
+    "PG50" : "Produto adicionado ao seu carrinho com sucesso!",
+    "PG51" : "Produto avaliado com sucesso!",
 };
 
 let containerError = document.getElementById("container-error");

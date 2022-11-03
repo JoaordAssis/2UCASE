@@ -60,13 +60,11 @@ if ($verifyEmail !== false){
 
     try {
         $updateCliente = $manager->updateClient('user_cliente', $dadosUsuario, $_SESSION['USER-ID'], 'id_cliente');
-        //TODO: Codigo de sucesso
-        header("Location: ../view/my-info.php");
+        header("Location: ../view/my-info.php?sucess-code=FR52");
         exit();
     }catch (PDOException $e){
         echo $e->getCode();
-        //TODO: Codigo de Erro
-        header("Location: ../view/my-info.php");
+        header("Location: ../view/my-info.php?error-code=FR34");
         exit();
     }
 

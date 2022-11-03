@@ -1,30 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="FINALIZED: Sistema de exibição de erros">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/controllers/ControllerAddEndereco.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controllers/ControllerAddEndereco.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/controllers/ControllerAddUsuarioUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controllers/ControllerAddUsuarioUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/controllers/ControllerAddprodutoCarrinho.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controllers/ControllerAddprodutoCarrinho.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/controllers/ControllerPagamento.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controllers/ControllerPagamento.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/controllers/ControllerUpdateCarrinho.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controllers/ControllerUpdateCarrinho.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/model/Clientes.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/model/Clientes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/carrinho.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/carrinho.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/entrega.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/entrega.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/homepage.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/homepage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/meus-pedidos.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/meus-pedidos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/navbar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/pagamento.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/pagamento.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/produto.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/produto.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm/controller/ControllerAddProdutoADM.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/controller/ControllerAddProdutoADM.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm/controller/ControllerProdutoADM.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/controller/ControllerProdutoADM.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm/model/Manager.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/model/Manager.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm/view/CRUDEditProduto.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/view/CRUDEditProduto.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/js/error-handling.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/js/error-handling.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/ControllerSearchBar.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/ControllerSearchBar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/ControllerUpdateCliente.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/ControllerUpdateCliente.php" afterDir="false" />
-    </list>
+    <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="DEBUG: Executando o debug das paginas de produto, adição de produtos, edição de produtos e exibição de pedidos. O site pode apresentar erros sinistros!" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -200,7 +177,7 @@
       <workItem from="1667398728856" duration="3756000" />
       <workItem from="1667405908637" duration="6972000" />
       <workItem from="1667425920805" duration="4389000" />
-      <workItem from="1667430629511" duration="520000" />
+      <workItem from="1667430629511" duration="1297000" />
     </task>
     <task id="LOCAL-00001" summary="Teste commit 09/10/2022">
       <created>1665346468595</created>
@@ -391,7 +368,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667414985098</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="DEBUG: Executando o debug das paginas de produto, adição de produtos, edição de produtos e exibição de pedidos. O site pode apresentar erros sinistros!">
+      <created>1667431432680</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1667431432680</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -426,7 +410,6 @@
       <path value="$PROJECT_DIR$/VilicapasProjeto" />
       <path value="$PROJECT_DIR$/../VilicapasProjetos" />
     </ignored-roots>
-    <MESSAGE value="AJUSTED: Realizando os ajustes contidos na lista de afazeres; Paginas: Payment, Contact, Produto." />
     <MESSAGE value="Modificaões basicas" />
     <MESSAGE value="REFATORED: Ajustes e formatações de inputs; carrinho.php, Login.js, login.php,&#10;pagamento.php, Payment.js." />
     <MESSAGE value="CREATED: Sistema de prazos e valores de frete" />
@@ -451,6 +434,7 @@
     <MESSAGE value="FINALIZED: Sistema de busca" />
     <MESSAGE value="WORKING: Sistema de exibição de erros" />
     <MESSAGE value="FINALIZED: Sistema de exibição de erros" />
-    <option name="LAST_COMMIT_MESSAGE" value="FINALIZED: Sistema de exibição de erros" />
+    <MESSAGE value="DEBUG: Executando o debug das paginas de produto, adição de produtos, edição de produtos e exibição de pedidos. O site pode apresentar erros sinistros!" />
+    <option name="LAST_COMMIT_MESSAGE" value="DEBUG: Executando o debug das paginas de produto, adição de produtos, edição de produtos e exibição de pedidos. O site pode apresentar erros sinistros!" />
   </component>
 </project>
