@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="DEBUG: Executando o debug das paginas de produto, adição de produtos, edição de produtos e exibição de pedidos. O site pode apresentar erros sinistros!" />
+    <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="AJUSTED: exibição do carrossel de produtos no carrinho" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -178,6 +178,7 @@
       <workItem from="1667405908637" duration="6972000" />
       <workItem from="1667425920805" duration="4389000" />
       <workItem from="1667430629511" duration="1297000" />
+      <workItem from="1667435898742" duration="841000" />
     </task>
     <task id="LOCAL-00001" summary="Teste commit 09/10/2022">
       <created>1665346468595</created>
@@ -375,7 +376,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667431432680</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="AJUSTED: ajustando o script de criação do banco de dados. Dificilmente sofrerá novas alterações.">
+      <created>1667436242265</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1667436242265</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -410,8 +418,6 @@
       <path value="$PROJECT_DIR$/VilicapasProjeto" />
       <path value="$PROJECT_DIR$/../VilicapasProjetos" />
     </ignored-roots>
-    <MESSAGE value="Modificaões basicas" />
-    <MESSAGE value="REFATORED: Ajustes e formatações de inputs; carrinho.php, Login.js, login.php,&#10;pagamento.php, Payment.js." />
     <MESSAGE value="CREATED: Sistema de prazos e valores de frete" />
     <MESSAGE value="WORKING: Sistema de prazos e valores de frete" />
     <MESSAGE value="FINALIZED: Sistema de busca de valor e prazo por CEP, product page" />
@@ -435,6 +441,8 @@
     <MESSAGE value="WORKING: Sistema de exibição de erros" />
     <MESSAGE value="FINALIZED: Sistema de exibição de erros" />
     <MESSAGE value="DEBUG: Executando o debug das paginas de produto, adição de produtos, edição de produtos e exibição de pedidos. O site pode apresentar erros sinistros!" />
-    <option name="LAST_COMMIT_MESSAGE" value="DEBUG: Executando o debug das paginas de produto, adição de produtos, edição de produtos e exibição de pedidos. O site pode apresentar erros sinistros!" />
+    <MESSAGE value="AJUSTED: ajustando o script de criação do banco de dados. Dificilmente sofrerá novas alterações." />
+    <MESSAGE value="AJUSTED: exibição do carrossel de produtos no carrinho" />
+    <option name="LAST_COMMIT_MESSAGE" value="AJUSTED: exibição do carrossel de produtos no carrinho" />
   </component>
 </project>
