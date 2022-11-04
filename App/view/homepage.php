@@ -14,6 +14,8 @@ $returnVendidos = $manager->exibProducts('categoria_special_produto','Mais Vendi
 
 //Promoções
 $returnPromos = $manager->exibProducts('categoria_special_produto','Promoções', 'preco_produto ASC',5);
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

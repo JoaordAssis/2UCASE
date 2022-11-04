@@ -39,13 +39,38 @@ let carrosselProdFirst = new Glide(carrosselProd, {
 
 carrosselProdFirst.mount();
 
-// Terceiro carrosel Produtos mais curtidos
 
-let carrosselProdLikes = new Glide(carrossel3Like, {
+// Quarto carrosel Produtos mais vendidos
+
+let carrosselProdSell = new Glide(carrossel4Sell, {
   type: "carousel",
   startAt: 0,
   perView: 4,
-  autoplay: 1700,
+  autoplay: 1500,
+  gap: 2,
+  breakpoints: {
+    800: {
+      perView: 3,
+    },
+    600: {
+      perView: 2,
+    },
+    500: {
+      perView: 1,
+    },
+  },
+});
+
+carrosselProdSell.mount();
+
+
+// Terceiro carrosel Produtos mais curtidos
+
+let carrosselProdLikes =  new Glide(carrossel3Like, {
+  type: "carousel",
+  startAt: 0,
+  perView: 4,
+  autoplay: 1500,
   gap: 2,
   breakpoints: {
     800: {
@@ -63,25 +88,3 @@ let carrosselProdLikes = new Glide(carrossel3Like, {
 carrosselProdLikes.mount();
 
 
-// Quarto carrosel Produtos mais vendidos
-
-let carrosselProdSell = new Glide(carrossel4Sell, {
-  type: "carousel",
-  startAt: 0,
-  perView: 4,
-  autoplay: 2000,
-  gap: 2,
-  breakpoints: {
-    800: {
-      perView: 3,
-    },
-    600: {
-      perView: 2,
-    },
-    500: {
-      perView: 1,
-    },
-  },
-});
-
-carrosselProdSell.mount();

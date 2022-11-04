@@ -22,7 +22,8 @@ if(count($selectCarrinhoVerify) > 0){
 }
 
 
-
+//Mais Vendidos
+$returnVendidos = $manager->exibProducts('categoria_special_produto','Mais Vendidos', 'preco_produto',5);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -185,15 +186,25 @@ if(count($selectCarrinhoVerify) > 0){
                 <div class="glide__track" data-glide-el="track">
 
                     <ul class="glide__slides">
-                        <?php for ($i = 0; $i < 6; $i++) : ?>
+                        <?php
+                        if (count($returnVendidos) > 0):
+                        ?>
 
-                            <a class="produto-box glide__slide" href="./produto.php">
-                                <img src="../assets/img/Time.png" alt="Capinha Flamengo">
-                                <h4>Capinha 2022 - Flamengo</h4>
-                                <p>R$ 23,59</p>
-                            </a>
+                        <ul class="glide__slides">
+                            <?php
+                            for ($i = 0, $iMax = count($returnVendidos); $i < $iMax; $i++) :
+                                ?>
 
-                        <?php endfor; ?>
+                                <a class="produto-box glide__slide" href="./produto.php?pd=<?=$returnVendidos[$i]['id_produto']?>">
+                                    <img src="<?=$returnVendidos[$i]['imagem_principal_produto']?>" alt="<?=$returnVendidos[$i]['nome_produto']?>">
+                                    <h4><?=$returnVendidos[$i]['nome_produto']?></h4>
+                                    <p>R$ <?=$returnVendidos[$i]['preco_produto']?></p>
+                                </a>
+
+                        <?php
+                            endfor;
+                        endif;
+                        ?>
                     </ul>
                 </div>
 

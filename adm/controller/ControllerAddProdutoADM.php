@@ -35,7 +35,6 @@ if (isset($_REQUEST['nome_produto']) && $_REQUEST['nome_produto'] !== '') :
     $dados["peso_produto"] = $_REQUEST["peso_produto"];
     $dados["cod_produto"] = $_REQUEST["cod_produto"];
     $dados["preco_produto"] = $precoProdutoReplace;
-    //TODO: BUG ao add produto na classe promoções ele nao aparece
     $dados["descricao_produto"] = $_REQUEST["descricao_produto"];
     $imgRetrieveData = $manager->imgUpload('imagem_principal_produto', $_REQUEST["nome_produto"]);
     $dados["imagem_principal_produto"] = $imgRetrieveData[0];

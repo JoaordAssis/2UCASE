@@ -66,6 +66,7 @@ if (isset($_REQUEST['action'], $_REQUEST['id']) && $_REQUEST['action'] !== '' &&
             <?php
         }
 
+        $precoProdutoReplace = str_replace(',', '.', $_REQUEST["preco_produto"]);
 
         $dadosProdutoADM['id_modelo_celular'] = $_REQUEST['marca_celular'];
         $dadosProdutoADM['id_categoria'] = $_REQUEST['categoria_produto'];
@@ -73,7 +74,7 @@ if (isset($_REQUEST['action'], $_REQUEST['id']) && $_REQUEST['action'] !== '' &&
         //Criar inputs para esses dados
         $dados["peso_produto"] = $_REQUEST["peso_produto"];
         $dados["cod_produto"] = $_REQUEST["cod_produto"];
-        $dadosProdutoADM['preco_produto'] = $_REQUEST['preco_produto'];
+        $dadosProdutoADM['preco_produto'] = $precoProdutoReplace;
         $dadosProdutoADM['descricao_produto'] = $_REQUEST['descricao_produto'];
         $dadosProdutoADM['quantidade_produto'] = $_REQUEST['quantidade_produto'];
         $dadosProdutoADM['garantias_produto'] = $_REQUEST['garantias_produto'];
