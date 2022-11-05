@@ -22,6 +22,7 @@ if(count($selectCarrinhoVerify) > 0){
 }
 
 
+
 //Mais Vendidos
 $returnVendidos = $manager->exibProducts('categoria_special_produto','Mais Vendidos', 'preco_produto',5);
 ?>
@@ -59,14 +60,20 @@ $returnVendidos = $manager->exibProducts('categoria_special_produto','Mais Vendi
                             $getInfoProduto = $manager->getInfo('user_produto', 'id_produto', $checkProdCarrinho[$i]['id_produto']);
                             $returnModelProduto = $manager->getInfo('user_mod_celular', 'id_modelo_celular', $getInfoProduto[0]['id_modelo_celular']);
                             for ($j = 0, $jMax = count($getInfoProduto); $j < $jMax; $j++) :
+
+                                //Pegar o produto do carrinho do cliente
+                                $paramsSelectProdutoCarrinho = ['id_produto', 'id_carrinho'];
+                                $paramsPostSelectProduto = [$getInfoProduto[$j]['id_produto'], $selectCarrinhoVerify[0]['id_carrinho']];
+
+                                $checkProd = $manager->selectWhere($paramsSelectProdutoCarrinho, $paramsPostSelectProduto, 'produto_carrinho');
                             ?>
                             <section class="prod-carrinho">
                                 <form method="POST" action="../controllers/ControllerDeleteCarrinho.php?action=excluir" class="fechar">
-                                    <input type="hidden" name="pd" value="<?=$getInfoProduto[$j]['id_produto']?>">
+                                    <input type="hidden" name="pc" value="<?=$checkProd[0]['id_produto_carrinho']?>">
                                     <button type="submit" id="fechar-btn"><i class="fa-regular fa-xmark fa-1x"></i></button>
                                 </form>
                                 <div class="produto-info">
-                                    <img src="../assets/./img/./Time.png" alt="Alt dinâmico">
+                                    <img src="<?=$getInfoProduto[$j]['imagem_principal_produto']?>" alt="Alt dinâmico">
                                     <div class="titles-column">
                                         <h4><?=$getInfoProduto[$j]['nome_produto']?></h4>
                                         <p id="p-opaco"><?=$returnModelProduto[$j]['modelo_celular']?></p>

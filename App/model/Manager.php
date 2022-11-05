@@ -254,4 +254,5 @@ class Manager extends Conexao {
         $cmd = $this->pdo->query($sql);
         return $cmd->fetchAll(PDO::FETCH_ASSOC);
     }
+
 }

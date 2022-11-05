@@ -21,13 +21,8 @@ $quantProd = $_REQUEST['quantProd'];
 $manager = new Manager();
 $ferramentas = new Ferramentas();
 
-if ($quantProd === '0'){
-    //Deletar Produto
-    header("Location: ./ControllerDeleteCarrinho.php?action=change&pd=$produtoId");
-    exit();
-}
 
-if (empty($quantProd) && !isset($_REQUEST['cupom'])){
+if (!isset($_REQUEST['quantProd'])){
     //Falha no recebimento
     header("Location: ../view/produto.php?error-code=FR30");
     exit();
@@ -46,6 +41,13 @@ $paramsPostSelectProduto = [$produtoId, $selectCarrinhoVerify[0]['id_carrinho']]
 $checkProd = $manager->selectWhere($paramsSelectProdutoCarrinho, $paramsPostSelectProduto, 'produto_carrinho');
 $getInfoProduto = $manager->getInfo('user_produto', 'id_produto', $produtoId);
 
+//Caso a quantidade do produto seja 0; faça a exclusão dele
+if ($quantProd === '0'){
+    //Deletar Produto
+    $produtoCarrinho = $checkProd[0]['id_produto_carrinho'];
+    header("Location: ./ControllerDeleteCarrinho.php?action=change&pc=$produtoCarrinho");
+    exit();
+}
 
 //ADICIONANDO O CUPOM
 

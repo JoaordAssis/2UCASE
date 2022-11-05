@@ -9,7 +9,7 @@ if (empty($_SESSION['USER-ID'])){
     exit();
 }
 
-if (empty($_REQUEST['pd'])){
+if (empty($_REQUEST['pc'])){
     //Produto não existente, BUG do site ou falha de segurança
     header("Location: ../view/produto.php?error-code=FR30");
     exit();
@@ -18,10 +18,10 @@ if (empty($_REQUEST['pd'])){
 $manager = new Manager();
 
 if (isset($_REQUEST['action'])){
-    $produtoId = $_REQUEST['pd'];
+    $produtoId = $_REQUEST['pc'];
 
     try {
-        $deleteFrom = $manager->deleteClient('produto_carrinho', 'id_produto', $produtoId);
+        $deleteFrom = $manager->deleteClient('produto_carrinho', 'id_produto_carrinho', $produtoId);
     }catch (PDOException $e){
         echo $e->getCode();
         header("Location: ../view/carrinho.php?error-code=CP03");
