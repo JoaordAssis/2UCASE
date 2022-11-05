@@ -26,10 +26,10 @@ $columnSearch = ['nome_produto ', 'categoria_special_produto '];
 $searchLike = $manager->selectLike('user_produto', $columnSearch, $filterSearch);
 
 if (count($searchLike) > 0){
-    header("Location: ../view/category.php?search=$filterSearch&category=todos");
+    header("Location: ../view/search.php?search=$filterSearch&category=todos");
     exit();
 
 }
 
-header("Location: ../view/category.php?search=invalid&category=any");
+header("Location: ../view/search.php?search=invalid&category=any");
 exit();

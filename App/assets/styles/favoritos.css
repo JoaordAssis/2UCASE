@@ -8,6 +8,7 @@
     margin-top: 5rem;
     gap: 4rem;
     padding: 1rem;
+    margin-bottom: 35rem;
 }
 
 .container-favoritos h1{
@@ -29,4 +30,8 @@
 #favorite-button{
     width: 100%;
     margin: .8rem auto 0;
+}
+
+#title-orange{
+    color: var(--cor-principal);
 }

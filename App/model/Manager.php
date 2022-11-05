@@ -218,7 +218,7 @@ class Manager extends Conexao {
 
 
     public function selectCategoriaOrder($tabela, $column, $order, $categoria, $postCategoria): bool|array {
-        $sql = "SELECT * FROM $tabela WHERE $categoria = $postCategoria ORDER BY $column $order";
+        $sql = "SELECT * FROM $tabela WHERE $categoria = $postCategoria && status = 1 ORDER BY $column $order";
 
         $cmd = $this->pdo->query($sql);
         return $cmd->fetchAll(PDO::FETCH_ASSOC);

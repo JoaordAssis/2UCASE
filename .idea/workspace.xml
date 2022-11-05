@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="AJUSTED: Bug de todos os itens na tabela produto_carrinho sumindo ao apagar um produto do carrinho">
-      <change afterPath="$PROJECT_DIR$/App/controllers/ControllerInfoEndereco.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/view/add-endereco.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/view/search.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="AJUSTED: Correções minimas de bugs e ajustes do front">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/assets/js/error-handling.js" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/js/error-handling.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/assets/styles/entrega.css" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/styles/entrega.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/controllers/ControllerAddEndereco.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controllers/ControllerAddEndereco.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/controllers/ControllerUpdateCarrinho.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controllers/ControllerUpdateCarrinho.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/carrinho.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/carrinho.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/category.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/entrega.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/entrega.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/assets/styles/category.css" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/styles/category.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/assets/styles/favoritos.css" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/styles/favoritos.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/assets/styles/reset.css" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/styles/reset.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/controllers/ControllerSearchBar.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controllers/ControllerSearchBar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/model/Manager.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/model/Manager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/view/favoritos.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/favoritos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/view/homepage.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/homepage.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,7 +200,9 @@
       <workItem from="1667430629511" duration="1297000" />
       <workItem from="1667525734280" duration="58000" />
       <workItem from="1667663840884" duration="4005000" />
-      <workItem from="1667674586312" duration="2832000" />
+      <workItem from="1667674586312" duration="3125000" />
+      <workItem from="1667679474841" duration="925000" />
+      <workItem from="1667681503364" duration="2656000" />
     </task>
     <task id="LOCAL-00001" summary="Teste commit 09/10/2022">
       <created>1665346468595</created>
@@ -423,7 +421,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667670825667</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="AJUSTED: Correções minimas de bugs e ajustes do front">
+      <created>1667677723080</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1667677723080</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -458,7 +463,6 @@
       <path value="$PROJECT_DIR$/VilicapasProjeto" />
       <path value="$PROJECT_DIR$/../VilicapasProjetos" />
     </ignored-roots>
-    <MESSAGE value="CREATED: Sistema de prazos e valores de frete" />
     <MESSAGE value="WORKING: Sistema de prazos e valores de frete" />
     <MESSAGE value="FINALIZED: Sistema de busca de valor e prazo por CEP, product page" />
     <MESSAGE value="REFATORED: Cards de categoria na homepage e mudança das imagens" />
@@ -483,6 +487,7 @@
     <MESSAGE value="DEBUG: Executando o debug das paginas de produto, adição de produtos, edição de produtos e exibição de pedidos. O site pode apresentar erros sinistros!" />
     <MESSAGE value="AJUSTED: Bug do produto na categoria promoção não aparecendo" />
     <MESSAGE value="AJUSTED: Bug de todos os itens na tabela produto_carrinho sumindo ao apagar um produto do carrinho" />
-    <option name="LAST_COMMIT_MESSAGE" value="AJUSTED: Bug de todos os itens na tabela produto_carrinho sumindo ao apagar um produto do carrinho" />
+    <MESSAGE value="AJUSTED: Correções minimas de bugs e ajustes do front" />
+    <option name="LAST_COMMIT_MESSAGE" value="AJUSTED: Correções minimas de bugs e ajustes do front" />
   </component>
 </project>

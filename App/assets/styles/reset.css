@@ -38,6 +38,8 @@ footer a:hover, header a:hover:not(#logo-site a, #first-link) {
 }
 
 
+
+
 /* Variaveis de Cor */
 
 :root{
@@ -249,4 +251,12 @@ ul, li{
 
 #close-error i{
     color: #ff0000;
+}
+
+
+/* Glide style */
+
+.glide__arrow:not(.glide-arrow-home){
+    background-color: #fff;
+    border: none;
 }

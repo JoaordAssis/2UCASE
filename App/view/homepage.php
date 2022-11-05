@@ -39,7 +39,7 @@ $returnPromos = $manager->exibProducts('categoria_special_produto','Promoções'
                 ?>
                 <section class="glide carrossel-container-box">
                     <div class="glide__arrows left" data-glide-el="controls">
-                        <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+                        <button class="glide__arrow glide__arrow--left glide-arrow-home" data-glide-dir="<"> <i class="fa-solid fa-angle-left fa-2x"></i> </button>
                     </div>
                     <div class="glide__track" data-glide-el="track">
 
@@ -74,7 +74,7 @@ $returnPromos = $manager->exibProducts('categoria_special_produto','Promoções'
                     </div>
 
                     <div class="glide__arrows right" data-glide-el="controls">
-                        <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+                        <button class="glide__arrow glide__arrow--right glide-arrow-home" data-glide-dir=">"> <i class="fa-solid fa-angle-right fa-2x"></i> </button>
                     </div>
                 </section>
 

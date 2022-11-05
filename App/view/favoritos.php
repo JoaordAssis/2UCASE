@@ -30,7 +30,7 @@ $returnFavoritos = $manager->selectWhere($paramFavorito, $paramPostFavorito, 'us
 
 <body id="body-margin">
     <main class="container-favoritos">
-        <h1>Seus Favoritos</h1>
+        <h1 id="title-orange">Seus Favoritos</h1>
 
         <section class="container-produtos">
             <?php
@@ -62,5 +62,7 @@ $returnFavoritos = $manager->selectWhere($paramFavorito, $paramPostFavorito, 'us
         </section>
     </main>
 </body>
+<!-- Footer -->
+<?php require_once "./footer.php"; ?>
 
 </html>
