@@ -12,7 +12,7 @@ if (empty($_SESSION['USER-ID'])){
 
 if (empty($_REQUEST['pd'])){
     //Produto não existente, BUG do site ou falha de segurança
-    header("Location: ../view/produto.php?error-code=FR30");
+    header("Location: ../view/carrinho.php?error-code=FR30");
     exit();
 }
 
@@ -21,12 +21,6 @@ $quantProd = $_REQUEST['quantProd'];
 $manager = new Manager();
 $ferramentas = new Ferramentas();
 
-
-if (!isset($_REQUEST['quantProd'])){
-    //Falha no recebimento
-    header("Location: ../view/produto.php?error-code=FR30");
-    exit();
-}
 
 
 //Pegar o carrinho do cliente
@@ -57,7 +51,7 @@ if (isset($_REQUEST['cupom'])){
     $checkProdCarrinho = $manager->selectWhere($produtoParams, $produtoPostparams, 'produto_carrinho');
 
     $checkProdProd = $manager->getInfo('user_produto', 'id_produto', $produtoId);
-    $returnCupom = $manager->cupomSelect('codigo_cupom', 'CARENTE45');
+    $returnCupom = $manager->cupomSelect('codigo_cupom', $_REQUEST['cupom']);
 
 
     if ($returnCupom[0]['id_categoria'] === $checkProdProd[0]['id_categoria'] && $checkProdCarrinho[0]['used_cupom'] === 0){

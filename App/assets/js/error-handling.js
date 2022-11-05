@@ -50,7 +50,7 @@ let errors = {
     "PG01" : "Pagina não encontrada.",
     "PG02" : "Não foi possivel encontrar os resultados desejados!.",
     "PG03" : "Não foi possivel avaliar o produto, tente novamente em alguns instantes!.",
-    "PG04" : "Cupom inválido, verifique se o digitou corretamente ou ele é valido para esse produto!",
+    "PG04" : "Cupom inválido, verifique se o digitou corretamente ou se ele é valido para esse produto!",
     "PG50" : "Produto adicionado ao seu carrinho com sucesso!",
     "PG51" : "Produto avaliado com sucesso!",
 };

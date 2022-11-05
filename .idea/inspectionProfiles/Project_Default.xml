@@ -6,7 +6,7 @@
         <language minSize="89" name="HTML" />
         <language minSize="13" name="Style Sheets" />
         <language minSize="166" name="JavaScript" />
-        <language minSize="156" name="PHP" />
+        <language minSize="314" name="PHP" />
       </Languages>
     </inspection_tool>
     <inspection_tool class="ForgottenDebugOutputInspection" enabled="true" level="ERROR" enabled_by_default="true">

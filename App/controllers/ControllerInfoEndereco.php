@@ -14,22 +14,6 @@ use app\model\Ferramentas;
 
 $manager = new Manager();
 $ferramentas = new Ferramentas();
-$valorFrete = $_REQUEST['frete'];
-$idCarrinho = $_REQUEST['id_carrinho'];
-
-//Chave 0 é o Valor do frete
-//Chave 1 é o Codigo do frete
-$explodeCep = explode(" ", $valorFrete);
-
-$replaceValue = str_replace(",", ".", $explodeCep[0]);
-$valueFrete = (float)($replaceValue);
-$codigoFrete = $explodeCep[1];
-
-if (empty($valueFrete)) {
-    //Não recebido o valor frete
-    header("Location: ../view/entrega.php?error-code=FR33&carrinho=$idCarrinho");
-    exit();
-}
 
 $inputEntrega['id_cliente'] = $_SESSION['USER-ID'];
 $inputEntrega['logradouro_cliente'] = $_REQUEST['logradouro'];
@@ -53,18 +37,16 @@ $injectionCheckComp = $ferramentas->antiInjection($inputEntrega['complemento_cli
 if ($injectionCheckBairro === 0 || $injectionCheckCidade === 0 || $injectionCheckLog === 0
     || $injectionCheckNomeR === 0 || $injectionCheckRef === 0 || $injectionCheckComp === 0) {
     //Tentativa de Injection
-    header("Location: ../view/entrega.php?error-code=FR24&carrinho=$idCarrinho");
+    header("Location: ../view/my-info.php?error-code=FR24");
     exit();
 }
 
 try {
     $insertEndereco = $manager->insertClient('user_endereco_cliente', $inputEntrega);
-    $returnEndereco = $manager->lastInsertId('user_endereco_cliente', 'id_endereco');
-    $idEntrega = $returnEndereco['id_endereco'];
-    header("Location: ../view/pagamento.php?frete=$valueFrete&id_endereco=$idEntrega&id_carrinho=$idCarrinho&codFrete=$codigoFrete");
+    header("Location: ../view/my-info.php");
     exit();
 }catch (PDOException $e){
-    echo $e->getMessage();
-    header("Location: ../view/carrinho.php");
+    echo $e->getCode();
+    header("Location: ../view/my-info.php?error-code=FR00");
     exit();
 }

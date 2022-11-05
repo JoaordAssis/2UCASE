@@ -5,14 +5,26 @@ require_once __DIR__ . "/../../vendor/autoload.php";
 use app\model\Manager;
 
 if (empty($_GET['category'])){
-    //Criar uma nova pagina pra isso
+    //Criar uma pagina para isso
     header("Location: ./homepage.php");
 }
+
 $manager = new Manager();
 $category = $_REQUEST['category'];
-$returnCategory = $manager->selectWhere(['nome_categoria'], [$category], 'user_categoria');
 
-$returnProdutos = $manager->selectWhere(['id_categoria', 'status'], [$returnCategory[0]['id_categoria'], 1], 'user_produto');
+
+//Select Like
+if (!empty($_REQUEST['search']) && $_REQUEST['category'] === 'todos'){
+
+    $searchQuery = $_REQUEST['search'];
+    $columnSearch = ['nome_produto ', 'categoria_special_produto '];
+    $returnCategory = strtoupper($searchQuery);
+    $returnProdutos =$manager->selectLike('user_produto', $columnSearch, $searchQuery);
+
+}else{
+    $returnCategory = $manager->selectWhere(['nome_categoria'], [$category], 'user_categoria');
+    $returnProdutos = $manager->selectWhere(['id_categoria'], [$returnCategory[0]['id_categoria']], 'user_produto');
+}
 
 
 //Select por relevancia e preço
@@ -51,14 +63,32 @@ if (!empty($_GET['selectOrdem'])) {
 <body id="body-margin">
 <main class="category-container">
     <div class="image-container">
-        <img src="<?=$returnCategory[0]['img_categoria']?>" alt="<?=$returnCategory[0]['nome_categoria']?>" id="image-category">
+        <?php
+        if (is_array($returnCategory)):
+            ?>
+            <img src="<?=$returnCategory[0]['img_categoria']?>" alt="<?=$returnCategory[0]['nome_categoria']?>" id="image-category">
+        <?php
+        endif;
+        ?>
     </div>
 
     <article class="filters-category">
         <section class="filtros-path">
             <div class="title-filtros">
-                <h2>Time</h2>
-                <p>HOME / CAPINHAS /<span id="last-path"><?=strtoupper($returnCategory[0]['nome_categoria'])?></span></p>
+                <h2><?=strtoupper($_REQUEST['category'])?></h2>
+                <p>HOME / CAPINHAS /
+                    <span id="last-path">
+                            <?php
+                            if ($_REQUEST['search'] === 'invalid'):
+                                echo "";
+                            else:
+                                ?>
+                                <?=is_array($returnCategory) ? $returnCategory[0]['nome_categoria'] : $returnCategory?>
+                            <?php
+                            endif;
+                            ?>
+                        </span>
+                </p>
             </div>
 
             <div class="filters-container row-product-container">
@@ -101,7 +131,6 @@ if (!empty($_GET['selectOrdem'])) {
                         </div>
                     </div>
                 </div>
-
         </section>
 
 
@@ -116,7 +145,7 @@ if (!empty($_GET['selectOrdem'])) {
                 </select>
             </div>
             <?php
-            if (count($returnProdutos) > 0):
+            if ($_REQUEST['search'] !== 'invalid' && count($returnProdutos) > 0):
                 ?>
 
                 <div class="product-container">
@@ -131,6 +160,12 @@ if (!empty($_GET['selectOrdem'])) {
                     <?php endfor; ?>
                 </div>
 
+            <?php
+            else:
+                ?>
+                <div class="product-container">
+                    <h1>Nenhum produto foi encontrado!</h1>
+                </div>
             <?php
             endif;
             ?>

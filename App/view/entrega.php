@@ -83,8 +83,7 @@ $idCarrinho = $_REQUEST['carrinho'];
                     <div class="number-container">
 
                         <label for="numero">
-                            <!--Todo: Formatar o valor do input numero-->
-                            <input type="text" name="numero" id="input-entrega" placeholder="Número">
+                            <input type="text" data-js="number" name="numero" id="input-entrega" placeholder="Número">
                         </label>
 
                         <label for="complemento">

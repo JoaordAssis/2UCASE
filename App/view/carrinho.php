@@ -24,7 +24,7 @@ if(count($selectCarrinhoVerify) > 0){
 
 
 //Mais Vendidos
-$returnVendidos = $manager->exibProducts('categoria_special_produto','Mais Vendidos', 'preco_produto',5);
+$returnVendidos = $manager->exibProducts('categoria_special_produto','Promoções', 'preco_produto',5);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -70,7 +70,7 @@ $returnVendidos = $manager->exibProducts('categoria_special_produto','Mais Vendi
                             <section class="prod-carrinho">
                                 <form method="POST" action="../controllers/ControllerDeleteCarrinho.php?action=excluir" class="fechar">
                                     <input type="hidden" name="pc" value="<?=$checkProd[0]['id_produto_carrinho']?>">
-                                    <button type="submit" id="fechar-btn"><i class="fa-regular fa-xmark fa-1x"></i></button>
+                                    <button type="submit" id="fechar-btn"><i class="fa-solid fa-xmark"></i></button>
                                 </form>
                                 <div class="produto-info">
                                     <img src="<?=$getInfoProduto[$j]['imagem_principal_produto']?>" alt="Alt dinâmico">
