@@ -67,7 +67,6 @@ $returnVenda = $manager->getInfo('adm_venda', 'id_cliente', $_SESSION['USER-ID']
                     $getCarrinhoProduto = $manager->getInfo('produto_carrinho', 'id_carrinho', $returnVenda[$i]['id_carrinho']);
 
                     if (isset($getCarrinhoProduto[0])):
-                        //TODO: Verificar bug: Testar se o problema ocorre quando é deletado um produto do carrinho
             ?>
             <div class="box-pedido">
                 <button class="accordion">

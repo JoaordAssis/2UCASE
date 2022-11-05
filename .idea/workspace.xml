@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="AJUSTED: Bug do produto na categoria promoção não aparecendo" />
+    <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="AJUSTED: Bug do produto na categoria promoção não aparecendo">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/view/meus-pedidos.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/meus-pedidos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/ControllerUpdateCarrinho.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/ControllerUpdateCarrinho.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -91,7 +95,7 @@
       <recent name="C:\xampp\htdocs\VilicapasProjeto\app\assets\img" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.error-handling.js">
+  <component name="RunManager" selected="PHP Script.ControllerUpdateCarrinho.php">
     <configuration name="correios-calc.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/app/assets/js/modules/correios-calc.js" working-dir="$PROJECT_DIR$/app/assets/js/modules">
       <method v="2" />
     </configuration>
@@ -101,8 +105,12 @@
     <configuration name="2UCASE Server" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" document_root="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
+    <configuration name="ControllerUpdateCarrinho.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/app/controllers/ControllerUpdateCarrinho.php">
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="PHP Script.ControllerUpdateCarrinho.php" />
         <item itemvalue="Node.js.error-handling.js" />
         <item itemvalue="Node.js.correios-calc.js" />
       </list>
@@ -185,6 +193,8 @@
       <workItem from="1667405908637" duration="6972000" />
       <workItem from="1667425920805" duration="4389000" />
       <workItem from="1667430629511" duration="1297000" />
+      <workItem from="1667525734280" duration="58000" />
+      <workItem from="1667663840884" duration="3665000" />
     </task>
     <task id="LOCAL-00001" summary="Teste commit 09/10/2022">
       <created>1665346468595</created>
@@ -382,7 +392,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667431432680</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="AJUSTED: Bug do produto na categoria promoção não aparecendo">
+      <created>1667525758230</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1667525758230</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -417,7 +434,6 @@
       <path value="$PROJECT_DIR$/VilicapasProjeto" />
       <path value="$PROJECT_DIR$/../VilicapasProjetos" />
     </ignored-roots>
-    <MESSAGE value="Modificaões basicas" />
     <MESSAGE value="REFATORED: Ajustes e formatações de inputs; carrinho.php, Login.js, login.php,&#10;pagamento.php, Payment.js." />
     <MESSAGE value="CREATED: Sistema de prazos e valores de frete" />
     <MESSAGE value="WORKING: Sistema de prazos e valores de frete" />
@@ -442,6 +458,7 @@
     <MESSAGE value="WORKING: Sistema de exibição de erros" />
     <MESSAGE value="FINALIZED: Sistema de exibição de erros" />
     <MESSAGE value="DEBUG: Executando o debug das paginas de produto, adição de produtos, edição de produtos e exibição de pedidos. O site pode apresentar erros sinistros!" />
-    <option name="LAST_COMMIT_MESSAGE" value="DEBUG: Executando o debug das paginas de produto, adição de produtos, edição de produtos e exibição de pedidos. O site pode apresentar erros sinistros!" />
+    <MESSAGE value="AJUSTED: Bug do produto na categoria promoção não aparecendo" />
+    <option name="LAST_COMMIT_MESSAGE" value="AJUSTED: Bug do produto na categoria promoção não aparecendo" />
   </component>
 </project>
