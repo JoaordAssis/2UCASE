@@ -1,4 +1,5 @@
 <?php
+session_start();
 $idUserADM = $_REQUEST['id'];
 require_once "../model/Manager.class.php";
 $manager = new Manager();

@@ -88,9 +88,9 @@ if (isset($_REQUEST['cadastroCompletoForm'])){
     $ferramentas = new Ferramentas();
     $manager = new Manager();
 
-    $nome = $_REQUEST['nome'];
-    $email = $_REQUEST['email'];
-    $senhaCripto = $_REQUEST['senhaCripto'];
+    $nome = filter_input(INPUT_GET, 'nome');
+    $email = filter_input(INPUT_GET, 'email');
+    $senhaCripto = filter_input(INPUT_GET, 'senhaCripto');
 
     $injectionCheckLog = $ferramentas->antiInjection($_REQUEST['logradouro']);
     $injectionCheckBairro = $ferramentas->antiInjection($_REQUEST['bairro'] );

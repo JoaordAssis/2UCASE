@@ -1,6 +1,4 @@
 <?php
-session_start();
-// var_dump($_SESSION['ADM-EMAIL']);
 
 if (isset($_SESSION['ADM-ID']) && $_SESSION['ADM-ID'] != '') :
 ?>

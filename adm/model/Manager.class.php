@@ -1,5 +1,9 @@
 <?php
-require_once 'Conexao.class.php';
+
+
+require_once __DIR__ . "/./conexao.class.php";
+
+
 class Manager extends Conexao {
 
 	public function listClient($table, $columnName) {

@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
-        'name' => 'vendor_name/vilicapas',
+        'name' => 'vendor_name/2ucase',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '2c498a7623bc3747ac8f9fd95fac508d2b0f2e20',
+        'reference' => 'a30b4e2fee8735ec2b0a79445504c6edaf62a07b',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -149,10 +149,10 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
-        'vendor_name/vilicapas' => array(
+        'vendor_name/2ucase' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '2c498a7623bc3747ac8f9fd95fac508d2b0f2e20',
+            'reference' => 'a30b4e2fee8735ec2b0a79445504c6edaf62a07b',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

@@ -1,11 +1,11 @@
 {
-  "name": "vendor_name/vilicapas",
-  "description": "vilicapas - refactor do site vilicapas",
+  "name": "vendor_name/2ucase",
+  "description": "2ucase - refactor do site 2ucase",
   "minimum-stability": "stable",
   "license": "proprietary",
   "authors": [
     {
-      "name": "vilicapas-team",
+      "name": "2ucase-team",
       "email": "davimsantana2706@gmail.com"
     }
   ],
@@ -22,7 +22,8 @@
   },
   "autoload": {
     "psr-4": {
-      "app\\": "app/"
+      "app\\": "app/",
+      "app\\model\\": "app/model"
     }
   }
 }

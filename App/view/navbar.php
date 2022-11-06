@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . "/../../vendor/autoload.php";
+require_once "../../vendor/autoload.php";
 
 use app\model\Manager;
 
@@ -11,7 +11,7 @@ $menuReturn = $manager->listClient('adm_menu', 'id_menu');
 <html lang="pt-br">
 
 <head>
-    <?php require_once __DIR__ . "/../config/stylesConfig.php" ?>
+    <?php require_once "../config/stylesConfig.php"?>
     <link rel="stylesheet" href="../assets/styles/navbar.css">
 </head>
 
