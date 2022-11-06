@@ -20,9 +20,9 @@ $ferramentas = new Ferramentas;
 $idProduto = $_REQUEST['pd'];
 
 //Inputs
-$inputTitulo = $_REQUEST['titulo_avaliacao'];
-$descAvaliacao = $_REQUEST['avaliacao-txt'];
-$notaAvaliacao = $_REQUEST['estrela'];
+$inputTitulo = filter_input(INPUT_GET, 'titulo_avaliacao');
+$descAvaliacao = filter_input(INPUT_GET, 'avaliacao-txt');
+$notaAvaliacao = filter_input(INPUT_GET, 'estrela');
 
 if (empty($inputTitulo) || empty($descAvaliacao) || empty($notaAvaliacao)){
 

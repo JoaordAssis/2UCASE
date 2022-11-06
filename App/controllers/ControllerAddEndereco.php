@@ -32,15 +32,15 @@ if (empty($valueFrete)) {
 }
 
 $inputEntrega['id_cliente'] = $_SESSION['USER-ID'];
-$inputEntrega['logradouro_cliente'] = $_REQUEST['logradouro'];
-$inputEntrega['cep_cliente'] = $_REQUEST['cep'];
+$inputEntrega['logradouro_cliente'] = filter_input(INPUT_GET, 'logradouro');
+$inputEntrega['cep_cliente'] = filter_input(INPUT_GET, 'cep');
 $inputEntrega['ponto_ref_cliente'] = $_REQUEST['referencia'];
-$inputEntrega['uf_cliente'] = $_REQUEST['state'];
-$inputEntrega['cidade_cliente'] = $_REQUEST['cidade'];
-$inputEntrega['numero_cliente'] = $_REQUEST['numero'];
-$inputEntrega['complemento_cliente'] = $_REQUEST['complemento'];
-$inputEntrega['bairro_cliente'] = $_REQUEST['bairro'];
-$inputEntrega['nomeR_cliente'] = $_REQUEST['nomeR'];
+$inputEntrega['uf_cliente'] = filter_input(INPUT_GET, 'state');
+$inputEntrega['cidade_cliente'] = filter_input(INPUT_GET, 'cidade');
+$inputEntrega['numero_cliente'] = filter_input(INPUT_GET, 'numero');
+$inputEntrega['complemento_cliente'] = filter_input(INPUT_GET, 'complemento');
+$inputEntrega['bairro_cliente'] = filter_input(INPUT_GET, 'bairro');
+$inputEntrega['nomeR_cliente'] = filter_input(INPUT_GET, 'nomeR');
 
 $injectionCheckLog = $ferramentas->antiInjection($inputEntrega['logradouro_cliente']);
 $injectionCheckBairro = $ferramentas->antiInjection($inputEntrega['bairro_cliente'] );
