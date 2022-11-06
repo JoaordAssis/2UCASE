@@ -34,6 +34,7 @@ $returnPromos = $manager->exibProducts('categoria_special_produto','Promoções'
 
             <section class="carrossel-container">
 
+                <!--TODO: MUDAR O NOME DO HREF DO CARROSSEL AO SUBIR PARA PRODUÇÃO-->
                 <?php
                 if(count($returnBanners) > 0):
                 ?>

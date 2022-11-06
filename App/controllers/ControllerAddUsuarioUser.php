@@ -130,6 +130,7 @@ if (isset($_REQUEST['cadastroCompletoForm'])){
     $dadosUsuario['telefone_cliente'] = $sanitizeNumber;
     $dadosUsuario['telefoneFixo_cliente'] =$sanitizeNumeroFixo !== '' ? $sanitizeNumeroFixo : 'NULL';
     $dadosUsuario['genero_cliente'] = $_REQUEST['gender'];
+    $dadosUsuario['status'] = 1;
 
     //INSERT USUARIO
     try {

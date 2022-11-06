@@ -154,9 +154,11 @@ $returnComentarios = $manager->selectWhere($paramComentario, $paramPostComentari
                         <?php
                         if ($returnProduto[0]['categoria_special_produto'] === 'Promoções') :
                             //Exibir o preço antigo
+                            if(isset($returnProduto[0]['last_price_produto'])):
                         ?>
                             <p id="last-price">R$ <?= $returnProduto[0]['last_price_produto'] ?></p>
                         <?php
+                            endif;
                         endif;
                         ?>
                         <h3>R$ <?= $returnProduto[0]['preco_produto'] ?></h3>
@@ -275,7 +277,7 @@ $returnComentarios = $manager->selectWhere($paramComentario, $paramPostComentari
                             for ($i = 0, $iMax = count($returnSimilares); $i < $iMax; $i++) :
                         ?>
 
-                                <a class="produto-box glide__slide" href="./produto.php?idProduto=<?= $returnSimilares[0]['id_produto'] ?>">
+                                <a class="produto-box glide__slide" href="./produto.php?pd=<?= $returnSimilares[0]['id_produto'] ?>">
                                     <img src="<?= $returnSimilares[0]['imagem_principal_produto'] ?>" alt="<?= $returnSimilares[0]['nome_produto'] ?>">
                                     <h4><?= $returnSimilares[0]['nome_produto'] ?></h4>
                                     <p>R$ <?= $returnSimilares[0]['preco_produto'] ?></p>

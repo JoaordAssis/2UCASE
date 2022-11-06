@@ -5,7 +5,7 @@ require_once __DIR__ . "/../../vendor/autoload.php";
 use app\model\Manager;
 
 if (empty($_GET['category'])){
-    //Criar uma nova pagina pra isso
+    //Criar uma pagina para isso
     header("Location: ./homepage.php");
 }
 $manager = new Manager();
