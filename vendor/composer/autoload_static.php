@@ -11,7 +11,6 @@ class ComposerStaticInite75d6be1cc0dc9bba591ccc56575771e
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
-        '70f55668eb41b91648126745b650762b' => __DIR__ . '/../..' . '/App/class/testeClass.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -39,7 +38,7 @@ class ComposerStaticInite75d6be1cc0dc9bba591ccc56575771e
     public static $prefixDirsPsr4 = array (
         'app\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/App',
+            0 => __DIR__ . '/../..' . '/app',
         ),
         'Psr\\Http\\Message\\' => 
         array (

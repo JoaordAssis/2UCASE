@@ -55,8 +55,8 @@ class CEP{
 //Pac:  04510
 
 /*
- Peso : constante passada nas configurações,
- CEP : POST recebido da fetch API; digitado pelo usuário,
+ Peso: constante passada nas configurações,
+ CEP: POST recebido da fetch API; digitado pelo usuário,
  Valor: Recebido da fetch API; pego do banco de dados
  Tipo de Frete: Constate passada direto nessa página
 */

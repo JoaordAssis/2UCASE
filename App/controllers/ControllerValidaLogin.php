@@ -5,6 +5,8 @@ use app\model\Ferramentas;
 use app\model\Clientes;
 use app\model\Manager;
 
+
+//TODO: Trocar a senha para ARGON
 session_start();
 
 if (!empty($_REQUEST['email-cpf']) && !empty($_REQUEST['senha-login'])) {

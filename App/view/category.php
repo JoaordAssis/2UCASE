@@ -122,7 +122,7 @@ if (!empty($_GET['selectOrdem'])) {
                 <div class="product-container">
                     <?php for ($i = 0, $iMax = count($returnProdutos); $i < $iMax; $i++) : ?>
 
-                        <a class="produto-box glide__slide" href="./produto.php?idProduto=<?=$returnProdutos[$i]['id_produto']?>">
+                        <a class="produto-box glide__slide" href="./produto.php?pd=<?=$returnProdutos[$i]['id_produto']?>">
                             <img src="<?=$returnProdutos[$i]['imagem_principal_produto']?>" alt="Capinha Flamengo">
                             <h4><?=$returnProdutos[$i]['nome_produto']?></h4>
                             <p>R$ <?=$returnProdutos[$i]['preco_produto']?></p>
