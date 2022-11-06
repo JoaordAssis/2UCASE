@@ -67,7 +67,7 @@ if (isset($_POST['email-login']) && $_POST['email-login'] != '' && isset($_POST[
             $_SESSION["ADM-PODER"] = $dados["poder_adm"];
 
         ?>
-            <form action="../view/bemvindo.php" name="myForm" id="myForm" method="post">
+            <form action="../view/BemVindo.php" name="myForm" id="myForm" method="post">
                 <input type="hidden" name="result" value="OA50">
             </form>
             <script>

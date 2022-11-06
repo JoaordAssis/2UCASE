@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="AJUSTED: Correções minimas de bugs e ajustes do front">
-      <change beforePath="$PROJECT_DIR$/.idea/Vilicapas.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Vilicapas.iml" afterDir="false" />
+    <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="AJUSTED: ajustes de sessão e requests para hospedagem">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/controllers/ControllerAddUsuarioUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controllers/ControllerAddUsuarioUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/navbar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VilicapasProjeto.zip" beforeDir="false" afterPath="$PROJECT_DIR$/VilicapasProjeto.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm/model/Manager.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/model/Manager.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VilicapasProjeto.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/adm/controller/validaLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/controller/validaLogin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adm/model/conexao.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/model/conexao.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/produto.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/produto.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,7 +208,7 @@
       <workItem from="1667737744809" duration="2000" />
       <workItem from="1667741739578" duration="1355000" />
       <workItem from="1667745926504" duration="607000" />
-      <workItem from="1667759740672" duration="1802000" />
+      <workItem from="1667759740672" duration="4602000" />
     </task>
     <task id="LOCAL-00001" summary="Teste commit 09/10/2022">
       <created>1665346468595</created>
@@ -449,7 +441,21 @@
       <option name="project" value="LOCAL" />
       <updated>1667695441840</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="AJUSTED: ajustes de sessão e requests para hospedagem">
+      <created>1667762195606</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1667762195606</updated>
+    </task>
+    <task id="LOCAL-00035" summary="AJUSTED: ajustes de sessão e requests para hospedagem">
+      <created>1667762295125</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1667762295125</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -484,7 +490,6 @@
       <path value="$PROJECT_DIR$/VilicapasProjeto" />
       <path value="$PROJECT_DIR$/../VilicapasProjetos" />
     </ignored-roots>
-    <MESSAGE value="WORKING: Sistema de prazos e valores de frete" />
     <MESSAGE value="FINALIZED: Sistema de busca de valor e prazo por CEP, product page" />
     <MESSAGE value="REFATORED: Cards de categoria na homepage e mudança das imagens" />
     <MESSAGE value="WORKING: Sistema de login" />
@@ -509,6 +514,7 @@
     <MESSAGE value="AJUSTED: Bug do produto na categoria promoção não aparecendo" />
     <MESSAGE value="AJUSTED: Bug de todos os itens na tabela produto_carrinho sumindo ao apagar um produto do carrinho" />
     <MESSAGE value="AJUSTED: Correções minimas de bugs e ajustes do front" />
-    <option name="LAST_COMMIT_MESSAGE" value="AJUSTED: Correções minimas de bugs e ajustes do front" />
+    <MESSAGE value="AJUSTED: ajustes de sessão e requests para hospedagem" />
+    <option name="LAST_COMMIT_MESSAGE" value="AJUSTED: ajustes de sessão e requests para hospedagem" />
   </component>
 </project>
