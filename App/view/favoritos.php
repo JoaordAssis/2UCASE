@@ -7,7 +7,7 @@ use app\model\Manager;
 $manager = new Manager();
 
 if (empty($_SESSION['USER-ID'])) {
-    header("Location: ./homepage.php?error-code=OA00");
+    header("Location: ./login.php?error-code=OA00");
 }
 
 

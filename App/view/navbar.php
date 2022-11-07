@@ -60,7 +60,7 @@ $menuReturn = $manager->listClient('adm_menu', 'id_menu');
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="../controllers/ControllerValidaLogin.php?exit">
+                                            <a href="../controllers/ControllerValidaLogin.php?exit=true">
                                                 Sair
                                             </a>
                                         </li>
@@ -162,7 +162,7 @@ $menuReturn = $manager->listClient('adm_menu', 'id_menu');
                 //Verificando se existe sessão
                 if (!isset($_SESSION['USER-ID'])) {
                 ?>
-                    <button id="login-button" onclick="window.location.href='./register.php.php'">
+                    <button id="login-button" onclick="window.location.href='./login.php'">
                         <img src="../assets/svg/Login.svg" alt="icone de login" id="login-icon" width="40" height="40"></img>
                     </button>
                 <?php

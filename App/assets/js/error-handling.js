@@ -21,7 +21,11 @@ let errors = {
     "FR22" : "Nome de arquivo não aceito.",
     "FR24" : "Caracteres não são aceitos. Tente outro nome",
     "FR25" : "Conta não encontrada",
-    "FR26" : "A senha deve conter um mínimo de 8 e maximo de 10 caracteres, pelo menos uma letra maiúscula, uma minúscula, um número e um caractere especial",
+    "FR26" : "A senha deve conter um mínimo de 6 e no máximo 15 caracteres.\n" +
+        "Deve ter somente letras e numero e caractere especial(!#@$%&)\n" +
+        "Deve ter no mínimo uma letra maiúscula e minúscula.\n" +
+        "Deve ter no mínimo um numero.\n" +
+        "Deve ter no mínimo caractere especial(!#@$%&)",
     "FR27" : "Email inválido, tente outro",
     "FR28" : "CPF inválido. Verifique se ele foi digitado corretamente",
     "FR29" : "CEP inválido. Verifique se ele foi digitado corretamente",
@@ -33,7 +37,7 @@ let errors = {
     "FR50" : "Conta criada com sucesso.",
     "FR51" : "Arquivo enviado com sucesso.",
     "FR52" : "Informações atualizadas com sucesso!",
-    "OA00" : "Erro de acesso.",
+    "OA00" : "Faça o login antes de prosseguir.",
     "OA01" : "Não há autorização para acessar a área solicitada.",
     "OA02" : "Erro: não foi possível efetuar o login. Tente novamente em alguns instantes",
     "OA50" : "Você foi logado com sucesso",
