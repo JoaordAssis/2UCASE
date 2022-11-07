@@ -45,6 +45,18 @@ class Clientes {
         return 1;
     }
 
+    //Check CPF
+    public function checkCPFExist($cpf): int {
+        $manager = new Manager();
+        $returnCPF = $manager->getInfo('user_cliente', 'cpf_cliente', $cpf);
+
+        if (count($returnCPF) > 0){
+            //Conta já existente
+            return 0;
+        }
+        return 1;
+    }
+
     public function checkEmailOrCPF($input): bool|int {
 
         //Checar a quantidade de caracteres

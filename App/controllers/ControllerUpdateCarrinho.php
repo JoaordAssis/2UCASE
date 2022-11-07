@@ -17,10 +17,9 @@ if (empty($_REQUEST['pd'])){
 }
 
 $produtoId = $_REQUEST['pd'];
-$quantProd = $_REQUEST['quantProd'];
+$quantProd = filter_input(INPUT_GET, 'quantProd');
 $manager = new Manager();
 $ferramentas = new Ferramentas();
-
 
 //Pegar o carrinho do cliente
 $paramsSelectCarrinho = ['id_cliente', 'id_status'];

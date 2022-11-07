@@ -179,7 +179,7 @@ $returnComentarios = $manager->selectWhere($paramComentario, $paramPostComentari
                 </div>
 
                 <div class="select-quant-prod">
-                    <label for="marcaProduto">Selecione a Quantidade
+                    <label for="quantProduto">Selecione a Quantidade
                         <select name="quantProduto" id="select-quant">
                             <?php
                             for ($i = 0; $i < $returnProduto[0]['quantidade_produto']; $i++) :

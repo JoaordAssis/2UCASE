@@ -28,8 +28,9 @@ if (!empty($_REQUEST['email-cpf']) && !empty($_REQUEST['senha-login'])) {
     $checkInput = $user->checkEmailOrCPF($_REQUEST['email-cpf']);
     $antiSql = $ferramentas->antiInjection($_REQUEST['email-cpf']);
 
-    //Criptografar Senha
-    $senhaHash = $ferramentas->hash256($_REQUEST['senha-login']);
+    //Descriptografar Senha
+    //$senhaHash = $ferramentas->hash256($_REQUEST['senha-login']);
+
 
     if ($antiSql === 0){
         //Tentativa de SQL Injection
@@ -43,24 +44,28 @@ if (!empty($_REQUEST['email-cpf']) && !empty($_REQUEST['senha-login'])) {
     if ($checkInput === 0){
 
         $validaEmail = $user->validaEmail($_REQUEST['email-cpf']);
+        $checkEmail = $manager->getInfo('user_cliente', 'email_cliente', $validaEmail);
 
         if ($validaEmail === false){
             //EMAIL invalido
-
             session_destroy();
             header("Location: ../view/login.php?error-code=FR09");
             exit();
         }
 
-        //Checar se Email existe no (BD)
-        $checkEmailExist = $manager->loginCliente($senhaHash, $validaEmail);
+        if (!password_verify($_REQUEST['senha-login'], $checkEmail[0]['senha_cliente'])){
+            //Senha Invalida
+            session_destroy();
+            header("Location: ../view/login.php?error-code=FR25");
+            exit();
+        }
 
 
-        if (count($checkEmailExist) > 0){
-            $_SESSION['USER-ID'] = $checkEmailExist[0]['id_cliente'];
-            $_SESSION['USER-NAME'] = $checkEmailExist[0]['nome_cliente'];
-            $_SESSION['USER-EMAIL'] = $checkEmailExist[0]['email_cliente'];
-            $_SESSION['USER-CPF'] = $checkEmailExist[0]['cpf_cliente'];
+        if (count($checkEmail) > 0){
+            $_SESSION['USER-ID'] = $checkEmail[0]['id_cliente'];
+            $_SESSION['USER-NAME'] = $checkEmail[0]['nome_cliente'];
+            $_SESSION['USER-EMAIL'] = $checkEmail[0]['email_cliente'];
+            $_SESSION['USER-CPF'] = $checkEmail[0]['cpf_cliente'];
 
 
             //SUCESSO
@@ -68,7 +73,7 @@ if (!empty($_REQUEST['email-cpf']) && !empty($_REQUEST['senha-login'])) {
             exit();
         }
 
-        //Não existe no BD
+        //Não existe no (BD)
         session_destroy();
         header("Location: ../view/login.php?error-code=FR25");
         exit();
@@ -88,11 +93,20 @@ if (!empty($_REQUEST['email-cpf']) && !empty($_REQUEST['senha-login'])) {
         }
 
         $formatCpf = $user->sanitizeField($_REQUEST['email-cpf']);
-        //Checar se o CPF existe no BD
-        $paramsPostCheckCPFExist = [$formatCpf, $senhaHash];
-        $paramsCheckCPFExist = ['cpf_cliente', 'senha_cliente'];
 
+
+        //Checar se o CPF existe no BD
+        $paramsPostCheckCPFExist = [$formatCpf];
+        $paramsCheckCPFExist = ['cpf_cliente'];
         $checkCPFExist = $manager->selectWhere($paramsCheckCPFExist, $paramsPostCheckCPFExist, 'user_cliente');
+
+        if (!password_verify($_REQUEST['senha-login'], $checkCPFExist[0]['senha_cliente'])){
+            //Senha Invalida
+            session_destroy();
+            header("Location: ../view/login.php?error-code=FR25");
+            exit();
+        }
+
 
         if (count($checkCPFExist) > 0){
             $_SESSION['USER-ID'] = $checkCPFExist[0]['id_cliente'];
@@ -106,7 +120,7 @@ if (!empty($_REQUEST['email-cpf']) && !empty($_REQUEST['senha-login'])) {
             exit();
         }
 
-        //Não existe no BD
+        //Não existe no (BD)
         session_destroy();
         header("Location: ../view/login.php?error-code=FR25");
         exit();

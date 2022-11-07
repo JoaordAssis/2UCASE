@@ -55,7 +55,8 @@ if (isset($_REQUEST['cadastroFirstRequest'])){
 
     if ($verifyEmail !== false && $verifySenha === 1){
 
-        $senhaHash = $ferramentas->hash256($_REQUEST['senhaUser']);
+        //moreira2706@gmail.com
+        $senhaHash = password_hash($_REQUEST['senhaUser'], PASSWORD_ARGON2ID);
 
         $dadosUsuario[] = $_REQUEST['nomeUser'];
         $dadosUsuario[] = $verifyEmail;
@@ -120,6 +121,14 @@ if (isset($_REQUEST['cadastroCompletoForm'])){
     $sanitizeCPF = $user->sanitizeField($_REQUEST['cpf']);
     $sanitizeNumber = $user->sanitizeField($_REQUEST['numeroCelular']);
     $sanitizeNumeroFixo = $user->sanitizeField($_REQUEST['numeroFixo']);
+
+    //Checar se o CPF já existe no banco
+    $checkCPF = $user->checkCPFExist($sanitizeCPF);
+    if ($checkCPF === 0){
+        $returnPage = $_SERVER['HTTP_REFERER'] . "&error-code=FR36";
+        header("Location: $returnPage");
+        exit();
+    }
 
     //Assinalando os dados
     $dadosUsuario['nome_cliente'] = $_REQUEST['nomeCompleto'];

@@ -5,7 +5,6 @@ let errors = {
     "FR02" : "Dados preenchidos incorretamente. Revise os campos preenchidos",
     "FR03" : "Senha incorreta. Se não se lembra da sua senha clique em 'Esqueceu a senha?'",
     "FR04" : "As duas senhas não são iguais. Verifique se as senhas estão certas",
-    "FR33" : "Os dois emails não são iguais. Verifique se os emails estão certas",
     "FR06" : "Esse email já está em uso. Utilize outro email",
     "FR07" : "CPF incorreto. Verifique se o CPF digitado está certo",
     "FR08" : "CPF desconhecido. Verifique se o CPF digitado está certo",
@@ -20,7 +19,7 @@ let errors = {
     "FR21" : "Arquivo sem extensão não é aceito.",
     "FR22" : "Nome de arquivo não aceito.",
     "FR24" : "Caracteres não são aceitos. Tente outro nome",
-    "FR25" : "Conta não encontrada",
+    "FR25" : "Conta não encontrada! Verifique se a senha e o email/CPF estão corretos e tente novamente!",
     "FR26" : "A senha deve conter um mínimo de 6 e no máximo 15 caracteres.\n" +
         "Deve ter somente letras e numero e caractere especial(!#@$%&)\n" +
         "Deve ter no mínimo uma letra maiúscula e minúscula.\n" +
@@ -32,6 +31,10 @@ let errors = {
     "FR30" : "Dados não recebidos corretamente, por favor tente novamente em alguns instantes!",
     "FR31" : "Falha ao criar a sua conta, tente novamente em alguns instantes!",
     "FR32" : "Falha ao armazenar o seu endereço, tente novamente em alguns instantes!",
+    "FR33" : "Verifique se o CEP foi digitado corretamente e clique novamente no botão",
+    "FR34" : "Não foi possível atualizar as suas informações, tente novamente em alguns instantes!",
+    "FR35" : "Os dois emails não são iguais. Verifique se os emails estão certas",
+    "FR36" : "Já existe uma conta com este CPF, caso não se lembre da senha; volte e clique em 'Esqueceu a senha?'",
     "FR50" : "Conta criada com sucesso.",
     "FR51" : "Arquivo enviado com sucesso.",
     "OA00" : "Faça o login antes de prosseguir.",
