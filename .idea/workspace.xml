@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="AJUSTED: ajustes de sessão e requests para hospedagem">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/controllers/ControllerValidaLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controllers/ControllerValidaLogin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adm/assets/js/listProdutos.js" beforeDir="false" afterPath="$PROJECT_DIR$/adm/assets/js/listProdutos.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adm/controller/ControllerProdutoADM.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/controller/ControllerProdutoADM.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,6 +211,8 @@
       <workItem from="1667777306018" duration="2935000" />
       <workItem from="1667780378943" duration="42000" />
       <workItem from="1667784760642" duration="747000" />
+      <workItem from="1667787185268" duration="95000" />
+      <workItem from="1667849058388" duration="2074000" />
     </task>
     <task id="LOCAL-00001" summary="Teste commit 09/10/2022">
       <created>1665346468595</created>
@@ -468,7 +473,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667764986485</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="AJUSTED: ajustes de sessão e requests para hospedagem">
+      <created>1667787269764</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1667787269764</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

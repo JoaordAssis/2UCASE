@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!isset($_SESSION["ADM-ID"]) || empty($_SESSION["ADM-ID"])) {
+if (empty($_SESSION["ADM-ID"])) {
     session_destroy();
 ?>
     <form action="../index.php" name="myForm" id="myForm" method="post">
@@ -13,6 +13,60 @@ if (!isset($_SESSION["ADM-ID"]) || empty($_SESSION["ADM-ID"])) {
     <?php
     exit();
 }
+
+
+// PESQUISA DE PRODUTOS
+
+if (isset($_REQUEST['searchBarProdutos'])) {
+
+    $exibSearch = $_REQUEST['searchBarProdutos'];
+    $header = 'Location: ../view/listProdutos.php?searchBarProdutos=' . $exibSearch;
+
+    header($header);
+    exit();
+}
+
+
+if (isset($_REQUEST['filtro'])):
+
+    // FILTROS DE CATEGORIA
+
+    if (isset($_REQUEST['selectOrdem']) && !empty($_REQUEST['selectOrdem'])) {
+        $exibSearch = $_REQUEST['selectOrdem'];
+        $header = 'Location: ../view/listProdutos.php?selectOrdem=' . $exibSearch;
+
+        header($header);
+        exit();
+    } else if (isset($_REQUEST['selectCategoria']) && !empty($_REQUEST['selectCategoria'])) {
+
+        $exibSearch = $_REQUEST['selectCategoria'];
+        $header = 'Location: ../view/listProdutos.php?selectCategoria=' . $exibSearch;
+
+        header($header);
+        exit();
+    } else if (isset($_REQUEST['selectStatus']) && !empty($_REQUEST['selectStatus'])) {
+
+        $exibSearch = $_REQUEST['selectStatus'];
+        $header = 'Location: ../view/listProdutos.php?selectStatus=' . $exibSearch;
+
+        header($header);
+        exit();
+    } else {
+        ?>
+        <form action="../view/listProdutos.php" name="myForm" id="myForm" method="post">
+            <input type="hidden" name="msg" value="BD05">
+        </form>
+        <script>
+            document.getElementById('myForm').submit();
+        </script>
+        <?php
+        exit();
+    }
+
+endif;
+
+
+
 
 if (isset($_REQUEST['action'], $_REQUEST['id']) && $_REQUEST['action'] !== '' && $_REQUEST['id'] !== '') {
 
@@ -81,7 +135,7 @@ if (isset($_REQUEST['action'], $_REQUEST['id']) && $_REQUEST['action'] !== '' &&
         $dadosProdutoADM['status'] = $_REQUEST['status'];
         $dadosProdutoADM["categoria_special_produto"] = $_REQUEST["categoria_special_produto"];
         $dadosProdutoADM["last_price_produto"] = 0.00;
-        if ($_REQUEST['imagem_principal_produto'] === ''){
+        if (!empty($_REQUEST['imagem_principal_produto'])){
             $imgRetrieveData = $manager->imgUpload('imagem_principal_produto', $_REQUEST["nome_produto"]);
             $dadosProdutoADM['imagem_principal_produto'] = $imgRetrieveData[0];
         }
@@ -113,49 +167,3 @@ if (isset($_REQUEST['action'], $_REQUEST['id']) && $_REQUEST['action'] !== '' &&
 <?php
 }
 
-
-// PESQUISA DE PRODUTOS
-
-if (isset($_REQUEST['searchBarProdutos'])) {
-
-    $exibSearch = $_REQUEST['searchBarProdutos'];
-    $header = 'Location: ../view/listProdutos.php?searchBarProdutos=' . $exibSearch;
-
-    header($header);
-    exit();
-}
-
-
-// FILTROS DE CATEGORIA
-
-if (isset($_REQUEST['selectOrdem']) && !empty($_REQUEST['selectOrdem'])) {
-    $exibSearch = $_REQUEST['selectOrdem'];
-    $header = 'Location: ../view/ListProdutos.php?selectOrdem=' . $exibSearch;
-
-    header($header);
-    exit();
-} else if (isset($_REQUEST['selectCategoria']) && !empty($_REQUEST['selectCategoria'])) {
-
-    $exibSearch = $_REQUEST['selectCategoria'];
-    $header = 'Location: ../view/ListProdutos.php?selectCategoria=' . $exibSearch;
-
-    header($header);
-    exit();
-} else if (isset($_REQUEST['selectStatus']) && !empty($_REQUEST['selectStatus'])) {
-
-    $exibSearch = $_REQUEST['selectStatus'];
-    $header = 'Location: ../view/ListProdutos.php?selectStatus=' . $exibSearch;
-
-    header($header);
-    exit();
-} else {
-?>
-    <form action="../view/ListProdutos.php" name="myForm" id="myForm" method="post">
-        <input type="hidden" name="msg" value="BD05">
-    </form>
-    <script>
-        document.getElementById('myForm').submit();
-    </script>
-<?php
-    exit();
-}

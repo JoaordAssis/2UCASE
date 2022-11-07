@@ -9,6 +9,16 @@ use app\model\Manager;
 //TODO: Trocar a senha para ARGON
 session_start();
 
+//LOGOUT
+
+if (!empty($_REQUEST['exit'])){
+    session_destroy();
+    //Exibir mensagem
+    header("Location: ../view/homepage.php?sucess-code=OA51");
+    exit();
+}
+
+
 if (!empty($_REQUEST['email-cpf']) && !empty($_REQUEST['senha-login'])) {
     $user = new Clientes();
     $ferramentas = new Ferramentas();
@@ -111,11 +121,3 @@ if (!empty($_REQUEST['email-cpf']) && !empty($_REQUEST['senha-login'])) {
 
 
 
-//LOGOUT
-
-if (!empty($_REQUEST['exit'])){
-    session_destroy();
-    //Exibir mensagem
-    header("Location: ../view/homepage.php?sucess-code=OA51");
-    exit();
-}
