@@ -13,7 +13,7 @@ let pacInput = document.getElementById("pac-cod");
 function freteCalc(cep) {
 
     let data = JSON.stringify(cep);
-    let url = "../../model/CEP.php?cep=" + cep;
+    let url = "../../app/model/CEP.php?cep=" + cep;
     let dataResponse = [];
 
     fetch(url, {

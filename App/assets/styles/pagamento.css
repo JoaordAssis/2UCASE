@@ -75,7 +75,7 @@
     padding: 1rem;
     border: 1px solid var(--cor-principal);
     border-radius: 15px;
-    color: var(--cor-principal);
+    color: #000;
 }
 
 #formulario-pagamento input::placeholder {

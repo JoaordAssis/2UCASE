@@ -21,10 +21,10 @@ $manager = new Manager();
 $ferramentas = new Ferramentas();
 $getInfoProduto = $manager->getInfo('user_produto', 'id_produto', $_REQUEST['idProduto']);
 $returnModelProduto = $manager->getInfo('user_mod_celular', 'id_modelo_celular', $getInfoProduto[0]['id_modelo_celular']);
-$idProduto = filter_input(INPUT_GET, 'idProduto'); ;
+$idProduto = $_REQUEST['idProduto'];
 
 //Adicionar no produto carrinho
-$quantidadeProduto = filter_input(INPUT_GET, 'quantProduto');
+$quantidadeProduto = $_REQUEST['quantProduto'];
 
 if (empty($quantidadeProduto)){
     //Falha no recebimento

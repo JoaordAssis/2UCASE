@@ -22,7 +22,6 @@ $manager = new Manager();
 $ferramentas = new Ferramentas();
 
 
-
 //Pegar o carrinho do cliente
 $paramsSelectCarrinho = ['id_cliente', 'id_status'];
 $paramsPostSelect = [$_SESSION['USER-ID'], 1];
@@ -297,7 +296,8 @@ $updateCarrinho['quant_carrinho']  = array_sum($saveValoresQauntidade);
 //Update no user_carrinho
 try {
     $updateUserCarrinho = $manager->updateClient('user_carrinho', $updateCarrinho, $selectCarrinhoVerifyInsert[0]['id_carrinho'], 'id_carrinho');
-    header("Location: ../view/carrinho.php?Deu-certo");
+    header("Location: ../view/carrinho.php");
+    exit();
 }catch (PDOException $e){
     echo $e->getCode();
     header("Location: ../view/carrinho.php?error-code=CP02");

@@ -75,8 +75,8 @@ try {
     exit();
 
 }catch (PDOException $e){
-    echo $e->getCode();
     header("Location: ../view/carrinho.php?error-code=CP05");
+    echo $e->getCode();
     exit();
 }
 

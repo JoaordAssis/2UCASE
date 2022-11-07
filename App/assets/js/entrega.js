@@ -89,13 +89,13 @@ cepInput.addEventListener("blur", () => {
         console.log(cepInput.value.length);
 
     }else{
-        buttonCep.addEventListener('click', () => {
+        buttonCep.addEventListener('blur', () => {
             let cepValue = {
                 cep: cepInput.value
             }
 
             let data = JSON.stringify(cepValue);
-            let url  = '../../model/CEP.php?cep=' + cepInput.value;
+            let url  = '../../app/model/CEP.php?cep=' + cepInput.value;
             let dataResponse = [];
 
             fetch(url, {

@@ -85,7 +85,7 @@ session_start();
 
             <div class="cep-calc">
                 <label for="cep">
-                    <input required type="text" name="cep" min="0" maxlength="90" placeholder="CEP" id="cep">
+                    <input required type="text" data-js="cep" name="cep" min="0" maxlength="90" placeholder="CEP" id="cep">
                 </label>
                 <button type="button" id="principal-button">Calcular</button>
                 <a href="#">Não sei meu CEP</a>
@@ -143,7 +143,7 @@ session_start();
         </button>
     </form>
 </body>
-<script src="../assets/js/entrega.js"></script>
+<script src="../assets/js/register.js"></script>
 <script src="../assets/js/error-handling.js"></script>
 <!-- Footer -->
 <?php require_once './footer.php'; ?>

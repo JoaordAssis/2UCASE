@@ -11,6 +11,11 @@ const masks = {
       )
       .replace(/(-\d{2})\d+?$/, "$1");
     },
+
+    number(value){
+      return value
+          .replace(/\D/g, "");
+    },
     
     phone(value) {
         return value
