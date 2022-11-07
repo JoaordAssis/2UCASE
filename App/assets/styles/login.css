@@ -29,6 +29,16 @@
     max-width: 100%;
 }
 
+.row-senha-eye{
+    display: flex;
+    align-items: center;
+}
+
+.row-senha-eye i{
+    margin-left: -1.5rem;
+    cursor: pointer;
+}
+
 /* Cadastro */
 
 .sign-container {
@@ -48,14 +58,11 @@
 
 .row-sign{
     display: flex;
-    gap: 1rem;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
-.row-sign label input{
-    display: block;
-    width: 12.5rem;
-    max-width: 100%;
-}
+
 
 /* Social Media */
 

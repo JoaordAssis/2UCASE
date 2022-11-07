@@ -181,7 +181,7 @@
     opacity: 0;
     background-color: rgba(0, 0, 0, .5);
     width: 350px;
-    height: 100px;
+    height: 0;
     position: absolute;
     border-radius: 15px;
     display: flex;
@@ -282,6 +282,28 @@
         height: 350px;
         max-width: 100%;
         border-radius: 15px;
+    }
+
+
+    .shadow-hover{
+        opacity: 0;
+        background-color: rgba(0, 0, 0, .5);
+        width: 250px;
+        height: 0;
+        position: absolute;
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #ffff;
+        cursor: pointer;
+        transition: ease .4s;
+    }
+
+    .card-category:hover .shadow-hover{
+        opacity: 1;
+        transition: ease .4s;
+        height: 350px;
     }
 }
 

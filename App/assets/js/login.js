@@ -110,3 +110,49 @@ if (dataError === true && cadastroFormCheck === false){
     textErrorLogin.innerText = errors[errorGet];
 }
 
+
+//Mostrar / Esconder senha
+
+let senhaLogin = document.getElementById("input-login-senha");
+
+//Senha de login
+function toggleSenhaLogin(e){
+
+    if (senhaLogin.getAttribute("type") === 'password'){
+        senhaLogin.setAttribute("type", "text");
+        e.classList.remove("fa-eye-slash");
+        e.classList.add("fa-eye");
+    }else{
+        senhaLogin.setAttribute("type", "password");
+        e.classList.remove("fa-eye");
+        e.classList.add("fa-eye-slash");
+    }
+}
+
+//Senha de cadastro
+function toggleSenhaCadastro(e){
+
+    if (inputSenha.getAttribute("type") === 'password'){
+        inputSenha.setAttribute("type", "text");
+        e.classList.remove("fa-eye-slash");
+        e.classList.add("fa-eye");
+    }else{
+        inputSenha.setAttribute("type", "password");
+        e.classList.remove("fa-eye");
+        e.classList.add("fa-eye-slash");
+    }
+}
+
+//Senha de confirmação cadastro
+function toggleSenhaCadastroConf(e){
+
+    if (inputSenhaConfirm.getAttribute("type") === 'password'){
+        inputSenhaConfirm.setAttribute("type", "text");
+        e.classList.remove("fa-eye-slash");
+        e.classList.add("fa-eye");
+    }else{
+        inputSenhaConfirm.setAttribute("type", "password");
+        e.classList.remove("fa-eye");
+        e.classList.add("fa-eye-slash");
+    }
+}

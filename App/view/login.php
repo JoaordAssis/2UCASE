@@ -21,8 +21,9 @@ session_start();
                 <label for="email-cpf">
                     <input type="text" required name="email-cpf" id="input-login-emailcpf" placeholder="Email ou CPF">
                 </label>
-                <label for="senha">
-                    <input type="text" required name="senha-login" id="input-login-senha" placeholder="Senha">
+                <label for="senha" class="row-senha-eye">
+                    <input type="password" required name="senha-login" id="input-login-senha" placeholder="Senha">
+                    <i id="eye-senha-hide" onclick="toggleSenhaLogin(this)" class="fa-regular fa-eye"></i>
                 </label>
                 <div id="container-error-login">
                     <p id="error-exib-login"></p>
@@ -65,13 +66,15 @@ session_start();
                 </label>
 
                 <div class="row-sign">
-                    <label for="senha">
-                        <input type="text" required  name="senhaUser" id="input-sign-senha" placeholder="Senha">
+                    <label for="senha" class="row-senha-eye">
+                        <input type="password" required name="senhaUser" id="input-sign-senha" placeholder="Senha">
+                        <i id="eye-senha-hide" onclick="toggleSenhaCadastro(this)" class="fa-regular fa-eye"></i>
                     </label>
 
-                    <label for="senhaC">
-                        <input type="text" required  name="senhaC" id="input-sign-senha-confirma"
+                    <label for="senhaC" class="row-senha-eye">
+                        <input type="password" required name="senhaC" id="input-sign-senha-confirma"
                                placeholder="Confirme sua Senha">
+                        <i id="eye-senha-hide" onclick="toggleSenhaCadastroConf(this)" class="fa-regular fa-eye"></i>
                     </label>
                 </div>
 

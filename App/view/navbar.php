@@ -145,7 +145,7 @@ $menuReturn = $manager->listClient('adm_menu', 'id_menu');
                 </button>
                 <h2 id="logo-site">
                     <a href="./homepage.php">
-                        VILICAPAS
+                        2UCASE
                     </a>
                 </h2>
             </section>
