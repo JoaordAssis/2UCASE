@@ -18,52 +18,72 @@ session_start();
             <h1>Dúvidas Frequentes</h1>
 
             <section class="question-buttons">
-                <button id="pagamento" class="btn-question active">Pagamentos</button>
-                <button id="pagamento" class="btn-question">Entrega</button>
-                <button id="pagamento" class="btn-question">Produtos e Garantia</button>
-                <button id="pagamento" class="btn-question">Trocas, Devoluções e Reembolsos</button>
-                <button id="pagamento" class="btn-question">Promoções e Cupons</button>
+                <button id="btn-pagamento" class="btn-question active">Pagamentos</button>
+                <button id="btn-entrega" class="btn-question">Entrega</button>
+                <button id="btn-prod-garantia" class="btn-question">Produtos e Garantia</button>
+                <button id="btn-tdr" class="btn-question">Trocas, Devoluções e Reembolsos</button>
+                <button id="btn-promo-cupom" class="btn-question">Promoções e Cupons</button>
 
-                <select name="questions-select" id="select-questions-group">
+                <select name="questions-select" id="select-questions-group" onclick="mobileContactPerguntas()">
                     <option value="pagamento">Pagamentos</option>
                     <option value="entrega">Entrega</option>
-                    <option value="produtogarantia">Produtos e Garantia</option>
+                    <option value="produto-garantia">Produtos e Garantia</option>
                     <option value="TDR">Trocas, Devoluções e Reebombolsos</option>
                     <option value="promo">Promoções e Cupons</option>
                 </select>
             </section>
 
             <section class="accordion-answers">
-                <div class="pergunta">
-                    <button class="accordion">Pergunta muito requisitada<img width="40" height="40" src="../assets/./svg/./arrow.svg" alt="icone de dropdown"></button>
+                <!--PAGAMENTO-->
+                <div class="pergunta pagamento-pergunta active">
+                    <button class="accordion">
+                        Pergunta muito requisitadaasva
+                        <img width="40" height="40" src="../assets/./svg/./arrow.svg" alt="icone de dropdown">
+                    </button>
                     <div class="panel">
                         <p>Lorem ipsum...</p>
                     </div>
                 </div>
 
-                <div class="pergunta">
-                    <button class="accordion">Pergunta muito requisitada<img width="40" height="40" src="../assets/./svg/./arrow.svg" alt="icone de dropdown"></button>
+                <!--ENTREGA-->
+                <div class="pergunta entrega-pergunta">
+                    <button class="accordion">
+                        Pergunta muito requisitadabdfgd
+                        <img width="40" height="40" src="../assets/./svg/./arrow.svg" alt="icone de dropdown">
+                    </button>
                     <div class="panel">
                         <p>Lorem ipsum...</p>
                     </div>
                 </div>
 
-                <div class="pergunta">
-                    <button class="accordion">Pergunta muito requisitada<img width="40" height="40" src="../assets/./svg/./arrow.svg" alt="icone de dropdown"></button>
+                <!--PRODUTO E GARANTIA-->
+                <div class="pergunta prod-garantia-pergunta">
+                    <button class="accordion">
+                        Pergunta muito requisitadasdvsBBB
+                        <img width="40" height="40" src="../assets/./svg/./arrow.svg" alt="icone de dropdown">
+                    </button>
                     <div class="panel">
                         <p>Lorem ipsum...</p>
                     </div>
                 </div>
 
-                <div class="pergunta">
-                    <button class="accordion">Pergunta muito requisitada<img width="40" height="40" src="../assets/./svg/./arrow.svg" alt="icone de dropdown"></button>
+                <!--TDR-->
+                <div class="pergunta tdr-pergunta">
+                    <button class="accordion">
+                        Pergunta muito requisitadaasdadav
+                        <img width="40" height="40" src="../assets/./svg/./arrow.svg" alt="icone de dropdown">
+                    </button>
                     <div class="panel">
                         <p>Lorem ipsum...</p>
                     </div>
                 </div>
 
-                <div class="pergunta">
-                    <button class="accordion">Pergunta muito requisitada<img width="40" height="40" src="../assets/./svg/./arrow.svg" alt="icone de dropdown"></button>
+                <!--PROMOÇÕES E CUPONS-->
+                <div class="pergunta promo-pergunta">
+                    <button class="accordion">
+                        Pergunta muito requisitadaasdadav
+                        <img width="40" height="40" src="../assets/./svg/./arrow.svg" alt="icone de dropdown">
+                    </button>
                     <div class="panel">
                         <p>Lorem ipsum...</p>
                     </div>
