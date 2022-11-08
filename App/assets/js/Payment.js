@@ -36,6 +36,30 @@ class Payment {
       });
     }
   }
+
+  modalVerMais(){
+    let modalCOntainer = document.getElementById("modal-container");
+    let modalContainerMobile = document.getElementById("modal-container-mobile");
+
+    if (window.innerWidth >= 1120){
+      modalCOntainer.style.display = 'flex';
+      modalContainerMobile.style.display = 'none';
+    }
+
+    if (window.innerWidth <= 1120){
+      modalCOntainer.style.display = 'none';
+      modalContainerMobile.style.display = 'flex';
+    }
+  }
+
+  closeModal(){
+    let modalCOntainer = document.getElementById("modal-container");
+    let modalContainerMobile = document.getElementById("modal-container-mobile");
+
+    modalContainerMobile.style.display = 'none';
+    modalCOntainer.style.display = 'none';
+
+  }
 }
 
 const masks = {

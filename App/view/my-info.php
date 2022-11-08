@@ -123,7 +123,6 @@ $getEndereco = $manager->getInfo('user_endereco_cliente', 'id_cliente', $_SESSIO
                 ?>
             </section>
 
-            <!-- TODO: Criar uma pagina-->
             <button id="btn-add-endereco" onclick="window.location.href='./add-endereco.php'">Adicionar outro Endereco</button>
 
             <button id="btn-exit" onclick="window.location.href='./homepage.php'">Voltar</button>

@@ -64,7 +64,7 @@
 }
 
 #fechar-btn i:hover{
-    color: var(--cor-principal);
+    color: #D7282C;
     transition: ease .4s;
 }
 

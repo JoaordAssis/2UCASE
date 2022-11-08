@@ -23,6 +23,9 @@ $idCarrinho = $_REQUEST['id_carrinho'];
 $returnProdutoCarrinho = $manager->countProdutoCarrinho("produto_carrinho", 'id_produto', 'id_carrinho', $idCarrinho);
 $returnCarrinho = $manager->getInfo('user_carrinho', 'id_carrinho', $idCarrinho);
 
+$checkProdCarrinho = $manager->getInfo('produto_carrinho', 'id_carrinho', $idCarrinho);
+
+
 if (isset($_REQUEST['action'])) {
 
     if (empty($_REQUEST['frete'])){
@@ -185,8 +188,9 @@ if (isset($_REQUEST['action'])) {
                         endif;
                         ?>
                         <span id="color-payment">
-                            <!--TODO: Criar modal para ver mais-->
-                            <button id="link-detail">Ver detalhes</button>
+                            <button id="link-detail" onclick="payment.modalVerMais()">
+                                Ver detalhes
+                            </button>
                         </span>
                     </div>
 
@@ -219,8 +223,93 @@ if (isset($_REQUEST['action'])) {
                     </div>
 
                     <button id="principal-button" type="submit" form="formulario-pagamento">Finalizar Compra</button>
+
+                    <?php
+                    if(count($checkProdCarrinho) > 0):
+                        for ($i = 0, $iMax = count($checkProdCarrinho); $i < $iMax; $i++):
+                            $getInfoProduto = $manager->getInfo('user_produto', 'id_produto', $checkProdCarrinho[$i]['id_produto']);
+                    ?>
+
+                    <div class="modal-container" id="modal-container">
+                        <button id="close-modal" onclick="payment.closeModal()">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                        <?php
+                        for ($j = 0, $jMax = count($getInfoProduto); $j < $jMax; $j++):
+                        ?>
+                        <div class="produto-info">
+                            <div class="row-mobile-img">
+                                <img src="<?=$getInfoProduto[$j]['imagem_principal_produto']?>" alt="<?=$getInfoProduto[$j]['nome_produto']?>">
+                                <div class="titles-column">
+                                    <h3><?=$getInfoProduto[$j]['nome_produto']?></h3>
+                                </div>
+                            </div>
+
+
+                            <div class="valor">
+                                <p id="p-opaco">QUANT</p>
+                                <p id="modal-quant"><?=$checkProdCarrinho[$i]['quant_carrinho']?></p>
+                            </div>
+
+                            <div class="valor">
+                                <p id="p-opaco">VALOR</p>
+                                <P id="modal-value">R$ <?=$getInfoProduto[$j]['preco_produto']?></P>
+                            </div>
+                        </div>
+                        <?php
+                        endfor;
+                        ?>
+                    </div>
+
+                    <?php
+                        endfor;
+                    endif;
+                    ?>
+
                 </section>
             </section>
+
+            <?php
+            if(count($checkProdCarrinho) > 0):
+                for ($i = 0, $iMax = count($checkProdCarrinho); $i < $iMax; $i++):
+                    $getInfoProduto = $manager->getInfo('user_produto', 'id_produto', $checkProdCarrinho[$i]['id_produto']);
+                    ?>
+
+                    <div class="modal-container" id="modal-container-mobile">
+                        <button id="close-modal" onclick="payment.closeModal()">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                        <?php
+                        for ($j = 0, $jMax = count($getInfoProduto); $j < $jMax; $j++):
+                            ?>
+                            <div class="produto-info">
+                                <div class="row-mobile-img">
+                                    <img src="<?=$getInfoProduto[$j]['imagem_principal_produto']?>" alt="<?=$getInfoProduto[$j]['nome_produto']?>">
+                                    <div class="titles-column">
+                                        <h3><?=$getInfoProduto[$j]['nome_produto']?></h3>
+                                    </div>
+                                </div>
+
+
+                                <div class="valor">
+                                    <p id="p-opaco">QUANT</p>
+                                    <p id="modal-quant"><?=$checkProdCarrinho[$i]['quant_carrinho']?></p>
+                                </div>
+
+                                <div class="valor">
+                                    <p id="p-opaco">VALOR</p>
+                                    <P id="modal-value">R$ <?=$getInfoProduto[$j]['preco_produto']?></P>
+                                </div>
+                            </div>
+                        <?php
+                        endfor;
+                        ?>
+                    </div>
+
+                <?php
+                endfor;
+            endif;
+            ?>
 
         </article>
     </main>

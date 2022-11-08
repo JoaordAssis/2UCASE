@@ -6,7 +6,6 @@ use app\model\Clientes;
 use app\model\Manager;
 
 
-//TODO: Trocar a senha para ARGON
 session_start();
 
 //LOGOUT
@@ -53,20 +52,22 @@ if (!empty($_REQUEST['email-cpf']) && !empty($_REQUEST['senha-login'])) {
             exit();
         }
 
-        if (!password_verify($_REQUEST['senha-login'], $checkEmail[0]['senha_cliente'])){
-            //Senha Invalida
-            session_destroy();
-            header("Location: ../view/login.php?error-code=FR25");
-            exit();
-        }
+
 
 
         if (count($checkEmail) > 0){
+
             $_SESSION['USER-ID'] = $checkEmail[0]['id_cliente'];
             $_SESSION['USER-NAME'] = $checkEmail[0]['nome_cliente'];
             $_SESSION['USER-EMAIL'] = $checkEmail[0]['email_cliente'];
             $_SESSION['USER-CPF'] = $checkEmail[0]['cpf_cliente'];
 
+            if (!password_verify($_REQUEST['senha-login'], $checkEmail[0]['senha_cliente'])){
+                //Senha Invalida
+                session_destroy();
+                header("Location: ../view/login.php?error-code=FR25");
+                exit();
+            }
 
             //SUCESSO
             header("Location: ../view/homepage.php?sucess-code=OA50");
