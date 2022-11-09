@@ -70,3 +70,10 @@ function redirectOrdem(search) {
 let selectModelo = document.getElementById("select-modelo-samsung-label");
 let formProduto = document.getElementById("form-prod-carrinho");
 
+//MUDAR CATEGORIA
+
+let formChange = document.getElementById("form-change-category");
+
+formChange.addEventListener('change', () => {
+    formChange.submit();
+});

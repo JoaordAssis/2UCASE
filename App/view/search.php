@@ -14,6 +14,9 @@ $category = filter_input(INPUT_GET,'category');
 $searchQuery = filter_input(INPUT_GET,'search');
 $columnSearch = ['nome_produto ', 'categoria_special_produto '];
 
+$listCategory = $manager->listClient('user_categoria', 'id_categoria');
+
+
 //Select Like
 if (!empty($_REQUEST['search']) && $_REQUEST['category'] === 'todos'){
     $returnCategory = strtoupper($searchQuery);
@@ -74,7 +77,7 @@ if (!empty($_GET['selectOrdem'])) {
         <section class="filtros-path">
             <div class="title-filtros">
                 <h2><?=strtoupper($_REQUEST['category'])?></h2>
-                <p>HOME / CAPINHAS /
+                <p>HOME /
                     <span id="last-path">
                             <?php
                             if ($_REQUEST['search'] === 'invalid'):
@@ -90,43 +93,32 @@ if (!empty($_GET['selectOrdem'])) {
             </div>
 
             <div class="filters-container row-product-container">
+                    <div class="pergunta">
+                        <button class="accordion">Categorias<img width="40" height="40" src="../assets/./svg/./arrow.svg" alt="icone de dropdown"></button>
+                        <form class="panel" action="../controllers/ControllerCategoria.php?change-category" method="post" id="form-change-category">
+                            <?php
+                            if (count($listCategory) > 0):
+                                for ($i = 0, $iMax = count($listCategory); $i < $iMax; $i++):
+                                    if ($listCategory[$i]['nome_categoria'] === $_REQUEST['category']):
+                                        ?>
+                                        <label class="container"><?=$listCategory[$i]['nome_categoria']?>
+                                            <input type="radio" value="<?=$listCategory[$i]['nome_categoria']?>" checked="checked" name="category">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    <?php
+                                    else:
+                                        ?>
+                                        <label class="container"><?=$listCategory[$i]['nome_categoria']?>
+                                            <input type="radio" value="<?=$listCategory[$i]['nome_categoria']?>" name="category">
+                                            <span class="checkmark"></span>
+                                        </label>
 
-                <div class="pergunta">
-                    <button class="accordion">Pergunta muito requisitada<img width="40" height="40" src="../assets/./svg/./arrow.svg" alt="icone de dropdown"></button>
-                    <div class="panel">
-                        <div class="checkbox">
-                            <label for="time">
-                                <input type="checkbox" name="time" id="input-checkbox">
-                                Times
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="pergunta">
-                    <button class="accordion">Pergunta muito requisitada<img width="40" height="40" src="../assets/./svg/./arrow.svg" alt="icone de dropdown"></button>
-                    <div class="panel">
-                        <div class="checkbox">
-                            <label for="time">
-                                <input type="checkbox" name="time" id="input-checkbox">
-                                Times
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="pergunta">
-                    <button class="accordion">
-                        Pergunta muito requisitada
-                        <img width="40" height="40" src="../assets/./svg/./arrow.svg" alt="icone de dropdown">
-                    </button>
-                    <div class="panel">
-                        <div class="checkbox">
-                            <label for="time">
-                                <input type="checkbox" name="time" id="input-checkbox">
-                                Times
-                            </label>
-                        </div>
+                                    <?php
+                                    endif;
+                                endfor;
+                            endif;
+                            ?>
+                        </form>
                     </div>
                 </div>
         </section>

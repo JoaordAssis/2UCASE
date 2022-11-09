@@ -71,13 +71,10 @@ function redirectOrdem(categoria) {
 let selectModelo = document.getElementById("select-modelo-samsung-label");
 let formProduto = document.getElementById("form-prod-carrinho");
 
-// formProduto.addEventListener('submit', (e) => {
-//   let opcaoTexto = selectModelo.options[selectModelo.selectedIndex].value;
-//
-//   if (opcaoTexto === "0"){
-//     e.preventDefault();
-//   }
-//
-// });
-//
-//
+//MUDAR CATEGORIA
+
+let formChange = document.getElementById("form-change-category");
+
+formChange.addEventListener('change', () => {
+  formChange.submit();
+});

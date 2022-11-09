@@ -89,6 +89,11 @@
     background-color: var(--cor-principal);
 }
 
+.accordion{
+    display: flex;
+    gap: 6rem;
+}
+
 /* Produto */
 
 .product-container{

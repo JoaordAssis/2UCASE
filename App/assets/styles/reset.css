@@ -124,70 +124,68 @@ ul, li{
 
 /* Checkbox */
 
-
-.checkbox:not(#input-checkbox-payment) {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.checkbox input:not(#input-checkbox-payment) {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-}
-
-.checkbox label:not(#input-checkbox-payment) {
+/* The container */
+.container {
+    display: block;
     position: relative;
-    padding-left: 2.2em;
-    display: inline-block;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-.checkbox label::before:not(#input-checkbox-payment) {
-    content: "";
-    display: inline-block;
-    vertical-align: middle;
-    height: 1.5em;
-    width: 1.5em;
-    background: #FFF;
-    margin-right: 0.5em;
-    border: 1px solid #000;
-    transition: all 0.2s ease;
+/* Hide the browser's default radio button */
+.container input {
     position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translate(0, -50%);
-    color: #000;
-}
-
-.checkbox label::after:not(#input-checkbox-payment) {
-    content: "\2713";
-    position: absolute;
-    top: 50%;
-    left: 0.75em;
-    transform: translate(-50%, -50%);
-    font-size: 1em;
-    color: #FFF;
     opacity: 0;
-    transition: all 0.2s ease;
+    cursor: pointer;
 }
 
-.checkbox label:focus::before:not(#input-checkbox-payment),
-.checkbox label:hover::before:not(#input-checkbox-payment) {
-    background: #DDD;
+/* Create a custom radio button */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
 }
 
-.checkbox input:checked+label::before:not(#input-checkbox-payment) {
-    background: var(--cor-principal);
-    border-color: var(--cor-principal);
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+    background-color: #ccc;
 }
 
-.checkbox input:checked+label::after {
-    opacity: 1;
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+    background-color: var(--cor-principal);
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: white;
 }
 
 

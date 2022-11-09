@@ -11,9 +11,9 @@ if (empty($_GET['category'])){
 $manager = new Manager();
 $category = filter_input(INPUT_GET, 'category');
 $returnCategory = $manager->selectWhere(['nome_categoria'], [$category], 'user_categoria');
-
 $returnProdutos = $manager->selectWhere(['id_categoria', 'status'], [$returnCategory[0]['id_categoria'], 1], 'user_produto');
 
+$listCategory = $manager->listClient('user_categoria', 'id_categoria');
 
 //Select por relevancia e preço
 
@@ -58,50 +58,38 @@ if (!empty($_GET['selectOrdem'])) {
         <section class="filtros-path">
             <div class="title-filtros">
                 <h2>Time</h2>
-                <p>HOME / CAPINHAS /<span id="last-path"><?=strtoupper($returnCategory[0]['nome_categoria'])?></span></p>
+                <p>HOME / <span id="last-path"><?=strtoupper($returnCategory[0]['nome_categoria'])?></span></p>
             </div>
 
             <div class="filters-container row-product-container">
 
                 <div class="pergunta">
-                    <button class="accordion">Pergunta muito requisitada<img width="40" height="40" src="../assets/./svg/./arrow.svg" alt="icone de dropdown"></button>
-                    <div class="panel">
-                        <div class="checkbox">
-                            <label for="time">
-                                <input type="checkbox" name="time" id="input-checkbox">
-                                Times
-                            </label>
-                        </div>
-                    </div>
-                </div>
+                    <button class="accordion">Categorias<img width="40" height="40" src="../assets/./svg/./arrow.svg" alt="icone de dropdown"></button>
+                    <form class="panel" action="../controllers/ControllerCategoria.php?change-category" method="post" id="form-change-category">
+                        <?php
+                        if (count($listCategory) > 0):
+                            for ($i = 0, $iMax = count($listCategory); $i < $iMax; $i++):
+                                if ($listCategory[$i]['nome_categoria'] === $_REQUEST['category']):
+                        ?>
+                        <label class="container"><?=$listCategory[$i]['nome_categoria']?>
+                            <input type="radio" value="<?=$listCategory[$i]['nome_categoria']?>" checked="checked" name="category">
+                            <span class="checkmark"></span>
+                        </label>
+                        <?php
+                            else:
+                        ?>
+                                <label class="container"><?=$listCategory[$i]['nome_categoria']?>
+                                    <input type="radio" value="<?=$listCategory[$i]['nome_categoria']?>" name="category">
+                                    <span class="checkmark"></span>
+                                </label>
 
-                <div class="pergunta">
-                    <button class="accordion">Pergunta muito requisitada<img width="40" height="40" src="../assets/./svg/./arrow.svg" alt="icone de dropdown"></button>
-                    <div class="panel">
-                        <div class="checkbox">
-                            <label for="time">
-                                <input type="checkbox" name="time" id="input-checkbox">
-                                Times
-                            </label>
-                        </div>
-                    </div>
+                        <?php
+                                endif;
+                            endfor;
+                        endif;
+                        ?>
+                    </form>
                 </div>
-
-                <div class="pergunta">
-                    <button class="accordion">
-                        Pergunta muito requisitada
-                        <img width="40" height="40" src="../assets/./svg/./arrow.svg" alt="icone de dropdown">
-                    </button>
-                    <div class="panel">
-                        <div class="checkbox">
-                            <label for="time">
-                                <input type="checkbox" name="time" id="input-checkbox">
-                                Times
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
         </section>
 
 
