@@ -2,7 +2,7 @@
 session_start();
 
 if(empty($_SESSION['USER-ID'])){
-    header("Location: ./homepage.php?error-code=OA00");
+    header("Location: ./login.php?error-code=OA00");
     exit();
 }
 require_once __DIR__ . '/../../vendor/autoload.php';

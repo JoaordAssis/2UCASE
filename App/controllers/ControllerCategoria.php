@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $categorySearch = $_REQUEST['category'];
 

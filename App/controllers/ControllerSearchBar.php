@@ -22,6 +22,16 @@ if ($filterSearch === 0){
     exit();
 }
 
+
+if (!empty($_REQUEST['selectOrdem'])){
+    $exibSearch = filter_input(INPUT_GET, 'selectOrdem');
+    $header = "Location: ../view/search.php?search=$searchQuery&selectOrdem=$exibSearch&category=todos";
+    header($header);
+    exit();
+}
+
+
+
 $columnSearch = ['nome_produto ', 'categoria_special_produto '];
 $searchLike = $manager->selectLike('user_produto', $columnSearch, $filterSearch);
 
@@ -31,5 +41,5 @@ if (count($searchLike) > 0){
 
 }
 
-header("Location: ../view/search.php?search=invalid&category=any");
+header("Location: ../view/search.php?search=$searchQuery&category=any");
 exit();

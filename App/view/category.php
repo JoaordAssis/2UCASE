@@ -9,7 +9,7 @@ if (empty($_GET['category'])){
     header("Location: ./homepage.php");
 }
 $manager = new Manager();
-$category = $_REQUEST['category'];
+$category = filter_input(INPUT_GET, 'category');
 $returnCategory = $manager->selectWhere(['nome_categoria'], [$category], 'user_categoria');
 
 $returnProdutos = $manager->selectWhere(['id_categoria', 'status'], [$returnCategory[0]['id_categoria'], 1], 'user_produto');
@@ -20,19 +20,19 @@ $returnProdutos = $manager->selectWhere(['id_categoria', 'status'], [$returnCate
 if (!empty($_GET['selectOrdem'])) {
 
     if ($_GET['selectOrdem'] === '1') {
-        // Maior preço
+        // Maior para menor preço
         $resultSearchOrdem = $manager->selectCategoriaOrder('user_produto', 'preco_produto', 'DESC', 'id_categoria', $returnCategory[0]['id_categoria']);
         $returnProdutos = $resultSearchOrdem;
     }
 
     if ($_GET['selectOrdem'] === '2') {
-        // Maior preço
+        // Menor para Maior preço
         $resultSearchOrdem = $manager->selectCategoriaOrder('user_produto', 'preco_produto', 'ASC', 'id_categoria', $returnCategory[0]['id_categoria']);
         $returnProdutos = $resultSearchOrdem;
     }
 
     if ($_GET['selectOrdem'] === '3') {
-        // Maior preço
+        // Relevancia
         $resultSearchOrdem = $manager->selectCategoriaOrder('user_produto', 'quantidade_produto', 'DESC', 'id_categoria', $returnCategory[0]['id_categoria']);
         $returnProdutos = $resultSearchOrdem;
     }

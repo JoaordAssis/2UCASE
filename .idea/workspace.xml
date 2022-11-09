@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="AJUSTED: ajustes de sessão e requests para hospedagem">
+      <change afterPath="$PROJECT_DIR$/App/assets/js/search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/ControllerValidaLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/ControllerValidaLogin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/my-info.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/my-info.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/controllers/ControllerSearchBar.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controllers/ControllerSearchBar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/view/my-info.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/my-info.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/view/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/search.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,6 +219,8 @@
       <workItem from="1667863413615" duration="2019000" />
       <workItem from="1667934801409" duration="6272000" />
       <workItem from="1667945180528" duration="5213000" />
+      <workItem from="1667951121301" duration="599000" />
+      <workItem from="1668024031728" duration="3092000" />
     </task>
     <task id="LOCAL-00001" summary="Teste commit 09/10/2022">
       <created>1665346468595</created>

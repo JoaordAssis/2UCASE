@@ -224,6 +224,25 @@ class Manager extends Conexao {
         return $cmd->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function selectSearchOrder($tabela, $columns, $search, $coluna, $order): bool|array {
+        $sql = "SELECT * FROM $tabela WHERE ";
+        $queryDinamica = '';
+        $qd = '';
+
+        for ($i = 0, $iMax = count($columns); $i < $iMax; $i++) {
+            $bindParams = substr_replace($columns[$i], " LIKE '%$search%' OR ", -1);
+            $addPlus = $bindParams;
+            $qd .= $addPlus;
+            $queryDinamica = substr($qd, 0, -4);
+        }
+
+        $sqlOrder = " && status = 1 ORDER BY $coluna $order";
+        $sqlQuery = $sql . $queryDinamica . $sqlOrder;
+
+        $cmd = $this->pdo->query($sqlQuery);
+        return $cmd->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function dateCountClientes($tabela, $column, $dataAtual, $dataCount) {
         $sql = "SELECT COUNT(*) FROM $tabela WHERE $column < '$dataAtual' 
 		AND $column >= '$dataCount'";

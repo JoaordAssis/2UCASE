@@ -10,42 +10,40 @@ if (empty($_GET['category'])){
 }
 
 $manager = new Manager();
-$category = $_REQUEST['category'];
-
+$category = filter_input(INPUT_GET,'category');
+$searchQuery = filter_input(INPUT_GET,'search');
+$columnSearch = ['nome_produto ', 'categoria_special_produto '];
 
 //Select Like
 if (!empty($_REQUEST['search']) && $_REQUEST['category'] === 'todos'){
-
-    $searchQuery = $_REQUEST['search'];
-    $columnSearch = ['nome_produto ', 'categoria_special_produto '];
     $returnCategory = strtoupper($searchQuery);
-    $returnProdutos =$manager->selectLike('user_produto', $columnSearch, $searchQuery);
-
-}else{
-    $returnCategory = $manager->selectWhere(['nome_categoria'], [$category], 'user_categoria');
-    $returnProdutos = $manager->selectWhere(['id_categoria'], [$returnCategory[0]['id_categoria']], 'user_produto');
+    $returnProdutos = $manager->selectLike('user_produto', $columnSearch, $searchQuery);
 }
 
+if($_REQUEST['category'] === 'any'){
+    $returnProdutos = [];
+    $returnCategory = strtoupper($searchQuery);
+}
 
 //Select por relevancia e preço
 
 if (!empty($_GET['selectOrdem'])) {
 
     if ($_GET['selectOrdem'] === '1') {
-        // Maior preço
-        $resultSearchOrdem = $manager->selectCategoriaOrder('user_produto', 'preco_produto', 'DESC', 'id_categoria', $returnCategory[0]['id_categoria']);
+        // Maior para menor preço
+        $resultSearchOrdem = $manager->selectSearchOrder('user_produto', $columnSearch, $searchQuery, 'preco_produto', 'DESC');
         $returnProdutos = $resultSearchOrdem;
     }
 
     if ($_GET['selectOrdem'] === '2') {
-        // Maior preço
-        $resultSearchOrdem = $manager->selectCategoriaOrder('user_produto', 'preco_produto', 'ASC', 'id_categoria', $returnCategory[0]['id_categoria']);
+        // Menor para maior preço
+        $resultSearchOrdem = $manager->selectSearchOrder('user_produto', $columnSearch, $searchQuery, 'preco_produto', 'ASC');
         $returnProdutos = $resultSearchOrdem;
     }
 
     if ($_GET['selectOrdem'] === '3') {
-        // Maior preço
-        $resultSearchOrdem = $manager->selectCategoriaOrder('user_produto', 'quantidade_produto', 'DESC', 'id_categoria', $returnCategory[0]['id_categoria']);
+        // Relevancia
+        $resultSearchOrdem = $manager->selectSearchOrder('user_produto', $columnSearch, $searchQuery, 'quantidade_produto', 'DESC');
         $returnProdutos = $resultSearchOrdem;
     }
 }
@@ -137,7 +135,7 @@ if (!empty($_GET['selectOrdem'])) {
         <section class="row-product-container" id="resize-container">
             <div class="order-option">
                 <h4>Ordenar Por: </h4>
-                <select id="order-select" oninput="redirectOrdem('<?=$_GET['category']?>')" name="select-ordem">
+                <select id="order-select" oninput="redirectOrdem('<?=$_REQUEST['search']?>')" name="select-ordem">
                     <option>Todos</option>
                     <option value="1">Maior Preço</option>
                     <option value="2">Menor Preço</option>
@@ -151,7 +149,7 @@ if (!empty($_GET['selectOrdem'])) {
                 <div class="product-container">
                     <?php for ($i = 0, $iMax = count($returnProdutos); $i < $iMax; $i++) : ?>
 
-                        <a class="produto-box glide__slide" href="./produto.php?idProduto=<?=$returnProdutos[$i]['id_produto']?>">
+                        <a class="produto-box glide__slide" href="./produto.php?pd=<?=$returnProdutos[$i]['id_produto']?>">
                             <img src="<?=$returnProdutos[$i]['imagem_principal_produto']?>" alt="Capinha Flamengo">
                             <h4><?=$returnProdutos[$i]['nome_produto']?></h4>
                             <p>R$ <?=$returnProdutos[$i]['preco_produto']?></p>
@@ -173,7 +171,7 @@ if (!empty($_GET['selectOrdem'])) {
     </article>
 </main>
 
-<script src="../assets/./js/category.js"></script>
+<script src="../assets/./js/search.js"></script>
 </body>
 <!-- Footer -->
 <?php require_once './footer.php'; ?>
