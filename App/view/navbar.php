@@ -26,14 +26,14 @@ $menuReturn = $manager->listClient('adm_menu', 'id_menu');
                 </button>
             </form>
             <section class="user-login">
-                <button id="login-button" onclick="window.location.href='./login.php'">
-                    <img src="../assets/svg/Login.svg" alt="icone de login" id="login-icon" width="50" height="50" />
-                </button>
                 <?php
                 //START SESSION
                 //Verificando se existe sessão
                 if (!isset($_SESSION['USER-ID'])) {
                 ?>
+                    <button id="login-button" onclick="window.location.href='./login.php'">
+                        <img src="../assets/svg/Login.svg" alt="icone de login" id="login-icon" width="50" height="50" />
+                    </button>
                     <div class="login-links">
                         <a href="./login.php">Minha conta</a>
                         <a href="./login.php" id="login-sign">Entre ou Cadastre-se</a>
@@ -41,6 +41,9 @@ $menuReturn = $manager->listClient('adm_menu', 'id_menu');
                 <?php
                 } else {
                 ?>
+                    <button id="login-button" onclick="window.location.href='./my-info.php'">
+                        <img src="../assets/svg/Login.svg" alt="icone de login" id="login-icon" width="50" height="50" />
+                    </button>
                     <div class="login-session">
                         <nav id="menu">
                             <ul id="nav-links">

@@ -224,8 +224,7 @@ $returnVendidos = $manager->exibProducts('categoria_special_produto','Promoçõe
 
 </body>
 <!-- Footer -->
-<?php require_once './footer.php';
-?>
+<?php require_once './footer.php'; ?>
 <script src="../assets/js/error-handling.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
 <script defer src="../assets/js/carrinho.js"></script>

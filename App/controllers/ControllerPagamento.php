@@ -69,9 +69,10 @@ try {
 
     $changeStatus['id_status'] = 5;
     $updateCarrinho = $manager->updateClient("user_carrinho", $changeStatus, $idCarrinho, 'id_carrinho');
-    //Criar uma pagina de compra sucedida
-    //TODO: Criar pagina de compra sucedida
-    header("Location: ../view/homepage.php?sucess-code=CP52");
+    $lastInsertPagamento = $manager->lastInsertId('adm_venda', 'id_venda');
+    $idVenda = $lastInsertPagamento['id_venda'];
+
+    header("Location: ../view/compra-concluida.php?sucess-code=CP52&venda=$idVenda");
     exit();
 
 }catch (PDOException $e){

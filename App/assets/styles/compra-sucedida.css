@@ -1,0 +1,44 @@
+@import './reset.css';
+
+.container-sucess{
+    display: flex;
+    flex-direction: column;
+    width: 99vw;
+    align-items: center;
+    text-align: center;
+    margin-top: 6rem;
+    gap: 2rem;
+    margin-bottom: 30rem;
+    padding: 1rem;
+}
+
+.title-container{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.title-container img{
+    width: 200px;
+    max-width: 100%;
+}
+
+.container-sucess a{
+    text-decoration: underline;
+}
+
+#highlight-pedido{
+    color: var(--cor-principal);
+}
+
+.container-sucess a:hover{
+    color: var(--cor-principal);
+    transition: ease .2s;
+}
+
+.container-sucess p{
+    width: 50rem;
+    max-width: 100%;
+}
