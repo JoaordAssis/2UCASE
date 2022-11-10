@@ -35,6 +35,85 @@ session_start();
 
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum velit reprehenderit doloribus unde voluptas consequuntur qui aut, autem perspiciatis fuga cumque aspernatur? Accusantium corrupti quo asperiores molestias ratione aperiam eos, veritatis necessitatibus porro! Aspernatur reiciendis minima et animi harum nemo atque officia, excepturi magnam. Nisi corporis est molestiae cumque laudantium?</p>
         </article>
+
+        <article class="container-integrantes">
+            <h1>Integrantes</h1>
+
+            <section class="box-integrante row-integrante">
+                <div class="box-info">
+                    <img src="../assets/img/no_picture.png" alt="">
+                    <div class="text-info">
+                        <h3>João Carlos Rodrigues Assis</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia aperiam minima, blanditiis laborum quae voluptatum doloribus, cum atque repellendus officia fugit sint? Voluptatem a qui pariatur quos quod corporis maiores.</p>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="box-integrante row-reverse-integrante">
+                <div class="box-info">
+                    <img src="../assets/img/no_picture.png" alt="">
+                    <div class="text-info">
+                        <h3>Davi Camargo Matias Freitas</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia aperiam minima, blanditiis laborum quae voluptatum doloribus, cum atque repellendus officia fugit sint? Voluptatem a qui pariatur quos quod corporis maiores.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="box-integrante row-integrante">
+                <div class="box-info">
+                    <img src="../assets/img/no_picture.png" alt="">
+                    <div class="text-info">
+                        <h3>Sophia Vieira Santos</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia aperiam minima, blanditiis laborum quae voluptatum doloribus, cum atque repellendus officia fugit sint? Voluptatem a qui pariatur quos quod corporis maiores.</p>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="box-integrante row-reverse-integrante">
+                <div class="box-info">
+                    <img src="../assets/img/no_picture.png" alt="">
+                    <div class="text-info">
+                        <h3>Kathleen Gomes de Oliveira</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia aperiam minima, blanditiis laborum quae voluptatum doloribus, cum atque repellendus officia fugit sint? Voluptatem a qui pariatur quos quod corporis maiores.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="box-integrante row-integrante">
+                <div class="box-info">
+                    <img src="../assets/img/no_picture.png" alt="">
+                    <div class="text-info">
+                        <h3>Andressa Rafaela de Holanda Silva</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia aperiam minima, blanditiis laborum quae voluptatum doloribus, cum atque repellendus officia fugit sint? Voluptatem a qui pariatur quos quod corporis maiores.</p>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="box-integrante row-reverse-integrante">
+                <div class="box-info">
+                    <img src="../assets/img/no_picture.png" alt="">
+                    <div class="text-info">
+                        <h3>Samuel Machado da Silva</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia aperiam minima, blanditiis laborum quae voluptatum doloribus, cum atque repellendus officia fugit sint? Voluptatem a qui pariatur quos quod corporis maiores.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="box-integrante row-integrante">
+                <div class="box-info">
+                    <img src="../assets/img/no_picture.png" alt="">
+                    <div class="text-info">
+                        <h3>Davi Moreira de Santana</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia aperiam minima, blanditiis laborum quae voluptatum doloribus, cum atque repellendus officia fugit sint? Voluptatem a qui pariatur quos quod corporis maiores.</p>
+                    </div>
+
+                </div>
+            </section>
+        </article>
+
     </main>
 </body>
 <!-- Footer -->
