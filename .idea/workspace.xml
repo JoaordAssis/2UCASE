@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="AJUSTED: ajustes de sessão e requests para hospedagem" />
+    <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="AJUSTED: textos nos selects">
+      <change afterPath="$PROJECT_DIR$/App/assets/styles/politica-privacidade.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/view/politica-privacidade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/view/add-endereco.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/add-endereco.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/view/entrega.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/entrega.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/view/pagamento.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/pagamento.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/view/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/register.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -81,7 +89,7 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\xampp\htdocs\VilicapasProjeto\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="preferences.customizations" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2021.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -218,6 +226,13 @@
       <workItem from="1668034752558" duration="55000" />
       <workItem from="1668035125347" duration="1609000" />
       <workItem from="1668036813582" duration="31000" />
+      <workItem from="1668036959557" duration="817000" />
+      <workItem from="1668039470105" duration="113000" />
+      <workItem from="1668124990649" duration="295000" />
+      <workItem from="1668129259043" duration="821000" />
+      <workItem from="1668219861502" duration="506000" />
+      <workItem from="1668556594216" duration="175000" />
+      <workItem from="1668556832668" duration="938000" />
     </task>
     <task id="LOCAL-00001" summary="Teste commit 09/10/2022">
       <created>1665346468595</created>
@@ -527,7 +542,6 @@
       <path value="$PROJECT_DIR$/VilicapasProjeto" />
       <path value="$PROJECT_DIR$/../VilicapasProjetos" />
     </ignored-roots>
-    <MESSAGE value="FINALIZED: Sistema de busca de valor e prazo por CEP, product page" />
     <MESSAGE value="REFATORED: Cards de categoria na homepage e mudança das imagens" />
     <MESSAGE value="WORKING: Sistema de login" />
     <MESSAGE value="FINALIZED: Sistema de login" />
@@ -552,6 +566,7 @@
     <MESSAGE value="AJUSTED: Bug de todos os itens na tabela produto_carrinho sumindo ao apagar um produto do carrinho" />
     <MESSAGE value="AJUSTED: Correções minimas de bugs e ajustes do front" />
     <MESSAGE value="AJUSTED: ajustes de sessão e requests para hospedagem" />
-    <option name="LAST_COMMIT_MESSAGE" value="AJUSTED: ajustes de sessão e requests para hospedagem" />
+    <MESSAGE value="AJUSTED: textos nos selects" />
+    <option name="LAST_COMMIT_MESSAGE" value="AJUSTED: textos nos selects" />
   </component>
 </project>

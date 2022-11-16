@@ -139,6 +139,10 @@ if (isset($_REQUEST['action'])) {
 
                                 <select name="parcelas" id="select-parcelas">
                                     <option value="0">Número de Parcelas</option>
+                                    <option value="1x">1x de <?=$totalCarrinho?></option>
+                                    <option value="2x">2x de <?=($totalCarrinho / 2)?></option>
+                                    <option value="3x">3x de <?=($totalCarrinho / 3)?></option>
+                                    <option value="4x">4x de <?=($totalCarrinho / 4)?></option>
                                 </select>
 
                                 <label for="checkCard" id="label-check">

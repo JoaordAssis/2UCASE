@@ -70,7 +70,33 @@ $idCarrinho = $_REQUEST['carrinho'];
                         <!-- Input estado e cidade row -->
 
                         <select name="state" id="state-input">
-                            <option value="0">Estado</option>
+                            <option>RO</option>
+                            <option>AC</option>
+                            <option>AM</option>
+                            <option>RR</option>
+                            <option>PA</option>
+                            <option>AP</option>
+                            <option>TO</option>
+                            <option>MA</option>
+                            <option>PI</option>
+                            <option>CE</option>
+                            <option>RN</option>
+                            <option>PB</option>
+                            <option>PE</option>
+                            <option>AL</option>
+                            <option>SE</option>
+                            <option>BA</option>
+                            <option>MG</option>
+                            <option>ES</option>
+                            <option>RJ</option>
+                            <option>SP</option>
+                            <option>PR</option>
+                            <option>SC</option>
+                            <option>RS</option>
+                            <option>MS</option>
+                            <option>MT</option>
+                            <option>GO</option>
+                            <option>DF</option>
                         </select>
 
                         <label for="cidade">
