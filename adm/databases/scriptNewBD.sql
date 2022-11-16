@@ -302,11 +302,29 @@ VALOR: Porcentagem do cupom menos o valor do produto.',
 );
 
 
+create table `2ucase_bd3`.user_newsletter
+(
+    id_noticias       int auto_increment
+        primary key,
+    email_noticias    varchar(360)                          not null,
+    data_reg_noticias timestamp default current_timestamp() not null comment 'Data de registro'
+);
+
+
+
+
 -- INSERTS CATEGORIA
 
-INSERT INTO user_categoria (nome_categoria, img_categoria, link_categoria) VALUES ('Times', '../assets/img/Banner1.png', './home.php');
+INSERT INTO user_categoria (nome_categoria, img_categoria, link_categoria) VALUES ('Times', '../assets/img/times-category.jpg', './homepage.php');
+INSERT INTO user_categoria (nome_categoria, img_categoria, link_categoria) VALUES ( 'Animacoes', '../assets/img/animacao-category.jpg', './homepage.php');
+INSERT INTO user_categoria (nome_categoria, img_categoria, link_categoria) VALUES ( 'flork', '../assets/img/flork-category.jpg', './homepage.php');
+INSERT INTO user_categoria (nome_categoria, img_categoria, link_categoria) VALUES ( 'estampas', '../assets/img/estampa-category.jpg', './homepage.php');
+INSERT INTO user_categoria (nome_categoria, img_categoria, link_categoria) VALUES ( 'herois', '../assets/img/herois-category.jpg', './homepage.php');
+-- NAO ENCONTREI IMAGEM POP SOCKET
+INSERT INTO user_categoria (nome_categoria, img_categoria, link_categoria) VALUES ( 'pop-socket', '../assets/img/StitchAirpodscase.png', './homepage.php');
 
-INSERT INTO user_categoria (nome_categoria, img_categoria, link_categoria) VALUES ( 'Animacoes', '../assets/img/Banner2.png', './home.php');
+
+
 
 
 -- INSERT INTO MODELO CELULAR

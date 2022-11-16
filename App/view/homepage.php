@@ -161,21 +161,21 @@ $returnPromos = $manager->exibProducts('categoria_special_produto','Promoções'
                     <img src="../assets/img/Olafinho.png" alt="Banner 1">
                 </a>
 
-                <a href="#" class="card-category" id="card1">
+                <a href="./category.php?category=estampas" class="card-category" id="card1">
                     <div class="shadow-hover">
                         <h2>Estampas</h2>
                     </div>
                     <img src="../assets/img/AmendoeiraVanGoghCase.png" alt="Banner 1">
                 </a>
 
-                <a href="#" class="card-category" id="card1">
+                <a href="./category.php?category=flork" class="card-category" id="card1">
                     <div class="shadow-hover">
                         <h2>Flork</h2>
                     </div>
                     <img src="../assets/img/Florkgirly.png" alt="Banner 1">
                 </a>
 
-                <a href="#" class="card-category" id="card1">
+                <a href="./category.php?category=herois" class="card-category" id="card1">
                     <div class="shadow-hover">
                         <h2>Heroís</h2>
                     </div>
@@ -189,7 +189,7 @@ $returnPromos = $manager->exibProducts('categoria_special_produto','Promoções'
                     <img src="../assets/img/GarotaCorinthiana.png" alt="Banner 1">
                 </a>
 
-                <a href="#" class="card-category" id="card1">
+                <a href="./category.php?category=pop-socket" class="card-category" id="card1">
                     <div class="shadow-hover">
                         <h2>Pop Sockets</h2>
                     </div>

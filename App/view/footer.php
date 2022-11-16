@@ -18,7 +18,7 @@
             <h4>Nós siga nas redes sociais</h4>
             <div class="icon-media">
                 <div class="instagram media">
-                    <a target="__blank" href="https://www.instagram.com/07_sophi/">
+                    <a target="__blank" href="https://www.instagram.com/_2ucase/">
                         <i class="fa-brands fa-instagram fa-2x"></i>
                     </a>
                 </div>
@@ -43,7 +43,7 @@
                     <a href="./contact.php">
                         <li>Central de Ajuda</li>
                     </a>
-                    <a href="#">
+                    <a href="./politica-privacidade.php">
                         <li>Políticas de Privacidade</li>
                     </a>
                 </ul>

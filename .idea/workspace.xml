@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="AJUSTED: textos nos selects">
-      <change afterPath="$PROJECT_DIR$/App/assets/styles/politica-privacidade.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/view/politica-privacidade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/assets/img/estampa-category.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/add-endereco.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/add-endereco.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/entrega.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/entrega.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/pagamento.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/pagamento.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/assets/styles/politica-privacidade.css" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/styles/politica-privacidade.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/view/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/view/homepage.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/homepage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adm/databases/scriptNewBD.sql" beforeDir="false" afterPath="$PROJECT_DIR$/adm/databases/scriptNewBD.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,7 +231,8 @@
       <workItem from="1668129259043" duration="821000" />
       <workItem from="1668219861502" duration="506000" />
       <workItem from="1668556594216" duration="175000" />
-      <workItem from="1668556832668" duration="938000" />
+      <workItem from="1668556832668" duration="1246000" />
+      <workItem from="1668632343573" duration="5389000" />
     </task>
     <task id="LOCAL-00001" summary="Teste commit 09/10/2022">
       <created>1665346468595</created>
