@@ -56,7 +56,7 @@ if (!empty($_GET['selectOrdem'])) {
 
 <head>
     <?php require_once __DIR__ . "/../config/stylesConfig.php"  ?>
-    <link rel="stylesheet" href="../assets/styles/category.css">
+    <link rel="stylesheet" href="../assets/styles/search.css">
 </head>
 <!-- Barra de Navegação -->
 <?php require_once './navbar.php'; ?>
