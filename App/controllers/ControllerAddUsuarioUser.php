@@ -10,6 +10,7 @@ session_start();
 
 if (!empty($_SESSION["USER-ID"])) {
 
+    //TODO: MUDAR A MENSAGEM DE ERRO
     ?>
 <!--Ja esta logado-->
     <form action="../view/login.php?030" name="myForm" id="myForm" method="post">

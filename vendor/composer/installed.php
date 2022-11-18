@@ -3,7 +3,7 @@
         'name' => 'vendor_name/2ucase',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'a30b4e2fee8735ec2b0a79445504c6edaf62a07b',
+        'reference' => '6027d9c97017e3914ec6a6949ede7f207b1f2e03',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -75,6 +75,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'phpmailer/phpmailer' => array(
+            'pretty_version' => 'v6.6.5',
+            'version' => '6.6.5.0',
+            'reference' => '8b6386d7417526d1ea4da9edb70b8352f7543627',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phpmailer/phpmailer',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'psr/http-client' => array(
             'pretty_version' => '1.0.1',
             'version' => '1.0.1.0',
@@ -132,7 +141,7 @@
         'roave/security-advisories' => array(
             'pretty_version' => 'dev-latest',
             'version' => 'dev-latest',
-            'reference' => '964c5d9ca40d0ec72db203b3dd6382a30abef616',
+            'reference' => 'ed33734832e5a87eaa4341be7ce580de54157460',
             'type' => 'metapackage',
             'install_path' => NULL,
             'aliases' => array(
@@ -152,7 +161,7 @@
         'vendor_name/2ucase' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'a30b4e2fee8735ec2b0a79445504c6edaf62a07b',
+            'reference' => '6027d9c97017e3914ec6a6949ede7f207b1f2e03',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

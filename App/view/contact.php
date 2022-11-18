@@ -95,34 +95,37 @@ session_start();
             <h1>Fale Conosco</h1>
 
             <section class="fale-container">
-                <form action="#" method="POST" class="form-contato">
-                    <input type="text" placeholder="Nome" id="input-nome" class="input-contact" name="nome">
+                <form action="../controllers/ControllerEmailContact.php" method="POST" class="form-contato">
+                    <input type="text" required placeholder="Nome" id="input-nome" class="input-contact" name="nome">
 
                     <div class="row-contact">
-
-                        <input type="text" data-js="phone" placeholder="Telefone" id="input-phone"
+                        <input type="text" required data-js="phone" placeholder="Telefone" id="input-phone"
                                class="input-contact"
                                name="phone" maxlength="15">
-                        <input type="text" placeholder="Número do Pedido" id="input-pedido" class="input-contact" name="nPedido">
+                        <input type="text" placeholder="Número do Pedido (opcional)" id="input-pedido" class="input-contact" name="nPedido">
                     </div>
+
+                    <input type="email" placeholder="Email" id="input-nome" class="input-contact" name="email">
+
 
                     <select name="assunto" id="select-assunto">
                         <option selected>Assunto</option>
-                        <option value="1">Cadastro</option>
-                        <option value="1">Cancelamento</option>
-                        <option value="1">Entrega</option>
-                        <option value="1">Serviços</option>
-                        <option value="1">Troca</option>
-                        <option value="1">Pagamento</option>
-                        <option value="1">Elogio</option>
-                        <option value="1">Reclamação</option>
-                        <option value="1">Trabalhe Conosoco</option>
+                        <option>Cadastro</option>
+                        <option>Cancelamento</option>
+                        <option>Entrega</option>
+                        <option>Serviços</option>
+                        <option>Troca</option>
+                        <option>Pagamento</option>
+                        <option>Elogio</option>
+                        <option>Reclamação</option>
+                        <option>Trabalhe Conosoco</option>
                     </select>
-                    <textarea name="mensagem" placeholder="Mensagem" id="msg-input" cols="30" rows="10"></textarea>
+
+                    <textarea name="mensagem" required placeholder="Mensagem" id="msg-input" cols="30" rows="10"></textarea>
 
                     <div class="row-contact">
                         <label id="input-file-label" for="archive"><i class="fa-solid fa-file fa-2x"></i> Anexar arquivos
-                            <input type="file" name="archive" id="input-file" placeholder="Anexar arquivos">
+                            <input type="file" name="archive" id="input-file" placeholder="Anexar arquivo">
                         </label>
                         <button id="principal-button" type="submit">Enviar</button>
                     </div>

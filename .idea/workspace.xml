@@ -2,8 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="AJUSTED: textos nos selects">
-      <change afterPath="$PROJECT_DIR$/App/assets/styles/search.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/search.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/controllers/ControllerEmailContact.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/controllers/ControllerLoginSocial.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/model/Email.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/model/GoogleLogin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Vilicapas.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Vilicapas.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/view/contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/contact.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/view/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +71,7 @@
       <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/phpmailer/phpmailer" />
     </include_path>
   </component>
   <component name="ProblemsViewState">
@@ -80,7 +94,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/adm/assets/css" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\xampp\htdocs\VilicapasProjeto\node_modules\prettier" />
@@ -230,6 +244,8 @@
       <workItem from="1668556832668" duration="1246000" />
       <workItem from="1668632343573" duration="5389000" />
       <workItem from="1668638607488" duration="659000" />
+      <workItem from="1668717983765" duration="6775000" />
+      <workItem from="1668731705626" duration="1186000" />
     </task>
     <task id="LOCAL-00001" summary="Teste commit 09/10/2022">
       <created>1665346468595</created>

@@ -1,3 +1,11 @@
+<?php
+const GOOGLE = [
+    'clientId'     => '278048798991-bsggnq10pf7u7lfmk3cilni8ttk3r2mg.apps.googleusercontent.com',
+    'clientSecret' => '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',
+    'redirectUri'  => 'http://localhost/Estudos/Testes_de_Implementa%c3%a7%c3%a3o/Login_google_facebook/google/'
+];
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 

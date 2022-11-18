@@ -5,7 +5,15 @@ session_start();
 <html lang="pt-br">
 
 <head>
-    <?php require_once __DIR__ . "/../config/stylesConfig.php"  ?>
+    <?php
+    require_once __DIR__ . "/../config/stylesConfig.php";
+    require_once __DIR__ . '/../../vendor/autoload.php';
+    use League\OAuth2\Client\Provider\Google;
+    $google = new Google(GOOGLE);
+
+    //FAZER A VERIFICAÇÃO DE ERRO NO CONTROLLER
+    $authUrl = $google->getAuthorizationUrl();
+    ?>
     <link rel="stylesheet" href="../assets/styles/login.css">
 
 </head>
@@ -35,11 +43,7 @@ session_start();
                 <p>Ou entre com as suas redes sociais</p>
                 <section class="social-media">
 
-                    <button id="social" class="facebook">
-                        <i class="fa-brands fa-facebook-f"></i>Facebook
-                    </button>
-
-                    <button id="social" class="google">
+                    <button type="button" id="social" onclick="window.location.href='<?=$authUrl?>'" class="google">
                         <img src="../assets/./svg/google.svg" alt="Logo do google" width="20" height="20">Google
                     </button>
                 </section>
@@ -86,10 +90,6 @@ session_start();
 
                 <p>Ou registre-se com suas redes sociais</p>
                 <section class="social-media">
-                    <button id="social" class="facebook">
-                        <i class="fa-brands fa-facebook-f"></i>Facebook
-                    </button>
-
                     <button id="social" class="google">
                         <img src="../assets/./svg/google.svg" alt="Logo do google" width="20" height="20">Google
                     </button>
