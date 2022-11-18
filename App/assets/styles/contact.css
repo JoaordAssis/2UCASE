@@ -73,6 +73,11 @@
     margin-bottom: 1rem;
 }
 
+.panel p{
+    max-width: 75rem;
+    padding: .8rem;
+}
+
 
 /* Fale Conosco */
 
