@@ -106,33 +106,33 @@ session_start();
 
                         <select required name="state" id="state-input">
                             <option value="0">Estado</option>
-                            <option>RO</option>
                             <option>AC</option>
-                            <option>AM</option>
-                            <option>RR</option>
-                            <option>PA</option>
-                            <option>AP</option>
-                            <option>TO</option>
-                            <option>MA</option>
-                            <option>PI</option>
-                            <option>CE</option>
-                            <option>RN</option>
-                            <option>PB</option>
-                            <option>PE</option>
                             <option>AL</option>
-                            <option>SE</option>
+                            <option>AM</option>
+                            <option>AP</option>
                             <option>BA</option>
-                            <option>MG</option>
+                            <option>CE</option>
+                            <option>DF</option>
                             <option>ES</option>
-                            <option>RJ</option>
-                            <option>SP</option>
-                            <option>PR</option>
-                            <option>SC</option>
-                            <option>RS</option>
+                            <option>GO</option>
+                            <option>MA</option>
+                            <option>MG</option>
                             <option>MS</option>
                             <option>MT</option>
-                            <option>GO</option>
-                            <option>DF</option>
+                            <option>PA</option>
+                            <option>PB</option>
+                            <option>PE</option>
+                            <option>PI</option>
+                            <option>PR</option>
+                            <option>RJ</option>
+                            <option>RN</option>
+                            <option>RO</option>
+                            <option>RR</option>
+                            <option>RS</option>
+                            <option>SC</option>
+                            <option>SE</option>
+                            <option>SP</option>
+                            <option>TO</option>
                         </select>
 
                         <label for="cidade">

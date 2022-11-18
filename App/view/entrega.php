@@ -24,134 +24,134 @@ $idCarrinho = $_REQUEST['carrinho'];
 </head>
 
 <!-- Barra de Navegação -->
-<?php require_once "./navbar-simple.php" ?>
+<?php require_once "./navbar.php" ?>
 
 <body id="body-margin">
-    <form action="../controllers/ControllerAddEndereco.php" method="POST" class="entrega-container">
+<form action="../controllers/ControllerAddEndereco.php" method="POST" id="form-entrega-frete" class="entrega-container">
 
-        <input type="hidden" name="id_carrinho" value="<?=$idCarrinho?>">
+    <input type="hidden" name="id_carrinho" value="<?=$idCarrinho?>">
 
 
-        <div class="process">
-            <!-- Icones da etapa do processo -->
-<!--            <img src="../assets/./img/Etapas.png" alt="etapa entrega" width="210" height="80">-->
+    <div class="process">
+        <!-- Icones da etapa do processo -->
+        <!--            <img src="../assets/./img/Etapas.png" alt="etapa entrega" width="210" height="80">-->
+    </div>
+
+
+    <article class="entrega">
+
+        <h1>Entrega</h1>
+        <!-- Flex direction Column -->
+
+        <div class="cep-calc">
+            <label for="cep">
+                <input data-js="cep" type="text" name="cep" placeholder="CEP"
+                       id="input-calcula-cep">
+            </label>
+            <button type="button" class="button-cep-calc" id="principal-button">Calcular</button>
+            <a target="_blank" href="https://www2.correios.com.br/sistemas/buscacep/buscaCep.cfm">Não sei meu CEP</a>
         </div>
 
+        <div id="container-error">
+            <p id="error-exib"></p>
+        </div>
 
-        <article class="entrega">
-
-            <h1>Entrega</h1>
-            <!-- Flex direction Column -->
-
-            <div class="cep-calc">
-                <label for="cep">
-                    <input data-js="cep" type="text" name="cep" placeholder="CEP"
-                           id="input-calcula-cep">
+        <section class="columns-container">
+            <section class="address-column1 address">
+                <label for="logradouro">
+                    <input type="text" required name="logradouro" id="logradouro" placeholder="Logradouro">
                 </label>
-                <button type="button" class="button-cep-calc" id="principal-button">Calcular</button>
-                <a target="_blank" href="https://www2.correios.com.br/sistemas/buscacep/buscaCep.cfm">Não sei meu CEP</a>
-            </div>
 
-            <div id="container-error">
-                <p id="error-exib"></p>
-            </div>
+                <label for="referencia">
+                    <input type="text" name="referencia" id="input-entrega" placeholder="Ponto de Referência">
+                </label>
 
-            <section class="columns-container">
-                <section class="address-column1 address">
-                    <label for="logradouro">
-                        <input type="text" name="logradouro" id="logradouro" placeholder="Logradouro">
+                <div class="state-container">
+                    <!-- Input estado e cidade row -->
+
+                    <select name="state" required id="state-input">
+                        <option>AC</option>
+                        <option>AL</option>
+                        <option>AM</option>
+                        <option>AP</option>
+                        <option>BA</option>
+                        <option>CE</option>
+                        <option>DF</option>
+                        <option>ES</option>
+                        <option>GO</option>
+                        <option>MA</option>
+                        <option>MG</option>
+                        <option>MS</option>
+                        <option>MT</option>
+                        <option>PA</option>
+                        <option>PB</option>
+                        <option>PE</option>
+                        <option>PI</option>
+                        <option>PR</option>
+                        <option>RJ</option>
+                        <option>RN</option>
+                        <option>RO</option>
+                        <option>RR</option>
+                        <option>RS</option>
+                        <option>SC</option>
+                        <option>SE</option>
+                        <option>SP</option>
+                        <option>TO</option>
+                    </select>
+
+                    <label for="cidade">
+                        <input type="text" required name="cidade" id="localidade" placeholder="Cidade">
                     </label>
-
-                    <label for="referencia">
-                        <input type="text" name="referencia" id="input-entrega" placeholder="Ponto de Referência">
-                    </label>
-
-                    <div class="state-container">
-                        <!-- Input estado e cidade row -->
-
-                        <select name="state" id="state-input">
-                            <option>RO</option>
-                            <option>AC</option>
-                            <option>AM</option>
-                            <option>RR</option>
-                            <option>PA</option>
-                            <option>AP</option>
-                            <option>TO</option>
-                            <option>MA</option>
-                            <option>PI</option>
-                            <option>CE</option>
-                            <option>RN</option>
-                            <option>PB</option>
-                            <option>PE</option>
-                            <option>AL</option>
-                            <option>SE</option>
-                            <option>BA</option>
-                            <option>MG</option>
-                            <option>ES</option>
-                            <option>RJ</option>
-                            <option>SP</option>
-                            <option>PR</option>
-                            <option>SC</option>
-                            <option>RS</option>
-                            <option>MS</option>
-                            <option>MT</option>
-                            <option>GO</option>
-                            <option>DF</option>
-                        </select>
-
-                        <label for="cidade">
-                            <input type="text" name="cidade" id="localidade" placeholder="Cidade">
-                        </label>
-                    </div>
-                </section>
-
-                <section class="address-column2 address">
-                    <div class="number-container">
-
-                        <label for="numero">
-                            <input type="text" data-js="number" name="numero" id="input-entrega" placeholder="Número">
-                        </label>
-
-                        <label for="complemento">
-                            <input type="text" name="complemento" id="input-entrega" placeholder="Complemento">
-                        </label>
-                    </div>
-
-                    <label for="bairro">
-                        <input type="text" name="bairro" id="bairro" placeholder="Bairro">
-                    </label>
-
-                    <label for="nomeR">
-                        <input type="text" name="nomeR" id="input-entrega" placeholder="Nome do Recebedor">
-                    </label>
-
-                </section>
+                </div>
             </section>
-        </article>
 
-        <article class="frete-container">
-            <h1>Frete</h1>
+            <section class="address-column2 address">
+                <div class="number-container">
 
-            <div class="frete-option" id="sedex">
-                <label class="label-values-entrega" for="frete">
-                    <input type="radio" name="frete" value="" id="radio-input-sedex">
-                    <p id="tempo-entrega-sedex"></p>
-                    <p id="valor-sedex"></p>
+                    <label for="numero">
+                        <input type="text" required name="numero" id="input-entrega" placeholder="Número">
+                    </label>
+
+                    <label for="complemento">
+                        <input type="text" name="complemento" id="input-entrega" placeholder="Complemento">
+                    </label>
+                </div>
+
+                <label for="bairro">
+                    <input type="text" required name="bairro" id="bairro" placeholder="Bairro">
                 </label>
-            </div>
 
-            <div class="frete-option" id="sedex">
-                <label class="label-values-entrega" for="frete">
-                    <input type="radio" name="frete" value="" id="radio-input-pac">
-                    <p id="tempo-entrega-pac"></p>
-                    <p id="valor-pac"></p>
+                <label for="nomeR">
+                    <input type="text" required name="nomeR" id="input-entrega" placeholder="Nome do Recebedor">
                 </label>
-            </div>
-        </article>
-        <button id="principal-button" class="form-submit" type="submit">
-            Ir para o pagamento
-        </button>
-    </form>
+
+            </section>
+        </section>
+    </article>
+
+    <article class="frete-container">
+        <h1>Frete</h1>
+
+        <div class="frete-option" id="sedex">
+            <label class="label-values-entrega" for="frete">
+                <input type="radio" name="frete" value="" id="radio-input-sedex">
+                <p id="tempo-entrega-sedex"></p>
+                <p id="valor-sedex"></p>
+            </label>
+        </div>
+
+        <div class="frete-option" id="sedex">
+            <label class="label-values-entrega" for="frete">
+                <input type="radio" name="frete" value="" id="radio-input-pac">
+                <p id="tempo-entrega-pac"></p>
+                <p id="valor-pac"></p>
+            </label>
+        </div>
+    </article>
+    <button id="principal-button" class="form-submit btn-form-entrega" type="submit">
+        Ir para o pagamento
+    </button>
+</form>
 </body>
 <script src="../assets/js/entrega.js"></script>
 <script src="../assets/js/error-handling.js"></script>

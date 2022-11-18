@@ -6,6 +6,10 @@ let freteSedex = document.getElementById("valor-sedex");
 let fretePAC = document.getElementById("valor-pac");
 let radioSedex = document.getElementById("radio-input-sedex");
 let radioPac = document.getElementById("radio-input-pac");
+let formDisable = document.querySelector(".btn-form-entrega");
+let formEventListener = document.getElementById("form-entrega-frete");
+
+
 
 const showData = (result) => {
     for (const campo in result) {
@@ -13,7 +17,7 @@ const showData = (result) => {
             document.querySelector("#" + campo).value = result[campo];
         }
     }
-    
+
 };
 
 cepInput.addEventListener('blur', (e) => {
@@ -82,6 +86,10 @@ document.querySelectorAll('input').forEach(($input) => {
 
 
 
+//DESABILITAR FORMULARIO
+formDisable.disabled = true;
+
+
 //Calcular CEP
 cepInput.addEventListener("blur", () => {
     if (cepInput.value.length === 0){
@@ -106,6 +114,12 @@ cepInput.addEventListener("blur", () => {
                     dataResponse = response;
                     freteSedex.innerText = "R$ " + dataResponse[1]['Valor'];
                     fretePAC.innerText = "R$ " + dataResponse[0]['Valor'];
+
+                    formEventListener.addEventListener("change", () => {
+                        if (radioPac.checked || radioSedex.checked){
+                            formDisable.disabled = false;
+                        }
+                    });
 
                     radioSedex.value = dataResponse[1]['Valor'] + " " + dataResponse[1]['Codigo'];
                     radioPac.value = dataResponse[0]['Valor'] + " " + dataResponse[0]['Codigo'];

@@ -14,11 +14,12 @@ a, button{
 }
 
 object{
-    padding: .5px;
+    padding: 1px;
 }
 
 #body-margin{
     margin-top: 148px;
+    overflow-x: hidden;
 }
 
 header{

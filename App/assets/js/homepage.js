@@ -43,7 +43,7 @@ carrosselProdFirst.mount();
 // Quarto carrosel Produtos mais vendidos
 
 let carrosselProdSell = new Glide(carrossel4Sell, {
-  type: "carousel",
+  type: "slide",
   startAt: 0,
   perView: 4,
   autoplay: 1500,
@@ -67,7 +67,7 @@ carrosselProdSell.mount();
 // Terceiro carrosel Produtos mais curtidos
 
 let carrosselProdLikes =  new Glide(carrossel3Like, {
-  type: "carousel",
+  type: "slide",
   startAt: 0,
   perView: 4,
   autoplay: 1500,

@@ -142,6 +142,16 @@ if (isset($_REQUEST['cadastroCompletoForm'])){
     $dadosUsuario['genero_cliente'] = $_REQUEST['gender'];
     $dadosUsuario['status'] = 1;
 
+
+    $cepVerify = $endereco->verifyCEP($_REQUEST['cep']);
+
+    if ($cepVerify !== true){
+
+        $returnPage = $_SERVER['HTTP_REFERER'] . "&error-code=FR29";
+        header("Location: $returnPage");
+        exit();
+    }
+
     //INSERT USUARIO
     try {
        $manager->insertClient("user_cliente", $dadosUsuario);
@@ -150,14 +160,6 @@ if (isset($_REQUEST['cadastroCompletoForm'])){
          header("Location: ../view/register.php?error-code=FR31&nome=$nome&email=$email&senhaCripto=$senhaCripto");
     }
 
-    $cepVerify = $endereco->verifyCEP($_REQUEST['cep']);
-
-    if ($cepVerify !== true){
-
-        //CEP está incorreto
-        header("Location: ../view/register.php?error-code=FR29&nome=$nome&email=$email&senhaCripto=$senhaCripto");
-        exit();
-    }
 
     $lastInsert = $manager->lastInsertId('user_cliente', 'id_cliente');
     $sanitizeCEP = $user->sanitizeField($_REQUEST['cep']);
