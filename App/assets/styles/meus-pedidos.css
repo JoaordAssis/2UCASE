@@ -53,7 +53,7 @@
 
 
 .container-filters-select{
-    width: 80%;
+    width: 90%;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -73,6 +73,14 @@
     text-transform: uppercase;
     background-color: #FFFFFF;
     border: 1px solid  var(--cor-principal);
+    min-width: 200px;
+}
+
+.btn-pedidos.active{
+    border: none;
+    background-color: var(--cor-principal);
+    color: #FFFFFF;
+    transition: ease .3s;
 }
 
 #btn-maior:hover, #btn-menor:hover, #btn-antigo:hover{

@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="AJUSTED: textos nos selects">
+      <change afterPath="$PROJECT_DIR$/App/controllers/ControllerOrderMeusPedidos.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/assets/js/meus-pedidos.js" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/js/meus-pedidos.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/assets/styles/meus-pedidos.css" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/styles/meus-pedidos.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/model/Manager.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/model/Manager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/view/meus-pedidos.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/meus-pedidos.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,6 +243,8 @@
       <workItem from="1668814700126" duration="2438000" />
       <workItem from="1668818371317" duration="234000" />
       <workItem from="1668822334904" duration="1757000" />
+      <workItem from="1668855972538" duration="3450000" />
+      <workItem from="1668859956402" duration="620000" />
     </task>
     <task id="LOCAL-00001" summary="Teste commit 09/10/2022">
       <created>1665346468595</created>

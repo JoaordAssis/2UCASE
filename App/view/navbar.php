@@ -49,7 +49,7 @@ $menuReturn = $manager->listClient('adm_menu', 'id_menu');
                             <ul id="nav-links">
                                 <li class="menu-link">
                                     <a href="#" id="first-link">
-                                        Meus Pedidos
+                                       Minha Conta
                                     </a>
                                     <ul class="container-submenu">
                                         <li>
@@ -164,6 +164,13 @@ $menuReturn = $manager->listClient('adm_menu', 'id_menu');
                 //START SESSION
                 //Verificando se existe sessão
                 if (!isset($_SESSION['USER-ID'])) {
+                ?>
+                    <button id="login-button" onclick="window.location.href='./login.php'">
+                        <img src="../assets/svg/Login.svg" alt="icone de login" id="login-icon" width="40" height="40"></img>
+                    </button>
+                <?php
+                }else{
+                    //TODO: PAGINA PARA MOBILE
                 ?>
                     <button id="login-button" onclick="window.location.href='./login.php'">
                         <img src="../assets/svg/Login.svg" alt="icone de login" id="login-icon" width="40" height="40"></img>

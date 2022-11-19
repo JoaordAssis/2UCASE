@@ -2,7 +2,7 @@
 session_start();
 
 if(empty($_SESSION['USER-ID'])){
-    header("Location: ./homepage.php?error-code=OA00");
+    header("Location: ./login.php?error-code=OA00");
     exit();
 }
 
@@ -11,6 +11,25 @@ use app\model\Manager;
 $manager = new Manager();
 
 $returnVenda = $manager->getInfo('adm_venda', 'id_cliente', $_SESSION['USER-ID']);
+
+if (!empty($_REQUEST['order'])){
+    $order = filter_input(INPUT_GET, 'order');
+
+    if ($order === 'maior'){
+        $orderVenda = $manager->selectOrderMeusPedidos('adm_venda', 'valor_venda_total', 'DESC', 'id_cliente', $_SESSION['USER-ID']);
+        $returnVenda = $orderVenda;
+    }
+
+    if ($order === 'menor'){
+        $orderVenda = $manager->selectOrderMeusPedidos('adm_venda', 'valor_venda_total', 'ASC', 'id_cliente', $_SESSION['USER-ID']);
+        $returnVenda = $orderVenda;
+    }
+
+    if ($order === 'antigo'){
+        $orderVenda = $manager->selectOrderMeusPedidos('adm_venda', 'data_venda', 'DESC', 'id_cliente', $_SESSION['USER-ID']);
+        $returnVenda = $orderVenda;
+    }
+}
 
 ?>
 
@@ -29,15 +48,10 @@ $returnVenda = $manager->getInfo('adm_venda', 'id_cliente', $_SESSION['USER-ID']
         <h1>Meus Pedidos</h1>
 
         <section class="container-filters">
-            <div class="container-search-bar">
-                <input type="search" name="searchBarProdutos" placeholder="Pesquisar" id="pesquisar-input">
-                <input type="submit" value="">
-            </div>
-
             <div class="container-filters-select">
-                <button class="btn-pedidos" id="btn-maior" onclick="btnMaiorOrder()">Maior Valor</button>
-                <button class="btn-pedidos" id="btn-menor" onclick="btnMenorOrder()">Menor Valor</button>
-                <button class="btn-pedidos" id="btn-antigo" onclick="btnAntigorOrder()">Mais Antigos</button>
+                <button class="btn-pedidos" id="btn-maior" onclick="btnMaiorOrder(<?=$_SESSION['USER-ID']?>)">Maior Valor</button>
+                <button class="btn-pedidos" id="btn-menor" onclick="btnMenorOrder(<?=$_SESSION['USER-ID']?>)">Menor Valor</button>
+                <button class="btn-pedidos" id="btn-antigo" onclick="btnAntigoOrder(<?=$_SESSION['USER-ID']?>)">Mais Recentes</button>
             </div>
 
             <div id="container-error">

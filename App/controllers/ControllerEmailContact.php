@@ -21,13 +21,11 @@ $arquivo = $_FILES['name'];
 try {
     $emailSend = $email->contactEmail($contactEmail, $contactNome, $contactAssunto, $contactTelefone, $contactMsg, $contactPedido, $arquivo);
     if ($emailSend){
-        //TODO: Criar mensagem para sucess de envio de email
-        header("Location: ../view/contact.php?error-code=0000");
+        header("Location: ../view/contact.php?error-code=FR53");
         exit();
     }
 
 }catch (Exception $exception){
-    //TODO: Criar mensagem para falha de envio de email
-    header("Location: ../view/contact.php?error-code=0000");
+    header("Location: ../view/contact.php?error-code=FR38");
     exit();
 }

@@ -21,7 +21,7 @@ let errors = {
     "FR24" : "Caracteres não são aceitos. Tente outro nome",
     "FR25" : "Conta não encontrada! Verifique se a senha e o email/CPF estão corretos e tente novamente!",
     "FR26" : "A senha deve conter um mínimo de 6 e no máximo 15 caracteres.\n" +
-        "Deve ter somente letras e numero e caractere especial(!#@$%&)\n" +
+        "Deve ter somente letras, números e caracteres especiais(!#@$%&)\n" +
         "Deve ter no mínimo uma letra maiúscula e minúscula.\n" +
         "Deve ter no mínimo um numero.\n" +
         "Deve ter no mínimo caractere especial(!#@$%&)",
@@ -35,8 +35,12 @@ let errors = {
     "FR34" : "Não foi possível atualizar as suas informações, tente novamente em alguns instantes!",
     "FR35" : "Os dois emails não são iguais. Verifique se os emails estão certas",
     "FR36" : "Já existe uma conta com este CPF, caso não se lembre da senha; volte e clique em 'Esqueceu a senha?'",
+    "FR37" : "Você já está logado, para entrar em outra conta se deslogue primeiro!",
+    "FR38" : "Falha ao enviar o email, tente novamente em alguns instantes.",
     "FR50" : "Conta criada com sucesso.",
     "FR51" : "Arquivo enviado com sucesso.",
+    "FR52" : "Informações atualizadas com sucesso!",
+    "FR53" : "Email enviado com sucesso, em instantes responderemos.",
     "OA00" : "Faça o login antes de prosseguir.",
     "OA01" : "Não há autorização para acessar a área solicitada.",
     "OA02" : "Erro: não foi possível efetuar o login. Tente novamente em alguns instantes",
