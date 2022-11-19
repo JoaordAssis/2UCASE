@@ -39,3 +39,13 @@ let accordion = new contactAnimation();
 
 accordion.accordionFunction();
 accordion.accordionAnimation();
+
+
+let btnMaior = document.getElementById('btn-maior');
+let btnMenor = document.getElementById('btn-menor');
+let btnAntigo = document.getElementById('btn-antigo');
+
+
+function btnMaiorOrder(){
+  btnMaior.style.backgroundColor = '#fb745d';
+}

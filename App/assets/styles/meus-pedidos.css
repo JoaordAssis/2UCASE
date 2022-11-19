@@ -51,11 +51,13 @@
     border-top-right-radius: 15px;
 }
 
+
 .container-filters-select{
     width: 80%;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .container-filters-select select{
@@ -64,6 +66,20 @@
     border: 1px solid var(--cor-principal);
     border-radius: 10px;
     width: 10rem;
+}
+
+.btn-pedidos{
+    padding: 1rem;
+    text-transform: uppercase;
+    background-color: #FFFFFF;
+    border: 1px solid  var(--cor-principal);
+}
+
+#btn-maior:hover, #btn-menor:hover, #btn-antigo:hover{
+    border: none;
+    background-color: var(--cor-principal);
+    color: #FFFFFF;
+    transition: ease .3s;
 }
 
 /* Meus Pedidos */
@@ -323,6 +339,14 @@
     .titles-column h4 {
         max-width: 200px;
     }
+
+    .container-filters-select{
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
 }
 
 @media (max-width: 670px) {
@@ -349,6 +373,7 @@
         flex-wrap: wrap;
         align-items: flex-start;
     }
+
 }
 
 @media (max-width: 620px) {
@@ -419,6 +444,10 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    .btn-pedidos{
+        width: 100%;
     }
 }
 

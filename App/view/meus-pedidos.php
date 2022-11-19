@@ -35,17 +35,9 @@ $returnVenda = $manager->getInfo('adm_venda', 'id_cliente', $_SESSION['USER-ID']
             </div>
 
             <div class="container-filters-select">
-                <select name="status-pedidos" id="select-status">
-                    <option>Todos</option>
-                </select>
-
-                <select name="select-categoria" id="select-categoria">
-                    <option>Todos</option>
-                </select>
-
-                <select name="faixa-preco" id="select-preco">
-                    <option>Todos</option>
-                </select>
+                <button class="btn-pedidos" id="btn-maior" onclick="btnMaiorOrder()">Maior Valor</button>
+                <button class="btn-pedidos" id="btn-menor" onclick="btnMenorOrder()">Menor Valor</button>
+                <button class="btn-pedidos" id="btn-antigo" onclick="btnAntigorOrder()">Mais Antigos</button>
             </div>
 
             <div id="container-error">
@@ -67,12 +59,15 @@ $returnVenda = $manager->getInfo('adm_venda', 'id_cliente', $_SESSION['USER-ID']
                     $getCarrinhoProduto = $manager->getInfo('produto_carrinho', 'id_carrinho', $returnVenda[$i]['id_carrinho']);
 
                     if (isset($getCarrinhoProduto[0])):
+                        $timestamp = strtotime($returnVenda[$i]['data_venda']);
+                        $newDate = date("d-m-Y H:i:s", $timestamp);
+                        $dateExib = str_replace('-', '/', $newDate)
             ?>
             <div class="box-pedido">
                 <button class="accordion">
                     Pedido N° <?=$returnVenda[$i]['numero_venda']?>
                     <div class="right-info">
-                        <p><?=$returnVenda[$i]['data_venda']?></p>
+                        <p><?=$dateExib?></p>
                         <img width="40" height="40" src="../assets/./svg/./arrow.svg" alt="icone de dropdown">
                     </div>
                 </button>

@@ -23,7 +23,7 @@
                     </a>
                 </div>
                 <div class="facebook media">
-                    <a target="__blank" href="https://www.facebook.com/friends/suggestions/?profile_id=100013558717826">
+                    <a target="__blank" href="https://www.facebook.com/profile.php?id=100087884648897">
                         <i class="fa-brands fa-facebook-f fa-2x"></i>
                     </a>
                 </div>
