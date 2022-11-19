@@ -304,7 +304,7 @@ $returnComentarios = $manager->selectWhere($paramComentario, $paramPostComentari
                 </div>
 
                 <div class="container-image-about">
-                    <img id="image-principal" src="../assets/img/Time.png" alt="Capinha flamengo">
+                    <img id="image-principal" src="<?=$returnProduto[0]['imagem_principal_produto']?>" alt="<?=$returnProduto[0]['nome_produto']?>">
                 </div>
             </section>
         </article>
@@ -418,38 +418,6 @@ $returnComentarios = $manager->selectWhere($paramComentario, $paramPostComentari
 <script src="../assets/js/category.js"></script>
 <script src="../assets/js/error-handling.js"></script>
 <script defer src="../assets/js/produto.js"></script>
-
-
-<script>
-    new Glide('.carousel-imgprod', {
-        type: 'slide',
-        startAt: -1,
-        perView: 4
-
-    }).mount();
-
-    new Glide('.prod-container-box', {
-        type: 'carousel',
-        startAt: 0,
-        perView: 4,
-        autoplay: 2000,
-        gap: 2,
-        breakpoints: {
-            800: {
-                perView: 3
-            },
-            600: {
-                perView: 2
-            },
-            500: {
-                perView: 1
-            }
-        }
-
-
-    }).mount();
-</script>
-
 
 <!-- Footer -->
 <?php require_once './footer.php'; ?>

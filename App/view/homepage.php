@@ -212,13 +212,13 @@ $returnPromos = $manager->exibProducts('categoria_special_produto','Promoções'
 
                     <ul class="glide__slides">
                         <?php
-                        for ($i = 0, $iMax = count($returnVendidos); $i < $iMax; $i++) :
+                        for ($j = 0, $iMax = count($returnVendidos); $j < $iMax; $j++) :
                             ?>
 
-                            <a class="produto-box glide__slide" href="./produto.php?pd=<?=$returnVendidos[$i]['id_produto']?>">
-                                <img src="<?=$returnVendidos[$i]['imagem_principal_produto']?>" alt="<?=$returnVendidos[$i]['nome_produto']?>">
-                                <h4><?=$returnVendidos[$i]['nome_produto']?></h4>
-                                <p>R$ <?=$returnVendidos[$i]['preco_produto']?></p>
+                            <a class="produto-box glide__slide" href="./produto.php?pd=<?=$returnVendidos[$j]['id_produto']?>">
+                                <img src="<?=$returnVendidos[$j]['imagem_principal_produto']?>" alt="<?=$returnVendidos[$j]['nome_produto']?>">
+                                <h4><?=$returnVendidos[$j]['nome_produto']?></h4>
+                                <p>R$ <?=$returnVendidos[$j]['preco_produto']?></p>
                             </a>
 
                         <?php
@@ -277,6 +277,58 @@ $returnPromos = $manager->exibProducts('categoria_special_produto','Promoções'
 <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
 <script src="../assets/js/homepage.js"></script>
 <script src="../assets/js/error-handling.js"></script>
+<script>
+
+    // Quarto carrosel Produtos mais vendidos
+
+    let carrosselProdSell = new Glide(carrossel4Sell, {
+        type: "slide",
+        startAt: 0,
+        perView: 4,
+        autoplay: 1500,
+        gap: 2,
+        breakpoints: {
+            800: {
+                perView: 3,
+            },
+            600: {
+                perView: 2,
+            },
+            500: {
+                perView: 1,
+            },
+        },
+    });
+
+    carrosselProdSell.mount();
+
+
+    // Terceiro carrosel Produtos mais curtidos
+
+    let carrosselProdLikes =  new Glide(carrossel3Like, {
+        type: "slide",
+        startAt: 0,
+        perView: 4,
+        autoplay: 1500,
+        gap: 2,
+        breakpoints: {
+            800: {
+                perView: 3,
+            },
+            600: {
+                perView: 2,
+            },
+            500: {
+                perView: 1,
+            },
+        },
+    });
+
+    carrosselProdLikes.mount();
+
+
+
+</script>
 <!-- Footer -->
 <?php require_once "./footer.php"; ?>
 

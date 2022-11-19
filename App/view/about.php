@@ -20,9 +20,11 @@ session_start();
 
         <article class="quem-somos text-container">
             <h1>Quem Somos</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum velit reprehenderit doloribus unde voluptas consequuntur qui aut, autem perspiciatis fuga cumque aspernatur? Accusantium corrupti quo asperiores molestias ratione aperiam eos, veritatis necessitatibus porro! Aspernatur reiciendis minima et animi harum nemo atque officia, excepturi magnam. Nisi corporis est molestiae cumque laudantium?</p>
+            <p>
+                2UCASE (to you case), significa "capinhas para você", ambos foram destinados para refletir que a criatividade vem de coisas mais complexas como as mais simples: capinhas. Somos um site que desenvolve capinhas criativas. Nossa marca e nossos produtos são para todos aqueles que querem se expressar. A diversidade é um combustível para a criatividade e você é muito bem-vindo a escolher diversos modelos que se encaixam com você em nosso site.
+            </p>
 
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum velit reprehenderit doloribus unde voluptas consequuntur qui aut, autem perspiciatis fuga cumque aspernatur? Accusantium corrupti quo asperiores molestias ratione aperiam eos, veritatis necessitatibus porro! Aspernatur reiciendis minima et animi harum nemo atque officia, excepturi magnam. Nisi corporis est molestiae cumque laudantium?</p>
+
         </article>
 
         <section class="image-about">
@@ -31,9 +33,10 @@ session_start();
 
         <article class="nossa-historia text-container">
             <h1>Nossa História</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum velit reprehenderit doloribus unde voluptas consequuntur qui aut, autem perspiciatis fuga cumque aspernatur? Accusantium corrupti quo asperiores molestias ratione aperiam eos, veritatis necessitatibus porro! Aspernatur reiciendis minima et animi harum nemo atque officia, excepturi magnam. Nisi corporis est molestiae cumque laudantium?</p>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum velit reprehenderit doloribus unde voluptas consequuntur qui aut, autem perspiciatis fuga cumque aspernatur? Accusantium corrupti quo asperiores molestias ratione aperiam eos, veritatis necessitatibus porro! Aspernatur reiciendis minima et animi harum nemo atque officia, excepturi magnam. Nisi corporis est molestiae cumque laudantium?</p>
+            <p>
+                A 2UCASE tem como objetivo você. Trabalhamos com você para te projetar de um jeito diferente e criativo.
+                Nossa empresa foi fundada em 15 de fevereiro de 2022 com a ideia de dar identidade e singularidade para algo meu, algo seu, algo nosso. De expressar ideias, gostos, sentimento e personalidade. Nossos produtos são detalhados porque nós somos cheios de detalhes, e é isso que nos torna nós. É isso que torna a 2UCASE o que é e, principalmente, é isso que te torna você.
+            </p>
         </article>
 
         <article class="container-integrantes">
