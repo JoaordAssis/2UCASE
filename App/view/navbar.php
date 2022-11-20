@@ -170,9 +170,9 @@ $menuReturn = $manager->listClient('adm_menu', 'id_menu');
                     </button>
                 <?php
                 }else{
-                    //TODO: PAGINA PARA MOBILE
+
                 ?>
-                    <button id="login-button" onclick="window.location.href='./login.php'">
+                    <button id="login-button" onclick="window.location.href='./mobile-conta.php'">
                         <img src="../assets/svg/Login.svg" alt="icone de login" id="login-icon" width="40" height="40"></img>
                     </button>
                 <?php

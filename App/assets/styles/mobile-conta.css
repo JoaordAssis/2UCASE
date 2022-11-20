@@ -1,0 +1,51 @@
+@import "./reset.css";
+
+.container-mobile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 6rem;
+    margin-bottom: 20rem;
+    overflow: hidden;
+    width: 100vw;
+    gap: 8rem;
+}
+
+.container-links{
+    display: flex;
+    gap: 6rem;
+    flex-wrap: wrap;
+    width: 50%;
+    padding: 1rem;
+    justify-content: center;
+}
+
+/* Link */
+
+.link-box{
+    text-align: center;
+}
+
+.link-box p{
+    margin-top: 1rem;
+}
+
+.box-item{
+    padding: 3rem;
+    border: 2px solid var(--cor-principal);
+    background-color: var(--cor-principal);
+}
+
+.box-item i {
+    color: #FFFFFF;
+}
+
+.box-item:hover{
+    background-color: transparent;
+    transition: ease .4s;
+}
+
+.box-item:hover i{
+    color: var(--cor-principal);
+    transition: ease .4s;
+}
