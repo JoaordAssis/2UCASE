@@ -47,7 +47,8 @@ session_start();
                     <img src="../assets/img/no_picture.png" alt="">
                     <div class="text-info">
                         <h3>João Carlos Rodrigues Assis</h3>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia aperiam minima, blanditiis laborum quae voluptatum doloribus, cum atque repellendus officia fugit sint? Voluptatem a qui pariatur quos quod corporis maiores.</p>
+                        <p><strong>Gestor & Editor</strong></p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, doloribus!</p>
                     </div>
 
                 </div>
@@ -55,20 +56,22 @@ session_start();
 
             <section class="box-integrante row-reverse-integrante">
                 <div class="box-info">
-                    <img src="../assets/img/no_picture.png" alt="">
+                    <img src="../assets/img/Pic-DaviC.jpeg" alt="">
                     <div class="text-info">
                         <h3>Davi Camargo Matias Freitas</h3>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia aperiam minima, blanditiis laborum quae voluptatum doloribus, cum atque repellendus officia fugit sint? Voluptatem a qui pariatur quos quod corporis maiores.</p>
+                        <p><strong>DBA & Desenvolvedor Back-End</strong></p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, doloribus!</p>
                     </div>
                 </div>
             </section>
 
             <section class="box-integrante row-integrante">
                 <div class="box-info">
-                    <img src="../assets/img/no_picture.png" alt="">
+                    <img src="../assets/img/Pic-Soph.jpeg" alt="">
                     <div class="text-info">
                         <h3>Sophia Vieira Santos</h3>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia aperiam minima, blanditiis laborum quae voluptatum doloribus, cum atque repellendus officia fugit sint? Voluptatem a qui pariatur quos quod corporis maiores.</p>
+                        <p><strong>Desenvolvedora Front-End & Designer UI/UX</strong></p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, doloribus!</p>
                     </div>
 
                 </div>
@@ -76,20 +79,22 @@ session_start();
 
             <section class="box-integrante row-reverse-integrante">
                 <div class="box-info">
-                    <img src="../assets/img/no_picture.png" alt="">
+                    <img src="../assets/img/Pic-Kath.jpeg" alt="">
                     <div class="text-info">
                         <h3>Kathleen Gomes de Oliveira</h3>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia aperiam minima, blanditiis laborum quae voluptatum doloribus, cum atque repellendus officia fugit sint? Voluptatem a qui pariatur quos quod corporis maiores.</p>
+                        <p><strong>Documentadora</strong></p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, doloribus!</p>
                     </div>
                 </div>
             </section>
 
             <section class="box-integrante row-integrante">
                 <div class="box-info">
-                    <img src="../assets/img/no_picture.png" alt="">
+                    <img src="../assets/img/Pic-Dressa.jpeg" alt="">
                     <div class="text-info">
                         <h3>Andressa Rafaela de Holanda Silva</h3>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia aperiam minima, blanditiis laborum quae voluptatum doloribus, cum atque repellendus officia fugit sint? Voluptatem a qui pariatur quos quod corporis maiores.</p>
+                        <p><strong>Documentadora</strong></p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, doloribus!</p>
                     </div>
 
                 </div>
@@ -100,6 +105,7 @@ session_start();
                     <img src="../assets/img/no_picture.png" alt="">
                     <div class="text-info">
                         <h3>Samuel Machado da Silva</h3>
+                        <p><strong>Documentador & Editor</strong></p>
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia aperiam minima, blanditiis laborum quae voluptatum doloribus, cum atque repellendus officia fugit sint? Voluptatem a qui pariatur quos quod corporis maiores.</p>
                     </div>
                 </div>
@@ -110,7 +116,8 @@ session_start();
                     <img src="../assets/img/no_picture.png" alt="">
                     <div class="text-info">
                         <h3>Davi Moreira de Santana</h3>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia aperiam minima, blanditiis laborum quae voluptatum doloribus, cum atque repellendus officia fugit sint? Voluptatem a qui pariatur quos quod corporis maiores.</p>
+                        <p><strong>Desenvolvedor Full-Stack & Designer UI/UX</strong></p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, doloribus!</p>
                     </div>
 
                 </div>

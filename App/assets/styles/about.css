@@ -84,6 +84,11 @@
     gap: .5rem;
 }
 
+.box-info img{
+    width: 400px;
+    height: 400px;
+}
+
 /* Media Queries */
 
 @media (max-width: 920px){

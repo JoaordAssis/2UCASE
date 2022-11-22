@@ -37,6 +37,11 @@
     height: 50rem;
 }
 
+.carrossel-container-box .glide__arrows button{
+    border: none;
+}
+
+
 /* Vantangens e Beneficios do site */
 
 

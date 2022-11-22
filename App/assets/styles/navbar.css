@@ -107,10 +107,6 @@
     width: fit-content;
 }
 
-#menu #first-link i{
-    transform: rotate(180deg);
-}
-
 #menu .menu-link:hover #first-link i{
     transform: rotate(0deg);
     transition: ease .4s;
