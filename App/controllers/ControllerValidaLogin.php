@@ -17,6 +17,13 @@ if (!empty($_REQUEST['exit'])){
     exit();
 }
 
+if (!empty($_SESSION['USER-ID'])){
+    //Usuário já esta logado
+    header("Location: ../view/login.php?error-code=FR37");
+    exit();
+}
+
+
 
 if (!empty($_REQUEST['email-cpf']) && !empty($_REQUEST['senha-login'])) {
     $user = new Clientes();

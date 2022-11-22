@@ -1,9 +1,17 @@
 <?php
 const GOOGLE = [
-    'clientId'     => '278048798991-bsggnq10pf7u7lfmk3cilni8ttk3r2mg.apps.googleusercontent.com',
-    'clientSecret' => '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',
-    'redirectUri'  => 'http://localhost/Estudos/Testes_de_Implementa%c3%a7%c3%a3o/Login_google_facebook/google/'
+    'clientId'     => '727943381883-2lve6lr30o56fiepb4rkn1j9sv1vnhes.apps.googleusercontent.com',
+    'clientSecret' => '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',
+    'redirectUri'  => 'http://localhost/VilicapasProjeto/app/controllers/ControllerRedirectLoginSocial.php'
 ];
+
+const GOOGLE_CADASTRO = [
+    'clientId'     => '727943381883-2lve6lr30o56fiepb4rkn1j9sv1vnhes.apps.googleusercontent.com',
+    'clientSecret' => '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',
+    'redirectUri'  => 'http://localhost/VilicapasProjeto/app/controllers/ControllerCadastroSocial.php'
+];
+
+
 ?>
 
 <!DOCTYPE html>

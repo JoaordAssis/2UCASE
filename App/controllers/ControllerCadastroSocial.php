@@ -5,6 +5,9 @@ require_once __DIR__ . "/../config/stylesConfig.php";
 
 
 
+use app\model\Clientes;
+use app\model\Ferramentas;
+use app\model\Manager;
 use League\OAuth2\Client\Provider\Google;
 
 session_start();
@@ -16,13 +19,11 @@ if (!empty($_SESSION['USER-ID'])){
 }
 
 
-if(empty($_SESSION['userLogin'])){
-    $provider = new Google(GOOGLE);
-    $authUrl = $provider->getAuthorizationUrl();
+$google = new Google(GOOGLE);
+$manager = new Manager();
+
+$code = filter_input(INPUT_GET, "code", FILTER_SANITIZE_STRING);
+$error = filter_input(INPUT_GET, "error", FILTER_SANITIZE_STRING);
 
 
-    //Entrando no pedido de CADASTRO
-    header("Location: $authUrl");
-    exit();
-
-}
+echo "asdasd";
