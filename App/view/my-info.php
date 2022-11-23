@@ -30,57 +30,72 @@ $getEndereco = $manager->getInfo('user_endereco_cliente', 'id_cliente', $_SESSIO
         <h1>Minhas Informações</h1>
         <section class="edit-info-user">
             <form action="../controllers/ControllerUpdateCliente.php" method="POST" class="form-add-produto" enctype="multipart/form-data">
+                <?php
+                if (isset($_REQUEST['sign-google'])){
+                    ?>
+                    <div id="container-error-google">
+                        <p id="error-exib-google">Por favor, antes de prosseguir corrija as suas informações!</p>
+                    </div>
+                <?php
+                }
+                ?>
 
-                <label for="nome_cliente">
+                <label for="nome_cliente">Nome Completo
                     <input type="text" required name="nome_cliente" value="<?=$getCliente[0]['nome_cliente']?>" id="input-nome" placeholder="Nome Completo">
                 </label>
 
-                <label for="email_cliente">
+                <label for="email_cliente">Email
                     <input type="text" required name="email_cliente" value="<?=$getCliente[0]['email_cliente']?>" id="input-nome" placeholder="Email">
                 </label>
 
                 <!--Mudar a cor do campo CPF-->
-                <label for="cpf_cliente">
-                    <input type="text" required name="cpf_cliente" value="<?=$getCliente[0]['cpf_cliente']?>" id="input-nome" placeholder="CPF">
+                <label for="cpf_cliente">CPF
+                    <input type="text" required data-js="cpf" name="cpf_cliente" value="<?=$getCliente[0]['cpf_cliente']?>" id="input-nome" placeholder="CPF">
                 </label>
 
 
                 <div class="row-preco-quant row-inputs">
-                    <label for="telefone_cliente">
-                        <input type="text" required data-js="money" value="<?=$getCliente[0]['telefone_cliente']?>" name="telefone_cliente" id="input-preco" placeholder="Número do Celular">
+                    <label for="telefone_cliente">Telefone Celular
+                        <input type="text" required data-js="phone" maxlength="15" value="<?=$getCliente[0]['telefone_cliente']?>"
+                               name="telefone_cliente" id="input-preco"
+                               placeholder="Número do Celular">
                     </label>
 
-                    <label for="telefoneFixo_cliente">
-                        <input type="number" required name="telefoneFixo_cliente" value="<?=$getCliente[0]['telefoneFixo_cliente']?>" min="0" id="input-quant" placeholder="Telefone Fixo">
+                    <label for="telefoneFixo_cliente">Telefone Fixo
+                        <input type="text" required data-js="phone" maxlength="14" name="telefoneFixo_cliente" value="<?=$getCliente[0]['telefoneFixo_cliente']?>"
+                               id="input-quant"
+                               placeholder="Telefone Fixo">
                     </label>
                 </div>
 
                 <div class="row-preco-quant row-inputs">
-                    <label for="data_nasc_cliente">
+                    <label for="data_nasc_cliente">Data de Nascimento
                         <input type="date" required name="data_nasc_cliente" value="<?=$getCliente[0]['data_nasc_cliente']?>" id="input-peso" placeholder="Data de Nascimento">
                     </label>
 
-                    <select required name="genero_cliente" id="select-garantia">
-                        <?php
+                    <label for="genero_cliente">Genêro
+                        <select required name="genero_cliente" id="select-garantia">
+                            <?php
 
-                        echo "<option>Genêro</option>";
-                        if ($getCliente[0]['genero_cliente'] === 1){
-                            echo "<option value='0'>Masculino</option>";
-                            echo "<option value='1' selected>Feminino</option>";
-                            echo "<option value='2'>Não Informar</option>";
+                            echo "<option>Genêro</option>";
+                            if ($getCliente[0]['genero_cliente'] === 1){
+                                echo "<option value='0'>Masculino</option>";
+                                echo "<option value='1' selected>Feminino</option>";
+                                echo "<option value='2'>Não Informar</option>";
 
-                        } elseif($getCliente[0]['genero_cliente'] === 0) {
-                            echo "<option value='0' selected>Masculino</option>";
-                            echo "<option value='1'>Feminino</option>";
-                            echo "<option value='2'>Não Informar</option>";
-                        }else{
-                            echo "<option value='0'>Masculino</option>";
-                            echo "<option value='1'>Feminino</option>";
-                            echo "<option value='2' selected>Não Informar</option>";
-                        }
+                            } elseif($getCliente[0]['genero_cliente'] === 0) {
+                                echo "<option value='0' selected>Masculino</option>";
+                                echo "<option value='1'>Feminino</option>";
+                                echo "<option value='2'>Não Informar</option>";
+                            }else{
+                                echo "<option value='0'>Masculino</option>";
+                                echo "<option value='1'>Feminino</option>";
+                                echo "<option value='2' selected>Não Informar</option>";
+                            }
 
-                        ?>
-                    </select>
+                            ?>
+                        </select>
+                    </label>
                 </div>
 
                 <input type="submit" value="Atualizar">
@@ -130,5 +145,7 @@ $getEndereco = $manager->getInfo('user_endereco_cliente', 'id_cliente', $_SESSIO
     </main>
 </body>
 <script src="../assets/js/error-handling.js"></script>
+<script src="../assets/js/my-info.js"></script>
+
 
 </html>

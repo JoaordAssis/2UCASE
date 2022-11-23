@@ -22,6 +22,12 @@
     padding: 1rem;
 }
 
+label{
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+}
+
 /* Entrega */
 
 .entrega {
@@ -57,6 +63,11 @@
     max-width: 32rem;
     gap: 1rem;
     width: 100%;
+}
+
+#state-input{
+    padding: 1rem;
+    max-width: 100%;
 }
 
 .cep-calc {
@@ -119,8 +130,7 @@ select {
     color: var(--cor-principal);
 }
 
-.state-container input,
-select,
+.state-container input, select,
 .number-container input {
     display: block;
     width: 15.5rem;
@@ -141,6 +151,7 @@ form #principal-button.form-submit {
 
 
 /* Media Queries */
+
 
 @media (max-width: 1150px) {
 
@@ -220,6 +231,16 @@ form #principal-button.form-submit {
     .cep-calc {
         display: flex;
         flex-direction: column;
+    }
+
+    .state-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #state-input {
+        padding: 1rem;
+        min-width: 100%;
     }
 }
 

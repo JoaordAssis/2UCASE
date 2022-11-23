@@ -17,12 +17,24 @@ if (!empty($_SESSION['USER-ID'])){
 
 
 if(empty($_SESSION['userLogin'])){
-    $provider = new Google(GOOGLE);
-    $authUrl = $provider->getAuthorizationUrl();
 
+    if (!empty($_REQUEST['login'])){
+        $provider = new Google(GOOGLE);
+        $authUrl = $provider->getAuthorizationUrl();
 
-    //Entrando no pedido de CADASTRO
-    header("Location: $authUrl");
-    exit();
+        //Entrando no pedido de LOGIN
+        header("Location: $authUrl");
+        exit();
+    }
+
+    if (!empty($_REQUEST['cadastro'])){
+        $provider = new Google(GOOGLE_CADASTRO);
+        $authUrl = $provider->getAuthorizationUrl();
+
+        //Entrando no pedido de LOGIN
+        header("Location: $authUrl");
+        exit();
+    }
+
 
 }

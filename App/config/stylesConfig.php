@@ -6,8 +6,8 @@ const GOOGLE = [
 ];
 
 const GOOGLE_CADASTRO = [
-    'clientId'     => '727943381883-2lve6lr30o56fiepb4rkn1j9sv1vnhes.apps.googleusercontent.com',
-    'clientSecret' => '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',
+    'clientId'     => '69473049594-9gg6rk32fjk7u4lsm8oolotqujqrqq0v.apps.googleusercontent.com',
+    'clientSecret' => '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',
     'redirectUri'  => 'http://localhost/VilicapasProjeto/app/controllers/ControllerCadastroSocial.php'
 ];
 

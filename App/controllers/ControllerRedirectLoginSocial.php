@@ -4,9 +4,6 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 require_once __DIR__ . "/../config/stylesConfig.php";
 
 
-
-use app\model\Clientes;
-use app\model\Ferramentas;
 use app\model\Manager;
 use League\OAuth2\Client\Provider\Google;
 
@@ -28,8 +25,8 @@ $error = filter_input(INPUT_GET, "error", FILTER_SANITIZE_STRING);
 //FAZER A VERIFICAÇÃO DE ERRO NO CONTROLLER
 
 if($error){
-    //Ocorreu algum erro
-    header("Location: ../view/login.php?error-code=FR00");
+    //Ocorreu algum erro inesperado
+    header("Location: ../view/login.php?error-code=FR39");
     exit();
 }
 
@@ -39,7 +36,7 @@ if($code){
     ]);
 
     $_SESSION['userLogin'] = serialize($google->getResourceOwner($token));
-    $user = unserialize($_SESSION['userLogin']);
+    $user = unserialize($_SESSION['userLogin'], [true]);
     $userObj = $user->toArray();
 
     $checkuser[0] = $userObj['email'];

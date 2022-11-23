@@ -253,6 +253,23 @@ ul, li{
 }
 
 
+/*LOGIN GOOGLE*/
+
+#container-error-google{
+    display: flex;
+    width: 100%;
+    background-color: #ffcccc;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    justify-content: center;
+}
+
+#error-exib-google{
+    font-size: 20px;
+    color: #ff0000;
+}
+
 /* Glide style */
 
 .glide__arrow:not(.glide-arrow-home){

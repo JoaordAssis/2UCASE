@@ -2,13 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="AJUSTED: textos nos selects">
-      <change afterPath="$PROJECT_DIR$/App/controllers/ControllerCadastroSocial.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/controllers/ControllerRedirectLoginSocial.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/assets/js/my-info.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/assets/styles/reset.css" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/styles/reset.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/config/stylesConfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/config/stylesConfig.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/controllers/ControllerAddUsuarioUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controllers/ControllerAddUsuarioUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/controllers/ControllerCadastroSocial.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controllers/ControllerCadastroSocial.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/controllers/ControllerLoginSocial.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controllers/ControllerLoginSocial.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/controllers/ControllerValidaLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controllers/ControllerValidaLogin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/controllers/ControllerRedirectLoginSocial.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controllers/ControllerRedirectLoginSocial.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/view/my-info.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/my-info.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +26,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -255,6 +257,7 @@
       <workItem from="1669147782671" duration="227000" />
       <workItem from="1669151008090" duration="1812000" />
       <workItem from="1669152865585" duration="4512000" />
+      <workItem from="1669233533239" duration="4499000" />
     </task>
     <task id="LOCAL-00001" summary="Teste commit 09/10/2022">
       <created>1665346468595</created>

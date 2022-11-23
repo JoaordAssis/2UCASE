@@ -157,6 +157,7 @@ if (isset($_REQUEST['cadastroCompletoForm'])){
     }catch (PDOException $exception){
          echo $exception->getCode();
          header("Location: ../view/register.php?error-code=FR31&nome=$nome&email=$email&senhaCripto=$senhaCripto");
+         exit();
     }
 
 

@@ -31,19 +31,19 @@ session_start();
 
             <section class="columns-container">
                 <section class="address-column1 address">
-                    <label for="nomeCompleto">
+                    <label for="nomeCompleto">Nome Completo
                         <input type="text" required name="nomeCompleto" id="nome-completo" value="<?=$_REQUEST['nome']?>"
                                placeholder="Nome Completo">
                     </label>
 
-                    <label for="cpf">
+                    <label for="cpf">CPF
                         <input required type="text" name="cpf" data-js="cpf" id="input-entrega" placeholder="CPF">
                     </label>
 
                     <div class="state-container">
                         <!-- Input Data de Nascimento -->
 
-                        <label for="dataNasc" class="input-dataNasc">
+                        <label for="dataNasc" class="input-dataNasc">Data de Nascimento
                             <input required type="date" name="dataNasc" id="input-entrega" placeholder="Data de Nascimento">
                         </label>
 
@@ -53,23 +53,26 @@ session_start();
                 <section class="address-column2 address">
                     <div class="number-container">
 
-                        <label for="numeroCelular">
+                        <label for="numeroCelular">Telefone Celular
                             <input required type="text" name="numeroCelular" required id="input-entrega"
                                    data-js="phone" maxlength="15" placeholder="Telefone Celular">
                         </label>
 
-                        <label for="numeroFixo">
+                        <label for="numeroFixo">Telefone Fixo
                             <input type="text" data-js="phone" maxlength="14" name="numeroFixo" id="input-entrega" placeholder="Telefone Fixo">
                         </label>
                     </div>
 
                     <div class="gender-container">
-                        <select required name="gender" id="gender-input">
-                            <option>Gênero</option>
-                            <option value="0">Masculino</option>
-                            <option value="1">Feminino</option>
-                            <option value="2">Prefiro não informar</option>
-                        </select>
+                        <label for="gender-input">Genêro
+                            <select required name="gender" id="gender-input">
+                                <option>Gênero</option>
+                                <option value="0">Masculino</option>
+                                <option value="1">Feminino</option>
+                                <option value="2">Prefiro não informar</option>
+                            </select>
+                        </label>
+
                     </div>
                 </section>
             </section>
@@ -93,49 +96,52 @@ session_start();
 
             <section class="columns-container">
                 <section class="address-column1 address">
-                    <label for="logradouro">
+                    <label for="logradouro">Logradouro
                         <input required type="text" name="logradouro" id="logradouro" placeholder="Logradouro">
                     </label>
 
-                    <label for="referencia">
+                    <label for="referencia">Ponto de Referência
                         <input type="text" name="referencia" id="input-entrega" placeholder="Ponto de Referência">
                     </label>
 
                     <div class="state-container">
                         <!-- Input estado e cidade row -->
 
-                        <select required name="state" id="state-input">
-                            <option value="0">Estado</option>
-                            <option>AC</option>
-                            <option>AL</option>
-                            <option>AM</option>
-                            <option>AP</option>
-                            <option>BA</option>
-                            <option>CE</option>
-                            <option>DF</option>
-                            <option>ES</option>
-                            <option>GO</option>
-                            <option>MA</option>
-                            <option>MG</option>
-                            <option>MS</option>
-                            <option>MT</option>
-                            <option>PA</option>
-                            <option>PB</option>
-                            <option>PE</option>
-                            <option>PI</option>
-                            <option>PR</option>
-                            <option>RJ</option>
-                            <option>RN</option>
-                            <option>RO</option>
-                            <option>RR</option>
-                            <option>RS</option>
-                            <option>SC</option>
-                            <option>SE</option>
-                            <option>SP</option>
-                            <option>TO</option>
-                        </select>
+                        <label for="state-input">Estado
+                            <select required name="state" id="state-input">
+                                <option value="0">Estado</option>
+                                <option>AC</option>
+                                <option>AL</option>
+                                <option>AM</option>
+                                <option>AP</option>
+                                <option>BA</option>
+                                <option>CE</option>
+                                <option>DF</option>
+                                <option>ES</option>
+                                <option>GO</option>
+                                <option>MA</option>
+                                <option>MG</option>
+                                <option>MS</option>
+                                <option>MT</option>
+                                <option>PA</option>
+                                <option>PB</option>
+                                <option>PE</option>
+                                <option>PI</option>
+                                <option>PR</option>
+                                <option>RJ</option>
+                                <option>RN</option>
+                                <option>RO</option>
+                                <option>RR</option>
+                                <option>RS</option>
+                                <option>SC</option>
+                                <option>SE</option>
+                                <option>SP</option>
+                                <option>TO</option>
+                            </select>
+                        </label>
 
-                        <label for="cidade">
+
+                        <label for="cidade">Cidade
                             <input required type="text" name="cidade" id="localidade" placeholder="Cidade">
                         </label>
                     </div>
@@ -144,20 +150,20 @@ session_start();
                 <section class="address-column2 address">
                     <div class="number-container">
 
-                        <label for="numero">
+                        <label for="numero">Nùmero
                             <input required type="text" name="numero" id="input-entrega" placeholder="Número">
                         </label>
 
-                        <label for="complemento">
+                        <label for="complemento">Complemento
                             <input type="text" name="complemento" id="input-entrega" placeholder="Complemento">
                         </label>
                     </div>
 
-                    <label for="bairro">
+                    <label for="bairro">Bairro
                         <input required type="text" name="bairro" id="bairro" placeholder="Bairro">
                     </label>
 
-                    <label for="nomeR">
+                    <label for="nomeR">Nome do Recebedor
                         <input required type="text" name="nomeR" id="input-entrega" placeholder="Nome do Recebedor">
                     </label>
                 </section>

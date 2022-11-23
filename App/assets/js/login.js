@@ -37,6 +37,8 @@ let errors = {
     "FR36" : "Já existe uma conta com este CPF, caso não se lembre da senha; volte e clique em 'Esqueceu a senha?'",
     "FR37" : "Você já está logado, para entrar em outra conta se deslogue primeiro!",
     "FR38" : "Falha ao enviar o email, tente novamente em alguns instantes.",
+    "FR39" : "Falha ao realizar o login com o Google, tente novamente em alguns minutos!.",
+    "FR40" : "Já existe uma conta cadastrada com esse email, realize o login por ela!.",
     "FR50" : "Conta criada com sucesso.",
     "FR51" : "Arquivo enviado com sucesso.",
     "FR52" : "Informações atualizadas com sucesso!",
