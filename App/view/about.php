@@ -28,7 +28,7 @@ session_start();
         </article>
 
         <section class="image-about">
-            <img src="../assets/./img/./bannerAbout.png" alt="Imagem de referencia de produtos">
+            <img src="../assets/img/Pic-Grupo.jpeg" alt="Imagem de referencia de produtos">
         </section>
 
         <article class="nossa-historia text-container">
@@ -44,7 +44,7 @@ session_start();
 
             <section class="box-integrante row-integrante">
                 <div class="box-info">
-                    <img src="../assets/img/no_picture.png" alt="">
+                    <img src="../assets/img/Pic-Joao.jpeg" alt="">
                     <div class="text-info">
                         <h3>João Carlos Rodrigues Assis</h3>
                         <p><strong>Gestor & Editor</strong></p>
@@ -102,7 +102,7 @@ session_start();
 
             <section class="box-integrante row-reverse-integrante">
                 <div class="box-info">
-                    <img src="../assets/img/no_picture.png" alt="">
+                    <img src="../assets/img/Pic-Samuel.jpeg" alt="">
                     <div class="text-info">
                         <h3>Samuel Machado da Silva</h3>
                         <p><strong>Documentador & Editor</strong></p>

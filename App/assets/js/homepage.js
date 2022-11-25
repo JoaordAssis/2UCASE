@@ -10,6 +10,7 @@ let carrossel4Sell = document.querySelector(".prod-container-box-sell");
 
 let carrosselBanner = new Glide(carrosselPrincipal, {
   type: "carousel",
+  autoplay: 5000,
   startAt: 0,
   perView: 1,
 });

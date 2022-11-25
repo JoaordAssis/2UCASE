@@ -57,7 +57,7 @@ if (!empty($_GET['selectOrdem'])) {
     <article class="filters-category">
         <section class="filtros-path">
             <div class="title-filtros">
-                <h2>Time</h2>
+                <h2><?=strtoupper($returnCategory[0]['nome_categoria'])?><</h2>
                 <p>HOME / <span id="last-path"><?=strtoupper($returnCategory[0]['nome_categoria'])?></span></p>
             </div>
 
