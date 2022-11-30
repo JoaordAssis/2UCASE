@@ -7,6 +7,7 @@ use app\model\Manager;
 if (empty($_GET['category'])){
     //Criar uma pagina para isso
     header("Location: ./homepage.php");
+    exit();
 }
 
 $manager = new Manager();
@@ -17,16 +18,20 @@ $columnSearch = ['nome_produto ', 'categoria_special_produto '];
 $listCategory = $manager->listClient('user_categoria', 'id_categoria');
 
 
+
 //Select Like
 if (!empty($_REQUEST['search']) && $_REQUEST['category'] === 'todos'){
     $returnCategory = strtoupper($searchQuery);
     $returnProdutos = $manager->selectLike('user_produto', $columnSearch, $searchQuery);
-}
 
-if($_REQUEST['category'] === 'any'){
+} else if($_REQUEST['category'] === 'any'){
     $returnProdutos = [];
     $returnCategory = strtoupper($searchQuery);
+}else{
+    header("Location: ./homepage.php");
+    exit();
 }
+
 
 //Select por relevancia e preço
 

@@ -4,14 +4,17 @@ session_start();
 require_once __DIR__ . "/../../vendor/autoload.php";
 use app\model\Manager;
 
-if (empty($_GET['category'])){
+if (empty($_GET['category']) && $_GET['category'] !== 'Acessorios'){
     //Criar uma pagina para isso
     header("Location: ./homepage.php");
 }
 $manager = new Manager();
-$category = filter_input(INPUT_GET, 'category');
-$returnCategory = $manager->selectWhere(['nome_categoria'], [$category], 'user_categoria');
-$returnProdutos = $manager->selectWhere(['id_categoria', 'status'], [$returnCategory[0]['id_categoria'], 1], 'user_produto');
+$returnCategoryAcessorios = $manager->selectWhere(['nome_categoria'], ['Acessorios'], 'user_categoria');
+
+$returnCategoryPop = $manager->selectWhere(['nome_categoria'], ['Pop-Sockets'], 'user_categoria');
+$returnCategoryPods = $manager->selectWhere(['nome_categoria'], ['Airpods'], 'user_categoria');
+
+$returnProdutos = $manager->selectWhereAcessorios('id_categoria', $returnCategoryPop[0]['id_categoria'], $returnCategoryPods[0]['id_categoria']);
 
 $listCategory = $manager->listClient('user_categoria', 'id_categoria');
 
@@ -21,19 +24,25 @@ if (!empty($_GET['selectOrdem'])) {
 
     if ($_GET['selectOrdem'] === '1') {
         // Maior para menor preço
-        $resultSearchOrdem = $manager->selectCategoriaOrder('user_produto', 'preco_produto', 'DESC', 'id_categoria', $returnCategory[0]['id_categoria']);
+        $resultSearchOrdem = $manager->selectCategoriaOrderAcessorios('user_produto', 'preco_produto',
+            'DESC', 'id_categoria', $returnCategoryPop[0]['id_categoria'], $returnCategoryPods[0]['id_categoria']);
+
         $returnProdutos = $resultSearchOrdem;
     }
 
     if ($_GET['selectOrdem'] === '2') {
         // Menor para Maior preço
-        $resultSearchOrdem = $manager->selectCategoriaOrder('user_produto', 'preco_produto', 'ASC', 'id_categoria', $returnCategory[0]['id_categoria']);
+        $resultSearchOrdem = $manager->selectCategoriaOrderAcessorios('user_produto', 'preco_produto',
+            'ASC', 'id_categoria', $returnCategoryPop[0]['id_categoria'], $returnCategoryPods[0]['id_categoria']);
+
         $returnProdutos = $resultSearchOrdem;
     }
 
     if ($_GET['selectOrdem'] === '3') {
         // Relevancia
-        $resultSearchOrdem = $manager->selectCategoriaOrder('user_produto', 'quantidade_produto', 'DESC', 'id_categoria', $returnCategory[0]['id_categoria']);
+        $resultSearchOrdem = $manager->selectCategoriaOrderAcessorios('user_produto', 'quantidade_produto',
+            'DESC', 'id_categoria', $returnCategoryPop[0]['id_categoria'], $returnCategoryPods[0]['id_categoria']);
+
         $returnProdutos = $resultSearchOrdem;
     }
 }
@@ -52,16 +61,16 @@ if (!empty($_GET['selectOrdem'])) {
 <main class="category-container">
     <div class="image-container">
         <picture>
-            <source media="(max-width:470px)" srcset="../assets/img/Banner-Mobile-<?=$returnCategory[0]['nome_categoria']?>.png">
-            <img src="<?=$returnCategory[0]['img_categoria']?>" alt="<?=$returnCategory[0]['nome_categoria']?>" id="image-category">
+            <source media="(max-width:470px)" srcset="../assets/img/Banner-Mobile-<?=$returnCategoryAcessorios[0]['nome_categoria']?>.png">
+            <img src="<?=$returnCategoryAcessorios[0]['img_categoria']?>" alt="<?=$returnCategoryAcessorios[0]['nome_categoria']?>" id="image-category">
         </picture>
     </div>
 
     <article class="filters-category">
         <section class="filtros-path">
             <div class="title-filtros">
-                <h2><?=strtoupper($returnCategory[0]['nome_categoria'])?></h2>
-                <p>HOME / <span id="last-path"><?=strtoupper($returnCategory[0]['nome_categoria'])?></span></p>
+                <h2><?=strtoupper($returnCategoryAcessorios[0]['nome_categoria'])?></h2>
+                <p>HOME / <span id="last-path"><?=strtoupper($returnCategoryAcessorios[0]['nome_categoria'])?></span></p>
             </div>
 
             <div class="filters-container row-product-container">

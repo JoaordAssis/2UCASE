@@ -22,10 +22,10 @@ $resultListSubMenu = $manager->listClient('adm_submenu', 'id_submenu');
 <body id="body-margin">
     <main class="container-new-produto">
         <h1>Adicionar Submenu</h1>
-        <form action="../controller/ControllerAddSubMenuADM.php" method="POST" class="form-add-menu" enctype="multipart/form-data">
+        <form action="../controller/ControllerSubMenuADM.php" method="POST" class="form-add-menu" enctype="multipart/form-data">
 
             <input type="hidden" name="action" value="editSubMenuADM">
-            <input type="hidden" name="idSubMenu" value="<?= $idMenuADM ?>">
+            <input type="hidden" name="id" value="<?= $idSubMenuADM ?>">
 
             <!-- <div class="row-nome-link"> -->
 

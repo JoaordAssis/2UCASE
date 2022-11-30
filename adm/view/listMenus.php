@@ -114,7 +114,7 @@ $resultSubMenu = $manager->listClient('adm_submenu', 'id_submenu');
                                     <button id="delete-prod" onclick="subMenuDelete(<?= $resultSubMenu[$j]['id_submenu'] ?>)">
                                         <i class="fa-solid fa-trash-can"></i>
                                     </button>
-                                    <button id="edit-prod" onclick="window.location.href='./CRUDEditSubMenu.php?id=<?= $resultSubMenu[$i]['id_submenu'] ?>&action=editSubMenuADM'">
+                                    <button id="edit-prod" onclick="window.location.href='./CRUDEditSubMenu.php?id=<?= $resultSubMenu[$j]['id_submenu']?>'">
                                         <i class="fa-regular fa-pen-to-square"></i>
                                     </button>
                                 </td>

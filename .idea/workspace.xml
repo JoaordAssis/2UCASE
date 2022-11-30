@@ -2,14 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="AJUSTED: textos nos selects">
-      <change afterPath="$PROJECT_DIR$/App/assets/img/Pic-Grupo.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/assets/img/Pic-Joao.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/assets/img/Pic-Samuel.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/assets/img/Banner-Acessorios1350x380.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/assets/img/Banner-AirPods1350x380.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/assets/img/Banner-Animacoes1350x380.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/assets/img/Banner-Estampa1350x380.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/assets/img/Banner-Flork1350x380.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/assets/img/Banner-Herois1350x380.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/assets/img/Banner-Mobile-Acessorios.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/assets/img/Banner-Mobile-Airpods.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/assets/img/Banner-Mobile-Animacoes.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/assets/img/Banner-Mobile-Estampas.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/assets/img/Banner-Mobile-Florks.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/assets/img/Banner-Mobile-Herois.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/assets/img/Banner-Mobile-Pop-Socket.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/assets/img/Banner-Mobile-Times.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/assets/img/Banner-Pop-Sockets1350x380.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/assets/img/Banner-Times1350x380.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/assets/img/popFlorkApaixonado.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/view/acessorios-page.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/assets/js/homepage.js" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/js/homepage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/assets/styles/footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/styles/footer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/assets/styles/homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/styles/homepage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/controllers/ControllerCategoria.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controllers/ControllerCategoria.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/model/Manager.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/model/Manager.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/view/about.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/about.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/view/category.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/favoritos.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/favoritos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/view/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/view/homepage.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/homepage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/view/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adm/controller/ControllerMenuADM.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/controller/ControllerMenuADM.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adm/controller/ControllerSubMenuADM.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/controller/ControllerSubMenuADM.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adm/view/CRUDAddCarrossel.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/view/CRUDAddCarrossel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adm/view/CRUDEditMenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/view/CRUDEditMenu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adm/view/CRUDEditSubMenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/view/CRUDEditSubMenu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adm/view/listMenus.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/view/listMenus.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +113,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/assets/img" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\xampp\htdocs\VilicapasProjeto\node_modules\prettier" />
@@ -96,11 +122,15 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\VilicapasProjeto\app\assets\img" />
+      <recent name="C:\xampp\htdocs\VilicapasProjeto\app\view" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\VilicapasProjeto\app\assets\img" />
       <recent name="C:\xampp\htdocs\VilicapasProjeto\app\assets\styles" />
       <recent name="C:\xampp\htdocs\VilicapasProjeto\adm\assets\css" />
       <recent name="C:\xampp\htdocs\VilicapasProjeto\app\model" />
-      <recent name="C:\xampp\htdocs\VilicapasProjeto\app\assets\img" />
     </key>
   </component>
   <component name="RunManager" selected="PHP Script.ControllerUpdateCarrinho.php">
@@ -259,6 +289,15 @@
       <workItem from="1669233533239" duration="4499000" />
       <workItem from="1669328712502" duration="200000" />
       <workItem from="1669404182631" duration="1595000" />
+      <workItem from="1669406092633" duration="1524000" />
+      <workItem from="1669464461324" duration="726000" />
+      <workItem from="1669465735869" duration="1209000" />
+      <workItem from="1669486181478" duration="271000" />
+      <workItem from="1669582304280" duration="563000" />
+      <workItem from="1669673784537" duration="1330000" />
+      <workItem from="1669753292466" duration="899000" />
+      <workItem from="1669755447971" duration="7128000" />
+      <workItem from="1669770751880" duration="744000" />
     </task>
     <task id="LOCAL-00001" summary="Teste commit 09/10/2022">
       <created>1665346468595</created>

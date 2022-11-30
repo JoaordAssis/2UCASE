@@ -7,7 +7,6 @@
     flex-direction: column;
     align-items: center;
     background-color: var(--cor-principal);
-    padding: 1rem;
     width: 100%;
 }
 
@@ -21,6 +20,8 @@
     display: flex;
     gap: 2rem;
     align-self: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 #logo-informations .user-login{
@@ -59,7 +60,9 @@
     padding: .5rem;
 }
 
-
+#logo-site{
+    margin-right: 2rem;
+}
 
 /* Parte de Baixo */
 
@@ -72,10 +75,13 @@
     margin-top: 1rem;
     display: flex;
     gap: 3rem;
+    background-color: #FFFFFF;
+    width: 100vw;
+    justify-content: center;
 }
 
 #nav-links .menu-link #first-link{
-    color: #ffff;
+    color: #000000;
 }
 
 #menu .menu-link{
@@ -234,7 +240,6 @@ transform: rotate(135deg);
 .header-navbar .input-search{
     border: 1px none white;
     border-bottom-style: solid;
-    margin-bottom: 1rem;  
 }
 
 .header-navbar .input-search input::placeholder {
@@ -266,6 +271,11 @@ transform: rotate(135deg);
 }
 
 @media (max-width: 1050px) {
+    .header-secundario, #nav-mobile{
+        display: none;
+        padding: 1rem;
+    }
+
 
     #menu #nav-links a, .login-links a{
         font-size: 1rem;

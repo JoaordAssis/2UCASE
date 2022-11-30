@@ -28,6 +28,7 @@ session_start();
                 <input type="file" name="imagem_carrossel" id="input-img">
             </label>
 
+            <p>Imagens novas que forem adicionadas precisam da sua versão mobile enviada a mim, por motivos de preguicinha pra arrumar esse sistema😍</p>
 
             <!-- </div> -->
 

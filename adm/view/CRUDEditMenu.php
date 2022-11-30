@@ -20,10 +20,10 @@ $resultListMenu = $manager->getInfo('adm_menu', 'id_menu', $idMenuADM);
 <body id="body-margin">
     <main class="container-new-produto">
         <h1>Adicionar Menu</h1>
-        <form action="../controller/ControllerAddMenuADM.php" method="POST" class="form-add-menu" enctype="multipart/form-data">
+        <form action="../controller/ControllerMenuADM.php" method="POST" class="form-add-menu" enctype="multipart/form-data">
 
             <input type="hidden" name="action" value="editMenuADM">
-            <input type="hidden" name="idMenu" value="<?= $idMenuADM ?>">
+            <input type="hidden" name="id" value="<?= $idMenuADM ?>">
 
 
             <!-- <div class="row-nome-link"> -->

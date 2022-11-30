@@ -281,4 +281,23 @@ class Manager extends Conexao {
         return $cmd->fetchAll(PDO::FETCH_ASSOC);
     }
 
+
+    //EXCLUSIVO PARA PAGINA DE ACESSORIOS
+
+
+    public function selectWhereAcessorios($colunaPop, $idPop, $idPod): bool|array {
+        $sql = "SELECT * FROM user_produto WHERE $colunaPop = $idPop AND status = 1 OR $colunaPop = $idPod AND status = 1";
+
+        $cmd = $this->pdo->query($sql);
+        return $cmd->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+
+    public function selectCategoriaOrderAcessorios($tabela, $column, $order, $categoria, $categoriaPop, $categoriaPod): bool|array {
+        $sql = "SELECT * FROM $tabela WHERE $categoria = $categoriaPop && status = 1 OR $categoria = $categoriaPod && status = 1 ORDER BY $column $order";
+
+        $cmd = $this->pdo->query($sql);
+        return $cmd->fetchAll(PDO::FETCH_ASSOC);
+    }
+
 }

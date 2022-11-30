@@ -48,7 +48,7 @@ session_start();
                     <div class="text-info">
                         <h3>João Carlos Rodrigues Assis</h3>
                         <p><strong>Gestor & Editor</strong></p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, doloribus!</p>
+                        <p>Como gerente, ele é quem acompanha o desenvolvimento de um projeto desde o seu início até o seu final, com a apresentação do resultado. Já como editor, cuida da criação de imagens para nosso site!</p>
                     </div>
 
                 </div>
@@ -60,7 +60,7 @@ session_start();
                     <div class="text-info">
                         <h3>Davi Camargo Matias Freitas</h3>
                         <p><strong>DBA & Desenvolvedor Back-End</strong></p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, doloribus!</p>
+                        <p>Responsável pela criação, instalação, monitoramento, reparos e análise de estruturas de um banco de dados, além de contribuir com o planejamento, construção e implementação de uma aplicação ( nesse caso, a 2UCASE!)</p>
                     </div>
                 </div>
             </section>
@@ -71,7 +71,7 @@ session_start();
                     <div class="text-info">
                         <h3>Sophia Vieira Santos</h3>
                         <p><strong>Desenvolvedora Front-End & Designer UI/UX</strong></p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, doloribus!</p>
+                        <p>Trabalha na otimização das funcionalidades da interface de diversas plataformas digitais, desde websites até aplicativos para dispositivos móveis e pensar na experiência que uma pessoa tem ao usar interfaces como aplicativos e sites, como ux.</p>
                     </div>
 
                 </div>
@@ -83,7 +83,7 @@ session_start();
                     <div class="text-info">
                         <h3>Kathleen Gomes de Oliveira</h3>
                         <p><strong>Documentadora</strong></p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, doloribus!</p>
+                        <p>O foco do documentador é produzir um conteúdo que se adapte ao público-alvo, seguindo as regras de negócio, legislação e outras premissas do desenvolvimento de software. Ao desenvolver estes materiais, o profissional de documentação pode propiciar outros ganhos para a empresa, como: Facilitar a comunicação.</p>
                     </div>
                 </div>
             </section>
@@ -94,7 +94,7 @@ session_start();
                     <div class="text-info">
                         <h3>Andressa Rafaela de Holanda Silva</h3>
                         <p><strong>Documentadora</strong></p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, doloribus!</p>
+                        <p>O foco do documentador é produzir um conteúdo que se adapte ao público-alvo, seguindo as regras de negócio, legislação e outras premissas do desenvolvimento de software. Ao desenvolver estes materiais, o profissional de documentação pode propiciar outros ganhos para a empresa, como: Facilitar a comunicação.</p>
                     </div>
 
                 </div>
@@ -105,8 +105,9 @@ session_start();
                     <img src="../assets/img/Pic-Samuel.jpeg" alt="">
                     <div class="text-info">
                         <h3>Samuel Machado da Silva</h3>
-                        <p><strong>Documentador & Editor</strong></p>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia aperiam minima, blanditiis laborum quae voluptatum doloribus, cum atque repellendus officia fugit sint? Voluptatem a qui pariatur quos quod corporis maiores.</p>
+                        <p><strong>Editor & Documentador</strong></p>
+                        <p>O editor tem como função, analisar o design do site e criar artes com base na personalidade do projeto, e ser responsável pela criação de imagens para nosso site!
+                        O foco do documentador é produzir um conteúdo que se adapte ao público-alvo, seguindo as regras do negócio</p>
                     </div>
                 </div>
             </section>
@@ -117,7 +118,7 @@ session_start();
                     <div class="text-info">
                         <h3>Davi Moreira de Santana</h3>
                         <p><strong>Desenvolvedor Full-Stack & Designer UI/UX</strong></p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, doloribus!</p>
+                        <p>O programador full stack é um especialista que faz tanto o front quanto o back-end. otimiza também as funcionalidades da interface de diversas plataformas digitais, desde websites até aplicativos para dispositivos móveis.</p>
                     </div>
 
                 </div>

@@ -31,7 +31,7 @@
         </section>
         <main class="footer-wraper">
             <section class="about">
-                <h4>Sobre o Vilicapas</h4>
+                <h4>Sobre o 2UCASE</h4>
                 <a href="./about.php">Quem Somos</a>
             </section>
             <section class="help">
@@ -50,10 +50,8 @@
             </section>
             <section class="payment">
                 <h4>Metódos de Pagamento</h4>
-                <p>PIX</p>
-                <p>Mastercard</p>
-                <p>Elo</p>
-                <p>Boleto</p>
+                <img src="../assets/img/Cartoes.png"
+                     alt="Formas de Pagamento">
             </section>
         </main>
     </footer>

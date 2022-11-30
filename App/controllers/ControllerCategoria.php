@@ -3,6 +3,13 @@ session_start();
 
 $categorySearch = $_REQUEST['category'];
 
+if (isset($_REQUEST['change-category']) && $categorySearch === 'Acessorios'){
+    $header = "Location: ../view/acessorios-page.php?category=Acessorios";
+    header($header);
+    exit();
+}
+
+
 if (isset($_REQUEST['change-category'])){
     $header = "Location: ../view/category.php?category=$categorySearch";
     header($header);

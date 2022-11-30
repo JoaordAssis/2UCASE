@@ -52,8 +52,11 @@ $returnPromos = $manager->exibProducts('categoria_special_produto','Promoções'
 
                             <div class="carrossel-box glide__slide">
                                 <a href="<?=$returnBanners[$i]['link_promo_carrossel']?>">
-                                    <img src="../../adm/databases/<?=$returnBanners[$i]['link_carrossel']?>"
-                                         alt="<?=$returnBanners[$i]['nome_carrossel']?>">
+                                    <picture>
+                                        <source media="(max-width:512px)" srcset="../assets/img/Mobile-Homepage-<?=$returnBanners[$i]['nome_carrossel']?>.png">
+                                        <img src="../../adm/databases/<?=$returnBanners[$i]['link_carrossel']?>"
+                                             alt="<?=$returnBanners[$i]['nome_carrossel']?>">
+                                    </picture>
                                 </a>
 
                             </div>
@@ -89,7 +92,7 @@ $returnPromos = $manager->exibProducts('categoria_special_produto','Promoções'
         <article class="homepage-beneficios">
             <section class="container-beneficio" id="beneficio1">
                 <img src="../assets/img/fast-time-icon.png" alt="Entregas rápidas para todo o Brasil">
-                <h3>Jajá na sua casas</h3>
+                <h3>Ja já em sua casa</h3>
                 <p>Entrega rápida para todo o Brasil.</p>
             </section>
 
@@ -158,42 +161,42 @@ $returnPromos = $manager->exibProducts('categoria_special_produto','Promoções'
                     <div class="shadow-hover">
                         <h2>Animações</h2>
                     </div>
-                    <img src="../assets/img/Olafinho.png" alt="Banner 1">
+                    <img src="../assets/img/animacoes-categoria.png" alt="Banner 1">
                 </a>
 
-                <a href="./category.php?category=estampas" class="card-category" id="card1">
+                <a href="./category.php?category=Estampas" class="card-category" id="card1">
                     <div class="shadow-hover">
                         <h2>Estampas</h2>
                     </div>
                     <img src="../assets/img/AmendoeiraVanGoghCase.png" alt="Banner 1">
                 </a>
 
-                <a href="./category.php?category=flork" class="card-category" id="card1">
+                <a href="./category.php?category=Flork" class="card-category" id="card1">
                     <div class="shadow-hover">
                         <h2>Flork</h2>
                     </div>
                     <img src="../assets/img/Florkgirly.png" alt="Banner 1">
                 </a>
 
-                <a href="./category.php?category=herois" class="card-category" id="card1">
+                <a href="./category.php?category=Herois" class="card-category" id="card1">
                     <div class="shadow-hover">
                         <h2>Heroís</h2>
                     </div>
-                    <img src="../assets/img/BabyGrootParty.png" alt="Banner 1">
+                    <img src="../assets/img/herois-categoria.png" alt="Banner 1">
                 </a>
 
                 <a href="./category.php?category=Times" class="card-category" id="card1">
                     <div class="shadow-hover">
                         <h2>Times</h2>
                     </div>
-                    <img src="../assets/img/GarotaCorinthiana.png" alt="Banner 1">
+                    <img src="../assets/img/times-categoria.png" alt="Banner 1">
                 </a>
 
-                <a href="./category.php?category=pop-socket" class="card-category" id="card1">
+                <a href="./acessorios-page.php?category=Acessorios" class="card-category" id="card1">
                     <div class="shadow-hover">
-                        <h2>Pop Sockets</h2>
+                        <h2>Acessórios</h2>
                     </div>
-                    <img src="../assets/img/StitchAirpodscase.png" alt="Banner 1">
+                    <img src="../assets/img/acessorios-categoria.png" alt="Banner 1">
                 </a>
             </section>
         </article>

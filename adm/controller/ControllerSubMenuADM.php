@@ -50,7 +50,7 @@ if (isset($_REQUEST['action']) && $_REQUEST['action'] != '' && isset($_REQUEST['
 
         if ($verificaNomeSubMenu && $verificaLinkSubMenu === 1) {
 
-            $idSubMenu = $_REQUEST['idSubMenu'];
+            $idSubMenu = $_REQUEST['id'];
 
             $dadosSubMenuADM['id_menu'] = $_REQUEST['id_menu'];
             $dadosSubMenuADM['nome_submenu'] = $_REQUEST['nome_submenu'];
