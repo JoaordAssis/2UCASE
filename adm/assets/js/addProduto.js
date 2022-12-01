@@ -69,3 +69,24 @@ function removeAllImages() {
 
 
 
+
+//CATEGORIA DO PRODUTO
+
+let selectCategoria = document.getElementById("select-categoria-tipo");
+let selectMarcaCelular = document.getElementById("select-categoria-marca");
+
+selectCategoria.addEventListener("change", () => {
+  let opcaoTexto = selectCategoria.options[selectCategoria.selectedIndex].value;
+  console.log(opcaoTexto);
+
+  if (opcaoTexto === '19' || opcaoTexto === '18' || opcaoTexto === '17'){
+    selectMarcaCelular.style.display = 'none';
+  }else{
+    selectMarcaCelular.style.display = 'block';
+
+  }
+
+});
+
+
+

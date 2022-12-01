@@ -40,7 +40,6 @@
 
 /* Vantangens e Beneficios do site */
 
-
 .homepage-beneficios{
     display: flex;
     width: 70vw;
@@ -341,6 +340,10 @@
 
     .carrossel-container {
         margin-top: 0;
+    }
+
+    .homepage-beneficios{
+        margin-top: -3rem;
     }
 }
 

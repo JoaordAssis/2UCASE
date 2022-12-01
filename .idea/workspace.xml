@@ -2,40 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="AJUSTED: textos nos selects">
-      <change afterPath="$PROJECT_DIR$/App/assets/img/Banner-Acessorios1350x380.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/assets/img/Banner-AirPods1350x380.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/assets/img/Banner-Animacoes1350x380.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/assets/img/Banner-Estampa1350x380.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/assets/img/Banner-Flork1350x380.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/assets/img/Banner-Herois1350x380.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/assets/img/Banner-Mobile-Acessorios.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/assets/img/Banner-Mobile-Airpods.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/assets/img/Banner-Mobile-Animacoes.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/assets/img/Banner-Mobile-Estampas.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/assets/img/Banner-Mobile-Florks.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/assets/img/Banner-Mobile-Herois.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/assets/img/Banner-Mobile-Pop-Socket.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/assets/img/Banner-Mobile-Times.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/assets/img/Banner-Pop-Sockets1350x380.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/assets/img/Banner-Times1350x380.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/assets/img/popFlorkApaixonado.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/view/acessorios-page.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/assets/styles/footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/styles/footer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/assets/styles/category.css" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/styles/category.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/assets/styles/homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/styles/homepage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/controllers/ControllerCategoria.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controllers/ControllerCategoria.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/assets/styles/navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/App/assets/styles/navbar.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/model/Manager.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/model/Manager.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/view/about.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/about.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/view/category.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/homepage.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/homepage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/search.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm/controller/ControllerMenuADM.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/controller/ControllerMenuADM.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm/controller/ControllerSubMenuADM.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/controller/ControllerSubMenuADM.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm/view/CRUDAddCarrossel.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/view/CRUDAddCarrossel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm/view/CRUDEditMenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/view/CRUDEditMenu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm/view/CRUDEditSubMenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/view/CRUDEditSubMenu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm/view/listMenus.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/view/listMenus.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adm/assets/js/addProduto.js" beforeDir="false" afterPath="$PROJECT_DIR$/adm/assets/js/addProduto.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adm/controller/ControllerAddProdutoADM.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/controller/ControllerAddProdutoADM.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adm/view/CRUDAddProduto.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/view/CRUDAddProduto.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -298,6 +274,9 @@
       <workItem from="1669753292466" duration="899000" />
       <workItem from="1669755447971" duration="7128000" />
       <workItem from="1669770751880" duration="744000" />
+      <workItem from="1669848322995" duration="2071000" />
+      <workItem from="1669850634296" duration="218000" />
+      <workItem from="1669852745479" duration="2541000" />
     </task>
     <task id="LOCAL-00001" summary="Teste commit 09/10/2022">
       <created>1665346468595</created>

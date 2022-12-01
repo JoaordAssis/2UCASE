@@ -24,7 +24,8 @@ if(count($selectCarrinhoVerify) > 0){
 
 
 //Mais Vendidos
-$returnVendidos = $manager->exibProducts('categoria_special_produto','Promoções', 'preco_produto',5);
+$returnVendidos = $manager->exibProducts('categoria_special_produto', 'Promoções', 'preco_produto', 6);
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -194,21 +195,17 @@ $returnVendidos = $manager->exibProducts('categoria_special_produto','Promoçõe
 
                     <ul class="glide__slides">
                         <?php
-                        if (count($returnVendidos) > 0):
-                        ?>
-
-                        <ul class="glide__slides">
-                            <?php
+                        if (count($returnVendidos) > 0) :
                             for ($i = 0, $iMax = count($returnVendidos); $i < $iMax; $i++) :
                                 ?>
 
-                                <a class="produto-box glide__slide" href="./produto.php?pd=<?=$returnVendidos[$i]['id_produto']?>">
-                                    <img src="<?=$returnVendidos[$i]['imagem_principal_produto']?>" alt="<?=$returnVendidos[$i]['nome_produto']?>">
-                                    <h4><?=$returnVendidos[$i]['nome_produto']?></h4>
-                                    <p>R$ <?=$returnVendidos[$i]['preco_produto']?></p>
+                                <a class="produto-box glide__slide" href="./produto.php?pd=<?= $returnVendidos[$i]['id_produto'] ?>">
+                                    <img src="<?= $returnVendidos[$i]['imagem_principal_produto'] ?>" alt="<?= $returnVendidos[$i]['nome_produto'] ?>">
+                                    <h4><?= $returnVendidos[$i]['nome_produto'] ?></h4>
+                                    <p>R$ <?= $returnVendidos[$i]['preco_produto'] ?></p>
                                 </a>
 
-                        <?php
+                            <?php
                             endfor;
                         endif;
                         ?>

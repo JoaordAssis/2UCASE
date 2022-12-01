@@ -54,7 +54,7 @@ $exibModeloFilters = $manager->listClient('user_mod_celular', 'id_modelo_celular
                 </select>
             </div>
 
-            <select required name="categoria_produto" id="select-categoria">
+            <select required name="categoria_produto" id="select-categoria-tipo">
                 <?php
                 if (count($exibCategoriaFilters) > 0) :
                     for ($i = 0, $iMax = count($exibCategoriaFilters); $i < $iMax; $i++) :
@@ -102,10 +102,10 @@ $exibModeloFilters = $manager->listClient('user_mod_celular', 'id_modelo_celular
                     Xiaomi
                 </label> -->
 
-                <select name="marca_celular" id="select-categoria">
+                <select name="marca_celular" id="select-categoria-marca">
                     <?php
                     if (count($exibModeloFilters) > 0) :
-                        for ($i = 0; $i < count($exibModeloFilters); $i++) :
+                        for ($i = 0, $iMax = count($exibModeloFilters); $i < $iMax; $i++) :
                     ?>
                             <option value="<?= $exibModeloFilters[$i]['id_modelo_celular'] ?>">
                                 <?= $exibModeloFilters[$i]['modelo_celular'] ?>

@@ -277,10 +277,10 @@ $returnComentarios = $manager->selectWhere($paramComentario, $paramPostComentari
                             for ($i = 0, $iMax = count($returnSimilares); $i < $iMax; $i++) :
                         ?>
 
-                                <a class="produto-box glide__slide" href="./produto.php?pd=<?= $returnSimilares[0]['id_produto'] ?>">
-                                    <img src="<?= $returnSimilares[0]['imagem_principal_produto'] ?>" alt="<?= $returnSimilares[0]['nome_produto'] ?>">
-                                    <h4><?= $returnSimilares[0]['nome_produto'] ?></h4>
-                                    <p>R$ <?= $returnSimilares[0]['preco_produto'] ?></p>
+                                <a class="produto-box glide__slide" href="./produto.php?pd=<?= $returnSimilares[$i]['id_produto'] ?>">
+                                    <img src="<?= $returnSimilares[$i]['imagem_principal_produto'] ?>" alt="<?= $returnSimilares[$i]['nome_produto'] ?>">
+                                    <h4><?= $returnSimilares[$i]['nome_produto'] ?></h4>
+                                    <p>R$ <?= $returnSimilares[$i]['preco_produto'] ?></p>
                                 </a>
 
                         <?php

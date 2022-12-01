@@ -29,7 +29,7 @@ if (isset($_REQUEST['nome_produto']) && $_REQUEST['nome_produto'] !== '') :
     $precoProdutoReplace = str_replace(',', '.', $_REQUEST["preco_produto"]);
     // echo $precoProdutoReplace;
 
-    $dados["id_modelo_celular"] = $_REQUEST["marca_celular"];
+    $dados["id_modelo_celular"] = $_REQUEST["marca_celular"] !== '' ? $_REQUEST["marca_celular"] : 3;
     $dados["id_categoria"] = $_REQUEST["categoria_produto"];
     $dados["nome_produto"] = $_REQUEST["nome_produto"];
     $dados["peso_produto"] = $_REQUEST["peso_produto"];

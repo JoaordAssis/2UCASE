@@ -137,7 +137,7 @@ if (isset($_REQUEST['cadastroCompletoForm'])){
     $dadosUsuario['cpf_cliente'] = $sanitizeCPF;
     $dadosUsuario['data_nasc_cliente'] = $_REQUEST['dataNasc'];
     $dadosUsuario['telefone_cliente'] = $sanitizeNumber;
-    $dadosUsuario['telefoneFixo_cliente'] =$sanitizeNumeroFixo !== '' ? $sanitizeNumeroFixo : 'NULL';
+    $dadosUsuario['telefoneFixo_cliente'] = $sanitizeNumeroFixo !== '' ? $sanitizeNumeroFixo : 'NULL';
     $dadosUsuario['genero_cliente'] = $_REQUEST['gender'];
     $dadosUsuario['status'] = 1;
 

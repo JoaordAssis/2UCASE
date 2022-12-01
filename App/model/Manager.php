@@ -174,7 +174,7 @@ class Manager extends Conexao {
         $qd = '';
 
         for ($i = 0, $iMax = count($columns); $i < $iMax; $i++) {
-            $bindParams = substr_replace($columns[$i], " LIKE '%$search%' OR ", -1);
+            $bindParams = substr_replace($columns[$i], " LIKE '%$search%' && status = 1 OR ", -1);
             $addPlus = $bindParams;
             $qd .= $addPlus;
             $queryDinamica = substr($qd, 0, -4);

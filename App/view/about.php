@@ -114,7 +114,7 @@ session_start();
 
             <section class="box-integrante row-integrante">
                 <div class="box-info">
-                    <img src="../assets/img/no_picture.png" alt="">
+                    <img src="../assets/img/Pic-Davi.jpg" alt="">
                     <div class="text-info">
                         <h3>Davi Moreira de Santana</h3>
                         <p><strong>Desenvolvedor Full-Stack & Designer UI/UX</strong></p>

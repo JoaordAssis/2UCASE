@@ -86,7 +86,7 @@
 
 #menu .menu-link{
     display: block;
-    padding: .5rem;
+    padding: .1rem;
 }
 
 #menu .container-submenu{
@@ -101,7 +101,7 @@
 #menu .container-submenu li a{
     color: var(--cor-principal);
     display: block;
-    padding: .5rem;
+    padding: .8rem;
     width: 8rem;
     height: 0;
     position: absolute;
@@ -399,6 +399,10 @@ transform: rotate(135deg);
         justify-content: space-between;
         width: 100%;
         gap: .8rem;
+    }
+
+    #logo-site{
+        margin-right: 0;
     }
 }
 

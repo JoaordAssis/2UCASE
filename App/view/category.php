@@ -72,6 +72,9 @@ if (!empty($_GET['selectOrdem'])) {
                         <?php
                         if (count($listCategory) > 0):
                             for ($i = 0, $iMax = count($listCategory); $i < $iMax; $i++):
+                                if ($listCategory[$i]['nome_categoria'] === 'Acessorios'){
+                                    continue;
+                                }
                                 if ($listCategory[$i]['nome_categoria'] === $_REQUEST['category']):
                         ?>
                         <label class="container"><?=$listCategory[$i]['nome_categoria']?>
