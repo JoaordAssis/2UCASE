@@ -326,6 +326,12 @@
     }
 }
 
+@media (max-width: 540px) {
+    .homepage-prod-carrossel .glide__arrow {
+        display: none;
+    }
+}
+
 @media (max-width: 500px) {
     .homepage-prod-carrossel {
         display: flex;

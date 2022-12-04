@@ -307,6 +307,12 @@
         border-radius: 15px;
     }
 
+    @media (max-width: 540px) {
+        .homepage-prod-carrossel .glide__arrow {
+            display: none;
+        }
+    }
+
 
     .shadow-hover{
         opacity: 0;

@@ -45,8 +45,6 @@ $countAvaliacao = $manager->countProdutoCarrinho('user_avaliacao', 'id_avaliacao
     <link rel="stylesheet" href="../../node_modules/./@glidejs/./glide/./dist/./css/./glide.core.min.css">
     <link rel="stylesheet" href="../../node_modules/@glidejs/glide/dist/css/glide.theme.min.css">
     <link rel="stylesheet" href="../assets/styles/produto.css">
-
-
 </head>
 <!-- Barra de Navegação -->
 <?php require_once './navbar.php'; ?>
@@ -241,6 +239,7 @@ $countAvaliacao = $manager->countProdutoCarrinho('user_avaliacao', 'id_avaliacao
                     <div class="cep-container">
                         <label for="cep">
                             <input data-js="cep" type="text" name="cep" placeholder="CEP" id="input-calcula-cep">
+                            <input type="hidden" name="valueFrete" id="value-frete-input" value="<?=$returnProduto[0]['preco_produto']?>">
                         </label>
                         <button type="button" class="button-cep-calc" id="principal-button">Calcular</button>
                     </div>

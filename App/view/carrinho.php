@@ -73,7 +73,7 @@ $returnVendidos = $manager->exibProducts('categoria_special_produto', 'Promoçõ
                                     <input type="hidden" name="pc" value="<?=$checkProd[0]['id_produto_carrinho']?>">
                                     <button type="submit" id="fechar-btn"><i class="fa-solid fa-xmark"></i></button>
                                 </form>
-                                <div class="produto-info">
+                                <a class="produto-info" href="./produto.php?pd=<?=$getInfoProduto[$j]['id_produto']?>">
                                     <img src="<?=$getInfoProduto[$j]['imagem_principal_produto']?>" alt="Alt dinâmico">
                                     <div class="titles-column">
                                         <h4><?=$getInfoProduto[$j]['nome_produto']?></h4>
@@ -102,7 +102,7 @@ $returnVendidos = $manager->exibProducts('categoria_special_produto', 'Promoçõ
                                         <p id="p-opaco">VALOR</p>
                                         <P><?=$getInfoProduto[$j]['preco_produto']?></P>
                                     </div>
-                                </div>
+                                </a>
 
                                 <form class="cupom-container" method="post" action="../controllers/ControllerUpdateCarrinho.php?cupom=true">
                                     <input type="text" required name="cupom" id="input-cupom" placeholder="Cupom de Desconto">
@@ -150,6 +150,7 @@ $returnVendidos = $manager->exibProducts('categoria_special_produto', 'Promoçõ
                         <p>TOTAL:</p>
                         <span id="color-payment">
                             <p id="total-value">R$ <?=$selectCarrinhoVerify[0]['total_carrinho']?></p>
+                            <input type="hidden" name="valueFrete" id="value-frete-input" value="<?=$selectCarrinhoVerify[0]['total_carrinho']?>">
                         </span>
                     </div>
                     <?php

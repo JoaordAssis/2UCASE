@@ -6,6 +6,7 @@ let textReplace = totalText.innerText;
 let replacedVariable = +textReplace.replace("R$", "");
 let formSelectQuant = document.getElementById("form-change-quant");
 let quantSelect = document.getElementById("quant-select");
+let valueProduto = document.getElementById("value-frete-input");
 
 
 function submitForm(event){
@@ -22,11 +23,12 @@ cepInput.addEventListener("blur", () => {
     }else{
         buttonCep.addEventListener('click', () => {
             let cepValue = {
-                cep: cepInput.value
+                cep: cepInput.value,
+                value: valueProduto.value
             }
 
             let data = JSON.stringify(cepValue);
-            let url  = '../../app/model/CEP.php?cep=' + cepInput.value;
+            let url  = '../../app/model/CEP.php?cep=' + cepInput.value + '&value=' + valueProduto.value;
             let dataResponse = [];
 
             fetch(url, {

@@ -2,38 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="AJUSTED: textos nos selects">
-      <change afterPath="$PROJECT_DIR$/adm/assets/js/navbarFix.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/adm/databases/img-database/Imagem Feliz---03-12-2022 13-42-47/Imagem Feliz-492884402.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/avaliacao.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/avaliacao.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/produto.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/produto.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm/assets/css/detailsComentarios.css" beforeDir="false" afterPath="$PROJECT_DIR$/adm/assets/css/detailsComentarios.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm/assets/css/navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/adm/assets/css/navbar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm/controller/ControllerCarrosselADM.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/controller/ControllerCarrosselADM.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm/model/Manager.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/model/Manager.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm/view/CRUDAddCarrossel.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/view/CRUDAddCarrossel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm/view/CRUDAddCupom.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/view/CRUDAddCupom.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm/view/CRUDAddProduto.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/view/CRUDAddProduto.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm/view/CRUDAddSubMenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/view/CRUDAddSubMenu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm/view/CRUDAddUsuario.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/view/CRUDAddUsuario.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm/view/CRUDEditCarrossel.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/view/CRUDEditCarrossel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm/view/CRUDEditCupom.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/view/CRUDEditCupom.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm/view/CRUDEditMenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/view/CRUDEditMenu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm/view/CRUDEditProduto.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/view/CRUDEditProduto.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm/view/CRUDEditSubMenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/view/CRUDEditSubMenu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm/view/CRUDEditUsuarioADM.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/view/CRUDEditUsuarioADM.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm/view/DetailsClientes.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/view/DetailsClientes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm/view/DetailsComentarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/view/DetailsComentarios.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm/view/DetailsPedidos.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/view/DetailsPedidos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm/view/ListComentarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/view/ListComentarios.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm/view/carrossel.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/view/carrossel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm/view/listClientes.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/view/listClientes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm/view/listCupons.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/view/listCupons.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm/view/listMenus.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/view/listMenus.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm/view/listPedidos.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/view/listPedidos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm/view/listProdutos.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/view/listProdutos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm/view/listUsuariosADM.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/view/listUsuariosADM.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm/view/navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/view/navbar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/styles/carrinho.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/styles/carrinho.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -302,6 +272,7 @@
       <workItem from="1669934413543" duration="1200000" />
       <workItem from="1670084433551" duration="4823000" />
       <workItem from="1670158676525" duration="2312000" />
+      <workItem from="1670162754835" duration="6433000" />
     </task>
     <task id="LOCAL-00001" summary="Teste commit 09/10/2022">
       <created>1665346468595</created>
@@ -637,5 +608,16 @@
     <MESSAGE value="AJUSTED: ajustes de sessão e requests para hospedagem" />
     <MESSAGE value="AJUSTED: textos nos selects" />
     <option name="LAST_COMMIT_MESSAGE" value="AJUSTED: textos nos selects" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/view/produto.php</url>
+          <line>58</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

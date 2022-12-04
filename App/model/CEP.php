@@ -63,8 +63,8 @@ class CEP{
 
 
 
-$val[] = (new CEP('2', $_GET['cep'], '145.69'))->calcFrete('04510');
-$val[] = (new CEP('2', $_GET['cep'], '145.69'))->calcFrete('40010');
+$val[] = (new CEP('2', $_GET['cep'], $_GET['value']))->calcFrete('04510');
+$val[] = (new CEP('2', $_GET['cep'], $_GET['value']))->calcFrete('40010');
 
 try {
     echo json_encode($val, JSON_THROW_ON_ERROR);

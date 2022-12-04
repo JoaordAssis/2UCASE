@@ -543,6 +543,12 @@ body{
     }
 }
 
+@media (max-width: 540px) {
+    .homepage-prod-carrossel .glide__arrow {
+        display: none;
+    }
+}
+
 @media (max-width: 350px) {
     .box-about p {
         max-width: 30rem;
@@ -557,9 +563,6 @@ body{
         width: 150px;
     }
 
-    .homepage-prod-carrossel .glide__arrow {
-        display: none;
-    }
 }
 
 

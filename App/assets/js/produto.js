@@ -57,6 +57,7 @@ document.querySelectorAll('input').forEach(($input) => {
 
 let cepInput = document.getElementById("input-calcula-cep");
 let buttonCep = document.querySelector(".button-cep-calc");
+let valueProduto = document.getElementById("value-frete-input");
 
 //Elementos para exibição
 let valueSedex = document.getElementById("value-sedex");
@@ -68,42 +69,44 @@ let txtObs = document.getElementById("text-obs");
 
 
 cepInput.addEventListener("blur", () => {
-   if (cepInput.value.length === 0){
-       buttonCep.disabled;
-       console.log(cepInput.value.length);
+    if (cepInput.value.length === 0){
+        buttonCep.disabled;
+        console.log(cepInput.value.length);
 
-   }else{
-       buttonCep.addEventListener('click', () => {
-           let cepValue = {
-               cep: cepInput.value
-           }
+    }else{
+        buttonCep.addEventListener('click', () => {
+            let cepValue = {
+                cep: cepInput.value,
+                value: valueProduto.value
+            }
 
-           let data = JSON.stringify(cepValue);
-           let url  = '../../model/CEP.php?cep=' + cepInput.value;
-           let dataResponse = [];
+            let data = JSON.stringify(cepValue);
+            //LINK DO MODEL TIRADO DA HOSPEDAGEM, PODE DAR ERRO AO TESTAR
+            let url  = '../../app/model/CEP.php?cep=' + cepInput.value + '&value=' + valueProduto.value;
+            let dataResponse = [];
 
-           fetch(url, {
-               method: 'POST',
-               body: data
-           }).then(response =>  response.json())
-               .then(response => {
-                   dataResponse = response;
-                   valueSedex.innerText = "Sedex - Valor: R$" + dataResponse[1]['Valor'];
-                   valuePAC.innerText = "PAC - Valor: R$" + dataResponse[0]['Valor'];
+            fetch(url, {
+                method: 'POST',
+                body: data
+            }).then(response =>  response.json())
+                .then(response => {
+                    dataResponse = response;
+                    valueSedex.innerText = "Sedex - Valor: R$" + dataResponse[1]['Valor'];
+                    valuePAC.innerText = "PAC - Valor: R$" + dataResponse[0]['Valor'];
 
-                   prazoSedex.innerText = "Prazo de Entrega: " + dataResponse[1]['PrazoEntrega']
-                       + " Dias úteis";
-                   prazoPAC.innerText = "Prazo de Entrega: " + dataResponse[0]['PrazoEntrega']
-                       + " Dias úteis";
+                    prazoSedex.innerText = "Prazo de Entrega: " + dataResponse[1]['PrazoEntrega']
+                        + " Dias úteis";
+                    prazoPAC.innerText = "Prazo de Entrega: " + dataResponse[0]['PrazoEntrega']
+                        + " Dias úteis";
 
-                   if (Object.entries(dataResponse[0]['obsFim']).length !== 0 && dataResponse[0]['obsFim'].constructor !== Object){
-                       txtObs.innerText = dataResponse[0]['obsFim'];
-                   }
+                    if (Object.entries(dataResponse[0]['obsFim']).length !== 0 && dataResponse[0]['obsFim'].constructor !== Object){
+                        txtObs.innerText = dataResponse[0]['obsFim'];
+                    }
 
 
-               }).catch(error => console.log(error));
-       });
-   }
+                }).catch(error => console.log(error));
+        });
+    }
 });
 
 
@@ -127,7 +130,6 @@ function redirectOrdem() {
             "../controller/ControllerProdutoADM.php?selectOrdem=" + opcaoTexto;
     }
 }
-
 
 
 
