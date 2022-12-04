@@ -67,6 +67,7 @@ $exibCategoriaFilters = $manager->listClient('user_categoria', 'id_categoria');
     </main>
 </body>
 <script src="../assets/js/listCupons.js"></script>
+<script src="../assets/js/navbarFix.js"></script>
 
 </html>
 

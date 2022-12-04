@@ -121,5 +121,6 @@ $resultListUsuario = $manager->getInfo('adm_administrador', 'id_adm', $idUserADM
     </main>
 </body>
 <!-- <script src="../assets/js/CRUDEditUsuarioADM.js"></script> -->
+<script src="../assets/js/navbarFix.js"></script>
 
 </html>

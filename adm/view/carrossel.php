@@ -105,6 +105,8 @@ $resultCarrosselList = $manager->listClient('adm_carrossel', 'id_carrossel');
 
 <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
 <script src="../assets/js/carrossel.js"></script>
+<script src="../assets/js/navbarFix.js"></script>
+
 <?php
 if (isset($_POST['msg'])) {
     require_once './msg.php';

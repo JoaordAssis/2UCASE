@@ -32,11 +32,14 @@ $exibCarrossel = $manager->getInfo('adm_carrossel', 'id_carrossel', $idCarrossel
             <input type="text" name="link_promo_carrossel" value="<?= $exibCarrossel[0]['link_promo_carrossel'] ?>" id="input_link" placeholder="Link Promocional">
             <br>
 
-            <p>Por Favor, adicione novamente a imagem</p>
+            <h5>Por motivos de incompetência minha, peço encarecidamente que não seja realizado alterações nos nomes dos carrosseis já adicionados, Thanks!</h5>
+
+            <p><?= $exibCarrossel[0]['link_carrossel'] ?></p>
 
 
             <label for="img_principal">Imagem Principal
-                <input type="file" name="link_carrossel" value="<?= $exibCarrossel[0]['link_carrossel'] ?>" id="input-img">
+                <input type="hidden" name="link_carrossel" value="<?= $exibCarrossel[0]['link_carrossel'] ?>" id="input-img">
+                <input type="file" name="link_carrossel_new" id="input-img">
             </label>
 
 
@@ -75,6 +78,7 @@ $exibCarrossel = $manager->getInfo('adm_carrossel', 'id_carrossel', $idCarrossel
 
     </main>
 </body>
+<script src="../assets/js/navbarFix.js"></script>
 
 </html>
 

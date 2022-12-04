@@ -63,6 +63,7 @@ $resultListMenu = $manager->listClient('adm_menu', 'id_menu');
 
     </main>
 </body>
+<script src="../assets/js/navbarFix.js"></script>
 
 </html>
 

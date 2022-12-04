@@ -163,6 +163,7 @@ if (isset($_GET['selectOrdem']) && $_GET['selectOrdem'] != '') {
         </section>
     </main>
 </body>
+<script src="../assets/js/navbarFix.js"></script>
 <script src="../assets/js/listPedidos.js"></script>
 <?php
 if (isset($_POST['msg'])) {

@@ -33,6 +33,9 @@ $paramComentario = ['id_produto'];
 $paramPostComentario = [$idProduto];
 $returnComentarios = $manager->selectWhere($paramComentario, $paramPostComentario, 'user_avaliacao',);
 
+//Avaliação
+$countAvaliacao = $manager->countProdutoCarrinho('user_avaliacao', 'id_avaliacao', 'id_produto', $idProduto);
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -174,7 +177,7 @@ $returnComentarios = $manager->selectWhere($paramComentario, $paramPostComentari
                         </div>
 
                         <!--Executar um count-->
-                        <p>200 Avaliações</p>
+                        <p><?=$countAvaliacao[0]['COUNT(id_avaliacao)']?> Avaliações</p>
                     </div>
                 </div>
 

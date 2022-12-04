@@ -68,6 +68,7 @@ $resultListMenu = $manager->getInfo('adm_menu', 'id_menu', $idMenuADM);
 
     </main>
 </body>
+<script src="../assets/js/navbarFix.js"></script>
 
 </html>
 

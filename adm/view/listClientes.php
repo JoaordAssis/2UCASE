@@ -130,6 +130,8 @@ $returnDataMonth = $manager->dateCountClientes('user_cliente', 'data_reg_cliente
         </section>
     </main>
 </body>
+<script src="../assets/js/navbarFix.js"></script>
+
 <?php
 if (isset($_POST['msg'])) {
     require_once './msg.php';

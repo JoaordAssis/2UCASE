@@ -14,7 +14,7 @@ $exibProdutoCarrinho = $manager->getInfo('produto_carrinho', 'id_carrinho', $exi
 
 <head>
     <?php require_once "../config/config.php"; ?>
-    <link rel="stylesheet" href="../assets/css/cupons.css">
+    <link rel="stylesheet" href="../assets/css/detailsComentarios.css">
 </head>
 
 <?php require_once "./navbar.php"; ?>
@@ -42,9 +42,26 @@ $exibProdutoCarrinho = $manager->getInfo('produto_carrinho', 'id_carrinho', $exi
                 </label>
             </div>
 
-            <label>Status da venda
-                <h3><?= $exibPedidosDetails[0]['status_venda'] ?></h3>
-            </label>
+
+            <div class="row-titulo-stars rows-comentarios">
+                <label>Status da venda
+                    <h3><?= $exibPedidosDetails[0]['status_venda'] ?></h3>
+                </label>
+
+                <label>Quantidade de Produtos
+                    <h3><?= $exibPedidosDetails[0]['quant_produto_total'] ?></h3>
+                </label>
+            </div>
+
+            <div class="row-titulo-stars rows-comentarios">
+                <label>Número da venda
+                    <h3><?= $exibPedidosDetails[0]['numero_venda'] ?></h3>
+                </label>
+
+                <label>Valor Frete
+                    <h3>R$ <?= $exibPedidosDetails[0]['frete_carrinho'] ?></h3>
+                </label>
+            </div>
         </article>
 
         <!-- Exibir informações do cliente -->
@@ -58,11 +75,13 @@ $exibProdutoCarrinho = $manager->getInfo('produto_carrinho', 'id_carrinho', $exi
             <h2>Cliente</h2>
 
             <div class="row-nome-email rows-comentarios">
-                <label>Nome do cliente
+                <label class="full-width">Nome do cliente
                     <h3><?= $exibPedidosDetails[0]['nome_cliente'] ?></h3>
                 </label>
+            </div>
 
-                <label>Email cliente
+            <div class="row-nome-email rows-comentarios">
+                <label class="full-width">Email cliente
                     <h3><?= $exibPedidosDetails[0]['email_cliente'] ?></h3>
                 </label>
             </div>
@@ -86,11 +105,13 @@ $exibProdutoCarrinho = $manager->getInfo('produto_carrinho', 'id_carrinho', $exi
             <h2>Endereço</h2>
 
             <div class="row-nome-email rows-comentarios">
-                <label>Logradouro
+                <label class="full-width">Logradouro
                     <h3><?= $exibPedidosDetails[0]['logradouro_cliente'] ?></h3>
                 </label>
+            </div>
 
-                <label>Bairro
+            <div class="row-nome-email rows-comentarios">
+                <label class="full-width">Bairro
                     <h3><?= $exibPedidosDetails[0]['bairro_cliente'] ?></h3>
                 </label>
             </div>
@@ -109,21 +130,21 @@ $exibProdutoCarrinho = $manager->getInfo('produto_carrinho', 'id_carrinho', $exi
                 <label>Número
                     <h3><?= $exibPedidosDetails[0]['numero_cliente'] ?></h3>
                 </label>
-            </div>
 
-            <div class="row-phone-birth rows-comentarios">
                 <?php
                 if ($exibPedidosDetails[0]['complemento_cliente'] !== null) :
-                ?>
+                    ?>
                     <label>Complemento
                         <h3><?= $exibPedidosDetails[0]['complemento_cliente'] ?></h3>
                     </label>
                 <?php endif; ?>
+            </div>
 
+            <div class="row-phone-birth rows-comentarios">
                 <?php
                 if ($exibPedidosDetails[0]['ponto_ref_cliente'] !== null) :
                 ?>
-                    <label>Ponto de Referência
+                    <label class="full-width">Ponto de Referência
                         <h3><?= $exibPedidosDetails[0]['ponto_ref_cliente'] ?></h3>
                     </label>
                 <?php endif; ?>
@@ -153,7 +174,7 @@ $exibProdutoCarrinho = $manager->getInfo('produto_carrinho', 'id_carrinho', $exi
 
             <div class="row-titulo-stars rows-comentarios">
                 <label>Desconto total do carrinho
-                    <h3><?= $exibPedidosDetails[0]['desconto_carrinho'] ?></h3>
+                    <h3>R$ <?= $exibPedidosDetails[0]['desconto_carrinho'] ?></h3>
                 </label>
 
                 <label>Quantidade de Produtos
@@ -161,10 +182,6 @@ $exibProdutoCarrinho = $manager->getInfo('produto_carrinho', 'id_carrinho', $exi
                 </label>
             </div>
 
-
-            <label>Frete carrinho
-                <h3>R$ <?= $exibPedidosDetails[0]['frete_carrinho'] ?></h3>
-            </label>
         </article>
 
 
@@ -182,8 +199,14 @@ $exibProdutoCarrinho = $manager->getInfo('produto_carrinho', 'id_carrinho', $exi
                     <h2>Produto Comprado</h2>
 
                     <div class="row-titulo-stars rows-comentarios">
-                        <label>Nome Produto
+                        <label class="full-width">Nome Produto
                             <h3><?= $exibProdutos[0]['nome_produto'] ?></h3>
+                        </label>
+                    </div>
+
+                    <div class="row-titulo-stars rows-comentarios">
+                        <label>Codigo Produto
+                            <h3><?= $exibProdutos[0]['cod_produto'] ?></h3>
                         </label>
 
                         <label>Quantidade produto
@@ -221,6 +244,9 @@ $exibProdutoCarrinho = $manager->getInfo('produto_carrinho', 'id_carrinho', $exi
 
     </main>
 </body>
+<script src="../assets/js/navbarFix.js"></script>
+
+<script src="../assets/js/navbarFix.js"></script>
 <?php
 if (isset($_POST['msg'])) {
     require_once './msg.php';

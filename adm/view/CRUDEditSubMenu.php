@@ -84,6 +84,7 @@ $resultListSubMenu = $manager->listClient('adm_submenu', 'id_submenu');
 
     </main>
 </body>
+<script src="../assets/js/navbarFix.js"></script>
 
 </html>
 

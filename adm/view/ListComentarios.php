@@ -143,6 +143,8 @@ if (isset($_REQUEST['dataStart']) && !empty($_REQUEST['dataStart']) && isset($_R
     </main>
 </body>
 <script src="../assets/js/listComentarios.js"></script>
+<script src="../assets/js/navbarFix.js"></script>
+
 <?php
 if (isset($_POST['msg'])) {
     require_once './msg.php';

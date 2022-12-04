@@ -91,6 +91,7 @@ $exibCupons = $manager->getInfo('user_cupom', 'id_cupom', $idCupom);
     </main>
 </body>
 <script src="../assets/js/listCupons.js"></script>
+<script src="../assets/js/navbarFix.js"></script>
 
 </html>
 

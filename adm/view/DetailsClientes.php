@@ -22,7 +22,7 @@ if ($exibClienteDetails[0]['genero_cliente'] === 0) {
 
 <head>
     <?php require_once "../config/config.php"; ?>
-    <link rel="stylesheet" href="../assets/css/cupons.css">
+    <link rel="stylesheet" href="../assets/css/detailsComentarios.css">
 </head>
 
 <?php require_once "./navbar.php"; ?>
@@ -37,18 +37,24 @@ if ($exibClienteDetails[0]['genero_cliente'] === 0) {
             <h2>Cliente</h2>
 
             <div class="row-nome-email rows-comentarios">
-                <label>Nome do cliente
+                <label class="full-width">Nome do cliente
                     <h3><?= $exibClienteDetails[0]['nome_cliente'] ?></h3>
                 </label>
+            </div>
 
-                <label>Email cliente
+            <div class="row-nome-email rows-comentarios">
+                <label class="full-width">Email cliente
                     <h3><?= $exibClienteDetails[0]['email_cliente'] ?></h3>
                 </label>
             </div>
 
             <div class="row-phone-birth rows-comentarios">
-                <label>Telefone cliente
+                <label>Telefone Celular
                     <h3><?= $exibClienteDetails[0]['telefone_cliente'] ?></h3>
+                </label>
+
+                <label>Telefone Fixo
+                    <h3><?= $exibClienteDetails[0]['telefoneFixo_cliente'] ?></h3>
                 </label>
 
                 <label>Data de Nascimento
@@ -83,11 +89,13 @@ if ($exibClienteDetails[0]['genero_cliente'] === 0) {
                     <h2>Endereço N° <?=($i + 1)?></h2>
 
                     <div class="row-nome-email rows-comentarios">
-                        <label>Logradouro
+                        <label class="full-width">Logradouro
                             <h3><?= $exibClienteEndereco[$i]['logradouro_cliente'] ?></h3>
                         </label>
+                    </div>
 
-                        <label>Bairro
+                    <div class="row-nome-email rows-comentarios">
+                        <label class="full-width">Bairro
                             <h3><?= $exibClienteEndereco[$i]['bairro_cliente'] ?></h3>
                         </label>
                     </div>
@@ -106,21 +114,21 @@ if ($exibClienteDetails[0]['genero_cliente'] === 0) {
                         <label>Número
                             <h3><?= $exibClienteEndereco[$i]['numero_cliente'] ?></h3>
                         </label>
-                    </div>
 
-                    <div class="row-phone-birth rows-comentarios">
                         <?php
                         if ($exibClienteEndereco[$i]['complemento_cliente'] !== null) :
-                        ?>
+                            ?>
                             <label>Complemento
                                 <h3><?= $exibClienteEndereco[$i]['complemento_cliente'] ?></h3>
                             </label>
                         <?php endif; ?>
+                    </div>
 
+                    <div class="row-phone-birth rows-comentarios">
                         <?php
                         if ($exibClienteEndereco[$i]['ponto_ref_cliente'] !== null) :
                         ?>
-                            <label>Ponto de Referência
+                            <label class="full-width">Ponto de Referência
                                 <h3><?= $exibClienteEndereco[$i]['ponto_ref_cliente'] ?></h3>
                             </label>
                         <?php endif; ?>
@@ -135,6 +143,8 @@ if ($exibClienteDetails[0]['genero_cliente'] === 0) {
 
     </main>
 </body>
+<script src="../assets/js/navbarFix.js"></script>
+
 <?php
 if (isset($_POST['msg'])) {
     require_once './msg.php';

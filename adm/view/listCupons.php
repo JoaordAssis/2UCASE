@@ -80,6 +80,8 @@ $resultListCupons = $manager->listClient('user_cupom', 'id_cupom');
         </section>
     </main>
 </body>
+<script src="../assets/js/navbarFix.js"></script>
+
 <?php
 if (isset($_POST['msg'])) {
     require_once './msg.php';

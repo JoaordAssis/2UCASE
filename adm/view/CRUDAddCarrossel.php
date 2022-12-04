@@ -49,6 +49,7 @@ session_start();
 
     </main>
 </body>
+<script src="../assets/js/navbarFix.js"></script>
 
 </html>
 

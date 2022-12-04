@@ -239,5 +239,6 @@ $exibProduto = $manager->getInfo('user_produto', 'id_produto', $idProduto);
     </main>
 </body>
 <script src="../assets/js/addProduto.js"></script>
+<script src="../assets/js/navbarFix.js"></script>
 
 </html>

@@ -138,5 +138,6 @@ $exibModeloFilters = $manager->listClient('user_mod_celular', 'id_modelo_celular
     </main>
 </body>
 <script src="../assets/js/addProduto.js"></script>
+<script src="../assets/js/navbarFix.js"></script>
 
 </html>

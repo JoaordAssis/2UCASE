@@ -46,7 +46,7 @@ $getCarrinho = $manager->selectWhere($params, $paramsPost, 'produto_carrinho');
 
         <section class="prod-carrinho">
             <div class="produto-info">
-                <img src="../assets/./img/./Time.png" alt="Alt dinâmico">
+                <img src="<?=$getProduto[0]['imagem_principal_produto']?>" alt="<?=$getProduto[0]['nome_produto']?>">
                 <div class="titles-column">
                     <h4><?=$getProduto[0]['nome_produto']?></h4>
                     <p id="p-opaco"><?=$getCarrinho[0]['marca_celular']?></p>

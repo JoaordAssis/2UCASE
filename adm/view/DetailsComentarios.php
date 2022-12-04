@@ -17,33 +17,6 @@ $resultDetailCategoria = $manager->getInfo('user_categoria', 'id_categoria', $re
 <head>
     <?php require_once "../config/config.php"; ?>
     <link rel="stylesheet" href="../assets/css/detailsComentarios.css">
-    <style>
-        .container-comment{
-            background-color: #fff;
-            padding: 1rem;
-            border-radius: 5px;
-        }
-        
-        .rows-comentarios {
-            display: flex;
-            width: 100%;
-            justify-content: space-between;
-        }
-
-        label {
-            border: 1px solid #000;
-            padding: 1rem;
-        }
-
-        .container-comment {
-            display: flex;
-            flex-direction: column;
-            width: 40vw;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-top: 3rem;
-        }
-    </style>
 </head>
 
 <?php require_once "./navbar.php"; ?>
@@ -58,11 +31,13 @@ $resultDetailCategoria = $manager->getInfo('user_categoria', 'id_categoria', $re
             <h2>Cliente</h2>
 
             <div class="row-nome-email rows-comentarios">
-                <label>Nome do cliente
+                <label class="full-width">Nome do cliente
                     <h3><?= $resultDetailCliente[0]['nome_cliente'] ?></h3>
                 </label>
+            </div>
 
-                <label>Email cliente
+            <div class="row-nome-email rows-comentarios">
+                <label class="full-width">Email cliente
                     <h3><?= $resultDetailCliente[0]['email_cliente'] ?></h3>
                 </label>
             </div>
@@ -86,8 +61,15 @@ $resultDetailCategoria = $manager->getInfo('user_categoria', 'id_categoria', $re
             <h2>Comentário</h2>
 
             <div class="row-titulo-stars rows-comentarios">
-                <label>Título
+                <label class="full-width">Título
                     <h3><?= $resultDetailComentario[0]['titulo_avaliacao'] ?></h3>
+                </label>
+            </div>
+
+
+            <div class="row-titulo-stars rows-comentarios">
+                <label>Data do comentário
+                    <h3><?= $resultDetailComentario[0]['data_avaliacao'] ?></h3>
                 </label>
 
                 <label>Avaliação
@@ -95,12 +77,8 @@ $resultDetailCategoria = $manager->getInfo('user_categoria', 'id_categoria', $re
                 </label>
             </div>
 
-            <label>Data do comentário
-                <h3><?= $resultDetailComentario[0]['data_avaliacao'] ?></h3>
-            </label>
 
-
-            <label>Comentário
+            <label class="full-width">Comentário
                 <h3><?= $resultDetailComentario[0]['descricao'] ?></h3>
             </label>
 
@@ -113,8 +91,14 @@ $resultDetailCategoria = $manager->getInfo('user_categoria', 'id_categoria', $re
             <h2>Produto</h2>
 
             <div class="row-titulo-stars rows-comentarios">
-                <label>Nome do Produto
+                <label class="full-width">Nome do Produto
                     <h3><?= $resultDetailProduto[0]['nome_produto'] ?></h3>
+                </label>
+            </div>
+
+            <div class="row-titulo-stars rows-comentarios">
+                <label>Categoria
+                    <h3><?= $resultDetailCategoria[0]['nome_categoria'] ?></h3>
                 </label>
 
                 <label>Preço do Produto
@@ -122,12 +106,8 @@ $resultDetailCategoria = $manager->getInfo('user_categoria', 'id_categoria', $re
                 </label>
             </div>
 
-            <label>Categoria
-                <h3><?= $resultDetailCategoria[0]['nome_categoria'] ?></h3>
-            </label>
 
-
-            <label>Descrição do Produto
+            <label class="full-width">Descrição do Produto
                 <h3><?= $resultDetailProduto[0]['descricao_produto'] ?></h3>
             </label>
 
@@ -138,6 +118,8 @@ $resultDetailCategoria = $manager->getInfo('user_categoria', 'id_categoria', $re
 
     </main>
 </body>
+<script src="../assets/js/navbarFix.js"></script>
+
 <?php
 if (isset($_POST['msg'])) {
     require_once './msg.php';

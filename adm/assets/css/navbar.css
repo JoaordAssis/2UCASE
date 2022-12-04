@@ -7,7 +7,7 @@ header{
     width: 16rem;
     gap: 10rem;
     padding: 2rem;
-    height: 100vh;
+    min-height: calc(100% + 100px);
     background-color: var(--cor-laranja);
     float: left;
     margin-top: -2rem;

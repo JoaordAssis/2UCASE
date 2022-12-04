@@ -177,6 +177,8 @@ if (isset($_GET['selectOrdem']) && $_GET['selectOrdem'] != '') {
     </main>
 </body>
 <script src="../assets/js/listProdutos.js"></script>
+<script src="../assets/js/navbarFix.js"></script>
+
 <?php
 if (isset($_POST['msg'])) {
     require_once './msg.php';

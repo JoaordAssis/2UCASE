@@ -50,13 +50,18 @@ if (isset($_REQUEST['action']) && $_REQUEST['action'] != '' && isset($_REQUEST['
         if ($verificaNomeBanner === 1) {
 
             $idCarrossel = $_REQUEST['id'];
-            $imgRetrieveData = $manager->imgUpload('link_carrossel', $_REQUEST["nome_carrossel"]);
 
             $dadosBannerADM['nome_carrossel'] = $_REQUEST['nome_carrossel'];
             $dadosBannerADM['link_promo_carrossel'] = $_REQUEST['link_promo_carrossel'];
-            $dadosBannerADM['link_carrossel'] = $imgRetrieveData[0];
-            $dadosBannerADM['status'] = $_REQUEST['status'];
 
+            if(empty($_FILES['link_carrossel_new']['name'])){
+                $dadosBannerADM['link_carrossel'] = $_REQUEST['link_carrossel'];
+            }else{
+                $imgRetrieveData = $manager->imgUpload('link_carrossel_new', $_REQUEST["nome_carrossel"]);
+                $dadosBannerADM['link_carrossel'] = $imgRetrieveData[0];
+            }
+
+            $dadosBannerADM['status'] = $_REQUEST['status'];
 
             $manager->updateClient("adm_carrossel", $dadosBannerADM, $idCarrossel, 'id_carrossel');
 

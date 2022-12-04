@@ -13,7 +13,7 @@ if (isset($_SESSION['ADM-ID']) && $_SESSION['ADM-ID'] != '') :
     </head>
 
     <body class="nav-body">
-        <header>
+        <header id="nav-header">
             <h1 id="logo">2UCASE</h1>
 
             <nav id="nav-links">
