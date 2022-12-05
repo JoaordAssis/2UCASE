@@ -41,5 +41,5 @@ if (count($searchLike) > 0){
 
 }
 
-header("Location: ../view/search.php?search=$searchQuery&category=any");
+header("Location: ../view/search.php?search=$searchQuery&category=Nenhum");
 exit();

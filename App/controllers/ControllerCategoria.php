@@ -19,6 +19,16 @@ if (isset($_REQUEST['change-category'])){
 
 // FILTROS DE CATEGORIA
 
+if (!empty($_REQUEST['selectOrdem']) && !empty($_REQUEST['acessorios'])) {
+    //ORDEM ACESSORIOS-PAGE
+    $exibSearch = $_REQUEST['selectOrdem'];
+    $header = "Location: ../view/acessorios-page.php?category=$categorySearch&selectOrdem=" . $exibSearch;
+
+    header($header);
+    exit();
+}
+
+
 if (!empty($_REQUEST['selectOrdem'])) {
 
     $exibSearch = $_REQUEST['selectOrdem'];

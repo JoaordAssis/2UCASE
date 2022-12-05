@@ -24,7 +24,7 @@ if (!empty($_REQUEST['search']) && $_REQUEST['category'] === 'todos'){
     $returnCategory = strtoupper($searchQuery);
     $returnProdutos = $manager->selectLike('user_produto', $columnSearch, $searchQuery);
 
-} else if($_REQUEST['category'] === 'any'){
+} else if($_REQUEST['category'] === 'Nenhum'){
     $returnProdutos = [];
     $returnCategory = strtoupper($searchQuery);
 }else{

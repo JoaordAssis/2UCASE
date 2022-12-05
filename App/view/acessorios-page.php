@@ -138,7 +138,7 @@ if (!empty($_GET['selectOrdem'])) {
     </article>
 </main>
 
-<script src="../assets/./js/category.js"></script>
+<script src="../assets/./js/acessorios-page.js"></script>
 </body>
 <!-- Footer -->
 <?php require_once './footer.php'; ?>

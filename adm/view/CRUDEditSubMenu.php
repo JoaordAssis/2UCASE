@@ -5,7 +5,7 @@ require_once "../model/Manager.class.php";
 $manager = new Manager();
 
 $resultListMenu = $manager->listClient('adm_menu', 'id_menu');
-$resultListSubMenu = $manager->listClient('adm_submenu', 'id_submenu');
+$resultListSubMenu = $manager->getInfo('adm_submenu', 'id_submenu', $idSubMenuADM);
 
 
 ?>

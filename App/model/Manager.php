@@ -297,6 +297,7 @@ class Manager extends Conexao {
         $sql = "SELECT * FROM $tabela WHERE $categoria = $categoriaPop && status = 1 OR $categoria = $categoriaPod && status = 1 ORDER BY $column $order";
 
         $cmd = $this->pdo->query($sql);
+        $cmd->execute();
         return $cmd->fetchAll(PDO::FETCH_ASSOC);
     }
 
