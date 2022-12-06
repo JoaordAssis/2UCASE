@@ -73,6 +73,7 @@ $dadosProdCarrinho['id_carrinho'] = $lastInsertIDCarrinho[0];
 $dadosProdCarrinho['id_produto'] = $getInfoProduto[0]['id_produto'];
 $dadosProdCarrinho['quant_carrinho'] = $quantidadeProduto;
 $dadosProdCarrinho['preco_quant_prod'] = $precoQuantProduto;
+$dadosProdCarrinho['preco_total'] = $precoQuantProduto;
 $dadosProdCarrinho['marca_celular'] = $returnModelProduto[0]['modelo_celular'];
 
 

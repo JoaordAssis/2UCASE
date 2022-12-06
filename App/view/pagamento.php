@@ -3,7 +3,7 @@ session_start();
 
 if (empty($_SESSION['USER-ID'])){
     //Não está logado
-    header("Location: ./carrinho.php");
+    header("Location: ./carrinho.php?error-code=OA00");
     exit();
 }
 
@@ -311,7 +311,7 @@ if (isset($_REQUEST['action'])) {
 <script src="../assets/js/error-handling.js"></script>
 
 <!-- Footer -->
-<?php //require_once './footer.php'; 
+<?php //require_once './footer.php';
 ?>
 
 </html>

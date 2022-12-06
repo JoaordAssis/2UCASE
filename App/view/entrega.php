@@ -21,6 +21,7 @@ $idCarrinho = $_REQUEST['carrinho'];
 <head>
     <?php require_once __DIR__ . "/../config/stylesConfig.php"  ?>
     <link rel="stylesheet" href="../assets/styles/entrega.css">
+    <title>Entrega - 2UCASE</title>
 </head>
 
 <!-- Barra de Navegação -->
@@ -30,7 +31,7 @@ $idCarrinho = $_REQUEST['carrinho'];
 <form action="../controllers/ControllerAddEndereco.php" method="POST" id="form-entrega-frete" class="entrega-container">
 
     <input type="hidden" name="id_carrinho" value="<?=$idCarrinho?>">
-
+    <input type="hidden" name="value-carrinho" value="<?=$_GET['value']?>" id="value-frete-input">
 
     <div class="process">
         <!-- Icones da etapa do processo -->

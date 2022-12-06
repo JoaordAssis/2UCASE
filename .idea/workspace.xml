@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90fe908a-bfb0-446b-9246-e6282524dd73" name="Changes" comment="AJUSTED: textos nos selects">
-      <change afterPath="$PROJECT_DIR$/App/assets/js/acessorios-page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/model/Manager.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/model/Manager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/view/acessorios-page.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/view/acessorios-page.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adm/view/CRUDEditSubMenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/adm/view/CRUDEditSubMenu.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -277,6 +273,7 @@
       <workItem from="1670158676525" duration="2312000" />
       <workItem from="1670162754835" duration="6433000" />
       <workItem from="1670248911961" duration="3715000" />
+      <workItem from="1670285657102" duration="6268000" />
     </task>
     <task id="LOCAL-00001" summary="Teste commit 09/10/2022">
       <created>1665346468595</created>

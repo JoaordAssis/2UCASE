@@ -23,7 +23,6 @@ const showData = (result) => {
 cepInput.addEventListener('blur', (e) => {
     let search = cepInput.value;
     const url = `https://viacep.com.br/ws/${search}/json`;
-    // console.log(url);
     const options = {
         method: 'GET',
         mode: 'cors',
@@ -90,6 +89,8 @@ document.querySelectorAll('input').forEach(($input) => {
 formDisable.disabled = true;
 
 
+let valueProduto = document.getElementById("value-frete-input");
+
 //Calcular CEP
 cepInput.addEventListener("blur", () => {
     if (cepInput.value.length === 0){
@@ -99,11 +100,12 @@ cepInput.addEventListener("blur", () => {
     }else{
         buttonCep.addEventListener('blur', () => {
             let cepValue = {
-                cep: cepInput.value
+                cep: cepInput.value,
+                value: valueProduto.value
             }
 
             let data = JSON.stringify(cepValue);
-            let url  = '../../app/model/CEP.php?cep=' + cepInput.value;
+            let url  = '../../app/model/CEP.php?cep=' + cepInput.value + '&value=' + valueProduto.value;
             let dataResponse = [];
 
             fetch(url, {
