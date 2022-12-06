@@ -30,7 +30,7 @@ if (isset($_REQUEST['action'])) {
 
     if (empty($_REQUEST['frete'])){
         //Não recebeu o frete
-        header("Location: ./show-enderecos.php");
+        header("Location: ./show-enderecos.php?error-code=FR41");
         exit();
     }
 

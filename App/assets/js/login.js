@@ -39,6 +39,7 @@ let errors = {
     "FR38" : "Falha ao enviar o email, tente novamente em alguns instantes.",
     "FR39" : "Falha ao realizar o login com o Google, tente novamente em alguns minutos!.",
     "FR40" : "Já existe uma conta cadastrada com esse email, realize o login por ela!.",
+    "FR41" : "Por favor, verifique se selecionou os campos necessarios.",
     "FR50" : "Conta criada com sucesso.",
     "FR51" : "Arquivo enviado com sucesso.",
     "FR52" : "Informações atualizadas com sucesso!",

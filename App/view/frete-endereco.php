@@ -3,13 +3,18 @@ session_start();
 
 if (empty($_SESSION['USER-ID'])){
     //Não está logado
-    header("Location: ./login.php");
+    header("Location: ./login.php?error-code=OA00");
+    exit();
+}
+
+if (isset($_REQUEST['error-code']) && $_REQUEST['error-code']  === 'FR41'){
+    header("Location: ./carrinho.php?error-code=FR41");
     exit();
 }
 
 if (empty($_REQUEST['id_endereco']) || empty($_REQUEST['id_carrinho'])){
     //Não recebeu o ID
-    header("Location: ./show-enderecos.php");
+    header("Location: ./show-enderecos.php?error-code=FR41");
     exit();
 }
 

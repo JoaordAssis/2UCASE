@@ -74,8 +74,10 @@ $returnVendidos = $manager->exibProducts('categoria_special_produto', 'Promoçõ
                                 <input type="hidden" name="pc" value="<?=$checkProd[0]['id_produto_carrinho']?>">
                                 <button type="submit" id="fechar-btn"><i class="fa-solid fa-xmark"></i></button>
                             </form>
-                            <a class="produto-info" href="./produto.php?pd=<?=$getInfoProduto[$j]['id_produto']?>">
-                                <img src="<?=$getInfoProduto[$j]['imagem_principal_produto']?>" alt="Alt dinâmico">
+                            <div class="produto-info">
+                                <a href="./produto.php?pd=<?=$getInfoProduto[$j]['id_produto']?>">
+                                    <img src="<?=$getInfoProduto[$j]['imagem_principal_produto']?>" alt="Alt dinâmico">
+                                </a>
                                 <div class="titles-column">
                                     <h4><?=$getInfoProduto[$j]['nome_produto']?></h4>
                                     <p id="p-opaco"><?=$returnModelProduto[$j]['modelo_celular']?></p>
@@ -103,7 +105,7 @@ $returnVendidos = $manager->exibProducts('categoria_special_produto', 'Promoçõ
                                     <p id="p-opaco">VALOR</p>
                                     <P><?=$getInfoProduto[$j]['preco_produto']?></P>
                                 </div>
-                            </a>
+                            </div>
 
                             <form class="cupom-container" method="post" action="../controllers/ControllerUpdateCarrinho.php?cupom=true">
                                 <input type="text" required name="cupom" id="input-cupom" placeholder="Cupom de Desconto">

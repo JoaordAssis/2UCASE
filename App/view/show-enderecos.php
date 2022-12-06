@@ -7,6 +7,11 @@ if (empty($_SESSION['USER-ID'])){
     exit();
 }
 
+if (isset($_REQUEST['error-code']) && $_REQUEST['error-code']  === 'FR41'){
+    header("Location: ./carrinho.php?error-code=FR41");
+    exit();
+}
+
 if (empty($_REQUEST['carrinho'])){
     //Não enviou o ID do carrinho
     header("Location: ./carrinho.php?error-code=FR00");

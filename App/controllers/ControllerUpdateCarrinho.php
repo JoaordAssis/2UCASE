@@ -112,6 +112,7 @@ if (isset($_REQUEST['cupom'])){
 
 //MUDAR A QUANTIDADE DO PRODUTO
 if (!empty($_REQUEST['changeQuant'])) {
+    $quantProd = filter_input(INPUT_POST, 'quantProd');
 
     //Conferir a quantidade do produto na tabela produto_carrinho
     $dadosUpdate['quant_carrinho'] = $quantProd;

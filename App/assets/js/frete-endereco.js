@@ -8,7 +8,13 @@ let sedexInput = document.getElementById("sedex-cod");
 let pacInput = document.getElementById("pac-cod");
 let valueProduto = document.getElementById("value-frete-input");
 
+let freteButton = document.getElementById("principal-button");
+
 //WORKING: ENVIAR O FRETE E O CODIGO DO FRETE JUNTOS
+
+sedexInput.disabled = true;
+pacInput.disabled = true;
+freteButton.disabled = true;
 
 function freteCalc(cep) {
 
@@ -22,6 +28,11 @@ function freteCalc(cep) {
     })
         .then((response) => response.json())
         .then((response) => {
+
+            freteButton.disabled = false;
+            sedexInput.disabled = false;
+            pacInput.disabled = false;
+
             dataResponse = response;
             let sedexObject = dataResponse[1]['Codigo'];
             let sedexObjectV = dataResponse[1]['Valor'];
