@@ -3,11 +3,11 @@ Projeto de desenvolvimento e remodelação do site Vilicapas, site de vendas de 
 Site renomeado para 2UCASE
 
 
-iNTEGRANTES:
+<h1>iNTEGRANTES:</h1><br>
 Davi Moreira<br>
-Samuel Machado
-Sophia Vieira
-Katheleen Gomes
-João Assis
-Andressa Rafaela
-Davi Camargo
+Samuel Machado<br>
+Sophia Vieira<br>
+Katheleen Gomes<br>
+João Assis<br>
+Andressa Rafaela<br>
+Davi Camargo<br>
