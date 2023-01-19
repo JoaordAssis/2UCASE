@@ -5,10 +5,10 @@ Site renomeado para 2UCASE
 �
 �
 iNTEGRANTES:
-Davi Moreira
-Samuel Machado
-Sophia Vieira
-Katheleen Gomes
-João Assis
-Andressa Rafaela
-Davi Camargo
+�Davi Moreira
+�Samuel Machado
+�Sophia Vieira
+�Katheleen Gomes
+�João Assis
+�Andressa Rafaela
+�Davi Camargo
